@@ -1,0 +1,85 @@
+[
+  {
+    "filename": "quicksort_diagram.png",
+    "title": "Sorting quicksort anim.gif",
+    "artist": "Wikipedia:en:User:RolandH",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sorting_quicksort_anim.gif",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "size_bytes": 93016
+  },
+  {
+    "filename": "merge_sort.png",
+    "title": "Merge-sort-example-300px.gif",
+    "artist": "Swfung8",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Merge-sort-example-300px.gif",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "size_bytes": 94355
+  },
+  {
+    "filename": "big_o_complexity.png",
+    "title": "big o complexity",
+    "artist": "Wikimedia Commons Contributor",
+    "license": "CC BY-SA / Public Domain",
+    "source_url": "https://commons.wikimedia.org/",
+    "size_bytes": 413205
+  },
+  {
+    "filename": "binary_search_tree.png",
+    "title": "binary search tree",
+    "artist": "Wikimedia Commons Contributor",
+    "license": "CC BY-SA / Public Domain",
+    "source_url": "https://commons.wikimedia.org/",
+    "size_bytes": 45490
+  },
+  {
+    "filename": "linked_list.png",
+    "title": "linked list",
+    "artist": "Wikimedia Commons Contributor",
+    "license": "CC BY-SA / Public Domain",
+    "source_url": "https://commons.wikimedia.org/",
+    "size_bytes": 10282
+  },
+  {
+    "filename": "doubly_linked_list.png",
+    "title": "doubly linked list",
+    "artist": "Wikimedia Commons Contributor",
+    "license": "CC BY-SA / Public Domain",
+    "source_url": "https://commons.wikimedia.org/",
+    "size_bytes": 26605
+  },
+  {
+    "filename": "stack_data_structure.png",
+    "title": "stack data structure",
+    "artist": "Wikimedia Commons Contributor",
+    "license": "CC BY-SA / Public Domain",
+    "source_url": "https://commons.wikimedia.org/",
+    "size_bytes": 53704
+  },
+  {
+    "filename": "queue_data_structure.png",
+    "title": "queue data structure",
+    "artist": "Wikimedia Commons Contributor",
+    "license": "CC BY-SA / Public Domain",
+    "source_url": "https://commons.wikimedia.org/",
+    "size_bytes": 44531
+  },
+  {
+    "filename": "hash_table.png",
+    "title": "hash table",
+    "artist": "Wikimedia Commons Contributor",
+    "license": "CC BY-SA / Public Domain",
+    "source_url": "https://commons.wikimedia.org/",
+    "size_bytes": 66189
+  },
+  {
+    "filename": "minimum_spanning_tree.png",
+    "title": "Minimum spanning tree.svg",
+    "artist": "No machine-readable author provided. Dcoetzee assumed (based on copyright claims).",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Minimum_spanning_tree.svg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Minimum_spanning_tree.svg/1280px-Minimum_spanning_tree.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 116124
+  }
+]

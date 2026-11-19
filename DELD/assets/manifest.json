@@ -1,0 +1,65 @@
+[
+  {
+    "filename": "full_adder_circuit.png",
+    "title": "Full-adder logic diagram.svg",
+    "artist": "Inductiveload",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Full-adder_logic_diagram.svg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Full-adder_logic_diagram.svg/1280px-Full-adder_logic_diagram.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 30766
+  },
+  {
+    "filename": "jk_flip_flop.png",
+    "title": "JK Flip-flop alt.svg",
+    "artist": "jjbeard, Berserkerus",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:JK_Flip-flop_alt.svg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/JK_Flip-flop_alt.svg/1280px-JK_Flip-flop_alt.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 16785
+  },
+  {
+    "filename": "ripple_counter.png",
+    "title": "Binary ripple counter timing diagram.jpg",
+    "artist": "Lambtron",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Binary_ripple_counter_timing_diagram.jpg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Binary_ripple_counter_timing_diagram.jpg/1280px-Binary_ripple_counter_timing_diagram.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 63350
+  },
+  {
+    "filename": "cmos_inverter.png",
+    "title": "CMOS inverter.svg",
+    "artist": "Abaddon1337",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:CMOS_inverter.svg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/CMOS_inverter.svg/1280px-CMOS_inverter.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 46394
+  },
+  {
+    "filename": "multiplexer_4to1.png",
+    "title": "Multiplexer 4-to-1.svg",
+    "artist": "en:User:Cburnett",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Multiplexer_4-to-1.svg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Multiplexer_4-to-1.svg/1280px-Multiplexer_4-to-1.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 36560
+  },
+  {
+    "filename": "logic_gates_symbols.png",
+    "title": "Logic-gate-and-de.svg",
+    "artist": "de:User:Stefan506, SVG by User:jxjl",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Logic-gate-and-de.svg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Logic-gate-and-de.svg/1280px-Logic-gate-and-de.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 10826
+  },
+  {
+    "filename": "karnaugh_map_4var.png",
+    "title": "K-map 6,8,9,10,11,12,13,14 anti-race.svg",
+    "artist": "en:User:Cburnett",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:K-map_6,8,9,10,11,12,13,14_anti-race.svg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/K-map_6%2C8%2C9%2C10%2C11%2C12%2C13%2C14_anti-race.svg/1280px-K-map_6%2C8%2C9%2C10%2C11%2C12%2C13%2C14_anti-race.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 77339
+  }
+]

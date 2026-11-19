@@ -1,0 +1,65 @@
+[
+  {
+    "filename": "pcb_process_control_block.png",
+    "title": "Process table and process control block.png",
+    "artist": "\u05d1\u05e8",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Process_table_and_process_control_block.png",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Process_table_and_process_control_block.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "size_bytes": 26724
+  },
+  {
+    "filename": "cpu_scheduling_gantt.png",
+    "title": "RoundRobin.jpg",
+    "artist": "Coolcoder",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:RoundRobin.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/RoundRobin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "size_bytes": 251788
+  },
+  {
+    "filename": "deadlock_rag.png",
+    "title": "Resource-allocation-graph.svg",
+    "artist": "MartinThoma",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Resource-allocation-graph.svg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Resource-allocation-graph.svg/1280px-Resource-allocation-graph.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 28193
+  },
+  {
+    "filename": "tlb_translation.png",
+    "title": "Translation lookaside buffer.png",
+    "artist": "Matheus Rigoni Hernandes",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Translation_lookaside_buffer.png",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Translation_lookaside_buffer.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "size_bytes": 37708
+  },
+  {
+    "filename": "os_process_states.png",
+    "title": "Process states.svg",
+    "artist": "No machine-readable author provided. A3r0 assumed (based on copyright claims).",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Process_states.svg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Process_states.svg/1280px-Process_states.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 142643
+  },
+  {
+    "filename": "virtual_memory_paging.png",
+    "title": "Virtual memory.svg",
+    "artist": "Ehamberg",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Virtual_memory.svg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Virtual_memory.svg/1280px-Virtual_memory.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 258423
+  },
+  {
+    "filename": "disk_scheduling_elevator.png",
+    "title": "Cylinder Head Sector.svg",
+    "artist": "LionKimbro",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cylinder_Head_Sector.svg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Cylinder_Head_Sector.svg/1280px-Cylinder_Head_Sector.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 261548
+  }
+]

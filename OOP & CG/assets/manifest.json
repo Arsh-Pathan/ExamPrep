@@ -1,0 +1,63 @@
+[
+  {
+    "filename": "jvm_architecture.png",
+    "title": "jvm architecture",
+    "artist": "Wikimedia Commons Contributor",
+    "license": "CC BY-SA / Public Domain",
+    "source_url": "https://commons.wikimedia.org/",
+    "size_bytes": 226028
+  },
+  {
+    "filename": "oop_inheritance.png",
+    "title": "oop inheritance",
+    "artist": "Wikimedia Commons Contributor",
+    "license": "CC BY-SA / Public Domain",
+    "source_url": "https://commons.wikimedia.org/",
+    "size_bytes": 28263
+  },
+  {
+    "filename": "bresenham_line.png",
+    "title": "Bresenham.svg",
+    "artist": "Crotalus horridus",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bresenham.svg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Bresenham.svg/1280px-Bresenham.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 8772
+  },
+  {
+    "filename": "midpoint_circle.png",
+    "title": "Midpoint circle algorithm, radius 23.png",
+    "artist": "Psi\u0125edelisto",
+    "license": "CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Midpoint_circle_algorithm,_radius_23.png",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Midpoint_circle_algorithm%2C_radius_23.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "size_bytes": 3464
+  },
+  {
+    "filename": "cohen_sutherland.png",
+    "title": "Cohen sutherland kody.svg",
+    "artist": "Wersj\u0119 rastrow\u0105 wykona\u0142 u\u017cytkownik polskiego projektu wikipedii: \tWojciech mula, Zwektoryzowa\u0142: Krzysztof Zaj\u0105czkowski",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cohen_sutherland_kody.svg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Cohen_sutherland_kody.svg/1280px-Cohen_sutherland_kody.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 21042
+  },
+  {
+    "filename": "bezier_curve.png",
+    "title": "B\u00e9zier 3 big.gif",
+    "artist": "Phil Tregoning",
+    "license": "Public domain",
+    "source_url": "https://commons.wikimedia.org/wiki/File:B%C3%A9zier_3_big.gif",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/B%C3%A9zier_3_big.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "size_bytes": 216264
+  },
+  {
+    "filename": "java_thread_lifecycle.png",
+    "title": "Measuring the studs with a thread gauge.jpg",
+    "artist": "Craig Howell from San Carlos, CA, USA",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Measuring_the_studs_with_a_thread_gauge.jpg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Measuring_the_studs_with_a_thread_gauge.jpg/1280px-Measuring_the_studs_with_a_thread_gauge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "size_bytes": 403000
+  }
+]
