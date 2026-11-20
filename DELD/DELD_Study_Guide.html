@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Digital Electronics & Logic Design (MDM-221-CSE) — SPPU SE 2024 Pattern Complete Master Study Guide</title>
+<title>Digital Electronics &amp; Logic Design (MDM-221-CSE) - SPPU 2024 Pattern Complete Study Guide</title>
 <meta name="theme-color" content="#F8F9FB">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,1454 +26,980 @@ window.MathJax = {
 </head>
 <body data-subject="deld">
 
-<nav id="sidebar">
+<nav id="sidebar" aria-label="Study Guide Navigation">
   <h2>DELD (MDM-221-CSE)</h2>
-  <p class="sb-sub">Digital Electronics &amp; Logic Design | SPPU 2024 NEP</p>
+  <p class="sidebar-sub">SPPU SE Computer Engg &bull; 2024 Pattern</p>
   <ul>
-    <li><a href="#overview" class="nav-unit">Course Overview &amp; Strategy</a></li>
-    <li>
-      <a href="#unit-1" class="nav-unit">Unit I: Boolean Algebra &amp; K-Map</a>
+    <li><a class="nav-unit" href="#unit-1">Unit I: Boolean Algebra &amp; K-Maps</a>
       <ul class="sub-nav">
-        <li><a href="#u1-gates">Logic Gates &amp; DeMorgan's Theorems</a></li>
-        <li><a href="#u1-signed">Signed Binary &amp; Complements</a></li>
-        <li><a href="#u1-kmap">4-Variable K-Map Minimization</a></li>
-        <li><a href="#u1-qm">Quine-McCluskey Tabular Method</a></li>
-        <li><a href="#u1-short-notes">One-Page Unit I Short Notes</a></li>
+        <li><a href="#u1-gates">Logic &amp; Universal Gates (NAND/NOR)</a></li>
+        <li><a href="#u1-boolean">Boolean Theorems &amp; DeMorgan</a></li>
+        <li><a href="#u1-signed">Signed Binary (1's &amp; 2's Comp)</a></li>
+        <li><a href="#u1-kmap">SOP/POS &amp; K-Maps (4-5 Vars)</a></li>
+        <li><a href="#u1-qm">Quine-McCluskey Method</a></li>
+        <li><a href="#u1-casestudy">Case Study &amp; Exam Q&amp;A</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#unit-2" class="nav-unit">Unit II: Combinational Logic</a>
+    <li><a class="nav-unit" href="#unit-2">Unit II: Combinational Logic</a>
       <ul class="sub-nav">
-        <li><a href="#u2-adders">Adders, Subtractors &amp; IC 7483</a></li>
-        <li><a href="#u2-cla">Carry Look-Ahead Generator</a></li>
-        <li><a href="#u2-bcd">BCD Adder &amp; Correction Logic</a></li>
-        <li><a href="#u2-converters">Code Converters &amp; Multiplexers</a></li>
-        <li><a href="#u2-short-notes">One-Page Unit II Short Notes</a></li>
+        <li><a href="#u2-adders">Adders &amp; Subtractors</a></li>
+        <li><a href="#u2-7483">IC 7483 &amp; BCD Adder</a></li>
+        <li><a href="#u2-cla">Look-Ahead Carry Generator</a></li>
+        <li><a href="#u2-converters">Code Converters (BCD, XS-3, Gray)</a></li>
+        <li><a href="#u2-mux">MUX (IC 74151), DEMUX &amp; Comparator</a></li>
+        <li><a href="#u2-casestudy">Case Study &amp; Exam Q&amp;A</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#unit-3" class="nav-unit">Unit III: Sequential Circuits</a>
+    <li><a class="nav-unit" href="#unit-3">Unit III: Sequential Circuits</a>
       <ul class="sub-nav">
-        <li><a href="#u3-flipflops">Latches &amp; Flip-Flops (SR, JK, D, T)</a></li>
-        <li><a href="#u3-waveforms">Timing Waveforms &amp; Race-Around</a></li>
-        <li><a href="#u3-counters">Asynchronous &amp; Synchronous Counters</a></li>
-        <li><a href="#u3-registers">Shift Registers, Ring &amp; Johnson</a></li>
-        <li><a href="#u3-short-notes">One-Page Unit III Short Notes</a></li>
+        <li><a href="#u3-ff">Flip-Flops (SR, JK, D, T, MS-JK)</a></li>
+        <li><a href="#u3-excite">Excitation Tables &amp; Conversions</a></li>
+        <li><a href="#u3-registers">Shift Registers (SISO to PIPO)</a></li>
+        <li><a href="#u3-counters">Counters (Ripple, Sync, Ring, Johnson)</a></li>
+        <li><a href="#u3-casestudy">Case Study &amp; Exam Q&amp;A</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#unit-4" class="nav-unit">Unit IV: ASM &amp; Logic Families</a>
+    <li><a class="nav-unit" href="#unit-4">Unit IV: ASM &amp; Logic Families</a>
       <ul class="sub-nav">
-        <li><a href="#u4-asm">Algorithmic State Machines (ASM)</a></li>
-        <li><a href="#u4-families">TTL, CMOS &amp; Electrical Specs</a></li>
-        <li><a href="#u4-short-notes">One-Page Unit IV Short Notes</a></li>
+        <li><a href="#u4-fsm">FSM: Mealy vs Moore Machines</a></li>
+        <li><a href="#u4-asm">ASM Charts &amp; Realization</a></li>
+        <li><a href="#u4-icparams">Logic Families &amp; IC Parameters</a></li>
+        <li><a href="#u4-ttlcmos">TTL vs CMOS Logic Families</a></li>
+        <li><a href="#u4-casestudy">Case Study &amp; Exam Q&amp;A</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#unit-5" class="nav-unit">Unit V: Programmable Logic (PLDs)</a>
+    <li><a class="nav-unit" href="#unit-5">Unit V: Programmable Logic Devices</a>
       <ul class="sub-nav">
-        <li><a href="#u5-plds">ROM, PLA and PAL Architectures</a></li>
-        <li><a href="#u5-design">Combinational Design Using PLDs</a></li>
-        <li><a href="#u5-short-notes">One-Page Unit V Short Notes</a></li>
+        <li><a href="#u5-pld">PLD Overview &amp; ROM as PLD</a></li>
+        <li><a href="#u5-pla">Programmable Logic Array (PLA)</a></li>
+        <li><a href="#u5-pal">Programmable Array Logic (PAL)</a></li>
+        <li><a href="#u5-fpga">CPLD, FPGA &amp; Verilog HDL</a></li>
+        <li><a href="#u5-casestudy">Case Study &amp; Exam Q&amp;A</a></li>
       </ul>
     </li>
-    <li><a href="#flashcards" class="nav-unit">Active Recall Flashcards (25 Cards)</a></li>
+    <li><a class="nav-unit" href="#references">References &amp; Image Credits</a></li>
   </ul>
 </nav>
 
 <main id="main">
-<div class="main-inner">
+  <header>
+    <span class="pill">SPPU 2024 Pattern &bull; SE Computer Engineering &bull; MDM-221-CSE</span>
+    <h1>Digital Electronics &amp; Logic Design</h1>
+    <p>Complete Exam-Oriented Study Guide &mdash; Simple Intuition, SPPU Exam Definitions, Solved K-Maps &amp; Numericals, Verilog/Python Code, SVG &amp; Circuit Diagrams, and Past Paper Model Answers.</p>
+  </header>
 
-<header class="guide-header">
-  <div class="breadcrumb">SPPU S.E. Sem III (NEP 2024 Pattern) &bull; MDM-221-CSE</div>
-  <h1>Digital Electronics &amp; Logic Design Master Study Guide</h1>
-  <p class="subtitle">Complete syllabus theory, accurate circuit schematics, digital timing waveforms, one-page revision short notes for each unit, and active-recall flashcard deck.</p>
-  
-  <div class="quick-nav-bar">
-    <a href="#overview">Overview &amp; Strategy</a>
-    <a href="#unit-1">Unit I</a>
-    <a href="#unit-2">Unit II</a>
-    <a href="#unit-3">Unit III (Waveforms)</a>
-    <a href="#unit-4">Unit IV</a>
-    <a href="#unit-5">Unit V</a>
-    <a href="#u1-short-notes">Unit Short Notes</a>
-    <a href="#flashcards">Flashcards Deck</a>
-  </div>
-</header>
+  <!-- ===================================================================== -->
+  <!-- UNIT I                                                                -->
+  <!-- ===================================================================== -->
+  <section id="unit-1">
+    <span class="unit-badge">Unit I &bull; 06 Hours &bull; CO1</span>
+    <h2 class="unit-title">Unit I: Boolean Algebra and Simplification Techniques</h2>
 
-<section id="overview" class="unit-section">
-  <div class="exam-strategy-banner">
-    <h3>SPPU Exam Scoring Blueprint &amp; Strategy (MDM-221-CSE)</h3>
-    <p>DELD requires rigorous circuit schematics, full truth/excitation tables, and clean digital timing waveforms. SPPU evaluators award maximum marks when you follow the <strong>Circuit &rarr; Truth Table &rarr; Boolean Expression &rarr; Waveform</strong> structure.</p>
-    <div class="strategy-grid">
-      <div class="strategy-pill">
-        <strong>Unit Weightage Breakdown</strong>
-        Continuous Evaluation: 40 Marks | End-Sem University Exam: 60 Marks.
-        Q1/Q2: Unit I (15M) | Q3/Q4: Unit II (15M) | Q5/Q6: Unit III (15M) | Q7/Q8: Unit IV &amp; V (15M).
-      </div>
-      <div class="strategy-pill">
-        <strong>Waveforms Are Mandatory</strong>
-        For flip-flops and counters, always draw at least 3 clock periods showing setup/hold times, active clock edges, and state transitions. Waveforms yield 40% of sequential question marks!
-      </div>
-      <div class="strategy-pill">
-        <strong>K-Map Golden Rules</strong>
-        Always draw Gray code labels (00, 01, 11, 10). Show overlapping loops for quads and octets. Mark don't-care conditions ($X$) inside groupings to minimize literals.
-      </div>
+    <h3 id="u1-gates">1.1 Logic Gates &amp; Universal Gates (NAND, NOR)</h3>
+    <p>Every digital computer is built from tiny electronic switches called <strong>logic gates</strong>. A logic gate takes one or more binary inputs ($0$ = LOW / False, $1$ = HIGH / True) and produces a single binary output based on a fixed rule.</p>
+
+    <figure class="figure-box">
+      <svg style="max-width:100%;height:auto;" viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Standard Logic Gate Symbols: AND, OR, NOT, NAND, NOR, XOR, XNOR">
+        <rect width="760" height="280" fill="#f8f9fa" rx="6"/>
+        <g stroke="#202124" stroke-width="2.2" fill="none" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+          <!-- Row 1: AND, OR, NOT, NAND -->
+          <!-- AND -->
+          <line x1="20" y1="45" x2="45" y2="45"/><line x1="20" y1="65" x2="45" y2="65"/>
+          <path d="M45,35 L70,35 A20,20 0 0,1 70,75 L45,75 Z" fill="#ffffff"/>
+          <line x1="90" y1="55" x2="115" y2="55"/>
+          <text x="68" y="95" fill="#202124" stroke="none" text-anchor="middle" font-weight="700">AND (Y = A·B)</text>
+
+          <!-- OR -->
+          <line x1="190" y1="45" x2="218" y2="45"/><line x1="190" y1="65" x2="218" y2="65"/>
+          <path d="M212,35 Q225,55 212,75 Q245,75 262,55 Q245,35 212,35 Z" fill="#ffffff"/>
+          <line x1="262" y1="55" x2="288" y2="55"/>
+          <text x="238" y="95" fill="#202124" stroke="none" text-anchor="middle" font-weight="700">OR (Y = A+B)</text>
+
+          <!-- NOT -->
+          <line x1="365" y1="55" x2="395" y2="55"/>
+          <polygon points="395,38 395,72 427,55" fill="#ffffff"/>
+          <circle cx="432" cy="55" r="4.5" fill="#ffffff"/>
+          <line x1="437" y1="55" x2="465" y2="55"/>
+          <text x="415" y="95" fill="#202124" stroke="none" text-anchor="middle" font-weight="700">NOT (Y = A')</text>
+
+          <!-- NAND -->
+          <line x1="540" y1="45" x2="565" y2="45"/><line x1="540" y1="65" x2="565" y2="65"/>
+          <path d="M565,35 L590,35 A20,20 0 0,1 590,75 L565,75 Z" fill="#ffffff"/>
+          <circle cx="615" cy="55" r="4.5" fill="#ffffff"/>
+          <line x1="620" y1="55" x2="645" y2="55"/>
+          <text x="592" y="95" fill="#202124" stroke="none" text-anchor="middle" font-weight="700">NAND (Y = (A·B)')</text>
+
+          <!-- Row 2: NOR, XOR, XNOR -->
+          <!-- NOR -->
+          <line x1="85" y1="175" x2="113" y2="175"/><line x1="85" y1="195" x2="113" y2="195"/>
+          <path d="M107,165 Q120,185 107,205 Q140,205 157,185 Q140,165 107,165 Z" fill="#ffffff"/>
+          <circle cx="162" cy="185" r="4.5" fill="#ffffff"/>
+          <line x1="167" y1="185" x2="192" y2="185"/>
+          <text x="138" y="225" fill="#202124" stroke="none" text-anchor="middle" font-weight="700">NOR (Y = (A+B)')</text>
+
+          <!-- XOR -->
+          <line x1="295" y1="175" x2="323" y2="175"/><line x1="295" y1="195" x2="323" y2="195"/>
+          <path d="M312,165 Q325,185 312,205"/>
+          <path d="M320,165 Q333,185 320,205 Q353,205 370,185 Q353,165 320,165 Z" fill="#ffffff"/>
+          <line x1="370" y1="185" x2="395" y2="185"/>
+          <text x="345" y="225" fill="#202124" stroke="none" text-anchor="middle" font-weight="700">XOR (Y = A ⊕ B)</text>
+
+          <!-- XNOR -->
+          <line x1="500" y1="175" x2="528" y2="175"/><line x1="500" y1="195" x2="528" y2="195"/>
+          <path d="M517,165 Q530,185 517,205"/>
+          <path d="M525,165 Q538,185 525,205 Q558,205 575,185 Q558,165 525,165 Z" fill="#ffffff"/>
+          <circle cx="580" cy="185" r="4.5" fill="#ffffff"/>
+          <line x1="585" y1="185" x2="610" y2="185"/>
+          <text x="555" y="225" fill="#202124" stroke="none" text-anchor="middle" font-weight="700">XNOR (Y = (A ⊕ B)')</text>
+        </g>
+        <text x="380" y="262" fill="#5f6368" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">IEEE/ANSI Standard Logic Gate Symbols (Basic: AND, OR, NOT | Universal: NAND, NOR | Special: XOR, XNOR)</text>
+      </svg>
+      <figcaption>Figure 1.1: Standard logic gate symbols (AND, OR, NOT, NAND, NOR, XOR, XNOR) and their Boolean expressions.</figcaption>
+    </figure>
+
+    <div class="concept-box">
+      <div class="box-title">Key Concept: Universal Gate (NAND &amp; NOR)</div>
+      <p><strong>Exam Definition:</strong> A <em>Universal Gate</em> is a logic gate using which any Boolean function or any other basic logic gate (NOT, AND, OR, XOR, XNOR) can be realized without needing any other gate type. <strong>NAND</strong> and <strong>NOR</strong> are the two universal gates.</p>
+      <p><strong>In Simple Words:</strong> Think of NAND and NOR as "master LEGO bricks." Even if a factory only ships you NAND chips (like IC 7400) or NOR chips (like IC 7402), you can wire them together to build every other gate in a CPU.</p>
     </div>
-  </div>
-</section>
 
-<section id="unit-1" class="unit-section">
-  <div class="unit-badge">Unit I &bull; 06 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit I: Boolean Algebra and Simplification Techniques</h2>
-  
-  <div class="topic-block" id="u1-gates">
-    <h3>1.1 Basic Theorems, DeMorgan's Rules &amp; Universal Logic Gates</h3>
-    <p>Boolean algebra defines binary algebraic operations where variables take only values in {0, 1}.</p>
-    
-    <div class="table-wrap">
-      <table>
+    <h4>Realization of Basic Gates Using NAND Gates Only (IC 7400)</h4>
+    <ul>
+      <li><strong>NOT using NAND:</strong> Tie both inputs of a NAND gate together: $Y = \overline{A \cdot A} = \overline{A}$. (1 NAND gate)</li>
+      <li><strong>AND using NAND:</strong> Invert the output of a NAND gate using another NAND-as-NOT: $Y = \overline{\overline{A \cdot B}} = A \cdot B$. (2 NAND gates)</li>
+      <li><strong>OR using NAND:</strong> Invert both inputs first, then feed to a NAND gate (by DeMorgan's law): $Y = \overline{\overline{A} \cdot \overline{B}} = A + B$. (3 NAND gates)</li>
+      <li><strong>XOR using NAND:</strong> $A \oplus B$ requires <strong>4 NAND gates</strong>: $g_1 = \overline{AB}$, $g_2 = \overline{A \cdot g_1}$, $g_3 = \overline{B \cdot g_1}$, $Y = \overline{g_2 \cdot g_3}$.</li>
+      <li><strong>XNOR using NAND:</strong> Add 1 more NAND-as-NOT at the XOR output (<strong>5 NAND gates</strong>).</li>
+    </ul>
+
+    <h4>Realization of Basic Gates Using NOR Gates Only (IC 7402)</h4>
+    <ul>
+      <li><strong>NOT using NOR:</strong> Tie both inputs together: $Y = \overline{A + A} = \overline{A}$. (1 NOR gate)</li>
+      <li><strong>OR using NOR:</strong> Invert the NOR output: $Y = \overline{\overline{A + B}} = A + B$. (2 NOR gates)</li>
+      <li><strong>AND using NOR:</strong> Invert both inputs first, then feed to a NOR gate: $Y = \overline{\overline{A} + \overline{B}} = A \cdot B$. (3 NOR gates)</li>
+      <li><strong>XNOR using NOR:</strong> Requires <strong>4 NOR gates</strong>; <strong>XOR using NOR</strong> requires <strong>5 NOR gates</strong>.</li>
+    </ul>
+
+    <figure class="svg-box">
+      <svg style="max-width:100%;height:auto;" viewBox="0 0 760 220" width="760" height="220" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="760" height="220" fill="#FAF7F4" rx="8"/>
+        <!-- NOT using NAND -->
+        <text x="110" y="24" fill="#4B5FD1" font-size="13" font-weight="bold" text-anchor="middle">NOT via NAND (1 Gate)</text>
+        <line x1="25" y1="80" x2="60" y2="80" stroke="#171717" stroke-width="2"/>
+        <line x1="60" y1="65" x2="60" y2="95" stroke="#171717" stroke-width="2"/>
+        <line x1="60" y1="65" x2="85" y2="65" stroke="#171717" stroke-width="2"/>
+        <line x1="60" y1="95" x2="85" y2="95" stroke="#171717" stroke-width="2"/>
+        <path d="M 85 55 L 115 55 A 25 25 0 0 1 115 105 L 85 105 Z" fill="#FFFFFF" stroke="#226D51" stroke-width="2"/>
+        <circle cx="145" cy="80" r="5" fill="#FFFFFF" stroke="#226D51" stroke-width="2"/>
+        <line x1="150" y1="80" x2="190" y2="80" stroke="#171717" stroke-width="2"/>
+        <text x="15" y="84" fill="#171717" font-size="12">A</text>
+        <text x="196" y="84" fill="#226D51" font-size="12">A'</text>
+
+        <!-- AND using NAND -->
+        <text x="380" y="24" fill="#4B5FD1" font-size="13" font-weight="bold" text-anchor="middle">AND via NAND (2 Gates)</text>
+        <line x1="250" y1="68" x2="280" y2="68" stroke="#171717" stroke-width="2"/>
+        <line x1="250" y1="92" x2="280" y2="92" stroke="#171717" stroke-width="2"/>
+        <text x="236" y="72" fill="#171717" font-size="12">A</text>
+        <text x="236" y="96" fill="#171717" font-size="12">B</text>
+        <path d="M 280 55 L 310 55 A 25 25 0 0 1 310 105 L 280 105 Z" fill="#FFFFFF" stroke="#4B5FD1" stroke-width="2"/>
+        <circle cx="340" cy="80" r="5" fill="#FFFFFF" stroke="#4B5FD1" stroke-width="2"/>
+        <line x1="345" y1="80" x2="375" y2="80" stroke="#171717" stroke-width="2"/>
+        <line x1="375" y1="65" x2="375" y2="95" stroke="#171717" stroke-width="2"/>
+        <line x1="375" y1="65" x2="395" y2="65" stroke="#171717" stroke-width="2"/>
+        <line x1="375" y1="95" x2="395" y2="95" stroke="#171717" stroke-width="2"/>
+        <path d="M 395 55 L 425 55 A 25 25 0 0 1 425 105 L 395 105 Z" fill="#FFFFFF" stroke="#4B5FD1" stroke-width="2"/>
+        <circle cx="455" cy="80" r="5" fill="#FFFFFF" stroke="#4B5FD1" stroke-width="2"/>
+        <line x1="460" y1="80" x2="495" y2="80" stroke="#171717" stroke-width="2"/>
+        <text x="500" y="84" fill="#226D51" font-size="12">A.B</text>
+
+        <!-- OR using NAND -->
+        <text x="640" y="24" fill="#4B5FD1" font-size="13" font-weight="bold" text-anchor="middle">OR via NAND (3 Gates)</text>
+        <text x="540" y="64" fill="#171717" font-size="12">A</text>
+        <text x="540" y="134" fill="#171717" font-size="12">B</text>
+        <line x1="555" y1="60" x2="575" y2="60" stroke="#171717" stroke-width="2"/>
+        <rect x="575" y="45" width="38" height="30" rx="4" fill="#FFFFFF" stroke="#9C7710" stroke-width="2"/>
+        <text x="594" y="64" fill="#9C7710" font-size="10" text-anchor="middle">NAND</text>
+        <line x1="555" y1="130" x2="575" y2="130" stroke="#171717" stroke-width="2"/>
+        <rect x="575" y="115" width="38" height="30" rx="4" fill="#FFFFFF" stroke="#9C7710" stroke-width="2"/>
+        <text x="594" y="134" fill="#9C7710" font-size="10" text-anchor="middle">NAND</text>
+        <line x1="613" y1="60" x2="645" y2="82" stroke="#171717" stroke-width="2"/>
+        <line x1="613" y1="130" x2="645" y2="108" stroke="#171717" stroke-width="2"/>
+        <rect x="645" y="75" width="44" height="40" rx="6" fill="#FFFFFF" stroke="#226D51" stroke-width="2"/>
+        <text x="667" y="99" fill="#226D51" font-size="10" text-anchor="middle">NAND</text>
+        <line x1="689" y1="95" x2="720" y2="95" stroke="#171717" stroke-width="2"/>
+        <text x="724" y="99" fill="#226D51" font-size="12">A+B</text>
+        <text x="380" y="195" fill="#6A625B" font-size="12" text-anchor="middle">Tip: Bubble-to-Bubble cancellation converts NAND-NAND two-level SOP directly into AND-OR!</text>
+      </svg>
+      <figcaption>Figure 1.2: Realization of NOT, AND, and OR gates using NAND gates only.</figcaption>
+    </figure>
+
+    <h3 id="u1-boolean">1.2 Boolean Algebra Theorems &amp; DeMorgan's Rules</h3>
+    <div class="concept-box">
+      <div class="box-title">Key Concept: Boolean Algebra</div>
+      <p><strong>Exam Definition:</strong> Boolean Algebra is a mathematical system formulated by George Boole over the binary set $B = \{0, 1\}$ with two binary operators ($+$ for OR, $\cdot$ for AND) and one unary operator ($'$ or $\overline{\phantom{A}}$ for NOT), satisfying Huntington's postulates.</p>
+      <p><strong>In Simple Words:</strong> It is the "algebra of True/False." Instead of solving for $x = 5$, you simplify switching equations so your circuit uses fewer gates, costs less, and runs faster.</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Law / Theorem</th><th>AND Form (Dual 1)</th><th>OR Form (Dual 2)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Identity Law</strong></td><td>$A \cdot 1 = A$</td><td>$A + 0 = A$</td></tr>
+        <tr><td><strong>Null / Dominance Law</strong></td><td>$A \cdot 0 = 0$</td><td>$A + 1 = 1$</td></tr>
+        <tr><td><strong>Idempotent Law</strong></td><td>$A \cdot A = A$</td><td>$A + A = A$</td></tr>
+        <tr><td><strong>Complement Law</strong></td><td>$A \cdot \overline{A} = 0$</td><td>$A + \overline{A} = 1$</td></tr>
+        <tr><td><strong>Involution (Double Negation)</strong></td><td colspan="2" style="text-align:center;">$\overline{\overline{A}} = A$</td></tr>
+        <tr><td><strong>Commutative Law</strong></td><td>$A \cdot B = B \cdot A$</td><td>$A + B = B + A$</td></tr>
+        <tr><td><strong>Associative Law</strong></td><td>$(A \cdot B) \cdot C = A \cdot (B \cdot C)$</td><td>$(A + B) + C = A + (B + C)$</td></tr>
+        <tr><td><strong>Distributive Law</strong></td><td>$A \cdot (B + C) = A B + A C$</td><td>$A + (B \cdot C) = (A + B)(A + C)$</td></tr>
+        <tr><td><strong>Absorption Law</strong></td><td>$A \cdot (A + B) = A$</td><td>$A + A \cdot B = A$</td></tr>
+        <tr><td><strong>Redundancy / Consensus</strong></td><td>$(A + B)(\overline{A} + C)(B + C) = (A + B)(\overline{A} + C)$</td><td>$AB + \overline{A}C + BC = AB + \overline{A}C$</td></tr>
+        <tr><td><strong>DeMorgan's Theorems</strong></td><td>$\overline{A \cdot B} = \overline{A} + \overline{B}$</td><td>$\overline{A + B} = \overline{A} \cdot \overline{B}$</td></tr>
+      </tbody>
+    </table>
+
+    <div class="formula-box">
+      <div class="box-title">DeMorgan's Theorems &mdash; Proof by Truth Table (Frequently Asked: 4M/5M)</div>
+      <p><strong>Rule 1:</strong> $\overline{A \cdot B} = \overline{A} + \overline{B}$ ("Break the bar, change the sign"). <strong>Rule 2:</strong> $\overline{A + B} = \overline{A} \cdot \overline{B}$.</p>
+    </div>
+    <table class="truth-table">
+      <thead>
+        <tr><th>$A$</th><th>$B$</th><th>$\overline{A}$</th><th>$\overline{B}$</th><th>$\overline{A \cdot B}$</th><th>$\overline{A} + \overline{B}$</th><th>$\overline{A + B}$</th><th>$\overline{A} \cdot \overline{B}$</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0</td><td>0</td><td>1</td><td>1</td><td><strong>1</strong></td><td><strong>1</strong></td><td><strong>1</strong></td><td><strong>1</strong></td></tr>
+        <tr><td>0</td><td>1</td><td>1</td><td>0</td><td><strong>1</strong></td><td><strong>1</strong></td><td><strong>0</strong></td><td><strong>0</strong></td></tr>
+        <tr><td>1</td><td>0</td><td>0</td><td>1</td><td><strong>1</strong></td><td><strong>1</strong></td><td><strong>0</strong></td><td><strong>0</strong></td></tr>
+        <tr><td>1</td><td>1</td><td>0</td><td>0</td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>0</strong></td><td><strong>0</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="u1-signed">1.3 Signed Binary Number Representation</h3>
+    <p>Computers only store $0$s and $1$s &mdash; there is no minus sign hardware bit! To store negative integers in $n$ bits, we reserve the Most Significant Bit (MSB) as the <strong>sign bit</strong> ($0$ = positive, $1$ = negative).</p>
+    <table>
+      <thead>
+        <tr><th>Feature</th><th>Signed Magnitude</th><th>1's Complement</th><th>2's Complement (Used in CPUs)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Positive Number ($+N$)</strong></td><td>Sign bit $0$ + binary magnitude</td><td>Same as Signed Magnitude</td><td>Same as Signed Magnitude</td></tr>
+        <tr><td><strong>Negative Number ($-N$)</strong></td><td>Flip only MSB to $1$</td><td>Invert all bits of $+N$</td><td>1's complement of $+N$, then add $1$</td></tr>
+        <tr><td><strong>Range ($n$ bits)</strong></td><td>$-(2^{n-1}-1)$ to $+(2^{n-1}-1)$</td><td>$-(2^{n-1}-1)$ to $+(2^{n-1}-1)$</td><td>$-2^{n-1}$ to $+(2^{n-1}-1)$</td></tr>
+        <tr><td><strong>Representation of Zero</strong></td><td>Two zeros: $+0$ (`0000`) &amp; $-0$ (`1000`)</td><td>Two zeros: $+0$ (`0000`) &amp; $-0$ (`1111`)</td><td><strong>Unique zero</strong> (`0000`)</td></tr>
+        <tr><td><strong>Subtraction Rule</strong></td><td>Separate sign &amp; magnitude hardware</td><td>Add 1's comp; add end-around carry</td><td>Add 2's comp; <strong>discard</strong> final carry</td></tr>
+      </tbody>
+    </table>
+
+    <div class="card">
+      <h4>Solved Numerical: Represent $-23_{10}$ in 8-bit Signed Magnitude, 1's Complement, and 2's Complement (SPPU Oct 2025, 4M)</h4>
+      <ol>
+        <li>First write $+23_{10}$ in 8-bit binary: $23 = 16 + 4 + 2 + 1 = (00010111)_2$.</li>
+        <li><strong>Signed Magnitude:</strong> Change MSB to $1 \implies \mathbf{10010111_2}$.</li>
+        <li><strong>1's Complement:</strong> Invert every bit of $00010111 \implies \mathbf{11101000_2}$.</li>
+        <li><strong>2's Complement:</strong> Add $1$ to 1's complement: $11101000 + 1 \implies \mathbf{11101001_2}$.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h4>Solved Numerical: Perform $(151)_{10} - (76)_{10}$ using 1's and 2's Complement (SPPU Oct 2025, 4M)</h4>
+      <p>Since $151$ needs 8 magnitude bits ($151 = 10010111_2$), use a 9-bit (or 10-bit) signed representation so the sign bit is clear. Using 9 bits: $+151 = 010010111_2$, $+76 = 001001100_2$.</p>
+      <ul>
+        <li><strong>1's Complement Method:</strong> 1's comp of $76$ is $110110011_2$. Add to $+151$: $010010111 + 110110011 = 1\;001001010_2$. Carry-out $= 1$. Add end-around carry: $001001010 + 1 = 001001011_2 = \mathbf{+75_{10}}$.</li>
+        <li><strong>2's Complement Method:</strong> 2's comp of $76$ is $110110100_2$. Add to $+151$: $010010111 + 110110100 = 1\;001001011_2$. Discard the carry-out $1 \implies 001001011_2 = \mathbf{+75_{10}}$.</li>
+      </ul>
+    </div>
+
+    <h3 id="u1-kmap">1.4 SOP, POS &amp; Karnaugh Map (K-Map) Minimization (Up to 4-5 Variables)</h3>
+    <div class="concept-box">
+      <div class="box-title">Key Concept: Canonical vs Minimal SOP and POS Forms</div>
+      <p><strong>Exam Definition:</strong> A <em>Sum of Products (SOP)</em> expression is an OR of AND terms (minterms $m_i$ where output $= 1$). A <em>Product of Sums (POS)</em> expression is an AND of OR terms (maxterms $M_i$ where output $= 0$). In <em>Canonical (Standard)</em> form, every term contains all input variables in true or complemented form.</p>
+      <p><strong>In Simple Words:</strong> SOP hunts for all the "$1$" rows in a truth table and ORs them together. POS hunts for all the "$0$" rows and ANDs them together. A K-Map arranges those rows in a Gray-code grid so neighboring cells differ by just 1 bit, letting you merge pairs, quads, and octets visually.</p>
+    </div>
+
+    <figure class="figure-box">
+      <img src="assets/karnaugh_map_4var.png" alt="Karnaugh Map Gray Code Cell Arrangement">
+      <figcaption>Figure 1.3: Karnaugh map cell adjacency using Gray code ordering (00, 01, 11, 10).</figcaption>
+    </figure>
+
+    <div class="card">
+      <h4>Solved K-Map Numerical (SOP): Minimize $Y = \sum m(0, 1, 2, 5, 7, 8, 9, 10, 13, 15)$ (SPPU Oct 2025, 5M)</h4>
+      <table class="kmap-grid">
         <thead>
-          <tr><th>Boolean Law</th><th>AND Form (Dual 1)</th><th>OR Form (Dual 2)</th><th>SPPU Significance</th></tr>
+          <tr><th>$AB \backslash CD$</th><th>$00$</th><th>$01$</th><th>$11$</th><th>$10$</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Identity Law</strong></td><td>$A \cdot 1 = A$</td><td>$A + 0 = A$</td><td>Preserves signal value through logic stages</td></tr>
-          <tr><td><strong>Null (Annulment) Law</strong></td><td>$A \cdot 0 = 0$</td><td>$A + 1 = 1$</td><td>Forced resetting and control line clamping</td></tr>
-          <tr><td><strong>Idempotent Law</strong></td><td>$A \cdot A = A$</td><td>$A + A = A$</td><td>Eliminates duplicate gate inputs</td></tr>
-          <tr><td><strong>Complement Law</strong></td><td>$A \cdot \overline{A} = 0$</td><td>$A + \overline{A} = 1$</td><td>Forms basis of race condition hazards</td></tr>
-          <tr><td><strong>Involution Law</strong></td><td colspan="2">$\overline{\overline{A}} = A$</td><td>Double inversion cancellation</td></tr>
-          <tr><td><strong>Commutative Law</strong></td><td>$A \cdot B = B \cdot A$</td><td>$A + B = B + A$</td><td>Symmetric circuit wiring</td></tr>
-          <tr><td><strong>Associative Law</strong></td><td>$A \cdot (B \cdot C) = (A \cdot B) \cdot C$</td><td>$A + (B + C) = (A + B) + C$</td><td>Multi-input gate cascading</td></tr>
-          <tr><td><strong>Distributive Law</strong></td><td>$A + (B \cdot C) = (A + B)(A + C)$</td><td>$A \cdot (B + C) = AB + AC$</td><td>Factoring SOP &amp; POS expressions</td></tr>
-          <tr><td><strong>Absorption Law</strong></td><td>$A(A + B) = A$</td><td>$A + AB = A$</td><td>Reduces redundant logic hardware</td></tr>
+          <tr><th>$00$</th><td class="one">1 (0)</td><td class="one">1 (1)</td><td class="zero">0 (3)</td><td class="one">1 (2)</td></tr>
+          <tr><th>$01$</th><td class="zero">0 (4)</td><td class="one">1 (5)</td><td class="one">1 (7)</td><td class="zero">0 (6)</td></tr>
+          <tr><th>$11$</th><td class="zero">0 (12)</td><td class="one">1 (13)</td><td class="one">1 (15)</td><td class="zero">0 (14)</td></tr>
+          <tr><th>$10$</th><td class="one">1 (8)</td><td class="one">1 (9)</td><td class="zero">0 (11)</td><td class="one">1 (10)</td></tr>
         </tbody>
       </table>
+      <ul>
+        <li><strong>Quad 1 (4 corners: $m_0, m_2, m_8, m_{10}$):</strong> $B=0, D=0 \implies \overline{B}\overline{D}$.</li>
+        <li><strong>Quad 2 ($m_0, m_1, m_8, m_9$):</strong> $B=0, C=0 \implies \overline{B}\overline{C}$.</li>
+        <li><strong>Quad 3 ($m_5, m_7, m_{13}, m_{15}$):</strong> $B=1, D=1 \implies BD$.</li>
+        <li><strong>Minimal SOP:</strong> $Y = \overline{B}\overline{D} + \overline{B}\overline{C} + BD$.</li>
+      </ul>
     </div>
 
-    <h4>DeMorgan's Theorems (Fundamental for Universal Logic)</h4>
-    <div class="formula-box">
-      <strong>First Theorem:</strong> $\overline{A \cdot B} = \overline{A} + \overline{B}$ &mdash; <em>The complement of a product equals the sum of individual complements (NAND = Bubbled OR).</em><br>
-      <strong>Second Theorem:</strong> $\overline{A + B} = \overline{A} \cdot \overline{B}$ &mdash; <em>The complement of a sum equals the product of individual complements (NOR = Bubbled AND).</em>
-    </div>
-  </div>
-
-  <div class="topic-block" id="u1-signed">
-    <h3>1.2 Signed Binary Number Representations</h3>
-    <p>In digital processors, signed numbers are represented using three primary schemes for an $n$-bit register:</p>
-    <ul>
-      <li><strong>Signed Magnitude:</strong> MSB represents sign ($0 = +, 1 = -$), remaining $n-1$ bits represent magnitude. Has dual representation for zero ($+0 = 0000_2, -0 = 1000_2$). Range: $-(2^{n-1}-1)$ to $+(2^{n-1}-1)$.</li>
-      <li><strong>1's Complement:</strong> Negative numbers obtained by inverting all bits. Has end-around carry during addition and dual zero ($0000_2$ and $1111_2$). Range: $-(2^{n-1}-1)$ to $+(2^{n-1}-1)$.</li>
-      <li><strong>2's Complement (Industry Standard):</strong> Obtained by adding $1$ to 1's complement: $2's = (1's) + 1$. Features unique zero ($0000_2$), hardware-efficient subtractor using adder, and asymmetrical range: $-2^{n-1}$ to $+(2^{n-1}-1)$. For $n=8$: $-128$ to $+127$.</li>
-    </ul>
-  </div>
-
-  <div class="topic-block" id="u1-kmap">
-    <h3>1.3 Karnaugh Map (K-Map) Minimization (Up to 4 Variables)</h3>
-    <p>K-Map arranges $2^n$ minterms in a multidimensional Gray code grid where adjacent cells differ by exactly 1 bit, enabling algebraic simplification by visual looping of $2^k$ cells (pairs, quads, octets).</p>
-    
-    <div class="sppu-diagram-notes">
-      <strong>4-Variable K-Map Structure &amp; Cell Numbering:</strong>
-      Rows ($AB$): $00, 01, 11, 10$. Columns ($CD$): $00, 01, 11, 10$.<br>
-      Row 0 ($00$): $m_0, m_1, m_3, m_2$ &bull; Row 1 ($01$): $m_4, m_5, m_7, m_6$<br>
-      Row 2 ($11$): $m_{12}, m_{13}, m_{15}, m_{14}$ &bull; Row 3 ($10$): $m_8, m_9, m_{11}, m_{10}$
+    <div class="card">
+      <h4>Solved K-Map Numerical (POS): Minimize $F(A, B, C, D) = \prod M(0, 2, 3, 8, 9, 12, 13, 15)$ (SPPU Oct 2025, 5M)</h4>
+      <p>Place $0$s at maxterms $\{0, 2, 3, 8, 9, 12, 13, 15\}$ and group the $0$s into largest powers of 2:</p>
+      <ul>
+        <li><strong>Quad ($M_8, M_9, M_{12}, M_{13}$):</strong> $A=1, C=0 \implies (\overline{A} + C)$.</li>
+        <li><strong>Pair ($M_0, M_2$):</strong> $A=0, B=0, D=0 \implies (A + B + D)$.</li>
+        <li><strong>Pair ($M_2, M_3$):</strong> $A=0, B=0, C=1 \implies (A + B + \overline{C})$.</li>
+        <li><strong>Pair ($M_{13}, M_{15}$):</strong> $A=1, B=1, D=1 \implies (\overline{A} + \overline{B} + \overline{D})$.</li>
+        <li><strong>Minimal POS:</strong> $F = (\overline{A} + C)(A + B + D)(A + B + \overline{C})(\overline{A} + \overline{B} + \overline{D})$.</li>
+      </ul>
     </div>
 
-    <div class="qa-card">
-      <div class="qa-q">Solved SPPU Numerical: Minimize $F(A, B, C, D) = \sum m(0, 1, 2, 5, 8, 9, 10) + d(3, 11)$ using K-Map.</div>
-      <div class="sol-box">
-        <p><strong>Step 1: Populate K-Map:</strong> Place $1$ in cells $0, 1, 2, 5, 8, 9, 10$ and $X$ in cells $3, 11$.</p>
-        <p><strong>Step 2: Form Prime Implicants:</strong></p>
-        <ul>
-          <li><strong>Octet:</strong> Cells $(0, 1, 2, 3, 8, 9, 10, 11)$ form an octet using don't-cares $3, 11$. Eliminates variables $A, C, D$. Term = $\overline{B}$.</li>
-          <li><strong>Pair:</strong> Cell 5 pairs with Cell 1 to form a pair $(1, 5)$ giving $\overline{A}\,\overline{C}\,D$.</li>
-        </ul>
-        <p><strong>Step 3: Minimal SOP Expression:</strong></p>
-        <div class="formula-box">$$F(A, B, C, D) = \overline{B} + \overline{A}\,\overline{C}\,D$$</div>
-        <p><strong>Hardware Count:</strong> Reduced from 7 four-input AND gates to 1 NOT gate, 1 three-input AND gate, and 1 two-input OR gate.</p>
-      </div>
+    <div class="exam-tip">
+      <div class="box-title">5-Variable K-Map Quick Rule</div>
+      <p>For 5 variables $F(A,B,C,D,E)$, draw two 4-variable K-maps side by side: one for $A=0$ (minterms $0$–$15$) and one for $A=1$ (minterms $16$–$31$). Any group in the exact same row/column position on <em>both</em> maps combines across $A$ to eliminate variable $A$!</p>
     </div>
-  </div>
 
-
-  <div class="topic-block" id="u1-qm">
-    <h3>1.4 Quine-McCluskey (Tabular) Minimization Method</h3>
-    <p>While K-Maps become impractical beyond 4&ndash;5 variables, the <strong>Quine-McCluskey (Q-M)</strong> algorithm systematically minimizes Boolean functions with $n \ge 5$ variables deterministically (ideal for CAD/EDA tools):</p>
+    <h3 id="u1-qm">1.5 Quine-McCluskey (Tabulation) Method</h3>
+    <p>When there are 5 or more variables, K-Maps become hard to read visually. The <strong>Quine-McCluskey (QM)</strong> method is a systematic, computer-friendly algorithm to find the exact minimal SOP.</p>
     <ol>
-      <li><strong>Step 1 (Group by Weight):</strong> Convert all minterms (and don't-cares) to binary and group them by the count of $1$'s (Index 0, Index 1, Index 2, &hellip;).</li>
-      <li><strong>Step 2 (Iterative Combining):</strong> Compare adjacent index groups. Pair minterms differing by <em>exactly 1 bit</em> (Hamming distance = 1), replace that bit with dash (<code>-</code>), and place checkmarks (&#10003;) on combined terms. Repeat for pairs of quads until no further merges are possible.</li>
-      <li><strong>Step 3 (Collect Prime Implicants):</strong> All unchecked terms at any stage are <strong>Prime Implicants (PIs)</strong>.</li>
-      <li><strong>Step 4 (PI Chart &amp; Essential PIs):</strong> Build a table with columns = required minterms (exclude don't-cares) and rows = PIs. Columns covered by only <em>one</em> PI identify <strong>Essential Prime Implicants (EPIs)</strong>; select remaining minimal PIs (via Petrick's method or row dominance) for final SOP expression.</li>
+      <li><strong>Group minterms</strong> by the number of $1$s in their binary representation.</li>
+      <li><strong>Compare adjacent groups</strong>: if two terms differ in exactly 1 bit, combine them and replace that bit with a dash (<code>-</code>). Repeat until no more merges are possible; unmerged terms are <strong>Prime Implicants (PIs)</strong>.</li>
+      <li><strong>Prime Implicant Chart</strong>: list PIs as rows and minterms as columns. Find columns with a single checkmark (<strong>Essential Prime Implicants</strong>), then cover any remaining minterms with minimum extra PIs.</li>
     </ol>
-    <div class="qa-card">
-      <div class="qa-q">Worked Q-M Trace: Minimize $F(A,B,C,D) = \sum m(0, 1, 2, 8, 9, 10)$</div>
-      <div class="sol-box">
-        <p><strong>Group 0 (zero 1s):</strong> $m_0(0000)$. <strong>Group 1 (one 1):</strong> $m_1(0001), m_2(0010), m_8(1000)$. <strong>Group 2 (two 1s):</strong> $m_9(1001), m_{10}(1010)$.</p>
-        <p><strong>1st Pass Merges:</strong> $(0,1): 000-$, $(0,2): 00-0$, $(0,8): -000$, $(1,9): -001$, $(2,10): -010$, $(8,9): 100-$, $(8,10): 10-0$.</p>
-        <p><strong>2nd Pass Quads:</strong> $(0,1,8,9) \to -00-$ ($\overline{B}\,\overline{C}$); $(0,2,8,10) \to -0-0$ ($\overline{B}\,\overline{D}$). Both are Essential PIs since $m_1, m_9$ belong uniquely to $\overline{B}\,\overline{C}$ and $m_2, m_{10}$ to $\overline{B}\,\overline{D}$. <strong>Minimal SOP:</strong> $F = \overline{B}\,\overline{C} + \overline{B}\,\overline{D}$.</p>
-      </div>
-    </div>
-  </div>
 
-  <section class="unit-short-notes" id="u1-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit I Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Condensed definitions, formulas, and SPPU scoring anchors for pre-exam recall.</p>
+    <div class="sol-box">
+      <div class="sol-header"><span class="q-tag">Solved Example: Quine-McCluskey Tabular Method</span><span class="m-tag">6 Marks</span></div>
+      <p>Minimize $F(A,B,C,D) = \sum m(0, 1, 2, 5, 7, 8, 9, 10, 13, 15)$.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Group (1s)</th><th>Minterm</th><th>Binary (ABCD)</th><th>Stage 1 Pairs</th><th>Stage 2 Quads</th></tr></thead>
+          <tbody>
+            <tr><td>0</td><td>0</td><td>0000</td><td>(0,1) 000- ; (0,2) 00-0 ; (0,8) -000</td><td>(0,1,8,9) -00- &rarr; <strong>B'C'</strong></td></tr>
+            <tr><td>1</td><td>1, 2, 8</td><td>0001, 0010, 1000</td><td>(1,5) 0-01 ; (1,9) -001 ; (2,10) -010 ; (8,9) 100- ; (8,10) 10-0</td><td>(0,2,8,10) -0-0 &rarr; <strong>B'D'</strong></td></tr>
+            <tr><td>2</td><td>5, 9, 10</td><td>0101, 1001, 1010</td><td>(5,7) 01-1 ; (5,13) -101 ; (9,13) 1-01</td><td>(5,7,13,15) -1-1 &rarr; <strong>BD</strong></td></tr>
+            <tr><td>3</td><td>7, 13</td><td>0111, 1101</td><td>(7,15) -111 ; (13,15) 11-1</td><td>(1,5,9,13) --01 &rarr; <strong>C'D</strong></td></tr>
+            <tr><td>4</td><td>15</td><td>1111</td><td>—</td><td>All 4 quads are Prime Implicants</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Essential Prime Implicants:</strong> From the PI chart, <code>B'D'</code> covers 2 &amp; 10, <code>BD</code> covers 7 &amp; 15, and <code>B'C'</code> covers 0 &amp; 8. Together <code>B'C' + B'D' + BD</code> covers all minterms (1, 5, 9, 13 are already covered by these three!).<br>
+      <strong>Minimal SOP:</strong> $F(A,B,C,D) = B'C' + B'D' + BD$.</p>
     </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Core Laws &amp; DeMorgan's</h4>
-          <ul>
-            <li>$A + \overline{A} = 1$, $A \cdot \overline{A} = 0$</li>
-            <li>$\overline{A \cdot B} = \overline{A} + \overline{B}$ (NAND = Bubbled OR)</li>
-            <li>$\overline{A + B} = \overline{A} \cdot \overline{B}$ (NOR = Bubbled AND)</li>
-            <li>Involution: $\overline{\overline{A}} = A$</li>
-            <li>Absorption: $A + AB = A$, $A(A+B) = A$</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Number Representation Ranges (n-bit)</h4>
-          <ul>
-            <li>Unsigned: $0$ to $2^n - 1$</li>
-            <li>Signed Magnitude: $-(2^{n-1}-1)$ to $+(2^{n-1}-1)$</li>
-            <li>1's Complement: $-(2^{n-1}-1)$ to $+(2^{n-1}-1)$</li>
-            <li>2's Complement: $-2^{n-1}$ to $+(2^{n-1}-1)$ (Industry standard, unique 0)</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>K-Map Looping Rules</h4>
-          <ul>
-            <li>Always group in powers of 2 (1, 2, 4, 8, 16)</li>
-            <li>Groups can wrap around edges and corners</li>
-            <li>Octet eliminates 3 variables; Quad eliminates 2 variables; Pair eliminates 1</li>
-            <li>Use don't-cares ($X$) only if they enlarge groups or eliminate literals</li>
-            <li>Gray code sequence: $00 \to 01 \to 11 \to 10$</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Universal Logic Realization</h4>
-          <ul>
-            <li>NOT using NAND: Connect both inputs together: $A \cdot A = A \implies \overline{A}$</li>
-            <li>AND using NAND: NAND gate followed by NAND inverter (2 gates)</li>
-            <li>OR using NAND: Invert inputs then NAND: $\overline{\overline{A} \cdot \overline{B}} = A + B$ (3 gates)</li>
-            <li>NOR requires: NOT (1), OR (2), AND (3) gates</li>
-          </ul>
-        </div>
-      </div>
+
+    <h3 id="u1-casestudy">1.6 Case Study &amp; Important SPPU Exam Questions</h3>
+    <div class="card">
+      <h4>Syllabus Case Study: Design &amp; Optimization of a Digital Temperature Control System</h4>
+      <p>A server-room controller has 3 binary sensors: $T_H$ (Temp &gt; 35&deg;C), $H_H$ (Humidity &gt; 70%), and $M$ (Manual Override). The cooling fan $F = 1$ turns ON if Temp is high, OR if Humidity is high without Manual Override off, OR during Manual Override: $F(T_H, H_H, M) = \sum m(2, 4, 5, 6, 7) + d(3)$. Using a 3-variable K-Map, grouping $(4,5,6,7)$ gives $T_H$, and grouping $(2,3,6,7)$ gives $H_H$. Thus, minimal hardware is just one 2-input OR gate: $F = T_H + H_H$.</p>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-q"><span>Q1. Simplify $F(A,B,C,D) = \sum m(1,5,7,13,15) + \sum d(0,6,12,14)$ using K-Map.</span><span class="marks-badge">5 Marks</span></div>
+      <p><strong>Answer:</strong> Plot $1$s at $\{1,5,7,13,15\}$ and $X$ (don't care) at $\{0,6,12,14\}$. Group $(5,7,13,15)$ gives $BD$; group $(0,1)$ gives $\overline{A}\overline{B}\overline{C}$ (or group $(1,5)$ gives $\overline{A}\overline{C}D$). Since $(1,5)$ uses only 1 don't-care-free pair, minimal SOP is $F = BD + \overline{A}\overline{C}D$.</p>
+    </div>
+    <div class="qa-block">
+      <div class="qa-q"><span>Q2. Convert $F = AB + \overline{A}C$ into Canonical SOP form.</span><span class="marks-badge">4 Marks</span></div>
+      <p><strong>Answer:</strong> Missing variable in $AB$ is $C$, and in $\overline{A}C$ is $B$. Multiply each by $(X + \overline{X})$:<br>
+      $F = AB(C + \overline{C}) + \overline{A}C(B + \overline{B}) = ABC + AB\overline{C} + \overline{A}BC + \overline{A}\overline{B}C = \sum m(1, 3, 6, 7)$.</p>
     </div>
   </section>
-</section>
 
-<section id="unit-2" class="unit-section">
-  <div class="unit-badge">Unit II &bull; 06 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit II: Combinational Logic Design</h2>
-  
-  <div class="topic-block" id="u2-adders">
-    <h3>2.1 Adders, Subtractors &amp; 4-Bit Binary Parallel Adder (IC 7483)</h3>
-    <p>Combinational circuits have outputs that depend solely on present inputs without feedback or internal state memory.</p>
-    
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Circuit</th><th>Inputs</th><th>Outputs</th><th>Boolean Equations</th><th>Gate Count</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Half Adder</strong></td><td>$A, B$</td><td>Sum, Carry</td><td>$S = A \oplus B$, $C = A \cdot B$</td><td>1 XOR, 1 AND</td></tr>
-          <tr><td><strong>Full Adder</strong></td><td>$A, B, C_{in}$</td><td>Sum, Carry</td><td>$S = A \oplus B \oplus C_{in}$, $C_{out} = AB + BC_{in} + AC_{in}$</td><td>2 XOR, 2 AND, 1 OR</td></tr>
-          <tr><td><strong>Half Subtractor</strong></td><td>$A, B$</td><td>Diff, Borrow</td><td>$D = A \oplus B$, $B_{out} = \overline{A} \cdot B$</td><td>1 XOR, 1 NOT, 1 AND</td></tr>
-          <tr><td><strong>Full Subtractor</strong></td><td>$A, B, B_{in}$</td><td>Diff, Borrow</td><td>$D = A \oplus B \oplus B_{in}$, $B_{out} = \overline{A}B + \overline{A}B_{in} + BB_{in}$</td><td>2 XOR, 2 NOT, 2 AND, 1 OR</td></tr>
-        </tbody>
-      </table>
+  <!-- ===================================================================== -->
+  <!-- UNIT II                                                               -->
+  <!-- ===================================================================== -->
+  <section id="unit-2">
+    <span class="unit-badge">Unit II &bull; 06 Hours &bull; CO2</span>
+    <h2 class="unit-title">Unit II: Combinational Logic Design</h2>
+
+    <div class="concept-box">
+      <div class="box-title">Key Concept: Combinational Logic Circuit</div>
+      <p><strong>Exam Definition:</strong> A <em>combinational circuit</em> is a digital logic circuit whose outputs at any instant depend <strong>only</strong> on the present combination of inputs, with no memory elements or feedback paths.</p>
+      <p><strong>In Simple Words:</strong> Like a vending machine button or a pocket calculator's `+` key &mdash; press the same inputs, and you always get the exact same output immediately, regardless of what happened earlier.</p>
     </div>
 
-    <h4>Ripple Carry Adder Delay Problem</h4>
-    <p>In an $n$-bit parallel adder, the carry must ripple through all $n$ full adders. Total propagation delay $T_{delay} = n \times 2t_g$, which limits CPU arithmetic clock speed.</p>
-  </div>
+    <h3 id="u2-adders">2.1 Adders and Subtractors</h3>
+    <table>
+      <thead>
+        <tr><th>Circuit</th><th>Inputs</th><th>Outputs &amp; Boolean Equations</th><th>Gate Implementation</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Half Adder (HA)</strong></td>
+          <td>$A, B$</td>
+          <td>$S = A \oplus B$, &nbsp; $C_{out} = A \cdot B$</td>
+          <td>1 XOR + 1 AND</td>
+        </tr>
+        <tr>
+          <td><strong>Full Adder (FA)</strong></td>
+          <td>$A, B, C_{in}$</td>
+          <td>$S = A \oplus B \oplus C_{in}$<br>$C_{out} = AB + BC_{in} + AC_{in}$</td>
+          <td>2 Half Adders + 1 OR gate</td>
+        </tr>
+        <tr>
+          <td><strong>Half Subtractor (HS)</strong></td>
+          <td>$A, B$</td>
+          <td>$D = A \oplus B$, &nbsp; $B_{out} = \overline{A} \cdot B$</td>
+          <td>1 XOR + 1 NOT + 1 AND</td>
+        </tr>
+        <tr>
+          <td><strong>Full Subtractor (FS)</strong></td>
+          <td>$A, B, B_{in}$</td>
+          <td>$D = A \oplus B \oplus B_{in}$<br>$B_{out} = \overline{A}B + (\overline{A \oplus B})B_{in}$</td>
+          <td>2 Half Subtractors + 1 OR gate</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <div class="topic-block" id="u2-cla">
-    <h3>2.2 Carry Look-Ahead (CLA) Generator (IC 74182)</h3>
-    <p>CLA eliminates ripple delay by computing all stage carries simultaneously in parallel using <strong>Carry Generate ($G_i$)</strong> and <strong>Carry Propagate ($P_i$)</strong> terms:</p>
+    <figure class="figure-box">
+      <img src="assets/full_adder_circuit.png" alt="Full Adder Logic Circuit Diagram">
+      <figcaption>Figure 2.1: Full Adder constructed from two Half Adders and an OR gate.</figcaption>
+    </figure>
+
+    <h3 id="u2-7483">2.2 4-Bit Binary Adder (IC 7483) &amp; BCD Adder</h3>
+    <p><strong>IC 7483 (74LS83)</strong> is a 16-pin TTL 4-bit binary parallel adder. It takes two 4-bit numbers $A_3A_2A_1A_0$ and $B_3B_2B_1B_0$ plus an input carry $C_0$, and produces a 4-bit sum $S_3S_2S_1S_0$ and carry-out $C_4$.</p>
+
+    <div class="concept-box">
+      <div class="box-title">Key Concept: BCD Adder &amp; The "+6" (0110) Correction Rule</div>
+      <p><strong>Exam Definition:</strong> A <em>BCD Adder</em> adds two 4-bit Binary Coded Decimal digits ($0$–$9$) and produces a valid BCD sum ($0$–$9$) with a decimal carry. Whenever the binary sum exceeds $9$ ($1001_2$) or produces a carry-out ($K=1$), binary $6$ ($0110_2$) is added to skip the 6 invalid BCD states ($10$–$15$).</p>
+      <p><strong>In Simple Words:</strong> 4 bits can count up to $15$, but decimal digits stop at $9$. Adding $6$ (`0110`) jumps past the 6 unused codes ($10$–$15$) so the answer wraps cleanly into the tens digit!</p>
+    </div>
+
     <div class="formula-box">
-      $$G_i = A_i \cdot B_i \quad \text{(Carry generated at bit } i \text{)}$$<br>
-      $$P_i = A_i \oplus B_i \quad \text{(Carry propagated across bit } i \text{)}$$<br>
-      $$C_1 = G_0 + P_0 C_0$$<br>
-      $$C_2 = G_1 + P_1 G_0 + P_1 P_0 C_0$$<br>
-      $$C_3 = G_2 + P_2 G_1 + P_2 P_1 G_0 + P_2 P_1 P_0 C_0$$<br>
+      <div class="box-title">BCD Correction Detection Logic (for IC 7483)</div>
+      <p>Let the first 4-bit adder output be $K$ (carry-out) and $Z_3 Z_2 Z_1 Z_0$. Correction ($+0110_2$) is needed when:</p>
+      $$C_{out} = K + Z_3 Z_2 + Z_3 Z_1$$
+      <p>Feed $C_{out}$ to inputs $B_2$ and $B_1$ of a second IC 7483 (with $B_3 = B_0 = 0$) to add $0110_2$ when $C_{out} = 1$, or $0000_2$ when $C_{out} = 0$.</p>
+    </div>
+
+    <div class="card">
+      <h4>Solved Example: BCD Addition of $7 + 8$</h4>
+      <ol>
+        <li>$A = 0111_2$ ($7$), $B = 1000_2$ ($8$). First IC 7483 outputs $Z_3Z_2Z_1Z_0 = 1111_2$ ($15$), $K = 0$.</li>
+        <li>Check correction: $C_{out} = 0 + (1 \cdot 1) + (1 \cdot 1) = 1$.</li>
+        <li>Second IC 7483 adds $1111_2 + 0110_2 = (1)\;0101_2 \implies \text{Carry} = 1, \text{Sum} = 0101_2$ ($5$), giving $\mathbf{15_{10}}$.</li>
+      </ol>
+    </div>
+
+    <h3 id="u2-cla">2.3 Look-Ahead Carry Generator (CLA)</h3>
+    <p>In a 4-bit ripple-carry adder, $C_4$ must wait for $C_1 \to C_2 \to C_3$ to ripple through every stage, causing $O(n)$ delay. A <strong>Look-Ahead Carry Generator (IC 74182)</strong> computes all carries simultaneously in just 2 gate levels!</p>
+    <div class="formula-box">
+      <div class="box-title">Carry Generate ($G_i$) &amp; Carry Propagate ($P_i$) Equations</div>
+      <p>Define $G_i = A_i \cdot B_i$ (generates a carry regardless of $C_i$) and $P_i = A_i \oplus B_i$ (propagates $C_i$ to $C_{i+1}$):</p>
+      $$C_1 = G_0 + P_0 C_0$$
+      $$C_2 = G_1 + P_1 G_0 + P_1 P_0 C_0$$
+      $$C_3 = G_2 + P_2 G_1 + P_2 P_1 G_0 + P_2 P_1 P_0 C_0$$
       $$C_4 = G_3 + P_3 G_2 + P_3 P_2 G_1 + P_3 P_2 P_1 G_0 + P_3 P_2 P_1 P_0 C_0$$
     </div>
-    <div class="figure-box"><svg viewBox="0 0 760 220" class="svg-diagram" xmlns="http://www.w3.org/2000/svg" id="deld-svg-1">
-  <rect width="760" height="220" fill="#FFFFFF" rx="8"/>
-  <style>#deld-svg-1 .cla-box { fill: #F8FAFC; stroke: #0F172A; stroke-width: 2; rx: 6; }#deld-svg-1 .wire { stroke: #1E293B; stroke-width: 1.6; fill: none; }#deld-svg-1 .wire-c { stroke: #DC2626; stroke-width: 1.8; fill: none; }#deld-svg-1 .txt-t { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #1E293B; }#deld-svg-1 .txt-p { font-family: monospace; font-size: 11px; fill: #1E293B; }#deld-svg-1 .txt-f { font-family: monospace; font-size: 11px; fill: #2563EB; }
-  </style>
-  <rect x="220" y="30" width="320" height="160" class="cla-box"/>
-  <text x="250" y="60" class="txt-t">Look-Ahead Carry Generator</text>
-  <text x="310" y="80" class="txt-p">(IC 74182 Architecture)</text>
-  
-  <line x1="60" y1="70" x2="220" y2="70" class="wire"/>
-  <text x="70" y="65" class="txt-f">P0 = A0 ^ B0, G0 = A0 * B0</text>
-  <line x1="60" y1="100" x2="220" y2="100" class="wire"/>
-  <text x="70" y="95" class="txt-f">P1 = A1 ^ B1, G1 = A1 * B1</text>
-  <line x1="60" y1="130" x2="220" y2="130" class="wire"/>
-  <text x="70" y="125" class="txt-f">P2 = A2 ^ B2, G2 = A2 * B2</text>
-  <line x1="60" y1="160" x2="220" y2="160" class="wire"/>
-  <text x="70" y="155" class="txt-f">P3 = A3 ^ B3, G3 = A3 * B3</text>
-  
-  <line x1="380" y1="10" x2="380" y2="30" class="wire-c"/><text x="390" y="25" class="txt-p">C0 (Cin)</text>
-  
-  <line x1="540" y1="65" x2="700" y2="65" class="wire-c"/><text x="550" y="60" class="txt-p">C1 = G0 + P0*C0</text>
-  <line x1="540" y1="95" x2="700" y2="95" class="wire-c"/><text x="550" y="90" class="txt-p">C2 = G1 + P1*G0 + P1*P0*C0</text>
-  <line x1="540" y1="125" x2="700" y2="125" class="wire-c"/><text x="550" y="120" class="txt-p">C3 = G2 + P2*G1 + P2*P1*G0 + P2*P1*P0*C0</text>
-  <line x1="540" y1="155" x2="700" y2="155" class="wire-c"/><text x="550" y="150" class="txt-p">C4 = G3 + P3*C3</text>
-  
-  <text x="235" y="210" class="txt-p" fill="#DC2626" font-weight="bold">Delay = Constant (2 Gate Delays) independent of bit width N!</text>
-</svg><div class="figure-caption">Figure 2.4: Carry Look-Ahead Generator Block and Simultaneous High-Speed Carry Equations</div></div>
-  </div>
 
-  <div class="topic-block" id="u2-bcd">
-    <h3>2.3 BCD Adder with Sum &gt; 9 Correction Logic</h3>
-    <p>BCD represents decimal digits $0-9$ in 4-bit binary ($0000_2$ to $1001_2$). When two BCD digits are added:</p>
+    <figure class="svg-box">
+      <svg style="max-width:100%;height:auto;" viewBox="0 0 720 190" width="720" height="190" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="720" height="190" fill="#FAF7F4" rx="8"/>
+        <rect x="40" y="25" width="120" height="55" rx="6" fill="#FFFFFF" stroke="#4B5FD1" stroke-width="2"/>
+        <text x="100" y="50" fill="#4B5FD1" font-size="12" font-weight="bold" text-anchor="middle">P, G Unit 0..3</text>
+        <text x="100" y="68" fill="#6A625B" font-size="10" text-anchor="middle">Pi = Ai^Bi, Gi = Ai.Bi</text>
+
+        <line x1="160" y1="52" x2="250" y2="52" stroke="#226D51" stroke-width="2"/>
+        <text x="205" y="44" fill="#226D51" font-size="11" text-anchor="middle">P0..3, G0..3</text>
+
+        <rect x="250" y="20" width="210" height="75" rx="6" fill="#E4F2EC" stroke="#226D51" stroke-width="2"/>
+        <text x="355" y="45" fill="#226D51" font-size="13" font-weight="bold" text-anchor="middle">Look-Ahead Carry</text>
+        <text x="355" y="63" fill="#171717" font-size="11" text-anchor="middle">Generator (2-Level AND-OR)</text>
+        <text x="355" y="81" fill="#9C7710" font-size="10" text-anchor="middle">Computes C1, C2, C3, C4 in parallel</text>
+
+        <line x1="460" y1="57" x2="530" y2="57" stroke="#9C7710" stroke-width="2"/>
+        <rect x="530" y="25" width="140" height="55" rx="6" fill="#FFFFFF" stroke="#9C7710" stroke-width="2"/>
+        <text x="600" y="50" fill="#9C7710" font-size="12" font-weight="bold" text-anchor="middle">Sum XOR Stage</text>
+        <text x="600" y="68" fill="#171717" font-size="10" text-anchor="middle">Si = Pi XOR Ci</text>
+
+        <line x1="355" y1="130" x2="355" y2="95" stroke="#4B5FD1" stroke-width="2"/>
+        <text x="355" y="148" fill="#4B5FD1" font-size="12" text-anchor="middle">C0 (Input Carry)</text>
+        <text x="360" y="175" fill="#6A625B" font-size="11" text-anchor="middle">Total Delay = Constant (O(1) gate levels) instead of Ripple O(n)</text>
+      </svg>
+      <figcaption>Figure 2.2: Look-Ahead Carry Adder architecture eliminating ripple-carry propagation delay.</figcaption>
+    </figure>
+
+    <h3 id="u2-converters">2.4 Code Converters (BCD to Excess-3, Binary to Gray, Gray to Binary)</h3>
     <ul>
-      <li>If sum $\le 9$ and $C_{out} = 0$: The binary sum is a valid BCD digit.</li>
-      <li>If sum &gt; 9 or $C_{out} = 1$: An invalid state occurs. Add decimal $6$ ($0110_2$) to skip the 6 invalid 4-bit states ($1010_2$ to $1111_2$).</li>
+      <li><strong>BCD to Excess-3:</strong> Add $3$ ($0011_2$) to each valid BCD digit ($0$–$9$). Inputs $10$–$15$ are <em>don't cares</em> ($d$). Minimized equations for Excess-3 outputs $E_3E_2E_1E_0$ from BCD $B_3B_2B_1B_0$:
+        <br>$E_0 = \overline{B_0}$, &nbsp; $E_1 = \overline{B_1 \oplus B_0}$, &nbsp; $E_2 = B_2 \oplus (B_1 + B_0)$, &nbsp; $E_3 = B_3 + B_2(B_1 + B_0)$.</li>
+      <li><strong>4-Bit Binary ($B_3B_2B_1B_0$) to Gray ($G_3G_2G_1G_0$):</strong>
+        <br>$G_3 = B_3$, &nbsp; $G_2 = B_3 \oplus B_2$, &nbsp; $G_1 = B_2 \oplus B_1$, &nbsp; $G_0 = B_1 \oplus B_0$.</li>
+      <li><strong>4-Bit Gray ($G_3G_2G_1G_0$) to Binary ($B_3B_2B_1B_0$):</strong>
+        <br>$B_3 = G_3$, &nbsp; $B_2 = B_3 \oplus G_2$, &nbsp; $B_1 = B_2 \oplus G_1$, &nbsp; $B_0 = B_1 \oplus G_0$.</li>
     </ul>
-    <div class="figure-box"><svg viewBox="0 0 760 280" class="svg-diagram" xmlns="http://www.w3.org/2000/svg" id="deld-svg-2">
-  <rect width="760" height="280" fill="#FFFFFF" rx="8"/>
-  <style>#deld-svg-2 .box { fill: #EFF6FF; stroke: #2563EB; stroke-width: 2; rx: 6; }#deld-svg-2 .box-corr { fill: #FEF3C7; stroke: #D97706; stroke-width: 2; rx: 6; }#deld-svg-2 .gate { fill: #F1F5F9; stroke: #0F172A; stroke-width: 1.8; }#deld-svg-2 .wire { fill: none; stroke: #1E293B; stroke-width: 1.8; }#deld-svg-2 .wire-corr { fill: none; stroke: #DC2626; stroke-width: 1.8; }#deld-svg-2 .txt-title { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #1E293B; }#deld-svg-2 .txt-port { font-family: monospace; font-size: 11px; fill: #1E293B; }#deld-svg-2 .txt-annot { font-family: sans-serif; font-size: 10px; fill: #475569; }
-  </style>
-  
-  <rect x="50" y="40" width="180" height="180" class="box"/>
-  <text x="65" y="70" class="txt-title">4-Bit Binary Adder</text>
-  <text x="105" y="90" class="txt-port">(IC 7483)</text>
-  <text x="60" y="125" class="txt-port">A3 A2 A1 A0</text>
-  <text x="60" y="165" class="txt-port">B3 B2 B1 B0</text>
-  <text x="60" y="200" class="txt-port">Cin = 0</text>
-  <text x="190" y="110" class="txt-port">S3</text>
-  <text x="190" y="135" class="txt-port">S2</text>
-  <text x="190" y="160" class="txt-port">S1</text>
-  <text x="190" y="185" class="txt-port">S0</text>
-  <text x="180" y="70" class="txt-port">K (Cout)</text>
-  
-  <line x1="230" y1="105" x2="310" y2="105" class="wire"/>
-  <line x1="230" y1="130" x2="310" y2="130" class="wire"/>
-  <line x1="230" y1="155" x2="310" y2="155" class="wire"/>
-  <line x1="230" y1="180" x2="520" y2="180" class="wire"/>
-  
-  <rect x="310" y="55" width="45" height="30" class="gate"/>
-  <text x="320" y="75" class="txt-port">AND</text>
-  <text x="270" y="70" class="txt-annot">S3*S2</text>
-  
-  <rect x="310" y="105" width="45" height="30" class="gate"/>
-  <text x="320" y="125" class="txt-port">AND</text>
-  <text x="270" y="120" class="txt-annot">S3*S1</text>
-  
-  <rect x="400" y="70" width="55" height="50" class="gate"/>
-  <text x="415" y="100" class="txt-port">OR</text>
-  <text x="390" y="60" class="txt-annot">Carry out / Correction</text>
-  
-  <line x1="230" y1="65" x2="400" y2="78" class="wire-corr"/>
-  <line x1="355" y1="70" x2="400" y2="92" class="wire-corr"/>
-  <line x1="355" y1="120" x2="400" y2="110" class="wire-corr"/>
-  
-  <line x1="455" y1="95" x2="720" y2="95" class="wire-corr"/>
-  <text x="640" y="85" class="txt-title" fill="#DC2626">Final BCD Cout</text>
-  
-  <rect x="520" y="40" width="180" height="180" class="box-corr"/>
-  <text x="540" y="70" class="txt-title" fill="#D97706">2nd Adder (+6)</text>
-  <text x="560" y="90" class="txt-port">(IC 7483)</text>
-  
-  <line x1="310" y1="105" x2="520" y2="105" class="wire"/>
-  <line x1="310" y1="130" x2="520" y2="130" class="wire"/>
-  <line x1="310" y1="155" x2="520" y2="155" class="wire"/>
-  
-  <line x1="480" y1="95" x2="480" y2="210" class="wire-corr"/>
-  <line x1="480" y1="210" x2="520" y2="210" class="wire-corr"/>
-  <text x="440" y="215" class="txt-annot">Add 0110 if &gt;9</text>
-  
-  <line x1="700" y1="110" x2="740" y2="110" class="wire"/><text x="742" y="115" class="txt-port">Y3</text>
-  <line x1="700" y1="135" x2="740" y2="135" class="wire"/><text x="742" y="140" class="txt-port">Y2</text>
-  <line x1="700" y1="160" x2="740" y2="160" class="wire"/><text x="742" y="165" class="txt-port">Y1</text>
-  <line x1="700" y1="185" x2="740" y2="185" class="wire"/><text x="742" y="190" class="txt-port">Y0</text>
-  
-  <text x="210" y="255" class="txt-annot" font-weight="bold">Correction Condition: Y = Cout + S3*S2 + S3*S1 (True when sum &gt; 9 or carry generated)</text>
-</svg><div class="figure-caption">Figure 2.3: BCD Adder Circuit using two 4-bit Binary Adders (IC 7483) and Sum &gt; 9 Correction Logic (Adding 0110)</div></div>
-  </div>
 
-  <div class="topic-block" id="u2-converters">
-    <h3>2.4 Code Converters &amp; Multiplexers (IC 74151)</h3>
-    <h4>Binary to Gray &amp; Gray to Binary Converters</h4>
-    <p>Gray code is an unweighted cyclic unit-distance code used in rotary encoders to prevent multi-bit transition errors.</p>
+    <h3 id="u2-mux">2.5 Multiplexers (IC 74151), Demultiplexers &amp; 2-Bit Comparator</h3>
+    <div class="concept-box">
+      <div class="box-title">Key Concept: Multiplexer (MUX) &amp; Demultiplexer (DEMUX)</div>
+      <p><strong>Exam Definition:</strong> A <em>Multiplexer (Data Selector)</em> is a combinational circuit with $2^n$ data inputs, $n$ select lines, and $1$ output that routes one selected input to the output. A <em>Demultiplexer (Data Distributor)</em> performs the reverse operation: $1$ input routed to one of $2^n$ outputs.</p>
+      <p><strong>In Simple Words:</strong> A MUX is a railway track merge (many tracks into 1 main line). A DEMUX is a railway track splitter (1 main line into many sidings).</p>
+    </div>
+
+    <figure class="figure-box">
+      <img src="assets/multiplexer_4to1.png" alt="4-to-1 Multiplexer Logic Diagram">
+      <figcaption>Figure 2.3: 4:1 Multiplexer with select lines $S_1, S_0$ and data inputs $I_0$–$I_3$.</figcaption>
+    </figure>
+
+    <p><strong>IC 74151 (8:1 Multiplexer):</strong> Has 8 data inputs ($D_0$–$D_7$), 3 select lines ($S_2, S_1, S_0$), active-low strobe/enable ($\overline{E}$), and complementary outputs $Y$ and $\overline{Y}$. To implement a 4-variable function $F(A,B,C,D)$ using an 8:1 MUX, connect $A,B,C$ to $S_2,S_1,S_0$ and express each $D_i$ in terms of $\{0, 1, D, \overline{D}\}$.</p>
+
+    <h4>2-Bit Magnitude Comparator ($A = A_1A_0$, $B = B_1B_0$)</h4>
+    <ul>
+      <li><strong>$A = B$:</strong> $(A_1 \odot B_1) \cdot (A_0 \odot B_0)$ (using two XNOR gates and one AND gate)</li>
+      <li><strong>$A > B$:</strong> $A_1\overline{B_1} + (A_1 \odot B_1)A_0\overline{B_0}$</li>
+      <li><strong>$A < B$:</strong> $\overline{A_1}B_1 + (A_1 \odot B_1)\overline{A_0}B_0$</li>
+    </ul>
+
+    <pre><code>// Verilog HDL: 4-Bit Full Adder &amp; 8:1 Multiplexer (IC 74151 style)
+module adder_4bit (
+    input  [3:0] A, B,
+    input        Cin,
+    output [3:0] Sum,
+    output       Cout
+);
+    assign {Cout, Sum} = A + B + Cin;
+endmodule
+
+module mux_8to1 (
+    input  [7:0] D,
+    input  [2:0] S,
+    input        En_n, // Active-low enable
+    output       Y
+);
+    assign Y = (!En_n) ? D[S] : 1'b0;
+endmodule
+</code></pre>
+
+    <h3 id="u2-casestudy">2.6 Case Study &amp; Important SPPU Exam Questions</h3>
+    <div class="card">
+      <h4>Syllabus Case Study: Binary Calculator for BCD Input and 2's Complement Operations</h4>
+      <p>A dual-mode calculator accepts two 4-bit inputs $A, B$ and a mode bit $M$. When $M=0$ (BCD Add mode), IC 7483 + correction logic (`+0110`) outputs a valid 2-digit BCD sum. When $M=1$ (Signed Subtract mode), $B$ passes through XOR gates controlled by $M$ (inverting $B$) with $C_{in}=1$ to compute $A + \overline{B} + 1 = A - B$ in 2's complement.</p>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-q"><span>Q1. Implement $F(A,B,C,D) = \sum m(0,1,3,4,8,9,15)$ using an 8:1 MUX (IC 74151).</span><span class="marks-badge">7 Marks</span></div>
+      <p><strong>Answer:</strong> Connect $A,B,C$ to $S_2,S_1,S_0$. Pair minterms $(2i, 2i+1)$ for $D=0,1$: $D_0 (0,1)=1$, $D_1 (2,3)=D$, $D_2 (4,5)=\overline{D}$, $D_3 (6,7)=0$, $D_4 (8,9)=1$, $D_5 (10,11)=0$, $D_6 (12,13)=0$, $D_7 (14,15)=D$.</p>
+    </div>
+    <div class="qa-block">
+      <div class="qa-q"><span>Q2. Differentiate between Half Adder and Full Adder.</span><span class="marks-badge">4 Marks</span></div>
+      <p><strong>Answer:</strong> (1) Half Adder adds 2 bits ($A,B$); Full Adder adds 3 bits ($A,B,C_{in}$). (2) HA has no carry-in; FA accepts previous stage carry-in. (3) HA uses 1 XOR + 1 AND; FA uses 2 XOR + 2 AND + 1 OR. (4) HA cannot be cascaded for multi-bit addition; FA can be cascaded.</p>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- UNIT III                                                              -->
+  <!-- ===================================================================== -->
+  <section id="unit-3">
+    <span class="unit-badge">Unit III &bull; 06 Hours &bull; CO3</span>
+    <h2 class="unit-title">Unit III: Sequential Circuits</h2>
+
+    <div class="concept-box">
+      <div class="box-title">Key Concept: Sequential Circuit vs Combinational Circuit</div>
+      <p><strong>Exam Definition:</strong> A <em>sequential circuit</em> is a digital circuit whose output depends not only on the present inputs but also on the <strong>past history of inputs</strong> (stored in memory elements called flip-flops).</p>
+      <p><strong>In Simple Words:</strong> A combinational circuit has no memory (like a light switch). A sequential circuit has memory (like a TV channel-up button &mdash; the next channel depends on what channel you are currently watching!).</p>
+    </div>
+
+    <h3 id="u3-ff">3.1 Flip-Flops (SR, JK, D, T, Master-Slave JK, Preset &amp; Clear)</h3>
+    <p>A <strong>Flip-Flop</strong> is a 1-bit bistable memory cell controlled by a clock signal ($CLK$). Unlike a level-triggered latch, an edge-triggered flip-flop updates its output $Q$ only at the rising ($\uparrow$) or falling ($\downarrow$) edge of the clock.</p>
+
+    <ul>
+      <li><strong>SR Flip-Flop:</strong> Set ($S=1, R=0 \implies Q=1$), Reset ($S=0, R=1 \implies Q=0$), Hold ($S=0, R=0 \implies Q_{n}$), and <strong>Invalid/Forbidden</strong> ($S=1, R=1$).</li>
+      <li><strong>D (Data/Delay) Flip-Flop:</strong> Eliminates the invalid state by setting $R = \overline{S}$ via an inverter. $Q_{n+1} = D$. Used in registers and RAM.</li>
+      <li><strong>JK Flip-Flop:</strong> Fixes the $S=R=1$ invalid state &mdash; when $J=1, K=1$, the output <strong>toggles</strong> ($Q_{n+1} = \overline{Q_n}$).</li>
+      <li><strong>T (Toggle) Flip-Flop:</strong> Formed by tying $J=K=T$. When $T=0$, it holds; when $T=1$, it toggles. Used in counters and frequency dividers.</li>
+      <li><strong>Preset ($\overline{PR}$) &amp; Clear ($\overline{CLR}$):</strong> Asynchronous active-low override pins. $\overline{PR}=0$ forces $Q=1$ immediately; $\overline{CLR}=0$ forces $Q=0$ immediately, regardless of $CLK$.</li>
+    </ul>
+
+    <figure class="figure-box">
+      <img src="assets/jk_flip_flop.png" alt="JK Flip-Flop Logic Diagram">
+      <figcaption>Figure 3.1: Clocked JK Flip-Flop using NAND gates with feedback from $Q$ and $\overline{Q}$.</figcaption>
+    </figure>
+
+    <div class="warning-box">
+      <div class="box-title">Race-Around Condition &amp; Master-Slave JK Flip-Flop (Very Important: 5M/6M)</div>
+      <p><strong>Problem:</strong> In a level-triggered JK flip-flop, when $J=1, K=1$ and the clock pulse width $t_p$ is greater than the propagation delay $\Delta t$ ($t_p > \Delta t$), the output $Q$ toggles back and forth multiple times during a single clock pulse. At the end of the pulse, $Q$ is unpredictable!</p>
+      <p><strong>Remedies:</strong> (1) Use edge-triggered flip-flops, or (2) Use a <strong>Master-Slave JK Flip-Flop</strong>: two cascaded SR/JK stages where the Master triggers on $CLK=1$ (or rising edge) and the Slave triggers on $\overline{CLK}=1$ (or falling edge), isolating output from input during the pulse.</p>
+    </div>
+
+    <h3 id="u3-excite">3.2 Truth Tables, Characteristic Equations &amp; Excitation Tables</h3>
+    <div class="concept-box">
+      <div class="box-title">Key Concept: Excitation Table</div>
+      <p><strong>Exam Definition:</strong> An <em>Excitation Table</em> lists the required flip-flop inputs (e.g., $S,R$ or $J,K$) needed to produce a desired transition from present state $Q_n$ to next state $Q_{n+1}$.</p>
+      <p><strong>In Simple Words:</strong> A truth table asks "Given inputs, what is the next state?" An excitation table works backwards: "I know where I am ($Q_n$) and where I want to go ($Q_{n+1}$) &mdash; what inputs must I apply?"</p>
+    </div>
+
+    <table class="truth-table">
+      <thead>
+        <tr><th>$Q_n$</th><th>$Q_{n+1}$</th><th>$S$</th><th>$R$</th><th>$J$</th><th>$K$</th><th>$D$</th><th>$T$</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0</td><td>0</td><td>0</td><td>X</td><td>0</td><td>X</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>X</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>X</td><td>1</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>X</td><td>0</td><td>X</td><td>0</td><td>1</td><td>0</td></tr>
+      </tbody>
+    </table>
+
     <div class="formula-box">
-      <strong>Binary to Gray (4-bit):</strong> $G_3 = B_3, \quad G_2 = B_3 \oplus B_2, \quad G_1 = B_2 \oplus B_1, \quad G_0 = B_1 \oplus B_0$<br>
-      <strong>Gray to Binary (4-bit):</strong> $B_3 = G_3, \quad B_2 = B_3 \oplus G_2, \quad B_1 = B_2 \oplus G_1, \quad B_0 = B_1 \oplus G_0$
+      <div class="box-title">Characteristic Equations of All 4 Flip-Flops</div>
+      <p><strong>SR:</strong> $Q_{n+1} = S + \overline{R}Q_n$ (with $SR=0$) &nbsp;|&nbsp; <strong>JK:</strong> $Q_{n+1} = J\overline{Q_n} + \overline{K}Q_n$ &nbsp;|&nbsp; <strong>D:</strong> $Q_{n+1} = D$ &nbsp;|&nbsp; <strong>T:</strong> $Q_{n+1} = T \oplus Q_n$</p>
     </div>
 
-    <h4>Multiplexer (Data Selector) Architecture</h4>
-    <p>A $2^n \times 1$ multiplexer selects 1 of $2^n$ data inputs based on $n$ select lines. Equation for 4:1 MUX:</p>
-    <div class="formula-box">$$Y = \overline{S_1}\,\overline{S_0} I_0 + \overline{S_1} S_0 I_1 + S_1 \overline{S_0} I_2 + S_1 S_0 I_3$$</div>
-  </div>
-
-  <section class="unit-short-notes" id="u2-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit II Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Combinational circuits, adder equations, and data selection essentials.</p>
+    <div class="card">
+      <h4>Solved Flip-Flop Conversion: SR to JK and JK to T (SPPU Oct 2025, 5M)</h4>
+      <p><strong>4-Step Conversion Recipe:</strong> (1) Write truth table of <em>required</em> FF ($J, K, Q_n \to Q_{n+1}$). (2) Append excitation columns of <em>available</em> FF ($S, R$). (3) Use K-Map to express available inputs ($S, R$) in terms of required inputs ($J, K, Q_n$). (4) Draw circuit.</p>
+      <ul>
+        <li><strong>SR to JK:</strong> $S = J\overline{Q_n}$, &nbsp; $R = KQ_n$. (Connect $J \cdot \overline{Q}$ to $S$, and $K \cdot Q$ to $R$!)</li>
+        <li><strong>JK to T:</strong> Short both inputs together: $J = T, \; K = T$.</li>
+        <li><strong>SR to D:</strong> $S = D, \; R = \overline{D}$ (one NOT gate).</li>
+        <li><strong>JK to D:</strong> $J = D, \; K = \overline{D}$ (one NOT gate).</li>
+      </ul>
     </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Adder &amp; Subtractor Equations</h4>
-          <ul>
-            <li>Half Adder: $S = A \oplus B$, $C = AB$</li>
-            <li>Full Adder: $S = A \oplus B \oplus C_{in}$, $C_{out} = AB + C_{in}(A \oplus B)$</li>
-            <li>Half Subtractor: $D = A \oplus B$, $B = \overline{A}B$</li>
-            <li>Full Subtractor: $D = A \oplus B \oplus B_{in}$, $B_{out} = \overline{A}B + B_{in}(\overline{A \oplus B})$</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>CLA &amp; BCD Adder Essentials</h4>
-          <ul>
-            <li>CLA Generate: $G_i = A_i B_i$; Propagate: $P_i = A_i \oplus B_i$</li>
-            <li>CLA delay is constant: 2 gate delays regardless of $n$ bits</li>
-            <li>BCD correction condition: $C_{out} + S_3 S_2 + S_3 S_1 = 1$</li>
-            <li>Correction action: Add binary $0110_2$ (6) using second 4-bit adder</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Code Converter Rules</h4>
-          <ul>
-            <li>Binary &rarr; Gray: $G_i = B_{i} \oplus B_{i-1}$, MSB $G_{MSB} = B_{MSB}$</li>
-            <li>Gray &rarr; Binary: Cascade XOR with previous binary bit: $B_i = B_{i+1} \oplus G_i$</li>
-            <li>BCD &rarr; Excess-3: Add 3 ($0011_2$) to each BCD digit</li>
-            <li>Excess-3 is self-complementing (9's complement = 1's complement)</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Multiplexer Function Realization</h4>
-          <ul>
-            <li>Any $n$-variable Boolean function can be realized using a $2^{n-1} \times 1$ MUX</li>
-            <li>Connect $n-1$ variables to select lines ($S_{n-2} \dots S_0$)</li>
-            <li>Connect remaining variable ($0, 1, V, \overline{V}$) to data inputs</li>
-            <li>Decoders (IC 74138) generate all $2^n$ minterms; connect NAND gates for SOP</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-</section>
 
-<section id="unit-3" class="unit-section">
-  <div class="unit-badge">Unit III &bull; 06 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit III: Sequential Circuits (Waveforms &amp; Counter Design)</h2>
-  
-  <div class="topic-block" id="u3-flipflops">
-    <h3>3.1 Flip-Flops, Excitation Tables &amp; Master-Slave Architecture</h3>
-    <p>Sequential circuits contain memory elements. Their output depends on both current inputs and previous internal states.</p>
-    
-    <div class="waveform-container"><svg viewBox="0 0 760 170" class="waveform-svg" xmlns="http://www.w3.org/2000/svg" id="deld-svg-3">
-  <rect width="760" height="170" fill="#FFFFFF" rx="8"/>
-  <style>#deld-svg-3 .grid { stroke: #E2E8F0; stroke-width: 1; stroke-dasharray: 4 4; }#deld-svg-3 .sig { fill: none; stroke: #2563EB; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }#deld-svg-3 .lbl { font-family: monospace; font-size: 13px; font-weight: bold; fill: #1E293B; }#deld-svg-3 .txt { font-family: sans-serif; font-size: 11px; fill: #475569; }#deld-svg-3 .mark { stroke: #DC2626; stroke-width: 1.5; }#deld-svg-3 .mark-lbl { font-family: sans-serif; font-size: 11px; fill: #DC2626; font-weight: bold; }
-  </style>
-  <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-      <path d="M 0 1 L 8 5 L 0 9 z" fill="#DC2626"/>
-    </marker>
-  </defs>
-  <line x1="100" y1="20" x2="100" y2="150" class="grid"/><line x1="220" y1="20" x2="220" y2="150" class="grid"/>
-  <line x1="340" y1="20" x2="340" y2="150" class="grid"/><line x1="460" y1="20" x2="460" y2="150" class="grid"/>
-  <line x1="580" y1="20" x2="580" y2="150" class="grid"/><line x1="700" y1="20" x2="700" y2="150" class="grid"/>
-  
-  <text x="30" y="90" class="lbl">CLK</text>
-  <path d="M 80 120 L 100 120 L 100 60 L 160 60 L 160 120 L 220 120 L 220 60 L 280 60 L 280 120 L 340 120 L 340 60 L 400 60 L 400 120 L 460 120 L 460 60 L 520 60 L 520 120 L 580 120 L 580 60 L 640 60 L 640 120 L 700 120 L 700 60 L 740 60" class="sig"/>
-  
-  <line x1="100" y1="40" x2="220" y2="40" class="mark" marker-start="url(#arr)" marker-end="url(#arr)"/>
-  <text x="135" y="34" class="mark-lbl">Clock Period T = 1/f</text>
-  <line x1="100" y1="80" x2="160" y2="80" class="mark" marker-start="url(#arr)" marker-end="url(#arr)"/>
-  <text x="110" y="74" class="mark-lbl">Pulse Width tw</text>
-  <text x="92" y="142" class="txt">t_r (Rise)</text><text x="152" y="142" class="txt">t_f (Fall)</text>
-  <text x="110" y="100" class="txt">Duty Cycle = (tw / T) * 100%</text>
-</svg><div class="waveform-caption">Figure 3.1: Digital Clock Waveform showing Period (T), Pulse Width (tw), Rising &amp; Falling Edges, and Duty Cycle</div></div>
+    <h3 id="u3-registers">3.3 Shift Registers (SISO, SIPO, PISO, PIPO)</h3>
+    <p>A <strong>Shift Register</strong> is a chain of $n$ D flip-flops sharing a common clock, used to store or shift $n$-bit binary data.</p>
+    <table>
+      <thead>
+        <tr><th>Type</th><th>Data Entry &amp; Exit</th><th>Clock Pulses (for $n$ bits)</th><th>Primary Application</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>SISO</strong> (Serial-In Serial-Out)</td><td>1 bit/clock in, 1 bit/clock out</td><td>$n$ to load, $n-1$ to shift out</td><td>Time delay lines, serial buffer</td></tr>
+        <tr><td><strong>SIPO</strong> (Serial-In Parallel-Out)</td><td>1 bit/clock in, all $n$ bits out at once</td><td>$n$ pulses to load</td><td>Serial-to-Parallel conversion (UART RX)</td></tr>
+        <tr><td><strong>PISO</strong> (Parallel-In Serial-Out)</td><td>All $n$ bits loaded at once, 1 bit/clock out</td><td>1 load + $n-1$ shift</td><td>Parallel-to-Serial conversion (UART TX)</td></tr>
+        <tr><td><strong>PIPO</strong> (Parallel-In Parallel-Out)</td><td>All $n$ bits in &amp; out simultaneously</td><td>1 clock pulse</td><td>Temporary parallel data storage</td></tr>
+      </tbody>
+    </table>
 
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Flip-Flop Type</th><th>Inputs</th><th>Characteristic Equation</th><th>Excitation Table ($Q_n \to Q_{n+1}$)</th><th>Special Operational Mode</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>SR Flip-Flop</strong></td><td>$S, R$</td><td>$Q_{n+1} = S + \overline{R}Q_n$ ($SR=0$)</td><td>$0\to 0: S=0,R=X$; $0\to 1: S=1,R=0$;<br>$1\to 0: S=0,R=1$; $1\to 1: S=X,R=0$</td><td>$S=R=1$ is FORBIDDEN (Metastable)</td></tr>
-          <tr><td><strong>JK Flip-Flop</strong></td><td>$J, K$</td><td>$Q_{n+1} = J\overline{Q_n} + \overline{K}Q_n$</td><td>$0\to 0: J=0,K=X$; $0\to 1: J=1,K=X$;<br>$1\to 0: J=X,K=1$; $1\to 1: J=X,K=0$</td><td>$J=K=1$ is TOGGLE mode ($Q_{n+1} = \overline{Q_n}$)</td></tr>
-          <tr><td><strong>D Flip-Flop</strong></td><td>$D$</td><td>$Q_{n+1} = D$</td><td>$0\to 0: D=0$; $0\to 1: D=1$;<br>$1\to 0: D=0$; $1\to 1: D=1$</td><td>Data Storage / Delay ($Q_{n+1}$ tracks $D$)</td></tr>
-          <tr><td><strong>T Flip-Flop</strong></td><td>$T$</td><td>$Q_{n+1} = T \oplus Q_n$</td><td>$0\to 0: T=0$; $0\to 1: T=1$;<br>$1\to 0: T=1$; $1\to 1: T=0$</td><td>Frequency Divider / Counter Stage</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="topic-block" id="u3-waveforms">
-    <h3>3.2 Race-Around Condition &amp; Master-Slave JK Waveform Analysis</h3>
-    <p>In a level-triggered JK flip-flop, when $J=1, K=1$, the output toggles. If clock pulse width $t_p &gt; t_{pd}$ (propagation delay of flip-flop), the output changes and feeds back to inputs while clock is still high, toggling repeatedly and unpredictably during $t_p$. This is the <strong>Race-Around Condition</strong>.</p>
-    
-    <div class="waveform-container"><svg viewBox="0 0 760 210" class="waveform-svg" xmlns="http://www.w3.org/2000/svg" id="deld-svg-4">
-  <rect width="760" height="210" fill="#FFFFFF" rx="8"/>
-  <style>#deld-svg-4 .grid { stroke: #E2E8F0; stroke-width: 1; stroke-dasharray: 4 4; }#deld-svg-4 .sig-clk { fill: none; stroke: #2563EB; stroke-width: 2.5; }#deld-svg-4 .sig-q { fill: none; stroke: #DC2626; stroke-width: 2.5; }#deld-svg-4 .lbl { font-family: monospace; font-size: 13px; font-weight: bold; fill: #1E293B; }#deld-svg-4 .txt { font-family: sans-serif; font-size: 11px; fill: #475569; }#deld-svg-4 .warn { font-family: sans-serif; font-size: 11px; fill: #DC2626; font-weight: bold; }#deld-svg-4 .box { fill: rgba(220, 38, 38, 0.08); stroke: #DC2626; stroke-width: 1; stroke-dasharray: 3 3; }
-  </style>
-  <line x1="120" y1="20" x2="120" y2="190" class="grid"/><line x1="360" y1="20" x2="360" y2="190" class="grid"/>
-  <line x1="480" y1="20" x2="480" y2="190" class="grid"/><line x1="720" y1="20" x2="720" y2="190" class="grid"/>
-  
-  <text x="30" y="65" class="lbl">CLK (Level)</text>
-  <path d="M 80 80 L 120 80 L 120 40 L 360 40 L 360 80 L 480 80 L 480 40 L 720 40 L 720 80" class="sig-clk"/>
-  <text x="210" y="32" class="txt" font-weight="bold">Clock High Duration: tp &gt; t_pd (Flip-Flop Delay)</text>
-  
-  <!-- Highlight region where race around occurs -->
-  <rect x="120" y="30" width="240" height="160" class="box"/>
-  <rect x="480" y="30" width="240" height="160" class="box"/>
-  
-  <text x="30" y="150" class="lbl">Q (J=1, K=1)</text>
-  <!-- Oscillations during clock high: toggles multiple times -->
-  <path d="M 80 160 L 120 160 L 120 120 L 160 120 L 160 160 L 200 160 L 200 120 L 240 120 L 240 160 L 280 160 L 280 120 L 320 120 L 320 160 L 360 160 L 480 160 L 480 120 L 520 120 L 520 160 L 560 160 L 560 120 L 600 120 L 600 160 L 640 160 L 640 120 L 680 120 L 680 160 L 720 160" class="sig-q"/>
-  
-  <text x="140" y="180" class="warn">Multiple Uncontrollable Toggles (Oscillation: 0-&gt;1-&gt;0-&gt;1) !</text>
-  <text x="500" y="180" class="warn">Unpredictable final state when CLK drops to 0</text>
-</svg><div class="waveform-caption">Figure 3.2: Race-Around Condition Timing Waveform in Level-Triggered JK Flip-Flop (when J=K=1 and tp &gt; t_pd)</div></div>
-
-    <h4>Elimination of Race-Around Condition</h4>
+    <h3 id="u3-counters">3.4 Counters (Asynchronous, Synchronous, BCD, Ring, Johnson)</h3>
     <ul>
-      <li>Use edge-triggered flip-flops (narrow spike trigger).</li>
-      <li>Ensure propagation delay $t_{pd} &gt; t_p$ (difficult to maintain across temperature variations).</li>
-      <li><strong>Master-Slave JK Flip-Flop (Industry Standard):</strong> Uses two cascaded flip-flops. Master clocked by $CLK$, Slave clocked by inverted $\overline{CLK}$. Master latches inputs while $CLK=1$ (Slave disabled). When $CLK$ falls to $0$, Master disabled, Slave transfers master's state to output. Eliminates feedback loop during active latching!</li>
+      <li><strong>Asynchronous (Ripple) Counter:</strong> Only the first flip-flop gets the external clock; each subsequent flip-flop is clocked by the output ($Q$ or $\overline{Q}$) of the previous flip-flop. Simple, but suffers from cumulative ripple propagation delay.</li>
+      <li><strong>Synchronous Counter:</strong> All flip-flops share the same external clock simultaneously. Faster, no decoding glitches, designed using excitation tables + K-maps.</li>
+      <li><strong>MOD-N Counter:</strong> Has $N$ unique states ($0$ to $N-1$). To build a MOD-6 counter (counts $0$–$5$), use 3 flip-flops and reset via $\overline{CLR}$ when $Q_2Q_1Q_0 = 110_2$ ($6$) using a NAND gate ($\overline{Q_2 \cdot Q_1}$).</li>
+      <li><strong>BCD (Decade) Counter (IC 7490):</strong> A MOD-10 counter counting $0000_2$ to $1001_2$ ($0$–$9$), then resetting to $0000_2$.</li>
+      <li><strong>Ring Counter:</strong> SISO shift register with $Q_{n-1}$ fed back to $D_0$. An $n$-bit Ring Counter has <strong>$n$ states</strong> (e.g., initial `1000` $\to$ `0100` $\to$ `0010` $\to$ `0001`).</li>
+      <li><strong>Johnson (Twisted Ring) Counter:</strong> SISO shift register with $\overline{Q_{n-1}}$ fed back to $D_0$. An $n$-bit Johnson Counter has <strong>$2n$ states</strong> (e.g., 4-bit gives 8 states!).</li>
     </ul>
 
-    <div class="waveform-container"><svg viewBox="0 0 760 250" class="waveform-svg" xmlns="http://www.w3.org/2000/svg" id="deld-svg-5">
-  <rect width="760" height="250" fill="#FFFFFF" rx="8"/>
-  <style>#deld-svg-5 .grid { stroke: #E2E8F0; stroke-width: 1; stroke-dasharray: 4 4; }#deld-svg-5 .sig { fill: none; stroke: #2563EB; stroke-width: 2.5; }#deld-svg-5 .sig-qm { fill: none; stroke: #7C3AED; stroke-width: 2.5; }#deld-svg-5 .sig-qs { fill: none; stroke: #059669; stroke-width: 2.5; }#deld-svg-5 .lbl { font-family: monospace; font-size: 13px; font-weight: bold; fill: #1E293B; }#deld-svg-5 .txt { font-family: sans-serif; font-size: 11px; fill: #475569; }#deld-svg-5 .arrow { stroke: #059669; stroke-width: 1.5; stroke-dasharray: 2 2; marker-end: url(#arr-g); }
-  </style>
-  <defs>
-    <marker id="arr-g" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-      <path d="M 0 1 L 8 5 L 0 9 z" fill="#059669"/>
-    </marker>
-  </defs>
-  <line x1="120" y1="20" x2="120" y2="230" class="grid"/><line x1="260" y1="20" x2="260" y2="230" class="grid"/>
-  <line x1="400" y1="20" x2="400" y2="230" class="grid"/><line x1="540" y1="20" x2="540" y2="230" class="grid"/>
-  <line x1="680" y1="20" x2="680" y2="230" class="grid"/>
-  
-  <text x="20" y="55" class="lbl">CLK</text>
-  <path d="M 70 65 L 120 65 L 120 30 L 260 30 L 260 65 L 400 65 L 400 30 L 540 30 L 540 65 L 680 65 L 680 30 L 730 30" class="sig"/>
-  
-  <text x="20" y="125" class="lbl">Master QM</text>
-  <!-- Master responds on CLK high (J=1, K=0 -> sets to 1 at 120; J=0, K=1 -> resets to 0 at 400) -->
-  <path d="M 70 140 L 120 140 L 120 105 L 400 105 L 400 140 L 680 140 L 680 105 L 730 105" class="sig-qm"/>
-  <text x="130" y="95" class="txt" fill="#7C3AED">Master latches on CLK High (Slave disabled)</text>
-  
-  <text x="20" y="195" class="lbl">Slave QS (Q)</text>
-  <!-- Slave only transfers on falling edge of CLK (at 260 and 540) -->
-  <path d="M 70 210 L 260 210 L 260 175 L 540 175 L 540 210 L 730 210" class="sig-qs"/>
-  <line x1="260" y1="65" x2="260" y2="175" class="arrow"/>
-  <text x="270" y="165" class="txt" fill="#059669">Slave transfers QM to QS on CLK Falling Edge</text>
-  <line x1="540" y1="65" x2="540" y2="210" class="arrow"/>
-  <text x="550" y="200" class="txt" fill="#059669">Slave resets on CLK Falling Edge</text>
-  
-  <text x="140" y="240" class="txt" font-weight="bold" fill="#059669">Result: Exact, single transition per clock period. Race-around is 100% eliminated!</text>
-</svg><div class="waveform-caption">Figure 3.3: Master-Slave JK Flip-Flop Timing Waveform: Master latches on Positive Level, Slave transfers on Negative Edge</div></div>
-  </div>
+    <figure class="figure-box">
+      <img src="assets/ripple_counter.png" alt="Binary Ripple Counter Timing Diagram">
+      <figcaption>Figure 3.2: Timing waveforms of a binary ripple counter showing frequency division by $2, 4, 8$.</figcaption>
+    </figure>
 
-  <div class="topic-block" id="u3-counters">
-    <h3>3.3 Counters: Asynchronous (Ripple) vs Synchronous Up-Counters</h3>
-    <p>Counters cycle through predefined binary sequences. SPPU heavily tests timing waveform analysis of cumulative delay and glitch states.</p>
-    
-    <div class="waveform-container"><svg viewBox="0 0 760 300" class="waveform-svg" xmlns="http://www.w3.org/2000/svg" id="deld-svg-6">
-  <rect width="760" height="300" fill="#FFFFFF" rx="8"/>
-  <style>#deld-svg-6 .grid { stroke: #E2E8F0; stroke-width: 1; stroke-dasharray: 4 4; }#deld-svg-6 .sig { fill: none; stroke: #2563EB; stroke-width: 2.2; stroke-linecap: round; }#deld-svg-6 .sig-q0 { fill: none; stroke: #0284C7; stroke-width: 2.2; }#deld-svg-6 .sig-q1 { fill: none; stroke: #7C3AED; stroke-width: 2.2; }#deld-svg-6 .sig-q2 { fill: none; stroke: #D97706; stroke-width: 2.2; }#deld-svg-6 .lbl { font-family: monospace; font-size: 13px; font-weight: bold; fill: #1E293B; }#deld-svg-6 .txt { font-family: sans-serif; font-size: 11px; fill: #475569; }#deld-svg-6 .glitch { stroke: #DC2626; stroke-width: 1.5; stroke-dasharray: 2 2; }#deld-svg-6 .glitch-txt { font-family: sans-serif; font-size: 10px; fill: #DC2626; font-weight: bold; }
-  </style>
-  <line x1="120" y1="20" x2="120" y2="270" class="grid"/><line x1="180" y1="20" x2="180" y2="270" class="grid"/>
-  <line x1="240" y1="20" x2="240" y2="270" class="grid"/><line x1="300" y1="20" x2="300" y2="270" class="grid"/>
-  <line x1="360" y1="20" x2="360" y2="270" class="grid"/><line x1="420" y1="20" x2="420" y2="270" class="grid"/>
-  <line x1="480" y1="20" x2="480" y2="270" class="grid"/><line x1="540" y1="20" x2="540" y2="270" class="grid"/>
-  <line x1="600" y1="20" x2="600" y2="270" class="grid"/><line x1="660" y1="20" x2="660" y2="270" class="grid"/>
-  
-  <text x="20" y="55" class="lbl">CLK</text>
-  <path d="M 80 60 L 120 60 L 120 35 L 150 35 L 150 60 L 180 60 L 180 35 L 210 35 L 210 60 L 240 60 L 240 35 L 270 35 L 270 60 L 300 60 L 300 35 L 330 35 L 330 60 L 360 60 L 360 35 L 390 35 L 390 60 L 420 60 L 420 35 L 450 35 L 450 60 L 480 60 L 480 35 L 510 35 L 510 60 L 540 60 L 540 35 L 570 35 L 570 60 L 600 60 L 600 35 L 630 35 L 630 60 L 660 60 L 660 35 L 690 35 L 690 60 L 720 60" class="sig"/>
-  
-  <text x="20" y="115" class="lbl">Q0 (t_pd)</text>
-  <path d="M 80 120 L 155 120 L 155 95 L 215 95 L 215 120 L 275 120 L 275 95 L 335 95 L 335 120 L 395 120 L 395 95 L 455 95 L 455 120 L 515 120 L 515 95 L 575 95 L 575 120 L 635 120 L 635 95 L 695 95 L 695 120 L 720 120" class="sig-q0"/>
-  
-  <text x="20" y="175" class="lbl">Q1 (2*t_pd)</text>
-  <path d="M 80 180 L 220 180 L 220 155 L 340 155 L 340 180 L 460 180 L 460 155 L 580 155 L 580 180 L 700 180 L 700 155 L 720 155" class="sig-q1"/>
-  
-  <text x="20" y="235" class="lbl">Q2 (3*t_pd)</text>
-  <path d="M 80 240 L 345 240 L 345 215 L 585 215 L 585 240 L 720 240" class="sig-q2"/>
-  
-  <line x1="335" y1="70" x2="335" y2="260" class="glitch"/>
-  <line x1="340" y1="70" x2="340" y2="260" class="glitch"/>
-  <line x1="345" y1="70" x2="345" y2="260" class="glitch"/>
-  <text x="350" y="275" class="glitch-txt">Glitch Window (3 -&gt; 2 -&gt; 0 -&gt; 4) due to 3*t_pd ripple delay!</text>
-  
-  <text x="130" y="290" class="txt" font-weight="bold">State 0</text>
-  <text x="190" y="290" class="txt" font-weight="bold">State 1</text>
-  <text x="250" y="290" class="txt" font-weight="bold">State 2</text>
-  <text x="310" y="290" class="txt" font-weight="bold">State 3</text>
-  <text x="430" y="290" class="txt" font-weight="bold">State 4</text>
-  <text x="490" y="290" class="txt" font-weight="bold">State 5</text>
-  <text x="550" y="290" class="txt" font-weight="bold">State 6</text>
-  <text x="610" y="290" class="txt" font-weight="bold">State 7</text>
-</svg><div class="waveform-caption">Figure 3.4: 3-Bit Asynchronous (Ripple) Up-Counter Timing Waveform: Illustrating Cumulative Propagation Delay (N * t_pd) and Transient False Glitch States</div></div>
-    <div class="waveform-container"><svg viewBox="0 0 760 260" class="waveform-svg" xmlns="http://www.w3.org/2000/svg" id="deld-svg-7">
-  <rect width="760" height="260" fill="#FFFFFF" rx="8"/>
-  <style>#deld-svg-7 .grid { stroke: #E2E8F0; stroke-width: 1; stroke-dasharray: 4 4; }#deld-svg-7 .sig { fill: none; stroke: #2563EB; stroke-width: 2.2; }#deld-svg-7 .sig-q0 { fill: none; stroke: #0284C7; stroke-width: 2.2; }#deld-svg-7 .sig-q1 { fill: none; stroke: #7C3AED; stroke-width: 2.2; }#deld-svg-7 .sig-q2 { fill: none; stroke: #059669; stroke-width: 2.2; }#deld-svg-7 .lbl { font-family: monospace; font-size: 13px; font-weight: bold; fill: #1E293B; }#deld-svg-7 .txt { font-family: sans-serif; font-size: 11px; fill: #475569; }#deld-svg-7 .edge-line { stroke: #059669; stroke-width: 1; stroke-dasharray: 2 2; }
-  </style>
-  <line x1="120" y1="20" x2="120" y2="240" class="edge-line"/><line x1="180" y1="20" x2="180" y2="240" class="edge-line"/>
-  <line x1="240" y1="20" x2="240" y2="240" class="edge-line"/><line x1="300" y1="20" x2="300" y2="240" class="edge-line"/>
-  <line x1="360" y1="20" x2="360" y2="240" class="edge-line"/><line x1="420" y1="20" x2="420" y2="240" class="edge-line"/>
-  <line x1="480" y1="20" x2="480" y2="240" class="edge-line"/><line x1="540" y1="20" x2="540" y2="240" class="edge-line"/>
-  <line x1="600" y1="20" x2="600" y2="240" class="edge-line"/>
-  
-  <text x="20" y="55" class="lbl">CLK</text>
-  <path d="M 80 60 L 120 60 L 120 35 L 150 35 L 150 60 L 180 60 L 180 35 L 210 35 L 210 60 L 240 60 L 240 35 L 270 35 L 270 60 L 300 60 L 300 35 L 330 35 L 330 60 L 360 60 L 360 35 L 390 35 L 390 60 L 420 60 L 420 35 L 450 35 L 450 60 L 480 60 L 480 35 L 510 35 L 510 60 L 540 60 L 540 35 L 570 35 L 570 60 L 600 60 L 600 35 L 630 35 L 630 60 L 660 60" class="sig"/>
-  
-  <text x="20" y="115" class="lbl">Q0</text>
-  <path d="M 80 120 L 120 120 L 120 95 L 180 95 L 180 120 L 240 120 L 240 95 L 300 95 L 300 120 L 360 120 L 360 95 L 420 95 L 420 120 L 480 120 L 480 95 L 540 95 L 540 120 L 600 120 L 600 95 L 660 95" class="sig-q0"/>
-  
-  <text x="20" y="165" class="lbl">Q1</text>
-  <path d="M 80 170 L 180 170 L 180 145 L 300 145 L 300 170 L 420 170 L 420 145 L 540 145 L 540 170 L 660 170" class="sig-q1"/>
-  
-  <text x="20" y="215" class="lbl">Q2</text>
-  <path d="M 80 220 L 300 220 L 300 195 L 540 195 L 540 220 L 660 220" class="sig-q2"/>
-  
-  <text x="200" y="250" class="txt" font-weight="bold" fill="#059669">Synchronous: All outputs change simultaneously on clock edge! Delay = 1 * t_pd (No cumulative ripple glitches)</text>
-</svg><div class="waveform-caption">Figure 3.5: 3-Bit Synchronous Up-Counter Timing Waveform: Common Clock pulse triggers all stages simultaneously</div></div>
+    <pre><code>// Verilog HDL: 4-Bit Synchronous Up-Counter with Active-Low Reset
+module sync_up_counter (
+    input            clk,
+    input            rst_n,
+    output reg [3:0] count
+);
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n)
+            count &lt;= 4'b0000;
+        else
+            count &lt;= count + 1'b1;
+    end
+endmodule
+</code></pre>
 
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Parameter</th><th>Asynchronous (Ripple) Counter</th><th>Synchronous Counter</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Clocking</strong></td><td>Only 1st FF connected to external CLK; subsequent FFs clocked by previous FF output ($Q$ or $\overline{Q}$).</td><td>All flip-flops connected to common external CLK simultaneously.</td></tr>
-          <tr><td><strong>Total Delay</strong></td><td>Cumulative: $T_{delay} = N \times t_{pd}$</td><td>Constant: $T_{delay} = t_{pd} + t_{gate}$</td></tr>
-          <tr><td><strong>Max Frequency</strong></td><td>Low ($f_{max} \le 1 / (N \cdot t_{pd})$)</td><td>High ($f_{max} \le 1 / (t_{pd} + t_{comb})$)</td></tr>
-          <tr><td><strong>Glitches / Hazards</strong></td><td>Present (False intermediate decoding states occur during ripple transitions)</td><td>Absent (Clean simultaneous transitions)</td></tr>
-          <tr><td><strong>Hardware Cost</strong></td><td>Minimal (No external logic gates needed for pure up/down ripple)</td><td>Higher (Requires AND gates for lookahead carry steering)</td></tr>
-        </tbody>
-      </table>
+    <h3 id="u3-casestudy">3.5 Case Study &amp; Important SPPU Exam Questions</h3>
+    <div class="card">
+      <h4>Syllabus Case Study: Digital Stopwatch Using Flip-Flops, Registers, and Counters</h4>
+      <p>A 1 Hz clock pulse (derived from a crystal oscillator via frequency dividers) feeds a cascade of <strong>BCD Decade Counters (MOD-10)</strong> for seconds' units ($0$–$9$) and a <strong>MOD-6 Counter</strong> for seconds' tens ($0$–$5$). A JK flip-flop acts as a Start/Stop toggle latch gating the clock, while a PIPO register latches the lap time for display on 7-segment decoders.</p>
     </div>
-  </div>
 
-  <div class="topic-block" id="u3-registers">
-    <h3>3.4 Shift Registers, Ring Counter &amp; Johnson Counter</h3>
-    <p>Shift registers transfer binary data internally bit by bit. 4 architectures: SISO, SIPO, PISO, PIPO.</p>
-    <div class="waveform-container"><svg viewBox="0 0 760 270" class="waveform-svg" xmlns="http://www.w3.org/2000/svg" id="deld-svg-8">
-  <rect width="760" height="270" fill="#FFFFFF" rx="8"/>
-  <style>#deld-svg-8 .grid { stroke: #E2E8F0; stroke-width: 1; stroke-dasharray: 4 4; }#deld-svg-8 .sig-r { fill: none; stroke: #2563EB; stroke-width: 2.2; }#deld-svg-8 .sig-j { fill: none; stroke: #7C3AED; stroke-width: 2.2; }#deld-svg-8 .lbl { font-family: monospace; font-size: 12px; font-weight: bold; fill: #1E293B; }#deld-svg-8 .txt { font-family: sans-serif; font-size: 11px; fill: #475569; }#deld-svg-8 .div-line { stroke: #CBD5E1; stroke-width: 1.5; }
-  </style>
-  <line x1="380" y1="10" x2="380" y2="260" class="div-line"/>
-  
-  <text x="30" y="30" class="lbl" fill="#2563EB">4-Bit Ring Counter (Circulating '1', Mod-4)</text>
-  <text x="20" y="70" class="lbl">Q0</text><path d="M 50 75 L 80 75 L 80 55 L 140 55 L 140 75 L 360 75" class="sig-r"/>
-  <text x="20" y="115" class="lbl">Q1</text><path d="M 50 120 L 140 120 L 140 100 L 200 100 L 200 120 L 360 120" class="sig-r"/>
-  <text x="20" y="160" class="lbl">Q2</text><path d="M 50 165 L 200 165 L 200 145 L 260 145 L 260 165 L 360 165" class="sig-r"/>
-  <text x="20" y="205" class="lbl">Q3</text><path d="M 50 210 L 260 210 L 260 190 L 320 190 L 320 210 L 360 210" class="sig-r"/>
-  <text x="40" y="245" class="txt" font-weight="bold">States (N=4): 1000 -&gt; 0100 -&gt; 0010 -&gt; 0001 -&gt; 1000</text>
-  
-  <text x="410" y="30" class="lbl" fill="#7C3AED">4-Bit Johnson Counter (Twisted Feedback, Mod-8)</text>
-  <text x="400" y="70" class="lbl">Q0</text><path d="M 430 75 L 460 75 L 460 55 L 580 55 L 580 75 L 740 75" class="sig-j"/>
-  <text x="400" y="115" class="lbl">Q1</text><path d="M 430 120 L 490 120 L 490 100 L 610 100 L 610 120 L 740 120" class="sig-j"/>
-  <text x="400" y="160" class="lbl">Q2</text><path d="M 430 165 L 520 165 L 520 145 L 640 145 L 640 165 L 740 165" class="sig-j"/>
-  <text x="400" y="205" class="lbl">Q3</text><path d="M 430 210 L 550 210 L 550 190 L 670 190 L 670 210 L 740 210" class="sig-j"/>
-  <text x="410" y="245" class="txt" font-weight="bold">States (2N=8): 0000-&gt;1000-&gt;1100-&gt;1110-&gt;1111-&gt;0111-&gt;0011-&gt;0001</text>
-</svg><div class="waveform-caption">Figure 3.6: Comparison Timing Waveforms: 4-Bit Ring Counter (N=4 states) vs 4-Bit Johnson Twisted Counter (2N=8 states)</div></div>
-  </div>
-
-  <section class="unit-short-notes" id="u3-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit III Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Flip-flop excitation, race-around remedies, and counter formulas.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Excitation Quick Lookup</h4>
-          <ul>
-            <li>$0\to 0$: SR (0, X) | JK (0, X) | D (0) | T (0)</li>
-            <li>$0\to 1$: SR (1, 0) | JK (1, X) | D (1) | T (1)</li>
-            <li>$1\to 0$: SR (0, 1) | JK (X, 1) | D (0) | T (1)</li>
-            <li>$1\to 1$: SR (X, 0) | JK (X, 0) | D (1) | T (0)</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Race-Around Condition Conditions</h4>
-          <ul>
-            <li>Occurs ONLY when $J=1, K=1$ and level CLK is HIGH</li>
-            <li>Condition: Clock pulse width $t_p &gt; t_{pd}$ (flip-flop delay)</li>
-            <li>Remedy 1: Master-Slave JK (Master on positive level, Slave on negative edge)</li>
-            <li>Remedy 2: Edge-triggered JK flip-flop using RC differentiator</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Counter Modulus Formulas</h4>
-          <ul>
-            <li>$N$ flip-flops count up to $2^N$ states ($0$ to $2^N - 1$)</li>
-            <li>Ripple counter max frequency: $f_{max} = 1 / (N \cdot t_{pd})$</li>
-            <li>Mod-10 (BCD Decade) Counter: Reset when count reaches $1010_2$ ($Q_3 \cdot Q_1 = 1$)</li>
-            <li>Ring Counter states: $N$ states (Circulating single 1)</li>
-            <li>Johnson Counter states: $2N$ states (Twisted $\overline{Q_N} \to D_0$)</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Shift Register Conversions</h4>
-          <ul>
-            <li>SISO: Takes $N$ clocks to load, $N-1$ clocks to read</li>
-            <li>SIPO: Takes $N$ clocks to load, 0 clocks to read</li>
-            <li>PISO: Takes 1 clock to load, $N-1$ clocks to read</li>
-            <li>PIPO: Takes 1 clock to load, 0 clocks to read (fastest register)</li>
-          </ul>
-        </div>
-      </div>
+    <div class="qa-block">
+      <div class="qa-q"><span>Q1. Explain the Ring Counter for initial condition 1010 and list all states.</span><span class="marks-badge">6 Marks</span></div>
+      <p><strong>Answer:</strong> In a 4-bit Ring Counter, $Q_3$ feeds $D_0$. Starting at `1010`: Clock 1 $\to$ `0101`; Clock 2 $\to$ `1010`; Clock 3 $\to$ `0101`. With initial state `1010`, it cycles through 2 alternating states (`1010` and `0101`). (For standard one-hot `1000`, it cycles through 4 states.)</p>
     </div>
   </section>
-</section>
 
-<section id="unit-4" class="unit-section">
-  <div class="unit-badge">Unit IV &bull; 06 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit IV: Algorithmic State Machines &amp; Logic Families</h2>
-  
-  <div class="topic-block" id="u4-asm">
-    <h3>4.1 Algorithmic State Machines (ASM) vs Finite State Machines</h3>
-    <p>ASM charts provide a hardware-oriented flowchart notation for describing digital control algorithms, tracking state execution clock by clock.</p>
-    
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>ASM Symbol</th><th>Shape</th><th>Function &amp; Timing</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>State Box</strong></td><td>Rectangle</td><td>Represents Moore state. Contains state name, binary code, and unconditional register operations executed during clock period.</td></tr>
-          <tr><td><strong>Decision Box</strong></td><td>Diamond</td><td>Evaluates condition input bit ($0$ or $1$) to steer next state path. No clock consumed.</td></tr>
-          <tr><td><strong>Conditional Output Box</strong></td><td>Oval (Rounded rectangle)</td><td>Represents Mealy output. Executed only if decision path leading to it is satisfied.</td></tr>
-        </tbody>
-      </table>
+  <!-- ===================================================================== -->
+  <!-- UNIT IV                                                               -->
+  <!-- ===================================================================== -->
+  <section id="unit-4">
+    <span class="unit-badge">Unit IV &bull; 06 Hours &bull; CO4</span>
+    <h2 class="unit-title">Unit IV: Algorithmic State Machines and Logic Families</h2>
+
+    <h3 id="u4-fsm">4.1 Finite State Machines (FSM): Mealy vs Moore</h3>
+    <div class="concept-box">
+      <div class="box-title">Key Concept: Finite State Machine (FSM)</div>
+      <p><strong>Exam Definition:</strong> A <em>Finite State Machine</em> is an abstract mathematical model of a sequential system consisting of a finite set of states, a set of inputs, a set of outputs, and a state transition function.</p>
+      <p><strong>In Simple Words:</strong> An FSM is a flowchart of "modes" a machine can be in (like `IDLE`, `COIN_INSERTED`, `DISPENSE`). Based on your current mode and what button you press, it decides the next mode and what output to turn on.</p>
     </div>
-  </div>
 
-  <div class="topic-block" id="u4-families">
-    <h3>4.2 Logic Families (TTL vs CMOS) &amp; Electrical Parameters</h3>
-    <p>Digital ICs are classified into bipolar (TTL, ECL) and unipolar (CMOS) logic families.</p>
-    
-    <div class="figure-box"><svg viewBox="0 0 760 250" class="svg-diagram" xmlns="http://www.w3.org/2000/svg" id="deld-svg-9">
-  <rect width="760" height="250" fill="#FFFFFF" rx="8"/>
-  <style>#deld-svg-9 .wire { stroke: #0F172A; stroke-width: 2; fill: none; }#deld-svg-9 .fet-body { stroke: #0F172A; stroke-width: 2.2; fill: none; }#deld-svg-9 .txt { font-family: monospace; font-size: 12px; fill: #0F172A; }#deld-svg-9 .txt-t { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #1E293B; }#deld-svg-9 .bubble { fill: #FFFFFF; stroke: #0F172A; stroke-width: 2; }#deld-svg-9 .rail { stroke: #2563EB; stroke-width: 2.5; }#deld-svg-9 .gnd { stroke: #0F172A; stroke-width: 2; }
-  </style>
-  <text x="60" y="30" class="txt-t">CMOS Inverter (NOT Gate) Circuit Diagram</text>
-  
-  <line x1="280" y1="45" x2="360" y2="45" class="rail"/>
-  <text x="310" y="38" class="txt" font-weight="bold" fill="#2563EB">+ VDD (5V)</text>
-  <line x1="320" y1="45" x2="320" y2="70" class="wire"/>
-  
-  <rect x="290" y="70" width="60" height="40" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.8" rx="4"/>
-  <circle cx="282" cy="90" r="5" class="bubble"/>
-  <text x="300" y="94" class="txt" font-weight="bold">PMOS</text>
-  <text x="360" y="94" class="txt" fill="#475569">Q1 (Pull-Up)</text>
-  
-  <line x1="320" y1="110" x2="320" y2="150" class="wire"/>
-  <circle cx="320" cy="130" r="3.5" fill="#0F172A"/>
-  <line x1="320" y1="130" x2="480" y2="130" class="wire"/>
-  <text x="490" y="135" class="txt" font-weight="bold" fill="#059669">Vout = NOT Vin</text>
-  
-  <rect x="290" y="150" width="60" height="40" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.8" rx="4"/>
-  <text x="300" y="174" class="txt" font-weight="bold">NMOS</text>
-  <text x="360" y="174" class="txt" fill="#475569">Q2 (Pull-Down)</text>
-  <line x1="320" y1="190" x2="320" y2="215" class="wire"/>
-  
-  <line x1="200" y1="130" x2="250" y2="130" class="wire"/>
-  <line x1="250" y1="90" x2="277" y2="90" class="wire"/>
-  <line x1="250" y1="170" x2="290" y2="170" class="wire"/>
-  <line x1="250" y1="90" x2="250" y2="170" class="wire"/>
-  <text x="160" y="135" class="txt" font-weight="bold">Vin</text>
-  
-  <line x1="300" y1="215" x2="340" y2="215" class="gnd"/>
-  <line x1="308" y1="220" x2="332" y2="220" class="gnd"/>
-  <line x1="315" y1="225" x2="325" y2="225" class="gnd"/>
-  <text x="350" y="222" class="txt">GND (0V)</text>
-  
-  <rect x="520" y="45" width="220" height="160" fill="#F8FAFC" stroke="#CBD5E1" rx="6"/>
-  <text x="535" y="70" class="txt-t" font-size="11px">Operation Matrix:</text>
-  <text x="535" y="95" class="txt" font-size="11px">Vin = 0 (Low):</text>
-  <text x="545" y="112" class="txt" font-size="10px" fill="#2563EB">PMOS ON, NMOS OFF -&gt; Vout=VDD (1)</text>
-  <text x="535" y="140" class="txt" font-size="11px">Vin = 1 (High):</text>
-  <text x="545" y="157" class="txt" font-size="10px" fill="#DC2626">PMOS OFF, NMOS ON -&gt; Vout=GND (0)</text>
-  <text x="535" y="185" class="txt" font-size="10px" fill="#059669">Static Power = ~0 Watts!</text>
-</svg><div class="figure-caption">Figure 4.1: CMOS Inverter Circuit Diagram and Pull-Up/Pull-Down Switching Operation</div></div>
+    <table>
+      <thead>
+        <tr><th>Parameter</th><th>Moore Machine</th><th>Mealy Machine</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Output Dependency</strong></td><td>Depends <strong>only on Present State</strong></td><td>Depends on <strong>Present State + Present Input</strong></td></tr>
+        <tr><td><strong>Output Placement in Diagram</strong></td><td>Written <em>inside</em> the state circle</td><td>Written on the <em>transition arrow</em> (`input / output`)</td></tr>
+        <tr><td><strong>Number of States</strong></td><td>Generally requires <strong>more states</strong></td><td>Requires <strong>fewer states</strong></td></tr>
+        <tr><td><strong>Response Speed</strong></td><td>Synchronous (changes only on clock edge)</td><td>Faster (reacts immediately to input change)</td></tr>
+        <tr><td><strong>Glitch Sensitivity</strong></td><td>Glitch-free outputs</td><td>Input noise can cause output glitches</td></tr>
+      </tbody>
+    </table>
 
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Parameter</th><th>TTL (Transistor-Transistor Logic)</th><th>CMOS (Complementary MOS)</th><th>SPPU Significance</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Basic Transistor</strong></td><td>BJT (Bipolar Junction Transistor)</td><td>MOSFET (PMOS + NMOS pairs)</td><td>Bipolar vs Unipolar conduction</td></tr>
-          <tr><td><strong>Power Dissipation</strong></td><td>Medium (~10 mW per gate)</td><td>Extremely Low (~10 nW static; rises with frequency)</td><td>Ideal for battery-operated devices</td></tr>
-          <tr><td><strong>Propagation Delay</strong></td><td>Low (fast, ~10 ns)</td><td>Moderate (~20-50 ns for 4000 series; &lt;2 ns in modern submicron)</td><td>Switching speed metric</td></tr>
-          <tr><td><strong>Noise Margin</strong></td><td>Moderate ($V_{NL} = 0.4V, V_{NH} = 0.4V$)</td><td>High (~30-40% of $V_{DD} \implies 1.5V$ at 5V)</td><td>Resilience to electromagnetic noise</td></tr>
-          <tr><td><strong>Fan-Out</strong></td><td>10 (Standard TTL)</td><td>&gt; 50 (High input impedance of MOS gate)</td><td>Number of standard loads driven</td></tr>
-          <tr><td><strong>Supply Voltage</strong></td><td>Strictly $5V \pm 5\%$ ($4.75V - 5.25V$)</td><td>Wide ($3V - 15V$)</td><td>Power supply tolerance</td></tr>
-        </tbody>
-      </table>
+    <h3 id="u4-asm">4.2 Algorithmic State Machine (ASM) Charts &amp; Realization</h3>
+    <p>An <strong>ASM Chart</strong> is a special flowchart used to design complex digital controllers. Unlike a standard software flowchart, an ASM chart explicitly models <strong>clocked timing</strong>: each ASM block executes in exactly one clock cycle.</p>
+    <ul>
+      <li><strong>State Box (Rectangle):</strong> Represents one state; holds the state name, binary code, and unconditional (Moore) outputs.</li>
+      <li><strong>Decision Box (Diamond):</strong> Tests a single input condition (`0` or `1` exit paths).</li>
+      <li><strong>Conditional Output Box (Oval / Rounded Rectangle):</strong> Placed on a decision exit path; lists Mealy outputs that depend on both state and input.</li>
+    </ul>
+
+    <figure class="svg-box">
+      <svg style="max-width:100%;height:auto;" viewBox="0 0 740 230" width="740" height="230" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="740" height="230" fill="#FAF7F4" rx="8"/>
+        <!-- State Box -->
+        <rect x="35" y="30" width="160" height="75" fill="#E4F2EC" stroke="#226D51" stroke-width="2"/>
+        <text x="115" y="52" fill="#226D51" font-size="12" font-weight="bold" text-anchor="middle">State Box (S0 = 00)</text>
+        <text x="115" y="75" fill="#171717" font-size="11" text-anchor="middle">Moore Outputs: Z1</text>
+        <text x="115" y="130" fill="#6A625B" font-size="11" text-anchor="middle">1. State Box</text>
+
+        <!-- Decision Box -->
+        <polygon points="350,25 435,68 350,111 265,68" fill="#EAEFFE" stroke="#4B5FD1" stroke-width="2"/>
+        <text x="350" y="72" fill="#4B5FD1" font-size="12" font-weight="bold" text-anchor="middle">M = 1 ?</text>
+        <text x="255" y="62" fill="#B8432B" font-size="11">0</text>
+        <text x="442" y="62" fill="#226D51" font-size="11">1</text>
+        <text x="350" y="130" fill="#6A625B" font-size="11" text-anchor="middle">2. Decision Box</text>
+
+        <!-- Conditional Output Box -->
+        <rect x="510" y="38" width="190" height="60" rx="28" fill="#FBF4DC" stroke="#9C7710" stroke-width="2"/>
+        <text x="605" y="65" fill="#9C7710" font-size="12" font-weight="bold" text-anchor="middle">Conditional Box</text>
+        <text x="605" y="83" fill="#171717" font-size="11" text-anchor="middle">Mealy Output: MAX_FLAG</text>
+        <text x="605" y="130" fill="#6A625B" font-size="11" text-anchor="middle">3. Conditional Output Box</text>
+
+        <text x="370" y="185" fill="#171717" font-size="12" text-anchor="middle">ASM Realization: Map each State Box to D or JK Flip-Flops, and each Decision Box to Multiplexers / Gates.</text>
+        <text x="370" y="206" fill="#6A625B" font-size="11" text-anchor="middle">Example (SPPU Oct 2025): 2-bit Up/Down Counter (M=1 Up, M=0 Down, Output=1 at 00 or 11).</text>
+      </svg>
+      <figcaption>Figure 4.1: The three standard ASM chart elements (State Box, Decision Box, Conditional Output Box).</figcaption>
+    </figure>
+
+    <h3 id="u4-icparams">4.3 Classification of Logic Families &amp; Digital IC Parameters</h3>
+    <ul>
+      <li><strong>Bipolar Logic Families</strong> (use BJTs): RTL, DTL, <strong>TTL</strong> (Transistor-Transistor Logic), ECL (Emitter-Coupled Logic &mdash; fastest), IIL.</li>
+      <li><strong>Unipolar Logic Families</strong> (use MOSFETs): PMOS, NMOS, <strong>CMOS</strong> (Complementary MOS &mdash; lowest power).</li>
+    </ul>
+
+    <table>
+      <thead>
+        <tr><th>IC Parameter</th><th>Exam Definition &amp; Formula</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Fan-In</strong></td><td>Maximum number of inputs a logic gate can accept without degrading performance.</td></tr>
+        <tr><td><strong>Fan-Out</strong></td><td>Maximum number of standard loads (gate inputs) a single gate output can drive reliably: $\min(I_{OH}/I_{IH}, \; I_{OL}/I_{IL})$.</td></tr>
+        <tr><td><strong>Noise Margin ($NM$)</strong></td><td>Maximum stray noise voltage a gate can tolerate without flipping output:<br>$NM_H = V_{OH(\min)} - V_{IH(\min)}$, &nbsp; $NM_L = V_{IL(\max)} - V_{OL(\max)}$.</td></tr>
+        <tr><td><strong>Propagation Delay ($t_{pd}$)</strong></td><td>Average time for an output to respond to an input change: $t_{pd} = \frac{t_{PLH} + t_{PHL}}{2}$.</td></tr>
+        <tr><td><strong>Power Dissipation ($P_D$)</strong></td><td>Average DC power drawn by a gate: $P_D = V_{CC} \times I_{CC(\text{avg})}$.</td></tr>
+        <tr><td><strong>Figure of Merit (FOM)</strong></td><td>Speed-Power Product: $\text{FOM} = t_{pd} \times P_D$ (measured in picojoules, pJ). <strong>Smaller is better!</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="u4-ttlcmos">4.4 TTL vs CMOS Logic Families</h3>
+    <figure class="figure-box">
+      <img src="assets/cmos_inverter.png" alt="CMOS Inverter Schematic">
+      <figcaption>Figure 4.2: CMOS Inverter (PMOS pull-up network + NMOS pull-down network) with near-zero static power.</figcaption>
+    </figure>
+
+    <table>
+      <thead>
+        <tr><th>Parameter</th><th>Standard TTL (74xx)</th><th>CMOS (4000 / 74HCxx)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Basic Devices</strong></td><td>Bipolar Junction Transistors (BJTs)</td><td>PMOS &amp; NMOS Enhancement MOSFETs</td></tr>
+        <tr><td><strong>Supply Voltage ($V_{CC}/V_{DD}$)</strong></td><td>Fixed $+5\text{ V} \pm 5\%$</td><td>Wide range: $+3\text{ V}$ to $+15\text{ V}$ (74HC: $2$–$6\text{ V}$)</td></tr>
+        <tr><td><strong>Static Power Dissipation</strong></td><td>High ($\approx 10\text{ mW/gate}$)</td><td>Extremely low ($\approx 10\text{ nW/gate}$ static)</td></tr>
+        <tr><td><strong>Fan-Out</strong></td><td>$10$</td><td>$&gt; 50$ (at low frequencies)</td></tr>
+        <tr><td><strong>Noise Margin</strong></td><td>Moderate ($\approx 0.4\text{ V}$)</td><td>High ($\approx 30\%\text{–}45\%$ of $V_{DD}$)</td></tr>
+        <tr><td><strong>Propagation Delay</strong></td><td>Fast ($\approx 10\text{ ns}$)</td><td>Moderate ($25\text{–}50\text{ ns}$ for 4000; $8\text{ ns}$ for 74HC)</td></tr>
+        <tr><td><strong>Operating Temp (Commercial)</strong></td><td>$0^\circ\text{C}$ to $+70^\circ\text{C}$</td><td>$-40^\circ\text{C}$ to $+85^\circ\text{C}$ (Military: $-55^\circ\text{C}$ to $+125^\circ\text{C}$)</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="u4-casestudy">4.5 Case Study &amp; Important SPPU Exam Questions</h3>
+    <div class="card">
+      <h4>Syllabus Case Study: Vending Machine Controller Using ASM</h4>
+      <p>A coffee/snack vending machine accepts Rs. 5 and Rs. 10 coins to dispense a Rs. 15 item. States: `S0` (Rs. 0), `S1` (Rs. 5), `S2` (Rs. 10). Decision boxes test `Coin_5` and `Coin_10`. Reaching Rs. 15 asserts `Dispense = 1` (and `Return_5 = 1` via a conditional box if Rs. 10 is inserted in `S2`), then returns to `S0`.</p>
     </div>
-  </div>
 
-  <section class="unit-short-notes" id="u4-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit IV Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>ASM chart syntax, logic families comparison, and electrical specs.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>ASM Block Rules</h4>
-          <ul>
-            <li>An ASM block contains exactly ONE state box</li>
-            <li>Can contain zero or more decision boxes and conditional output boxes</li>
-            <li>All operations in one ASM block occur during ONE clock cycle</li>
-            <li>Exit paths from ASM block lead to next state box</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Noise Margin Equations</h4>
-          <ul>
-            <li>$NM_{High} = V_{OH(min)} - V_{IH(min)}$ (High state margin)</li>
-            <li>$NM_{Low} = V_{IL(max)} - V_{OL(max)}$ (Low state margin)</li>
-            <li>For TTL: $V_{OH}=2.4V, V_{IH}=2.0V \implies NM_H = 0.4V$</li>
-            <li>For TTL: $V_{IL}=0.8V, V_{OL}=0.4V \implies NM_L = 0.4V$</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Figure of Merit</h4>
-          <ul>
-            <li>$\text{Figure of Merit} = \text{Propagation Delay} \times \text{Power Dissipation}$</li>
-            <li>Measured in pico-Joules ($pJ$) &mdash; Lower is superior!</li>
-            <li>Fan-out: $I_{OH} / I_{IH}$ or $I_{OL} / I_{IL}$</li>
-            <li>Unused CMOS inputs must NEVER float (connect to $V_{DD}$ or GND to prevent latchup)</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>TTL Totem-Pole Stage</h4>
-          <ul>
-            <li>Consists of multi-emitter transistor $Q_1$, phase-splitter $Q_2$</li>
-            <li>Totem-pole pair: $Q_3$ (pull-down) and $Q_4$ (pull-up) with diode $D_1$</li>
-            <li>Diode $D_1$ ensures $Q_4$ stays OFF when $Q_3$ is saturated</li>
-            <li>Provides low output impedance in both High and Low states</li>
-          </ul>
-        </div>
-      </div>
+    <div class="qa-block">
+      <div class="qa-q"><span>Q1. Draw an ASM chart for a 2-bit Up/Down Counter with mode M (M=1 Up, M=0 Down) and output Z=1 at min (00) or max (11).</span><span class="marks-badge">5 Marks</span></div>
+      <p><strong>Answer:</strong> Use 4 State Boxes (`00`, `01`, `10`, `11`). Inside `00` and `11`, assert Moore output `Z = 1`. After each State Box, place a Decision Box testing `M`: if `M=1`, transition `00 &rarr; 01 &rarr; 10 &rarr; 11 &rarr; 00`; if `M=0`, transition `00 &rarr; 11 &rarr; 10 &rarr; 01 &rarr; 00`.</p>
     </div>
   </section>
-</section>
 
-<section id="unit-5" class="unit-section">
-  <div class="unit-badge">Unit V &bull; 06 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit V: Programmable Logic Devices (PLDs)</h2>
-  
-  <div class="topic-block" id="u5-plds">
-    <h3>5.1 Classification &amp; Comparison: ROM vs PLA vs PAL</h3>
-    <p>PLDs are reconfigurable digital chips containing arrays of AND and OR gates that can be customized to implement arbitrary combinational and sequential logic.</p>
-    
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>PLD Architecture</th><th>AND Array</th><th>OR Array</th><th>Hardware Flexibility</th><th>Cost &amp; Programming Speed</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>PROM (Read Only Memory)</strong></td><td><strong>Fixed</strong> (Full $2^n$ Decoder)</td><td><strong>Programmable</strong> (Fuse links)</td><td>Low (Generates ALL minterms; inefficient if few minterms used)</td><td>Lowest cost, simplest programming</td></tr>
-          <tr><td><strong>PLA (Prog. Logic Array)</strong></td><td><strong>Programmable</strong></td><td><strong>Programmable</strong></td><td><strong>Highest</strong> (Both arrays customized; product terms can be shared across outputs)</td><td>Highest cost, complex programming</td></tr>
-          <tr><td><strong>PAL (Prog. Array Logic)</strong></td><td><strong>Programmable</strong></td><td><strong>Fixed</strong> (Fixed input OR gates)</td><td>Moderate (Fastest execution; no shared product terms)</td><td>Medium cost, highly popular in industry</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+  <!-- ===================================================================== -->
+  <!-- UNIT V                                                                -->
+  <!-- ===================================================================== -->
+  <section id="unit-5">
+    <span class="unit-badge">Unit V &bull; 06 Hours &bull; CO5</span>
+    <h2 class="unit-title">Unit V: Programmable Logic Devices (PLDs)</h2>
 
-  <div class="topic-block" id="u5-design">
-    <h3>5.2 Combinational Design Using PLDs</h3>
-    <p>To implement functions using a PLA, express outputs in minimal SOP form, find common product terms to maximize sharing across OR gates, and create a PLA programming table (Inputs, Product Term, Outputs).</p>
-    
-    <div class="qa-card">
-      <div class="qa-q">Design a BCD-to-Excess-3 code converter using PLA.</div>
-      <div class="sol-box">
-        <p><strong>Step 1: Truth Table &amp; K-Map Simplification:</strong> Inputs: $A, B, C, D$. Outputs: $W, X, Y, Z$.</p>
-        <div class="formula-box">
-          $$W = A + BC + BD$$<br>
-          $$X = \overline{B}C + \overline{B}D + B\,\overline{C}\,\overline{D}$$<br>
-          $$Y = C \oplus D = C\overline{D} + \overline{C}D$$<br>
-          $$Z = \overline{D}$$
-        </div>
-        <p><strong>Step 2: PLA Programming Matrix:</strong> 4 inputs, 9 product terms, 4 outputs. Each product term is programmed once in the AND matrix and connected to the appropriate OR lines.</p>
-      </div>
+    <h3 id="u5-pld">5.1 PLD Overview &amp; ROM as a PLD</h3>
+    <div class="concept-box">
+      <div class="box-title">Key Concept: Programmable Logic Device (PLD)</div>
+      <p><strong>Exam Definition:</strong> A <em>Programmable Logic Device (PLD)</em> is an integrated circuit containing an array of AND and OR gates whose interconnections can be programmed by the user to implement custom combinational or sequential logic functions.</p>
+      <p><strong>In Simple Words:</strong> Instead of wiring 10 separate 74xx chips on a breadboard, a PLD is a "blank canvas" chip where you blow internal fuses (or load SRAM bits) to wire the exact AND-OR circuit you want.</p>
     </div>
-  </div>
 
-  <section class="unit-short-notes" id="u5-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit V Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>PLD architecture matrix, fuse states, and PLA vs PAL rules.</p>
+    <p><strong>ROM (PROM) as a PLD:</strong> A Read-Only Memory has a <strong>fixed AND array</strong> (functioning as an $n$-to-$2^n$ decoder generating all $2^n$ minterms) followed by a <strong>programmable OR array</strong>. Because it generates every single minterm, PROM is inefficient for functions with many don't-cares or few product terms.</p>
+
+    <h3 id="u5-pla">5.2 Programmable Logic Array (PLA)</h3>
+    <p>A <strong>PLA</strong> has <strong>both</strong> a programmable AND array and a programmable OR array. Each product term can be shared across multiple output OR gates, making it far more compact than PROM.</p>
+    <ul>
+      <li><strong>Implementation Procedure:</strong> (1) Minimize each output function using K-Maps (trying to share common product terms!). (2) Construct the PLA Program Table listing Product Term, Inputs (`1`, `0`, `-`), and Outputs (`1` or `-`). (3) Mark the fuse intersections (`x`) on the AND-OR matrix.</li>
+      <li><strong>Advantages over ROM:</strong> No need to decode all $2^n$ minterms; handles don't-cares efficiently; shares product terms across outputs; smaller silicon area.</li>
+    </ul>
+
+    <div class="card">
+      <h4>Solved PLA Design: Implement $F_1 = \overline{A}B + AB + C$ and $F_2 = \overline{A}BC + AB$ (SPPU Oct 2025, 5M)</h4>
+      <p>First note $F_1 = B(\overline{A}+A) + C = B + C$, or keep $AB$ if sharing with $F_2$: unique product terms needed are $P_1 = B$, $P_2 = C$, $P_3 = \overline{A}BC$, $P_4 = AB$ (4 product lines). In the PLA Program Table: $F_1 = P_1 + P_2$ and $F_2 = P_3 + P_4$.</p>
     </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>PLD Array Quick Matrix</h4>
-          <ul>
-            <li>PROM: Fixed AND (Decoder) + Programmable OR</li>
-            <li>PLA: Programmable AND + Programmable OR (Max flexibility)</li>
-            <li>PAL: Programmable AND + Fixed OR (Fastest)</li>
-            <li>GAL: Electrically erasable and reprogrammable PAL (EEPROM cells)</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>PLA Design Steps</h4>
-          <ul>
-            <li>Step 1: Write truth table for all required outputs</li>
-            <li>Step 2: Minimize each output using K-Map</li>
-            <li>Step 3: Identify shared product terms between multiple outputs</li>
-            <li>Step 4: Draw PLA program table: Term # | Inputs (1/0/-) | Outputs (1/-)</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>CPLD vs FPGA Overview</h4>
-          <ul>
-            <li>CPLD (Complex PLD): Multiple PAL-like macrocells interconnected by a global routing matrix. Non-volatile, instant ON.</li>
-            <li>FPGA (Field Programmable Gate Array): Thousands of Configurable Logic Blocks (CLBs) using SRAM Look-Up Tables (LUTs). Volatile (needs boot flash).</li>
-            <li>LUT (Look-Up Table): $n$-input LUT is essentially a $2^n \times 1$ SRAM holding truth table values.</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Exam Traps in PLD Questions</h4>
-          <ul>
-            <li>Do not confuse PLA and PAL! Remember: PAL has <strong>FIXED OR</strong> gates.</li>
-            <li>In PAL diagrams, show fuse marks ($X$) only in the programmable AND matrix.</li>
-            <li>In ROM, capacity = $2^n \times m$ (where $n$ is address bits, $m$ is word bit length).</li>
-          </ul>
-        </div>
-      </div>
+
+    <h3 id="u5-pal">5.3 Programmable Array Logic (PAL)</h3>
+    <p>A <strong>PAL</strong> has a <strong>programmable AND array</strong> and a <strong>fixed OR array</strong>. Each OR gate is permanently connected to a specific group of AND gates, so product terms cannot be shared between outputs. However, PALs are faster, cheaper, and easier to program than PLAs.</p>
+
+    <figure class="svg-box">
+      <svg style="max-width:100%;height:auto;" viewBox="0 0 740 190" width="740" height="190" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="740" height="190" fill="#FAF7F4" rx="8"/>
+        <!-- PROM -->
+        <rect x="25" y="30" width="210" height="120" rx="6" fill="#FFFFFF" stroke="#6A625B" stroke-width="2"/>
+        <text x="130" y="55" fill="#171717" font-size="13" font-weight="bold" text-anchor="middle">PROM (ROM as PLD)</text>
+        <text x="130" y="85" fill="#B8432B" font-size="12" text-anchor="middle">Fixed AND Array (Decoder)</text>
+        <text x="130" y="110" fill="#226D51" font-size="12" text-anchor="middle">Programmable OR Array</text>
+        <text x="130" y="135" fill="#6A625B" font-size="10" text-anchor="middle">Generates all 2^n minterms</text>
+
+        <!-- PLA -->
+        <rect x="265" y="30" width="210" height="120" rx="6" fill="#E4F2EC" stroke="#226D51" stroke-width="2"/>
+        <text x="370" y="55" fill="#226D51" font-size="13" font-weight="bold" text-anchor="middle">PLA</text>
+        <text x="370" y="85" fill="#226D51" font-size="12" text-anchor="middle">Programmable AND Array</text>
+        <text x="370" y="110" fill="#226D51" font-size="12" text-anchor="middle">Programmable OR Array</text>
+        <text x="370" y="135" fill="#171717" font-size="10" text-anchor="middle">Max flexibility; shares product terms</text>
+
+        <!-- PAL -->
+        <rect x="505" y="30" width="210" height="120" rx="6" fill="#EAEFFE" stroke="#4B5FD1" stroke-width="2"/>
+        <text x="610" y="55" fill="#4B5FD1" font-size="13" font-weight="bold" text-anchor="middle">PAL</text>
+        <text x="610" y="85" fill="#226D51" font-size="12" text-anchor="middle">Programmable AND Array</text>
+        <text x="610" y="110" fill="#B8432B" font-size="12" text-anchor="middle">Fixed OR Array</text>
+        <text x="610" y="135" fill="#171717" font-size="10" text-anchor="middle">Faster &amp; simpler than PLA</text>
+      </svg>
+      <figcaption>Figure 5.1: Architectural comparison of PROM, PLA, and PAL.</figcaption>
+    </figure>
+
+    <table>
+      <thead>
+        <tr><th>Feature</th><th>PROM (ROM)</th><th>PLA</th><th>PAL</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>AND Array</strong></td><td>Fixed (Decoder)</td><td>Programmable</td><td>Programmable</td></tr>
+        <tr><td><strong>OR Array</strong></td><td>Programmable</td><td>Programmable</td><td>Fixed</td></tr>
+        <tr><td><strong>Product Term Sharing</strong></td><td>Yes</td><td>Yes</td><td>No</td></tr>
+        <tr><td><strong>Speed &amp; Cost</strong></td><td>Slowest, moderate</td><td>Slower, most expensive</td><td>Fastest, economical</td></tr>
+        <tr><td><strong>Best Used For</strong></td><td>Lookup tables, microcode</td><td>Complex multi-output SOP</td><td>Glue logic, decoders</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="u5-fpga">5.4 CPLD, FPGA &amp; Hardware Description Languages (VHDL/Verilog)</h3>
+    <ul>
+      <li><strong>CPLD (Complex PLD):</strong> Combines multiple PAL-like blocks connected via a central programmable interconnect matrix (non-volatile EEPROM/Flash; instant-on; deterministic timing).</li>
+      <li><strong>FPGA (Field-Programmable Gate Array):</strong> Consists of a 2D grid of <strong>Configurable Logic Blocks (CLBs)</strong> containing <strong>Look-Up Tables (LUTs)</strong> and flip-flops, surrounded by programmable routing channels and I/O blocks (IOBs). SRAM-based (volatile, high density, ideal for DSP/AI/prototyping).</li>
+    </ul>
+
+    <pre><code>// Verilog HDL: 4-Way Traffic Light Controller FSM (Unit V Case Study)
+module traffic_light_pld (
+    input            clk, rst_n,
+    output reg [1:0] ns_light, ew_light // 00=Red, 01=Yellow, 10=Green
+);
+    reg [1:0] state;
+    localparam S_NS_GREEN = 2'd0, S_NS_YEL = 2'd1,
+               S_EW_GREEN = 2'd2, S_EW_YEL = 2'd3;
+
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) state &lt;= S_NS_GREEN;
+        else        state &lt;= state + 2'd1;
+    end
+
+    always @(*) begin
+        case (state)
+            S_NS_GREEN: begin ns_light = 2'b10; ew_light = 2'b00; end
+            S_NS_YEL:   begin ns_light = 2'b01; ew_light = 2'b00; end
+            S_EW_GREEN: begin ns_light = 2'b00; ew_light = 2'b10; end
+            S_EW_YEL:   begin ns_light = 2'b00; ew_light = 2'b01; end
+        endcase
+    end
+endmodule
+</code></pre>
+
+    <h3 id="u5-casestudy">5.5 Case Study &amp; Important SPPU Exam Questions</h3>
+    <div class="card">
+      <h4>Syllabus Case Study: Traffic Light Control System Using PLD</h4>
+      <p>A 4-state intersection controller (North-South Green, NS Yellow, East-West Green, EW Yellow) is encoded with 2 state bits $Q_1, Q_0$ from a timer-driven counter. The 6 lamp outputs ($R_{NS}, Y_{NS}, G_{NS}, R_{EW}, Y_{EW}, G_{EW}$) are combinational SOP functions of $(Q_1, Q_0)$ programmed directly into a PAL/PLA chip (e.g., $G_{NS} = \overline{Q_1}\overline{Q_0}$, $Y_{NS} = \overline{Q_1}Q_0$, $R_{NS} = Q_1$).</p>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-q"><span>Q1. Design a BCD-to-Excess-3 code converter and implement it using PAL.</span><span class="marks-badge">5 Marks</span></div>
+      <p><strong>Answer:</strong> Derive the 4 minimized SOP equations for $E_3, E_2, E_1, E_0$ in terms of BCD $B_3, B_2, B_1, B_0$: $E_0 = \overline{B_0}$; $E_1 = \overline{B_1}\overline{B_0} + B_1B_0$; $E_2 = \overline{B_2}B_1 + \overline{B_2}B_0 + B_2\overline{B_1}\overline{B_0}$; $E_3 = B_3 + B_2B_1 + B_2B_0$. Since each equation has at most 3 product terms, a 4-input, 4-output PAL (3 AND gates per OR gate) implements it directly.</p>
     </div>
   </section>
-</section>
 
-<section class="flashcards-section" id="flashcards">
-  <div class="flashcards-header">
-    <div class="flashcards-title-group">
-      <span class="flashcards-badge">Active Recall Deck</span>
-      <h2>DELD Master Exam Flashcards (25 Cards)</h2>
-      <p>Tap any card to flip and verify your understanding of formulas, waveforms, and circuits.</p>
-    </div>
-    <div class="flashcards-controls">
-      <button type="button" class="fc-ctrl-btn" id="fc-flip-all">Flip All Cards</button>
-      <button type="button" class="fc-ctrl-btn" id="fc-reset-all">Reset All</button>
-      <div class="fc-filter-group">
-        <label>Filter Unit:</label>
-        <select id="fc-unit-filter">
-          <option value="all">All Units</option>
-          <option value="u1">Unit I: Boolean &amp; K-Map</option>
-          <option value="u2">Unit II: Combinational</option>
-          <option value="u3">Unit III: Sequential</option>
-          <option value="u4">Unit IV: ASM &amp; Families</option>
-          <option value="u5">Unit V: PLDs</option>
-        </select>
-      </div>
-    </div>
-  </div>
+  <!-- ===================================================================== -->
+  <!-- REFERENCES                                                            -->
+  <!-- ===================================================================== -->
+  <section id="references">
+    <span class="unit-badge">Official Syllabus &amp; Attributions</span>
+    <h2 class="unit-title">References, Textbooks, MOOCs &amp; Image Credits</h2>
 
-  <div class="flashcards-grid">
-    <!-- Card 1 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; DeMorgan's Laws</div>
-          <div class="fc-q">State DeMorgan's First and Second Laws in mathematical form.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>1st Law:</strong> $\overline{A \cdot B} = \overline{A} + \overline{B}$ (NAND = Bubbled OR)<br>
-            <strong>2nd Law:</strong> $\overline{A + B} = \overline{A} \cdot \overline{B}$ (NOR = Bubbled AND)
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
+    <h3>Official SPPU 2024 Pattern Textbooks</h3>
+    <ol>
+      <li>R. P. Jain, <em>Modern Digital Electronics</em>, 4th Edition, Tata McGraw Hill (ISBN 978-0-07-066911-6).</li>
+      <li>M. Morris Mano, <em>Digital Logic and Computer Design</em>, Pearson (ISBN 978-93-325-4252-5).</li>
+    </ol>
 
-    <!-- Card 2 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; 2's Complement</div>
-          <div class="fc-q">What is the range of numbers represented in 8-bit 2's complement? Why is it asymmetrical?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Range: $-2^7$ to $+(2^7 - 1) = -128$ to $+127$.<br>
-            It is asymmetrical because zero ($00000000_2$) is uniquely mapped to the positive set, allowing one extra negative value ($-128 = 10000000_2$).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
+    <h3>Reference Books</h3>
+    <ol>
+      <li>John F. Wakerly, <em>Digital Design: Principles and Practices</em>, Pearson.</li>
+      <li>Mark Bach, <em>Complete Digital Design</em>, Tata McGraw Hill, 2005.</li>
+      <li>Charles H. Roth Jr., <em>Fundamentals of Logic Design</em>, Cengage Learning.</li>
+    </ol>
 
-    <!-- Card 3 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; K-Map Groupings</div>
-          <div class="fc-q">How many variables are eliminated by grouping an Octet and a Quad in a 4-variable K-Map?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>Octet (8 cells):</strong> Eliminates 3 variables, leaving 1 literal.<br>
-            <strong>Quad (4 cells):</strong> Eliminates 2 variables, leaving 2 literals.<br>
-            <strong>Pair (2 cells):</strong> Eliminates 1 variable, leaving 3 literals.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
+    <h3>e-Books, NPTEL / MOOC &amp; Video Links (from SPPU Syllabus)</h3>
+    <ul>
+      <li>Springer e-Book: <a href="https://link.springer.com/book/10.1007/978-3-030-36196-9" target="_blank" rel="noopener">Springer Digital Logic Resource</a></li>
+      <li>McGraw Hill e-Book: <a href="https://www.mheducation.co.uk/ebook-fundamentals-of-digital-logic-9780077144227-emea" target="_blank" rel="noopener">Fundamentals of Digital Logic</a></li>
+      <li>NPTEL &mdash; <em>Digital Circuits</em> by Prof. Santanu Chattopadhyay, IIT Kharagpur (<a href="https://swayam.gov.in/nd1_noc19_ee5" target="_blank" rel="noopener">SWAYAM / NPTEL</a>)</li>
+      <li>NPTEL &mdash; <em>Digital Circuits and Systems</em> by Prof. S. Srinivasan, IIT Madras (<a href="https://nptel.ac.in/courses/117/106/11" target="_blank" rel="noopener">NPTEL Course</a>)</li>
+      <li>NPTEL &mdash; <em>VLSI Technology</em> by Dr. Nandita Dasgupta, IIT Madras (<a href="https://nptel.ac.in/courses/117106093" target="_blank" rel="noopener">NPTEL Course</a>)</li>
+    </ul>
 
-    <!-- Card 4 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Full Adder Equations</div>
-          <div class="fc-q">Write the minimal Boolean equations for Sum and Carry of a Full Adder.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$\text{Sum } S = A \oplus B \oplus C_{in}$$<br>
-            $$\text{Carry } C_{out} = AB + BC_{in} + AC_{in} = AB + C_{in}(A \oplus B)$$
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; BCD Adder Correction</div>
-          <div class="fc-q">What is the condition and value added to correct an invalid BCD sum?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>Condition:</strong> When Sum &gt; 9 or Carry Out = 1 ($Y = C_{out} + S_3 S_2 + S_3 S_1$).<br>
-            <strong>Correction Value:</strong> Add binary $0110_2$ (decimal 6) using a second 4-bit parallel adder to bypass the 6 invalid 4-bit states.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 6 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Carry Lookahead</div>
-          <div class="fc-q">What are the formulas for Carry Generate ($G_i$) and Carry Propagate ($P_i$)?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$G_i = A_i \cdot B_i$$<br>
-            $$P_i = A_i \oplus B_i$$<br>
-            Enables all stage carries ($C_1, C_2, C_3, C_4$) to be computed simultaneously in 2 gate delays without rippling!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 7 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Code Converters</div>
-          <div class="fc-q">Why is Gray code called a 'unit-distance' code? Where is it applied?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Only 1 bit changes between consecutive numbers (e.g., $001_2 \to 011_2$).<br>
-            <strong>Application:</strong> Rotary optical shaft encoders and K-Maps to eliminate false transient switching glitches caused by multi-bit transitions.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 8 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Race-Around Condition</div>
-          <div class="fc-q">State the exact conditions under which Race-Around occurs in a JK Flip-Flop.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Occurs when: <strong>1)</strong> $J = 1$ and $K = 1$ (toggle mode), <strong>2)</strong> Clock level is HIGH, and <strong>3)</strong> Clock pulse duration $t_p &gt; t_{pd}$ (flip-flop propagation delay). Output oscillates unpredictably!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 9 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Master-Slave JK</div>
-          <div class="fc-q">How does Master-Slave JK architecture eliminate race-around?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            During $CLK=1$: Master latches inputs while Slave is disabled ($\overline{CLK}=0$).<br>
-            During $CLK=0$: Master is disabled, Slave transfers master's state to output.<br>
-            Since master and slave are NEVER active simultaneously, feedback oscillation is physically impossible!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 10 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Ripple vs Sync Counters</div>
-          <div class="fc-q">Why do Ripple counters suffer from glitches, while Synchronous counters do not?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            In Ripple counters, stage $N$ is clocked by stage $N-1$, causing cumulative delay ($N \times t_{pd}$) and transient false intermediate counts.<br>
-            In Synchronous counters, all flip-flops share a single common clock and transition simultaneously.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 11 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Ring vs Johnson Counter</div>
-          <div class="fc-q">Compare the number of valid states in an $N$-bit Ring Counter vs $N$-bit Johnson Counter.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>$N$-bit Ring Counter:</strong> Has $N$ states (Circulates a single '1' bit, e.g., $1000 \to 0100 \dots$).<br>
-            <strong>$N$-bit Johnson Counter:</strong> Has $2N$ states (Twisted feedback $\overline{Q_N} \to D_0$, e.g., $0000 \to 1000 \to 1100 \dots$).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 12 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; ASM Chart Symbols</div>
-          <div class="fc-q">What are the three fundamental symbols used in an ASM chart?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>1. State Box (Rectangle):</strong> Moore outputs and state name.<br>
-            <strong>2. Decision Box (Diamond):</strong> Evaluates 1 input condition bit.<br>
-            <strong>3. Conditional Output Box (Oval):</strong> Mealy outputs executed conditionally.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 13 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; CMOS Inverter Operation</div>
-          <div class="fc-q">Why does a CMOS gate consume virtually zero static power?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            In steady state ($V_{in}=0$ or $V_{in}=V_{DD}$), exactly one transistor is ON while the other is OFF. There is NO direct DC conductive path from $V_{DD}$ to Ground! Power is consumed only during dynamic switching.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 14 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Noise Margins</div>
-          <div class="fc-q">Define High State Noise Margin ($NM_H$) and Low State Noise Margin ($NM_L$).</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$NM_H = V_{OH(min)} - V_{IH(min)}$$<br>
-            $$NM_L = V_{IL(max)} - V_{OL(max)}$$<br>
-            Quantifies the maximum noise voltage that can be superimposed on a digital signal without corrupting logical interpretation.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 15 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; PLD Comparison</div>
-          <div class="fc-q">Contrast PROM, PLA, and PAL in terms of AND and OR array programmability.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>PROM:</strong> Fixed AND (Decoder) + Programmable OR.<br>
-            <strong>PLA:</strong> Programmable AND + Programmable OR (Max flexibility).<br>
-            <strong>PAL:</strong> Programmable AND + Fixed OR (Fastest &amp; most cost-effective).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 16 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Excitation Conversion</div>
-          <div class="fc-q">What is the formula to convert a JK Flip-Flop into a T Flip-Flop?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Connect inputs $J$ and $K$ together to input $T$:<br>
-            $$J = T, \quad K = T$$<br>
-            When $T=0 \implies J=0, K=0$ (No change / Hold).<br>
-            When $T=1 \implies J=1, K=1$ (Toggle mode).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 17 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Mod-10 Decade Counter</div>
-          <div class="fc-q">Which flip-flop outputs are connected to the NAND reset gate in an asynchronous BCD Decade counter?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Connect outputs $Q_3$ and $Q_1$ to the NAND gate.<br>
-            The count sequence is $0$ to $9$ ($0000_2$ to $1001_2$). Upon reaching state $10$ ($1010_2$), $Q_3=1$ and $Q_1=1$ triggers the NAND gate, clearing all flip-flops back to $0000_2$.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 18 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; TTL Totem Pole Diode</div>
-          <div class="fc-q">What is the specific purpose of Diode $D_1$ in the TTL Totem-Pole output stage?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Diode $D_1$ adds a $0.7V$ voltage drop in series with pull-up transistor $Q_4$. This ensures that when pull-down transistor $Q_3$ saturates (output Low), $Q_4$ remains strictly OFF, preventing high cross-conduction current!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 19 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; FPGA Look-Up Tables</div>
-          <div class="fc-q">How does an FPGA CLB Look-Up Table (LUT) implement a Boolean function?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            An $n$-input LUT is a small $2^n \times 1$ SRAM array. The truth table output values are stored in SRAM cells. The $n$ inputs serve as address lines to select and read the output bit directly.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 20 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Multiplexer Implementation</div>
-          <div class="fc-q">Can any 4-variable Boolean function be implemented using an 8:1 Multiplexer without external gates?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>Yes!</strong> Connect 3 variables to select lines $S_2, S_1, S_0$. For each of the 8 combinations, the fourth variable can be applied as $0, 1, D,$ or $\overline{D}$ directly to data inputs $I_0 - I_7$.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 21 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; Universal Gates</div>
-          <div class="fc-q">Why are NAND and NOR called 'Universal Gates'?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Because any basic Boolean function (AND, OR, NOT) and any combinational or sequential circuit can be constructed solely using NAND gates or solely using NOR gates without any other gate types.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 22 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Setup &amp; Hold Time</div>
-          <div class="fc-q">Define Setup Time ($t_s$) and Hold Time ($t_h$) for edge-triggered flip-flops.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>Setup Time ($t_s$):</strong> Minimum time data input must remain stable BEFORE the active clock edge.<br>
-            <strong>Hold Time ($t_h$):</strong> Minimum time data input must remain stable AFTER the active clock edge. Violations cause metastability!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 23 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Fan-Out Metric</div>
-          <div class="fc-q">What is Fan-Out? What happens if fan-out is exceeded?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            The maximum number of standard input loads that a gate output can reliably drive while maintaining legal logic voltage levels ($V_{OH}, V_{OL}$). Exceeding it causes output voltage degradation and severe propagation delay spikes.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 24 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Magnitude Comparator</div>
-          <div class="fc-q">Write the logic equation for equality ($A = B$) in a 2-bit magnitude comparator ($A_1 A_0$ vs $B_1 B_0$).</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Both bit pairs must match simultaneously using XNOR gates:<br>
-            $$(A = B) = (A_1 \odot B_1) \cdot (A_0 \odot B_0) = \overline{A_1 \oplus B_1} \cdot \overline{A_0 \oplus B_0}$$
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 25 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; PLA Product Term Sharing</div>
-          <div class="fc-q">Why can PLA implement multiple functions using fewer total gates than PAL?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Because PLA has a <strong>programmable OR matrix</strong>. A single product term output from the AND array can be connected to multiple OR gates simultaneously (shared across outputs), eliminating duplicated hardware.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-</div><!-- /main-inner -->
+    <h3>Wikimedia Commons Image Attributions</h3>
+    <table>
+      <thead>
+        <tr><th>Local File</th><th>Title</th><th>Author / Artist</th><th>License</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>logic_gates_symbols.png</code></td><td>Online Logic Gates Simulator And Gate Truthtabletools com.png</td><td>LearnToRaise</td><td>CC BY 4.0</td><td><a href="https://commons.wikimedia.org/wiki/File:Online_Logic_Gates_Simulator_And_Gate_Truthtabletools_com.png" target="_blank" rel="noopener">Wikimedia Commons</a></td></tr>
+<tr><td><code>karnaugh_map_4var.png</code></td><td>Karnaugh map KV 2Variables 06.png</td><td>RosarioVanTulpe</td><td>Public domain</td><td><a href="https://commons.wikimedia.org/wiki/File:Karnaugh_map_KV_2Variables_06.png" target="_blank" rel="noopener">Wikimedia Commons</a></td></tr>
+<tr><td><code>full_adder_circuit.png</code></td><td>Full-adder logic diagram.svg</td><td>Inductiveload</td><td>Public domain</td><td><a href="https://commons.wikimedia.org/wiki/File:Full-adder_logic_diagram.svg" target="_blank" rel="noopener">Wikimedia Commons</a></td></tr>
+<tr><td><code>jk_flip_flop.png</code></td><td>JK Flip-flop alt.svg</td><td>jjbeard, Berserkerus</td><td>Public domain</td><td><a href="https://commons.wikimedia.org/wiki/File:JK_Flip-flop_alt.svg" target="_blank" rel="noopener">Wikimedia Commons</a></td></tr>
+<tr><td><code>ripple_counter.png</code></td><td>Binary ripple counter timing diagram.jpg</td><td>Lambtron</td><td>CC BY-SA 4.0</td><td><a href="https://commons.wikimedia.org/wiki/File:Binary_ripple_counter_timing_diagram.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></td></tr>
+<tr><td><code>cmos_inverter.png</code></td><td>CMOS inverter.svg</td><td>Abaddon1337</td><td>CC BY-SA 3.0</td><td><a href="https://commons.wikimedia.org/wiki/File:CMOS_inverter.svg" target="_blank" rel="noopener">Wikimedia Commons</a></td></tr>
+<tr><td><code>multiplexer_4to1.png</code></td><td>Multiplexer 4-to-1.svg</td><td>en:User:Cburnett</td><td>CC BY-SA 3.0</td><td><a href="https://commons.wikimedia.org/wiki/File:Multiplexer_4-to-1.svg" target="_blank" rel="noopener">Wikimedia Commons</a></td></tr>
+      </tbody>
+    </table>
+  </section>
 </main>
 
 <script src="../assets/study-data.js"></script>
 <script src="../assets/app-store.js"></script>
 <script src="../assets/guide-app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/verilog.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.hljs) {
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+  }
+});
+</script>
 </body>
 </html>

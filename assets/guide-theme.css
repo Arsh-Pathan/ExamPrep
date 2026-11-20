@@ -369,12 +369,7 @@ button, input, textarea, select {
 }
 
 /* Guide Hero Header */
-.main-inner {
-  width: 100%;
-  min-width: 0;
-}
-
-#main > header, #main > .page-header, #main .guide-header, .main-inner > header {
+#main > header, #main > .page-header {
   background: var(--subject-bg);
   color: var(--subject-ink);
   border-radius: 24px;
@@ -384,21 +379,7 @@ button, input, textarea, select {
   box-shadow: var(--shadow-sm);
 }
 
-.breadcrumb {
-  display: inline-block;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--ink-muted);
-  font-size: 0.72rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 4px 11px;
-  border-radius: 9999px;
-  margin-bottom: 6px;
-}
-
-#main > header h1, #main > .page-header h1, #main .guide-header h1, .main-inner > header h1 {
+#main > header h1, #main > .page-header h1 {
   font-size: clamp(1.5rem, 3.6vw, 2.05rem);
   font-weight: 800;
   letter-spacing: -0.025em;
@@ -407,7 +388,7 @@ button, input, textarea, select {
   margin: 8px 0;
 }
 
-#main > header p, #main > .page-header p, #main .guide-header p, .main-inner > header p, .subtitle {
+#main > header p, #main > .page-header p, .subtitle {
   font-size: 0.93rem;
   color: var(--ink-secondary);
   margin-bottom: 10px;
@@ -464,7 +445,7 @@ button, input, textarea, select {
 }
 
 /* Unit Sections */
-#main > section, .main-inner > section, #main section.unit-section {
+#main > section {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 22px;
@@ -477,27 +458,12 @@ button, input, textarea, select {
 }
 
 @media (min-width: 720px) {
-  #main > section, .main-inner > section, #main section.unit-section {
+  #main > section {
     padding: 26px 28px;
   }
 }
 
-.unit-header {
-  margin-bottom: 18px;
-}
-
-.unit-desc {
-  font-size: 0.9rem;
-  color: var(--ink-secondary);
-  margin: 4px 0 12px;
-}
-
-.topic-block {
-  margin-bottom: 24px;
-  scroll-margin-top: 76px;
-}
-
-h2.unit-title, h2.section-title, #main > section > h2, .main-inner > section > h2, #main section.unit-section .unit-header h2, #main section.unit-section > h2 {
+h2.unit-title, h2.section-title, #main > section > h2 {
   font-size: clamp(1.2rem, 2.8vw, 1.5rem);
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -508,11 +474,11 @@ h2.unit-title, h2.section-title, #main > section > h2, .main-inner > section > h
   line-height: 1.3;
 }
 
-.unit-badge, .unit-tag {
+.unit-badge {
   display: inline-block;
   background: var(--subject-bg);
   color: var(--subject-ink);
-  font-size: 0.72rem;
+  font-size: 0.71rem;
   font-weight: 800;
   padding: 3px 10px;
   border-radius: 9999px;
@@ -885,12 +851,11 @@ html[data-theme="dark"] .kmap-grid td.dc   { background-color: #383118; color: #
   margin: 0 auto;
 }
 
-.figure-box figcaption, .svg-box figcaption, .svg-caption, .figure-caption {
+.figure-box figcaption, .svg-box figcaption, .svg-caption {
   margin-top: 9px;
   font-size: 0.8rem;
   color: #4B5563;
   font-weight: 600;
-  text-align: center;
 }
 
 svg {
@@ -964,10 +929,6 @@ mjx-container:not([display="true"]) {
   display: inline !important;
   overflow: visible !important;
   max-width: none !important;
-}
-
-mjx-container:not([display="true"]) * {
-  overflow: visible !important;
 }
 
 mjx-container[display="true"],
@@ -1078,438 +1039,4 @@ mjx-container.mjx-wide {
 .guide-toast.show {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
-}
-
-
-
-/* ==========================================================================
-   ONE-PAGE UNIT SHORT NOTES & HIGH-YIELD REVISION CHEAT SHEETS
-   ========================================================================== */
-.unit-short-notes {
-  margin: 40px 0 32px 0;
-  padding: 24px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-left: 5px solid #2563EB;
-  border-radius: 16px;
-  box-shadow: var(--shadow-sm);
-}
-
-.short-notes-header {
-  margin-bottom: 20px;
-}
-
-.sn-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border-radius: 9999px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: rgba(37, 99, 235, 0.12);
-  color: #2563EB;
-  margin-bottom: 8px;
-}
-
-.unit-short-notes h3 {
-  margin: 0 0 6px 0;
-  font-size: 1.25rem;
-  color: var(--ink);
-}
-
-.short-notes-header p {
-  margin: 0;
-  font-size: 0.88rem;
-  color: var(--ink-secondary);
-}
-
-.short-notes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 16px;
-  margin-top: 16px;
-}
-
-.sn-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px;
-}
-
-.sn-card h4 {
-  margin: 0 0 10px 0;
-  font-size: 0.92rem;
-  color: #2563EB;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  border-bottom: 1px dashed var(--border);
-  padding-bottom: 6px;
-}
-
-.sn-card ul {
-  margin: 0;
-  padding-left: 18px;
-  font-size: 0.84rem;
-  line-height: 1.55;
-  color: var(--ink);
-}
-
-.sn-card ul li {
-  margin-bottom: 6px;
-}
-
-.sn-card ul li:last-child {
-  margin-bottom: 0;
-}
-
-.sn-formula {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 8px 12px;
-  margin: 8px 0;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.82rem;
-  overflow-x: auto;
-}
-
-/* ==========================================================================
-   INTERACTIVE FLASHCARDS SECTION (ACTIVE RECALL DECK)
-   ========================================================================== */
-.flashcards-section {
-  margin: 48px 0 36px 0;
-  padding: 28px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  box-shadow: var(--shadow-sm);
-}
-
-.flashcards-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 24px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 18px;
-}
-
-.flashcards-title-group h2 {
-  margin: 6px 0 4px 0;
-  font-size: 1.4rem;
-  color: var(--ink);
-}
-
-.flashcards-title-group p {
-  margin: 0;
-  font-size: 0.88rem;
-  color: var(--ink-secondary);
-}
-
-.flashcards-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border-radius: 9999px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: rgba(16, 185, 129, 0.12);
-  color: #059669;
-}
-
-.flashcards-controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.fc-ctrl-btn {
-  padding: 8px 14px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--ink);
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.fc-ctrl-btn:hover {
-  background: var(--surface-hover, var(--border));
-  color: #2563EB;
-}
-
-.fc-filter-group {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.82rem;
-  color: var(--ink-secondary);
-}
-
-.fc-filter-group select {
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--ink);
-  font-size: 0.82rem;
-}
-
-.flashcards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 18px;
-}
-
-.flashcard-card {
-  perspective: 1200px;
-  height: 230px;
-  cursor: pointer;
-  user-select: none;
-}
-
-.flashcard-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: left;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-style: preserve-3d;
-  border-radius: 14px;
-  box-shadow: var(--shadow-sm);
-}
-
-.flashcard-card.is-flipped .flashcard-inner {
-  transform: rotateY(180deg);
-}
-
-.flashcard-front, .flashcard-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  border-radius: 14px;
-  padding: 18px;
-  border: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-  overflow-y: auto;
-}
-
-.flashcard-front {
-  background: var(--surface);
-}
-
-.flashcard-back {
-  background: var(--surface);
-  border-color: #2563EB;
-  transform: rotateY(180deg);
-}
-
-.fc-tag {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #2563EB;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.fc-q {
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1.45;
-  color: var(--ink);
-  margin: auto 0;
-}
-
-.fc-a {
-  font-size: 0.86rem;
-  line-height: 1.5;
-  color: var(--ink);
-  margin: auto 0;
-}
-
-.fc-hint {
-  font-size: 0.74rem;
-  color: var(--ink-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 4px;
-}
-
-.fc-return {
-  font-size: 0.74rem;
-  color: #2563EB;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 4px;
-}
-
-/* ==========================================================================
-   DIGITAL LOGIC TIMING WAVEFORMS & CIRCUIT STYLES (DELD & HARDWARE)
-   ========================================================================== */
-.waveform-container {
-  margin: 20px 0;
-  padding: 18px;
-  background: #FFFFFF !important;
-  color: #0F172A !important;
-  border: 1px solid #CBD5E1;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  overflow-x: auto;
-}
-
-.waveform-caption {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #475569 !important;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.waveform-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-}
-
-/* ==========================================================================
-   EXAM STRATEGY & QUICK NAVIGATION
-   ========================================================================== */
-.exam-strategy-banner {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(99, 102, 241, 0.08));
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  border-radius: 16px;
-  padding: 20px;
-  margin: 24px 0;
-}
-
-.exam-strategy-banner h3 {
-  margin: 0 0 10px 0;
-  font-size: 1.15rem;
-  color: #1E40AF;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.strategy-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 12px;
-  margin-top: 14px;
-}
-
-.strategy-pill {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 12px 14px;
-  font-size: 0.84rem;
-  color: var(--ink);
-  line-height: 1.45;
-}
-
-.strategy-pill strong {
-  color: #2563EB;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.quick-nav-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 16px 0 24px 0;
-  padding: 10px 14px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
-
-.quick-nav-bar a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: 8px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--ink);
-  text-decoration: none;
-  transition: all 0.15s ease;
-}
-
-.quick-nav-bar a:hover {
-  background: #2563EB;
-  color: #FFFFFF;
-  border-color: #2563EB;
-}
-
-.sn-col {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.sn-card p {
-  font-size: 0.84rem;
-  line-height: 1.55;
-  color: var(--ink);
-  margin: 0;
-}
-
-/* Dark-Mode Contrast Fixes for Short Notes, Strategy Banner & Flashcards */
-html[data-theme="dark"] .exam-strategy-banner {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.14), rgba(99, 102, 241, 0.14));
-  border-color: rgba(147, 197, 253, 0.28);
-}
-
-html[data-theme="dark"] .exam-strategy-banner h3,
-html[data-theme="dark"] .strategy-pill strong,
-html[data-theme="dark"] .sn-card h4,
-html[data-theme="dark"] .fc-tag,
-html[data-theme="dark"] .fc-return {
-  color: #93C5FD;
-}
-
-html[data-theme="dark"] .sn-badge {
-  background: rgba(147, 197, 253, 0.15);
-  color: #93C5FD;
-}
-
-html[data-theme="dark"] .flashcards-badge {
-  background: rgba(52, 211, 153, 0.15);
-  color: #6EE7B7;
-}
-
-html[data-theme="dark"] .unit-short-notes {
-  border-left-color: #60A5FA;
-}
-
-html[data-theme="dark"] .flashcard-back {
-  border-color: #60A5FA;
 }

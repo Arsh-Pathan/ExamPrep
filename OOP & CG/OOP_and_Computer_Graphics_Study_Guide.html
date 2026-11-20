@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>OOP &amp; Computer Graphics (PCC-202-CSE) — SPPU SE 2024 Pattern Complete Master Study Guide</title>
+<title>OOP &amp; Computer Graphics (PCC-202-COM) - SPPU 2024 Pattern Complete Study Guide</title>
 <meta name="theme-color" content="#F8F9FB">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,1318 +26,1151 @@ window.MathJax = {
 </head>
 <body data-subject="oopcg">
 
-<nav id="sidebar">
-  <h2>OOP &amp; Computer Graphics</h2>
-  <p class="sb-sub">PCC-202-CSE | SPPU 2024 Pattern</p>
+<nav id="sidebar" aria-label="Study Guide Navigation">
+  <h2>OOP &amp; CG Guide</h2>
+  <p class="sub-meta">SPPU SE Computer (2024 Pattern) &bull; PCC-202-COM</p>
   <ul>
-    <li><a href="#overview" class="nav-unit">Course Overview &amp; Strategy</a></li>
+    <li><a href="#overview" class="nav-unit">Course Overview &amp; Pattern</a></li>
     <li>
-      <a href="#unit-1" class="nav-unit">Unit I: OOP Concepts &amp; Java</a>
+      <a href="#unit-1" class="nav-unit">Unit I: OOP &amp; Control Structures</a>
       <ul class="sub-nav">
         <li><a href="#u1-paradigms">Programming Paradigms</a></li>
-        <li><a href="#u1-jvm">JVM Architecture &amp; Memory</a></li>
-        <li><a href="#u1-control">Control Structures &amp; Arrays</a></li>
-        <li><a href="#u1-short-notes">One-Page Unit I Short Notes</a></li>
+        <li><a href="#u1-principles">OOP Fundamentals &amp; Pillars</a></li>
+        <li><a href="#u1-java-arch">Java Structure, JVM &amp; Memory</a></li>
+        <li><a href="#u1-types-ops">Data Types &amp; Operators</a></li>
+        <li><a href="#u1-control">Control Statements</a></li>
+        <li><a href="#u1-casestudy">Case Study &amp; Exam Q&amp;A</a></li>
       </ul>
     </li>
     <li>
-      <a href="#unit-2" class="nav-unit">Unit II: Classes, Objects &amp; I/O</a>
+      <a href="#unit-2" class="nav-unit">Unit II: Classes, Arrays &amp; I/O</a>
       <ul class="sub-nav">
-        <li><a href="#u2-classes">Classes, Objects, Methods, this</a></li>
-        <li><a href="#u2-overloading">Constructors, Static, Overloading</a></li>
-        <li><a href="#u2-io">Java I/O Streams &amp; Scanner</a></li>
-        <li><a href="#u2-short-notes">One-Page Unit II Short Notes</a></li>
+        <li><a href="#u2-classes">Classes, Objects &amp; Methods</a></li>
+        <li><a href="#u2-constructors">Constructors, this &amp; static</a></li>
+        <li><a href="#u2-overloading">Overloading, Scope &amp; Packages</a></li>
+        <li><a href="#u2-arrays">Arrays, Varargs &amp; CLI Args</a></li>
+        <li><a href="#u2-io">Managing I/O &amp; Streams</a></li>
+        <li><a href="#u2-casestudy">Case Study &amp; Exam Q&amp;A</a></li>
       </ul>
     </li>
     <li>
-      <a href="#unit-3" class="nav-unit">Unit III: Inheritance &amp; Threads</a>
+      <a href="#unit-3" class="nav-unit">Unit III: Inheritance, Exceptions &amp; Threads</a>
       <ul class="sub-nav">
-        <li><a href="#u3-inheritance">Inheritance &amp; Dynamic Dispatch</a></li>
-        <li><a href="#u3-exceptions">Exception Handling Hierarchy</a></li>
-        <li><a href="#u3-threads">Multithreading &amp; Thread Lifecycle</a></li>
-        <li><a href="#u3-short-notes">One-Page Unit III Short Notes</a></li>
+        <li><a href="#u3-inheritance">Inheritance, super &amp; Object</a></li>
+        <li><a href="#u3-polymorphism">Polymorphism, Abstract &amp; Interface</a></li>
+        <li><a href="#u3-exceptions">Exception Handling</a></li>
+        <li><a href="#u3-threads">Multithreading &amp; Lifecycle</a></li>
+        <li><a href="#u3-casestudy">Case Study &amp; Exam Q&amp;A</a></li>
       </ul>
     </li>
     <li>
-      <a href="#unit-4" class="nav-unit">Unit IV: Graphics &amp; Clipping</a>
+      <a href="#unit-4" class="nav-unit">Unit IV: Graphics, Scan Conversion &amp; Clipping</a>
       <ul class="sub-nav">
-        <li><a href="#u4-primitives">Graphics Primitives &amp; Display</a></li>
-        <li><a href="#u4-scan">Line &amp; Circle Scan Conversion</a></li>
-        <li><a href="#u4-clipping">Windowing &amp; 2D Clipping</a></li>
-        <li><a href="#u4-short-notes">One-Page Unit IV Short Notes</a></li>
+        <li><a href="#u4-primitives">Primitives &amp; Display Devices</a></li>
+        <li><a href="#u4-lines">Line Algorithms: DDA &amp; Bresenham</a></li>
+        <li><a href="#u4-circles">Circle Algorithms &amp; Midpoint</a></li>
+        <li><a href="#u4-polygons">Polygons, Inside Test &amp; Filling</a></li>
+        <li><a href="#u4-clipping">Windowing &amp; Clipping</a></li>
+        <li><a href="#u4-casestudy">Case Studies &amp; Exam Q&amp;A</a></li>
       </ul>
     </li>
     <li>
-      <a href="#unit-5" class="nav-unit">Unit V: Transformations &amp; Proj</a>
+      <a href="#unit-5" class="nav-unit">Unit V: 2D/3D Transformations &amp; Projections</a>
       <ul class="sub-nav">
-        <li><a href="#u5-2d">2D Transformations &amp; Arbitrary Point</a></li>
-        <li><a href="#u5-3d">3D Transformations &amp; Rotation Axis</a></li>
+        <li><a href="#u5-2d">2D Transformations &amp; Pivot Rotation</a></li>
+        <li><a href="#u5-3d">3D Transformations &amp; Arbitrary Axis</a></li>
         <li><a href="#u5-projections">Parallel &amp; Perspective Projections</a></li>
-        <li><a href="#u5-curves">Bezier &amp; B-Spline Parametric Curves</a></li>
-        <li><a href="#u5-short-notes">One-Page Unit V Short Notes</a></li>
+        <li><a href="#u5-curves">Parametric Curves (Bezier &amp; B-Spline)</a></li>
+        <li><a href="#u5-casestudy">Case Studies &amp; Exam Q&amp;A</a></li>
       </ul>
     </li>
-    <li><a href="#flashcards" class="nav-unit">Active Recall Flashcards (25 Cards)</a></li>
+    <li><a href="#references" class="nav-unit">References &amp; Image Credits</a></li>
   </ul>
 </nav>
 
 <main id="main">
-<div class="main-inner">
-
-<header class="guide-header">
-  <div class="breadcrumb">SPPU S.E. Sem III (NEP 2024 Pattern) &bull; PCC-202-CSE</div>
-  <h1>Object Oriented Programming &amp; Computer Graphics Master Study Guide</h1>
-  <p class="subtitle">Complete syllabus theory, Java memory architecture, Bresenham scan conversion derivations, transformation matrices, one-page unit short notes, and active recall flashcard deck.</p>
-  
-  <div class="quick-nav-bar">
-    <a href="#overview">Overview &amp; Strategy</a>
-    <a href="#unit-1">Unit I</a>
-    <a href="#unit-2">Unit II</a>
-    <a href="#unit-3">Unit III</a>
-    <a href="#unit-4">Unit IV</a>
-    <a href="#unit-5">Unit V</a>
-    <a href="#u1-short-notes">Unit Short Notes</a>
-    <a href="#flashcards">Flashcards Deck</a>
+<header class="page-header" id="overview">
+  <h1>Object Oriented Programming &amp; Computer Graphics</h1>
+  <p>Complete Exam-Ready Study Guide for <strong>SPPU SE Computer Engineering (2024 Pattern - Revised)</strong> &bull; Course Code: <code>PCC-202-COM</code> / <code>PCC-202-CSE</code></p>
+  <div class="meta-pills">
+    <span class="pill">Credits: 03</span>
+    <span class="pill">CCE: 40 Marks</span>
+    <span class="pill">End-Semester: 60 Marks (70M Paper)</span>
+    <span class="pill">Java + Computer Graphics</span>
+    <span class="pill">5 Units + Solved Numericals + PYQs</span>
   </div>
 </header>
 
-<section id="overview" class="unit-section">
-  <div class="exam-strategy-banner">
-    <h3>SPPU Exam Scoring Blueprint &amp; Strategy (PCC-202-CSE)</h3>
-    <p>OOP &amp; CG is a hybrid subject combining Java object-oriented system design (Units I-III) with computer graphics mathematical algorithms (Units IV-V). Maximum marks require: <strong>Complete Java Class/Method code</strong> for Units I-III, and <strong>Step-by-step Mathematical Derivations &amp; Matrix Multiplication</strong> for Units IV-V.</p>
-    <div class="strategy-grid">
-      <div class="strategy-pill">
-        <strong>Question Paper Split</strong>
-        Continuous Assessment (CCE): 40 Marks | End-Sem University Exam: 60 Marks.
-        Units I-III test Core Java, Exception Handling &amp; Multithreading. Units IV-V test Line/Circle algorithms, Clipping, and 2D/3D Transformations.
-      </div>
-      <div class="strategy-pill">
-        <strong>Algorithm Derivations</strong>
-        In Unit IV, always derive decision parameters: $P_k = 2\Delta y - \Delta x$ for Bresenham line and $P_0 = 1 - R$ for midpoint circle. Evaluators award 50% of algorithm marks for derivations!
-      </div>
-      <div class="strategy-pill">
-        <strong>Matrix Forms</strong>
-        In Unit V, always use $3 \times 3$ homogeneous coordinate matrices for 2D and $4 \times 4$ for 3D. Show matrix multiplication step-by-step.
-      </div>
+<div class="exam-tip">
+  <span class="box-title">How to Use This Guide for 90%+ in SPPU Endsem</span>
+  <p>In the SPPU 2024 Pattern paper, Questions 1&ndash;2 cover <strong>Unit I</strong>, Questions 3&ndash;4 cover <strong>Unit II</strong>, Questions 5&ndash;6 cover <strong>Unit III</strong>, Questions 7&ndash;8 cover <strong>Unit IV</strong>, and Questions 9&ndash;10 cover <strong>Unit V</strong>. Every unit has <strong>Exam Definitions</strong> (write these verbatim for full marks), <strong>Simple-Words Intuition</strong>, runnable <strong>Java / CG code</strong>, <strong>Step-by-step Solved Numericals</strong>, and <strong>Important SPPU Exam Q&amp;A</strong>.</p>
+</div>
+
+<section id="unit-1">
+  <h2 class="unit-title">Unit I: Introduction to OOP Concepts and Control Structure</h2>
+
+  <h3 id="u1-paradigms">1.1 Programming Paradigms &amp; Need for OOP</h3>
+  <div class="concept-box">
+    <span class="box-title">Programming Paradigm</span>
+    <p><strong>Exam Definition:</strong> A programming paradigm is a fundamental style or approach to structuring and organizing computer programs, defining how problems are modeled and solved in a programming language.</p>
+    <p><strong>In Simple Words:</strong> Think of it like cooking styles. Just as Indian, Italian, and Chinese cuisines use different techniques to make a meal, different paradigms give us different ways to organize code.</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Paradigm</th>
+        <th>Core Idea</th>
+        <th>How It Works</th>
+        <th>Examples</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Procedural</strong></td>
+        <td>Step-by-step instructions (procedures/functions)</td>
+        <td>Data is global/shared and functions operate on it sequentially. Hard to scale for huge apps.</td>
+        <td>C, Pascal, Fortran</td>
+      </tr>
+      <tr>
+        <td><strong>Object-Oriented (OOP)</strong></td>
+        <td>Objects bundling data + methods</td>
+        <td>Models real-world entities. Data is protected inside objects and accessed via methods.</td>
+        <td>Java, C++, Python</td>
+      </tr>
+      <tr>
+        <td><strong>Functional</strong></td>
+        <td>Pure mathematical functions</td>
+        <td>Avoids changing state or mutable data; functions are first-class values.</td>
+        <td>Haskell, Lisp, Scala</td>
+      </tr>
+      <tr>
+        <td><strong>Logic &amp; Rule-Based</strong></td>
+        <td>Facts and rules</td>
+        <td>You declare <em>what</em> is true (facts + rules), and the engine deduces answers.</td>
+        <td>Prolog, Datalog</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Need for Object-Oriented Programming:</strong> In large procedural programs (like a banking system with millions of lines), global data can be accidentally modified by any function, leading to bugs and tight coupling. OOP solves this by binding data and the functions that operate on it into secure, reusable units called <strong>objects</strong>.</p>
+
+  <h3 id="u1-principles">1.2 Fundamentals of OOP &amp; Java as an OOP Language</h3>
+  <ul>
+    <li><strong>Class:</strong> A blueprint or template that defines data members (fields) and methods. No memory is allocated for instances until an object is created.</li>
+    <li><strong>Object:</strong> A runtime instance of a class that has state (data), behavior (methods), and identity (memory address).</li>
+    <li><strong>Data Members &amp; Methods:</strong> Data members (fields) store an object's attributes (e.g., <code>balance</code>), while methods define its behavior (e.g., <code>deposit()</code>).</li>
+    <li><strong>Messages:</strong> Objects communicate by sending messages to one another &mdash; i.e., calling a method on an object (e.g., <code>acc.deposit(500)</code>).</li>
+    <li><strong>Namespaces:</strong> Named scopes (implemented via <code>package</code> in Java) that prevent naming conflicts between classes with the same name.</li>
+  </ul>
+
+  <div class="grid-2">
+    <div class="concept-box">
+      <span class="box-title">1. Data Encapsulation &amp; Information Hiding</span>
+      <p><strong>Exam Definition:</strong> Encapsulation is the mechanism of wrapping data (variables) and code acting on the data (methods) together as a single unit, restricting direct access via access modifiers (<code>private</code>).</p>
+      <p><strong>In Simple Words:</strong> Like a medicine capsule &mdash; the powder (data) is sealed inside, and you only interact with the outer shell (public methods).</p>
+    </div>
+    <div class="concept-box">
+      <span class="box-title">2. Data Abstraction</span>
+      <p><strong>Exam Definition:</strong> Abstraction is the process of hiding complex internal implementation details and showing only the essential features of an object to the user.</p>
+      <p><strong>In Simple Words:</strong> When you drive a car, you use the steering wheel and pedals without needing to know how fuel injection works inside the engine.</p>
+    </div>
+    <div class="concept-box">
+      <span class="box-title">3. Inheritance</span>
+      <p><strong>Exam Definition:</strong> Inheritance is the mechanism by which one class (subclass) acquires the properties and behaviors of another class (superclass), enabling hierarchical classification and code reuse.</p>
+      <p><strong>In Simple Words:</strong> A child inherits traits from a parent and can also have its own unique skills.</p>
+    </div>
+    <div class="concept-box">
+      <span class="box-title">4. Polymorphism</span>
+      <p><strong>Exam Definition:</strong> Polymorphism (&ldquo;many forms&rdquo;) allows a single interface, method name, or reference variable to exhibit different behaviors depending on the object or arguments.</p>
+      <p><strong>In Simple Words:</strong> A single button &ldquo;Play&rdquo; plays a song in a music app, a video in a player, or a game in a console.</p>
     </div>
   </div>
-</section>
 
-<section id="unit-1" class="unit-section">
-  <div class="unit-badge">Unit I &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit I: Introduction to OOP Concepts and Control Structures</h2>
-  
-  <div class="topic-block" id="u1-paradigms">
-    <h3>1.1 Four Programming Paradigms &amp; Four OOP Pillars</h3>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Programming Paradigm</th><th>Core Philosophy</th><th>Key Languages</th><th>Strengths &amp; Limitations</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Procedural</strong></td><td>Focuses on step-by-step procedures/functions operating on passive data.</td><td>C, Pascal, FORTRAN</td><td>Simple, fast execution; poor data hiding and hard to maintain at scale.</td></tr>
-          <tr><td><strong>Object-Oriented (OOP)</strong></td><td>Bundles data and methods into autonomous objects mimicking real-world entities.</td><td>Java, C++, Python</td><td>Encapsulation, code reusability via inheritance; slight runtime abstraction overhead.</td></tr>
-          <tr><td><strong>Functional</strong></td><td>Treats computation as evaluation of pure mathematical functions without mutable state.</td><td>Haskell, Scala, Lisp</td><td>Eliminates side-effects, ideal for concurrent parallelism; steeper learning curve.</td></tr>
-          <tr><td><strong>Logic &amp; Rule-Based</strong></td><td>Expresses logic in terms of relations, facts, and inference deduction rules.</td><td>Prolog</td><td>Excellent for automated theorem proving and expert systems; inefficient for general tasks.</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <p><strong>Benefits of OOP:</strong> Modularity, Code Reusability (via inheritance), Data Security (via encapsulation), Easy Maintenance, and Scalability for large software systems.</p>
+  <p><strong>Java as an OOP Language:</strong> Java is platform-independent (&ldquo;Write Once, Run Anywhere&rdquo;), strongly typed, garbage-collected, secure (no raw pointers), and enforces OOP by requiring every executable unit to live inside a class.</p>
 
-    <h4>The Four Pillars of Object-Oriented Programming</h4>
+  <h3 id="u1-java-arch">1.3 Overview of Java Language, JVM &amp; Memory Concepts</h3>
+  <p>A standard Java source file follows a clean 5-part structure:</p>
+  <ol>
+    <li><strong>Documentation Section:</strong> Comments (<code>/** ... */</code>) describing author, date, and purpose.</li>
+    <li><strong>Package Statement:</strong> Optional first code line declaring the namespace (e.g., <code>package com.sppu.oop;</code>).</li>
+    <li><strong>Import Statements:</strong> Brings in classes from Java Class Libraries (e.g., <code>import java.util.Scanner;</code>).</li>
+    <li><strong>Class Definition:</strong> Declares the class using <code>class ClassName { ... }</code>.</li>
+    <li><strong>Main Method Class:</strong> Entry point <code>public static void main(String[] args)</code> where JVM starts execution.</li>
+  </ol>
+
+  <div class="concept-box">
+    <span class="box-title">JVM (Java Virtual Machine) &amp; Platform Independence</span>
+    <p><strong>Exam Definition:</strong> The JVM is an abstract computing machine that loads, verifies, and executes Java bytecode (<code>.class</code> files), translating it into native machine instructions for the host OS.</p>
+    <p><strong>In Simple Words:</strong> Java compiles your <code>.java</code> code into a universal language called <strong>Bytecode</strong> (<code>.class</code>). Every OS (Windows, Linux, macOS) has its own JVM translator, so the exact same <code>.class</code> file runs everywhere.</p>
+  </div>
+
+  <figure class="figure-box">
+    <img src="assets/jvm_architecture.png" alt="JVM Architecture showing Class Loader, Runtime Data Areas, and Execution Engine">
+    <figcaption>Figure 1.1: Java Virtual Machine (JVM) Architecture &mdash; Class Loader Subsystem, Runtime Data Areas (Method Area, Heap, Stack, PC Registers), and Execution Engine.</figcaption>
+  </figure>
+
+  <p><strong>Typical Java Development Environment &amp; Memory Concepts:</strong></p>
+  <ul>
+    <li><strong>Compile &amp; Run:</strong> Write <code>Hello.java</code> &rarr; <code>javac Hello.java</code> produces <code>Hello.class</code> (Bytecode) &rarr; <code>java Hello</code> launches the JVM.</li>
+    <li><strong>Memory Areas:</strong>
+      <ul>
+        <li><strong>Stack Memory:</strong> Stores local primitive variables and method call frames (LIFO).</li>
+        <li><strong>Heap Memory:</strong> Stores all objects created with <code>new</code> and their instance variables; managed by the Garbage Collector.</li>
+        <li><strong>Method Area:</strong> Stores class metadata, static variables, and bytecode.</li>
+      </ul>
+    </li>
+    <li><strong>Java Class Libraries (API):</strong> Pre-built packages like <code>java.lang</code> (auto-imported: <code>String</code>, <code>Math</code>, <code>System</code>), <code>java.util</code> (<code>Scanner</code>, <code>ArrayList</code>), and <code>java.io</code> (streams/files).</li>
+  </ul>
+
+  <h3 id="u1-types-ops">1.4 Data Types, Primitive vs Reference Types &amp; Operators</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Primitive Types (8 types)</th>
+        <th>Reference Types</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>What it stores</strong></td>
+        <td>Actual value directly in memory</td>
+        <td>Memory address (reference) pointing to an object on Heap</td>
+      </tr>
+      <tr>
+        <td><strong>Examples</strong></td>
+        <td><code>byte</code> (1B), <code>short</code> (2B), <code>int</code> (4B), <code>long</code> (8B), <code>float</code> (4B), <code>double</code> (8B), <code>char</code> (2B), <code>boolean</code> (1 bit)</td>
+        <td>Classes (<code>String</code>, <code>Scanner</code>), Arrays (<code>int[]</code>), Interfaces</td>
+      </tr>
+      <tr>
+        <td><strong>Default value</strong></td>
+        <td><code>0</code>, <code>0.0</code>, <code>false</code>, <code>'\u0000'</code> (for fields)</td>
+        <td><code>null</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Floating Point Numbers:</strong> Java uses IEEE 754 standard: <code>float</code> (32-bit single precision, suffix <code>f</code> like <code>3.14f</code>) and <code>double</code> (64-bit double precision, default for decimals).<br>
+  <strong>Operators &amp; Expressions:</strong> Arithmetic (<code>+ - * / %</code>), Relational (<code>== != &lt; &gt; &lt;= &gt;=</code>), Logical (<code>&amp;&amp; || !</code>), Bitwise (<code>&amp; | ^ ~ &lt;&lt; &gt;&gt;</code>), Assignment (<code>= += -=</code>), Unary (<code>++ --</code>), and Ternary (<code>cond ? a : b</code>).</p>
+
+  <h3 id="u1-control">1.5 Control Statements in Java</h3>
+  <p>Java provides <strong>Selection statements</strong> (<code>if</code>, <code>if-else</code>, <code>nested if-else</code>, <code>switch</code>), <strong>Iteration statements</strong> (<code>while</code>, <code>do-while</code>, <code>for</code>, <code>for-each</code>), and <strong>Jump statements</strong> (<code>break</code> exits a loop/switch; <code>continue</code> skips the current iteration).</p>
+
+  <pre><code>/**
+ * Documentation Section: Control Statements Demo
+ * Demonstrates if-else, nested if-else, for, while, do-while, for-each, break, continue
+ */
+package unit1;
+import java.util.Scanner;
+
+public class ControlDemo {
+    public static void main(String[] args) {
+        int marks = 78;
+
+        // 1. Nested if-else
+        if (marks &gt;= 75) {
+            System.out.println("Grade: Distinction");
+        } else if (marks &gt;= 60) {
+            System.out.println("Grade: First Class");
+        } else {
+            System.out.println("Grade: Pass/Fail");
+        }
+
+        // 2. for loop with continue and break
+        System.out.print("Odd numbers up to 7: ");
+        for (int i = 1; i &lt;= 10; i++) {
+            if (i % 2 == 0) continue; // skip even
+            if (i &gt; 7) break;         // stop after 7
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        // 3. while &amp; do-while
+        int count = 3;
+        while (count &gt; 0) {
+            System.out.print(count + " ");
+            count--;
+        }
+        int x = 1;
+        do {
+            System.out.println("\nDo-while executes at least once: x = " + x);
+            x++;
+        } while (x &lt;= 1);
+
+        // 4. for-each loop
+        String[] langs = {"Java", "C++", "Python"};
+        for (String lang : langs) {
+            System.out.println("Language: " + lang);
+        }
+    }
+}</code></pre>
+
+  <h3 id="u1-casestudy">1.6 Case Study &amp; Important SPPU Exam Questions</h3>
+  <div class="card">
+    <h4>Case Study: Java vs C++ vs Python (OOP Features)</h4>
+    <table>
+      <thead>
+        <tr><th>Feature</th><th>Java</th><th>C++</th><th>Python</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Paradigm</strong></td><td>Purely class-based OOP</td><td>Multi-paradigm (Procedural + OOP)</td><td>Multi-paradigm (OOP + Functional)</td></tr>
+        <tr><td><strong>Platform Independence</strong></td><td>Bytecode + JVM (WORA)</td><td>Compiles to OS-specific native binary</td><td>Interpreted bytecode (PVM)</td></tr>
+        <tr><td><strong>Memory Management</strong></td><td>Automatic Garbage Collection</td><td>Manual (<code>new</code> / <code>delete</code>)</td><td>Automatic Garbage Collection</td></tr>
+        <tr><td><strong>Multiple Inheritance</strong></td><td>Via Interfaces only</td><td>Supported directly with classes</td><td>Supported directly with classes</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-q">Q1. What is JVM? Explain how Java achieves platform independence using JVM and Bytecode. <span class="marks-badge">SPPU Oct 2025 &bull; 5M</span></div>
     <ul>
-      <li><strong>Data Encapsulation:</strong> Binding data members and methods that manipulate them into a single unit (class), restricting direct unauthorized access using <code>private</code> access specifiers.</li>
-      <li><strong>Data Abstraction:</strong> Exposing only essential interface features while hiding internal operational complexity (achieved via Abstract Classes and Interfaces).</li>
-      <li><strong>Inheritance:</strong> Mechanism where a subclass inherits state and behaviors from a superclass, fostering code reuse and taxonomic class hierarchies.</li>
-      <li><strong>Polymorphism:</strong> The ability of a message or method call to be processed in different ways based on the runtime object type (Method Overloading and Method Overriding).</li>
+      <li><strong>Definition (1M):</strong> JVM is an abstract machine that provides a runtime environment to execute Java bytecode.</li>
+      <li><strong>Compilation (1M):</strong> <code>javac</code> compiles <code>.java</code> source code into OS-neutral <strong>Bytecode</strong> (<code>.class</code>), not machine code.</li>
+      <li><strong>Execution (2M):</strong> Each OS has its own JVM implementation (Windows JVM, Linux JVM). The Class Loader loads bytecode, Bytecode Verifier checks safety, and JIT/Interpreter converts it into native machine instructions.</li>
+      <li><strong>Conclusion (1M):</strong> Because bytecode is identical across platforms, Java achieves <em>Write Once, Run Anywhere (WORA)</em>.</li>
     </ul>
   </div>
 
-  <div class="topic-block" id="u1-jvm">
-    <h3>1.2 Java Architecture &amp; JVM Internal Subsystems</h3>
-    <p>Java achieves "Write Once, Run Anywhere" (WORA) by compiling source code (<code>.java</code>) into architecture-neutral bytecode (<code>.class</code>), which is executed by the <strong>Java Virtual Machine (JVM)</strong>.</p>
-    
-    <div class="figure-box"><svg viewBox="0 0 760 250" class="svg-diagram" xmlns="http://www.w3.org/2000/svg" id="oop-svg-1">
-  <rect width="760" height="250" fill="#FFFFFF" rx="8"/>
-  <style>#oop-svg-1 .jvm-box { fill: #F8FAFC; stroke: #0F172A; stroke-width: 2; rx: 6; }#oop-svg-1 .mem-box { fill: #EFF6FF; stroke: #2563EB; stroke-width: 1.8; rx: 4; }#oop-svg-1 .exec-box { fill: #FEF3C7; stroke: #D97706; stroke-width: 1.8; rx: 4; }#oop-svg-1 .wire { stroke: #0F172A; stroke-width: 1.6; fill: none; marker-end: url(#arr-bl); }#oop-svg-1 .txt-t { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #1E293B; }#oop-svg-1 .txt-c { font-family: monospace; font-size: 11px; fill: #1E293B; text-anchor: middle; }#oop-svg-1 .txt-sub { font-family: sans-serif; font-size: 10px; fill: #64748B; text-anchor: middle; }
-  </style>
-  <defs>
-    <marker id="arr-bl" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 1 L 8 5 L 0 9 z" fill="#0F172A"/></marker>
-  </defs>
-  <rect x="20" y="20" width="720" height="210" class="jvm-box"/>
-  <text x="40" y="45" class="txt-t">Java Virtual Machine (JVM) Architectural Subsystems</text>
-  
-  <!-- Classloader Subsystem -->
-  <g transform="translate(40, 60)">
-    <rect x="0" y="0" width="120" height="150" class="mem-box" fill="#F1F5F9" stroke="#475569"/>
-    <text x="60" y="30" class="txt-c" font-weight="bold">Classloader</text>
-    <text x="60" y="50" class="txt-sub">Loading</text>
-    <text x="60" y="70" class="txt-sub">Linking (Verify,</text>
-    <text x="60" y="85" class="txt-sub">Prepare, Resolve)</text>
-    <text x="60" y="110" class="txt-sub">Initialization</text>
-  </g>
-  <path d="M 160 135 L 200 135" class="wire"/>
-  
-  <!-- Runtime Data Areas (JVM Memory) -->
-  <g transform="translate(200, 60)">
-    <rect x="0" y="0" width="310" height="150" class="mem-box"/>
-    <text x="155" y="25" class="txt-c" font-weight="bold" fill="#2563EB">JVM Runtime Memory Data Areas</text>
-    
-    <rect x="15" y="40" width="130" height="42" fill="#DBEAFE" stroke="#2563EB" rx="3"/>
-    <text x="80" y="58" class="txt-c">Method Area</text>
-    <text x="80" y="72" class="txt-sub">Class Code, Statics</text>
-    
-    <rect x="160" y="40" width="135" height="42" fill="#DBEAFE" stroke="#2563EB" rx="3"/>
-    <text x="227" y="58" class="txt-c">Heap Memory</text>
-    <text x="227" y="72" class="txt-sub">Objects, Instances</text>
-    
-    <rect x="15" y="95" width="85" height="42" fill="#E0E7FF" stroke="#4F46E5" rx="3"/>
-    <text x="57" y="113" class="txt-c">JVM Stack</text>
-    <text x="57" y="127" class="txt-sub">Frames, Local Vars</text>
-    
-    <rect x="110" y="95" width="85" height="42" fill="#E0E7FF" stroke="#4F46E5" rx="3"/>
-    <text x="152" y="113" class="txt-c">PC Registers</text>
-    <text x="152" y="127" class="txt-sub">Instruction Ptr</text>
-    
-    <rect x="205" y="95" width="90" height="42" fill="#E0E7FF" stroke="#4F46E5" rx="3"/>
-    <text x="250" y="113" class="txt-c">Native Stack</text>
-    <text x="250" y="127" class="txt-sub">C/C++ Methods</text>
-  </g>
-  <path d="M 510 135 L 545 135" class="wire"/>
-  
-  <!-- Execution Engine -->
-  <g transform="translate(545, 60)">
-    <rect x="0" y="0" width="175" height="150" class="exec-box"/>
-    <text x="87" y="25" class="txt-c" font-weight="bold" fill="#D97706">Execution Engine</text>
-    
-    <rect x="15" y="40" width="145" height="28" fill="#FFFFFF" stroke="#D97706" rx="3"/>
-    <text x="87" y="58" class="txt-c">Interpreter</text>
-    
-    <rect x="15" y="75" width="145" height="28" fill="#FFFFFF" stroke="#D97706" rx="3"/>
-    <text x="87" y="93" class="txt-c">JIT Compiler</text>
-    
-    <rect x="15" y="110" width="145" height="28" fill="#FFFFFF" stroke="#D97706" rx="3"/>
-    <text x="87" y="128" class="txt-c">Garbage Collector</text>
-  </g>
-</svg><div class="figure-caption">Figure 1.1: Java Virtual Machine (JVM) Architecture: Classloader, Memory Model, and Execution Engine</div></div>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Memory Area</th><th>Allocation Scope</th><th>Contents Stored</th><th>Garbage Collected?</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Method Area</strong></td><td>Shared across all threads</td><td>Class-level metadata, static variables, bytecode instructions, constant pool.</td><td>Rarely (Class unloading)</td></tr>
-          <tr><td><strong>Heap Memory</strong></td><td>Shared across all threads</td><td>All dynamically created class instances and array objects (<code>new</code>).</td><td><strong>Yes (Primary GC domain)</strong></td></tr>
-          <tr><td><strong>JVM Stack</strong></td><td>Per-thread dedicated memory</td><td>Stack frames per method call: local variables, operand stack, return references.</td><td>No (Freed when method returns)</td></tr>
-          <tr><td><strong>PC Registers</strong></td><td>Per-thread dedicated</td><td>Address of JVM instruction currently being executed by thread.</td><td>No</td></tr>
-          <tr><td><strong>Native Method Stack</strong></td><td>Per-thread dedicated</td><td>State for native code execution (C/C++ JNI functions).</td><td>No</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="qa-block">
+    <div class="qa-q">Q2. What are programming paradigms? Describe the four main programming paradigms with examples. <span class="marks-badge">SPPU Oct 2025 &bull; 4M</span></div>
+    <p>Define paradigm (1M), then briefly explain with 1 example each (3M): (1) <strong>Procedural</strong> (C &mdash; functions &amp; sequential steps), (2) <strong>Object-Oriented</strong> (Java &mdash; classes &amp; objects), (3) <strong>Functional</strong> (Haskell &mdash; pure functions, no mutable state), (4) <strong>Logic &amp; Rule-Based</strong> (Prolog &mdash; facts &amp; inference rules).</p>
   </div>
-
-  <div class="topic-block" id="u1-control">
-    <h3>1.3 Control Statements &amp; Memory Concepts</h3>
-    <p>Primitive types (<code>byte, short, int, long, float, double, char, boolean</code>) store raw values directly on the stack. Reference types (Classes, Interfaces, Arrays) store memory pointers on the stack pointing to object memory allocated in Heap.</p>
-  </div>
-
-  <section class="unit-short-notes" id="u1-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit I Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Paradigms, JVM memory areas, and primitive vs reference types.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>JVM Memory Quick Anchors</h4>
-          <ul>
-            <li><strong>Heap:</strong> Objects, instances, arrays (shared, GC-managed)</li>
-            <li><strong>Stack:</strong> Method frames, local variables, primitive values (per-thread)</li>
-            <li><strong>Method Area:</strong> Class definitions, static fields, bytecode (shared)</li>
-            <li><strong>PC Register:</strong> Current bytecode execution pointer (per-thread)</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Four OOP Pillars Summary</h4>
-          <ul>
-            <li>Encapsulation: Data hiding via <code>private</code> + getter/setter</li>
-            <li>Abstraction: Hiding implementation via <code>abstract</code> &amp; <code>interface</code></li>
-            <li>Inheritance: Code reusability via <code>extends</code></li>
-            <li>Polymorphism: Overloading (compile-time) &amp; Overriding (runtime)</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Primitive vs Reference Types</h4>
-          <ul>
-            <li>Primitives: 8 types, fixed memory, stored directly by value on stack</li>
-            <li>Reference: Objects, arrays, strings; reference pointer on stack, object in heap</li>
-            <li>Default values: <code>int=0, double=0.0, boolean=false, Object=null</code></li>
-            <li>Java is strictly <strong>pass-by-value</strong> (references are passed by value!)</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Compilation Pipeline</h4>
-          <ul>
-            <li>Source Code: <code>MyClass.java</code></li>
-            <li>Bytecode: <code>javac MyClass.java &rarr; MyClass.class</code></li>
-            <li>JVM: <code>java MyClass</code> (JIT compiles hot spots to native x86 machine code)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 </section>
 
-<section id="unit-2" class="unit-section">
-  <div class="unit-badge">Unit II &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit II: Classes, Objects, Arrays &amp; I/O Streams</h2>
-  
-  <div class="topic-block" id="u2-classes">
-    <h3>2.1 Defining Classes, Instantiation, Methods &amp; 'this' Keyword</h3>
-    <p>A class is a blueprint from which individual objects are instantiated using the <code>new</code> operator.</p>
+<section id="unit-2">
+  <h2 class="unit-title">Unit II: Introduction to Classes and Objects and Arrays</h2>
 
-<pre><code class="language-java">public class BankAccount {
-    private String accountNumber;
-    private double balance; // Encapsulated data member
+  <h3 id="u2-classes">2.1 Defining a Class, Objects, Argument Passing &amp; Getters/Setters</h3>
+  <div class="concept-box">
+    <span class="box-title">Class &amp; Object</span>
+    <p><strong>Exam Definition:</strong> A <strong>class</strong> is a user-defined blueprint or prototype from which objects are created, encapsulating fields and methods. An <strong>object</strong> is a concrete instance of a class allocated on the heap using the <code>new</code> operator.</p>
+    <p><strong>In Simple Words:</strong> A class is like an architect's house plan; an object is an actual house built from that plan. You can build 10 houses from 1 plan.</p>
+  </div>
 
-    // Constructor with 'this' resolving variable shadowing
-    public BankAccount(String accountNumber, double balance) {
-        this.accountNumber = accountNumber;
+  <ul>
+    <li><strong>Field &amp; Method Declaration:</strong> Fields are variables inside a class; methods define actions (with return type, name, and parameter list).</li>
+    <li><strong>Instantiating &amp; Accessing Members:</strong> <code>Student s1 = new Student();</code> allocates memory on the heap. Access members with the dot operator: <code>s1.setName("Asha");</code>.</li>
+    <li><strong>Assigning Object Reference Variables:</strong> <code>Student s2 = s1;</code> does <strong>not</strong> copy the object; both <code>s1</code> and <code>s2</code> point to the exact same object in memory.</li>
+    <li><strong>Argument Passing &amp; Returning Objects:</strong> Java passes everything <em>by value</em>. For primitives, a copy of the value is passed. For objects, a copy of the <em>reference</em> is passed, so modifying the object's fields inside the method affects the original object. Methods can also return an object reference (e.g., <code>Box doubleSize() { return new Box(w*2); }</code>).</li>
+    <li><strong>Getter (Accessor) &amp; Setter (Mutator) Methods:</strong> Used to safely read and update <code>private</code> fields while enforcing validation (encapsulation).</li>
+  </ul>
+
+  <h3 id="u2-constructors">2.2 Constructors, <code>this</code> Keyword &amp; <code>static</code> Members</h3>
+  <div class="concept-box">
+    <span class="box-title">Constructor</span>
+    <p><strong>Exam Definition:</strong> A constructor is a special member method having the exact same name as the class and no return type, automatically invoked when an object is created to initialize its state.</p>
+    <p><strong>In Simple Words:</strong> It is the automatic setup routine that runs the moment a new object is born.</p>
+  </div>
+  <ul>
+    <li><strong>Default Constructor:</strong> Takes no parameters. If you write none, Java provides one automatically.</li>
+    <li><strong>Parameterized Constructor:</strong> Accepts arguments to initialize fields with custom values at creation time.</li>
+    <li><strong><code>this</code> Keyword:</strong> Refers to the current invoking object. Resolves naming conflicts between instance fields and parameters (<code>this.id = id;</code>) and can call another constructor via <code>this(...)</code>.</li>
+    <li><strong><code>static</code> Variables &amp; Methods:</strong> Belong to the <em>class</em> rather than any individual object. Shared across all instances (e.g., <code>static int count = 0;</code>). Static methods can be called via <code>ClassName.method()</code> without creating an object, and cannot directly access non-static instance members.</li>
+  </ul>
+
+  <h3 id="u2-overloading">2.3 Method Overloading, Scope &amp; Java API Packages</h3>
+  <div class="concept-box">
+    <span class="box-title">Method Overloading (Compile-Time Polymorphism)</span>
+    <p><strong>Exam Definition:</strong> Method overloading is a feature in which a class has multiple methods with the same name but different parameter lists (number, type, or order of parameters).</p>
+    <p><strong>In Simple Words:</strong> Like a Swiss Army knife &mdash; one tool name (<code>area</code>) handles both a square (1 side) and a rectangle (length &amp; breadth).</p>
+  </div>
+  <p><strong>Scope of Declaration:</strong> Block scope (variables inside <code>{ }</code>), Method/Local scope (parameters and local variables), and Class scope (fields accessible throughout the class).<br>
+  <strong>Java API Packages:</strong> Built-in folders of classes such as <code>java.util</code>, <code>java.io</code>, <code>java.math</code>. Imported using <code>import java.util.Scanner;</code> or <code>import java.util.*;</code>.</p>
+
+  <pre><code>// Complete Demo: Class, Getters/Setters, Constructors, this, static, Overloading, Object Passing
+package unit2;
+
+class Box {
+    private double width, height;
+    private static int boxCount = 0; // static field shared by all Box objects
+
+    // Default constructor
+    Box() {
+        this(1.0, 1.0); // calls parameterized constructor using 'this'
+    }
+
+    // Parameterized constructor
+    Box(double width, double height) {
+        this.width = width;
+        this.height = height;
+        boxCount++;
+    }
+
+    // Getters &amp; Setters (Accessors &amp; Mutators)
+    public double getWidth() { return width; }
+    public void setWidth(double width) {
+        if (width &gt; 0) this.width = width;
+    }
+
+    // Method Overloading: area(side) vs area(w, h)
+    public double area(double side) { return side * side; }
+    public double area(double w, double h) { return w * h; }
+
+    // Object as parameter &amp; returning an object
+    public Box combine(Box other) {
+        return new Box(this.width + other.width, this.height + other.height);
+    }
+
+    public static int getBoxCount() { return boxCount; }
+}
+
+public class ClassDemo {
+    public static void main(String[] args) {
+        Box b1 = new Box(4, 5);
+        Box b2 = new Box();
+        Box b3 = b1.combine(b2);
+        System.out.println("Square area: " + b1.area(5));
+        System.out.println("Rect area: " + b1.area(4, 5));
+        System.out.println("Combined width: " + b3.getWidth());
+        System.out.println("Total boxes created: " + Box.getBoxCount());
+    }
+}</code></pre>
+
+  <h3 id="u2-arrays">2.4 Arrays, Multidimensional Arrays, Varargs &amp; Command-Line Arguments</h3>
+  <ul>
+    <li><strong>1-D Array:</strong> <code>int[] arr = new int[5];</code> or <code>int[] arr = {10, 20, 30};</code>. Arrays are objects in Java with a <code>.length</code> property.</li>
+    <li><strong>Passing Arrays to Methods:</strong> Passes the array reference, so the method can read or modify the original array elements.</li>
+    <li><strong>2-D / Multidimensional Arrays:</strong> <code>int[][] mat = new int[2][3];</code> (an array of arrays; rows can even have different lengths, called <em>jagged arrays</em>).</li>
+    <li><strong>Variable-Length Argument Lists (Varargs):</strong> <code>int sum(int... nums)</code> lets a method accept 0 or more arguments of the same type, treated internally as an array.</li>
+    <li><strong>Command-Line Arguments:</strong> Strings passed when running <code>java MyApp arg1 arg2</code> are received in <code>main(String[] args)</code> as <code>args[0]</code>, <code>args[1]</code>.</li>
+  </ul>
+
+  <pre><code>public class ArrayAndVarargsDemo {
+    // Passing 1D array to method
+    static int arraySum(int[] a) {
+        int s = 0;
+        for (int val : a) s += val;
+        return s;
+    }
+
+    // Varargs method
+    static double average(double... values) {
+        if (values.length == 0) return 0;
+        double total = 0;
+        for (double v : values) total += v;
+        return total / values.length;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {10, 20, 30};
+        System.out.println("Array sum: " + arraySum(nums));
+
+        int[][] matrix = {{1, 2}, {3, 4}};
+        System.out.println("Matrix[1][0]: " + matrix[1][0]);
+
+        System.out.println("Varargs avg: " + average(10, 20, 30, 40));
+
+        if (args.length &gt; 0) {
+            System.out.println("First CLI arg: " + args[0]);
+        }
+    }
+}</code></pre>
+
+  <h3 id="u2-io">2.5 Managing I/O: Streams, Console Input/Output &amp; <code>PrintWriter</code></h3>
+  <p>Java performs I/O through <strong>Streams</strong> (a continuous flow of data from source to destination):</p>
+  <table>
+    <thead>
+      <tr><th>Stream Type</th><th>Unit of Data</th><th>Base Classes</th><th>Typical Use</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Byte Streams</strong></td><td>8-bit bytes</td><td><code>InputStream</code>, <code>OutputStream</code></td><td>Binary files (images, audio, PDFs)</td></tr>
+      <tr><td><strong>Character Streams</strong></td><td>16-bit Unicode chars</td><td><code>Reader</code>, <code>Writer</code></td><td>Text files, console I/O (<code>BufferedReader</code>, <code>PrintWriter</code>)</td></tr>
+    </tbody>
+  </table>
+  <ul>
+    <li><strong>Predefined Streams:</strong> <code>System.in</code> (standard input, keyboard), <code>System.out</code> (standard output, console), <code>System.err</code> (standard error).</li>
+    <li><strong>Reading Console Input:</strong> Either <code>Scanner sc = new Scanner(System.in);</code> (easy token parsing) or <code>BufferedReader br = new BufferedReader(new InputStreamReader(System.in));</code> (fast line reading).</li>
+    <li><strong><code>PrintWriter</code> Class:</strong> Character-based output class recommended for real-world internationalization: <code>PrintWriter pw = new PrintWriter(System.out, true); pw.println("Hello!");</code>.</li>
+  </ul>
+
+  <h3 id="u2-casestudy">2.6 Case Study &amp; Important SPPU Exam Questions</h3>
+  <pre><code>// Case Study: Interactive Banking System using Class, Objects &amp; Array of Objects
+import java.util.Scanner;
+
+class BankAccount {
+    private int accNo;
+    private String holder;
+    private double balance;
+
+    BankAccount(int accNo, String holder, double balance) {
+        this.accNo = accNo;
+        this.holder = holder;
         this.balance = balance;
     }
-
-    public void deposit(double amount) {
-        if (amount &gt; 0) this.balance += amount;
+    public void deposit(double amt) { if (amt &gt; 0) balance += amt; }
+    public void display() {
+        System.out.println(accNo + " | " + holder + " | Rs. " + balance);
     }
+}
 
-    public double getBalance() { return balance; }
-}</code></pre>
-  </div>
-
-  <div class="topic-block" id="u2-overloading">
-    <h3>2.2 Static Members, Method Overloading &amp; Access Specifiers</h3>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Access Modifier</th><th>Same Class</th><th>Same Package</th><th>Subclass (Different Pkg)</th><th>World (Any Package)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>private</code></td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
-          <tr><td><em>default (no keyword)</em></td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
-          <tr><td><code>protected</code></td><td>Yes</td><td>Yes</td><td><strong>Yes (via inheritance)</strong></td><td>No</td></tr>
-          <tr><td><code>public</code></td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h4>Static Keyword Rules in Java</h4>
-    <ul>
-      <li><strong>Static Variables:</strong> Single shared copy per class in Method Area, accessed via <code>ClassName.varName</code>.</li>
-      <li><strong>Static Methods:</strong> Belongs to class; cannot access <code>this</code>, <code>super</code>, or instance members directly!</li>
-    </ul>
-
-    <h4>Varargs (Variable Arguments) &amp; Command-Line Arguments</h4>
-    <p>Java allows passing zero or more arguments of the same type using <strong>Varargs</strong> (<code>type... param</code>, internally an array; must be the <em>last</em> parameter) and accepts runtime inputs via <code>String[] args</code> in <code>main()</code>.</p>
-<pre><code class="language-java">public class VarargsDemo {
-    static int sumAll(String label, int... nums) { // nums behaves as int[]
-        int total = 0;
-        for (int x : nums) total += x;
-        return total;
-    }
-    public static void main(String[] args) { // args passed via CLI: java VarargsDemo 10 20
-        System.out.println(sumAll("Marks", 15, 18, 20));
+public class BankSystem {
+    public static void main(String[] args) {
+        BankAccount[] accounts = new BankAccount[2]; // Array of objects
+        accounts[0] = new BankAccount(101, "Riya", 5000);
+        accounts[1] = new BankAccount(102, "Arjun", 8500);
+        accounts[0].deposit(1500);
+        for (BankAccount b : accounts) b.display();
     }
 }</code></pre>
 
+  <div class="qa-block">
+    <div class="qa-q">Q1. What is method overloading? Write a Java program that overloads a method to calculate the area of a square and rectangle. <span class="marks-badge">SPPU Oct 2025 &bull; 5M</span></div>
+    <p>Define method overloading (2M) &mdash; same method name in the same class with different parameter count/type (resolved at compile time). Provide the <code>area(double side)</code> and <code>area(double l, double b)</code> Java class &amp; <code>main()</code> output (3M).</p>
   </div>
 
-  <div class="topic-block" id="u2-io">
-    <h3>2.3 Java I/O Streams: Byte Streams vs Character Streams</h3>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Parameter</th><th>Byte Streams</th><th>Character Streams</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Base Abstract Classes</strong></td><td><code>InputStream</code>, <code>OutputStream</code></td><td><code>Reader</code>, <code>Writer</code></td></tr>
-          <tr><td><strong>Data Unit</strong></td><td>8-bit bytes (raw binary data)</td><td>16-bit Unicode characters</td></tr>
-          <tr><td><strong>Use Case</strong></td><td>Images, audio, video, binary serialization</td><td>Text files, multilingual text parsing</td></tr>
-          <tr><td><strong>Key Concrete Classes</strong></td><td><code>FileInputStream</code>, <code>FileOutputStream</code></td><td><code>FileReader</code>, <code>BufferedReader</code>, <code>PrintWriter</code></td></tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="qa-block">
+    <div class="qa-q">Q2. What are arrays? Demonstrate declaration, creation, and initialization of 1-D and 2-D arrays and passing arrays to methods. <span class="marks-badge">SPPU Oct 2025 &bull; 5M</span></div>
+    <p>Explain contiguous indexed collection (1M), show 1-D syntax <code>int[] a = new int[5];</code> and 2-D syntax <code>int[][] m = {{1,2},{3,4}};</code> (2M), and demonstrate passing <code>a</code> into a method <code>static int sum(int[] arr)</code> (2M).</p>
   </div>
-
-  <section class="unit-short-notes" id="u2-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit II Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Class declarations, access specifier matrix, and stream handling.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Overloading vs Overriding</h4>
-          <ul>
-            <li>Overloading: Same method name, different parameter signature, same class (Compile-time)</li>
-            <li>Return type alone CANNOT overload a method</li>
-            <li>Overriding: Same name, exact same parameters, super/subclass (Runtime)</li>
-            <li><code>static</code> methods CANNOT be overridden (they are hidden!)</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Constructor Properties</h4>
-          <ul>
-            <li>Same name as class, NO return type (not even <code>void</code>)</li>
-            <li>If no constructor is written, compiler supplies default no-arg constructor</li>
-            <li><code>this(...)</code> calls overloaded constructor in same class (must be 1st line)</li>
-            <li><code>super(...)</code> calls superclass constructor (must be 1st line)</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Access Matrix Cheat Rule</h4>
-          <ul>
-            <li><code>private</code> &rarr; Class only</li>
-            <li>default &rarr; Package private</li>
-            <li><code>protected</code> &rarr; Package + Subclasses in other packages</li>
-            <li><code>public</code> &rarr; Global access</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>I/O Handling Fast Code</h4>
-          <ul>
-            <li>Fast Console: <code>BufferedReader br = new BufferedReader(new InputStreamReader(System.in));</code></li>
-            <li>Scanner: <code>Scanner sc = new Scanner(System.in); int x = sc.nextInt();</code></li>
-            <li>File Output: <code>PrintWriter pw = new PrintWriter(new FileWriter("out.txt"));</code></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 </section>
 
-<section id="unit-3" class="unit-section">
-  <div class="unit-badge">Unit III &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit III: Inheritance, Polymorphism, Exception Handling &amp; Multithreading</h2>
-  
-  <div class="topic-block" id="u3-inheritance">
-    <h3>3.1 Inheritance, Dynamic Method Dispatch &amp; Interfaces</h3>
-    <p>Java supports Single, Multilevel, and Hierarchical inheritance via classes, and Multiple inheritance via <strong>Interfaces</strong>.</p>
-    
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Feature</th><th>Abstract Class</th><th>Interface</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Multiple Inheritance</strong></td><td>No (A class can extend only 1 class)</td><td><strong>Yes</strong> (A class can implement multiple interfaces)</td></tr>
-          <tr><td><strong>Methods</strong></td><td>Can have both abstract and fully concrete methods with instance fields.</td><td>Abstract methods, <code>default</code> methods, and <code>static</code> methods.</td></tr>
-          <tr><td><strong>Variables</strong></td><td>Can have instance variables (private, protected, etc.)</td><td>Strictly <code>public static final</code> (Constants only)</td></tr>
-          <tr><td><strong>Speed</strong></td><td>Faster method invocation</td><td>Slightly slower search in interface dispatch tables</td></tr>
-        </tbody>
-      </table>
-    </div>
+<section id="unit-3">
+  <h2 class="unit-title">Unit III: Inheritance, Polymorphism, Exception Handling &amp; Multithreading</h2>
 
-    <h4>Dynamic Method Dispatch (Runtime Polymorphism)</h4>
-    <p>When an overridden method is called through a superclass reference variable, Java determines which version of that method to execute based on the actual object being referred to at runtime:</p>
-<pre><code class="language-java">class Shape { void draw() { System.out.println("Drawing Shape"); } }
-class Circle extends Shape { void draw() { System.out.println("Drawing Circle"); } }
-
-Shape s = new Circle(); // Superclass reference pointing to Subclass object
-s.draw(); // Prints "Drawing Circle" at runtime! (Dynamic Binding)</code></pre>
+  <h3 id="u3-inheritance">3.1 Inheritance, <code>protected</code> Members, Subclass Constructors &amp; <code>Object</code> Class</h3>
+  <div class="concept-box">
+    <span class="box-title">Inheritance (IS-A Relationship)</span>
+    <p><strong>Exam Definition:</strong> Inheritance is an OOP mechanism where a subclass (derived/child class) acquires the non-private fields and methods of a superclass (base/parent class) using the <code>extends</code> keyword.</p>
+    <p><strong>In Simple Words:</strong> A <code>SavingsAccount</code> <em>is a</em> <code>BankAccount</code> &mdash; it automatically gets <code>balance</code> and <code>deposit()</code> without rewriting them, and adds <code>interestRate</code>.</p>
   </div>
 
-  <div class="topic-block" id="u3-exceptions">
-    <h3>3.2 Exception Handling Hierarchy</h3>
-    <p>All exception types inherit from <code>java.lang.Throwable</code>:</p>
-    <ul>
-      <li><strong>Checked Exceptions (Compile-Time):</strong> Inherit from <code>Exception</code> (excluding <code>RuntimeException</code>). Compiler enforces handling via <code>try-catch</code> or <code>throws</code> (e.g., <code>IOException, SQLException, ClassNotFoundException</code>).</li>
-      <li><strong>Unchecked Exceptions (Runtime):</strong> Inherit from <code>RuntimeException</code>. Represents programming logic bugs; compiler does not force catching (e.g., <code>NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException</code>).</li>
-      <li><strong>Errors:</strong> Severe JVM conditions that applications should not catch (e.g., <code>OutOfMemoryError, StackOverflowError</code>).</li>
-    </ul>
+  <ul>
+    <li><strong><code>protected</code> Access Specifier:</strong> Accessible within the same package AND in subclasses in <em>other</em> packages (unlike default/package-private).</li>
+    <li><strong>Types of Inheritance in Java:</strong>
+      <ul>
+        <li><strong>Single:</strong> <code>B extends A</code></li>
+        <li><strong>Multilevel:</strong> <code>C extends B</code>, <code>B extends A</code></li>
+        <li><strong>Hierarchical:</strong> <code>B extends A</code> and <code>C extends A</code></li>
+        <li><em>Note:</em> Multiple inheritance with classes is <strong>not</strong> allowed in Java (avoids the Diamond Problem ambiguity); it is achieved using <strong>Interfaces</strong>.</li>
+      </ul>
+    </li>
+    <li><strong>Constructors in Subclasses (<code>super()</code>):</strong> Java always executes the superclass constructor <em>before</em> the subclass constructor. Use <code>super(args)</code> as the first line of the subclass constructor to pass arguments to the parent constructor.</li>
+    <li><strong><code>java.lang.Object</code> Class:</strong> The root of all Java classes. Key inherited methods: <code>toString()</code>, <code>equals(Object o)</code>, <code>hashCode()</code>, and <code>getClass()</code>.</li>
+  </ul>
 
-    <h4>Finally Block Guarantee</h4>
-    <p>The <code>finally</code> block executes regardless of whether an exception is thrown, caught, or missed, guaranteeing resource cleanup (closing DB connections, file streams).</p>
+  <figure class="figure-box">
+    <img src="assets/oop_inheritance.png" alt="OOP Inheritance Hierarchy Diagram">
+    <figcaption>Figure 3.1: Inheritance Hierarchy &mdash; Superclass and Subclasses sharing common attributes and extending specialized behavior.</figcaption>
+  </figure>
+
+  <h3 id="u3-polymorphism">3.2 Polymorphism, Dynamic Binding, Abstract Classes, <code>final</code> &amp; Interfaces</h3>
+  <div class="concept-box">
+    <span class="box-title">Dynamic Method Dispatch (Runtime Polymorphism)</span>
+    <p><strong>Exam Definition:</strong> Dynamic method dispatch (dynamic binding) is the mechanism by which a call to an overridden method is resolved at runtime rather than compile time, based on the actual object type referenced by a superclass reference variable.</p>
+    <p><strong>In Simple Words:</strong> You hold a generic <code>Shape s</code> remote control; if it points to a <code>Circle</code> object, <code>s.draw()</code> draws a circle; if it points to a <code>Rectangle</code>, <code>s.draw()</code> draws a rectangle.</p>
   </div>
 
-  <div class="topic-block" id="u3-threads">
-    <h3>3.3 Multithreading &amp; Thread Lifecycle States</h3>
-    <p>A thread is a lightweight unit of process execution sharing the same process memory space.</p>
-    <ul>
-      <li><strong>New:</strong> Thread created but <code>start()</code> not yet called.</li>
-      <li><strong>Runnable:</strong> Ready for CPU scheduling in thread pool.</li>
-      <li><strong>Running:</strong> CPU actively executing thread's <code>run()</code> method.</li>
-      <li><strong>Blocked / Waiting:</strong> Waiting for monitor lock, I/O completion, or <code>wait()</code> call.</li>
-      <li><strong>Terminated (Dead):</strong> <code>run()</code> completed or fatal exception occurred.</li>
-    </ul>
+  <ul>
+    <li><strong><code>final</code> Keyword:</strong> A <code>final</code> variable is a constant; a <code>final</code> method cannot be overridden; a <code>final</code> class (e.g., <code>String</code>) cannot be inherited.</li>
+  </ul>
 
-    <h4>Thread Synchronization</h4>
-    <p>The <code>synchronized</code> keyword ensures only one thread accesses a critical section at a time using the object's intrinsic monitor lock, preventing race conditions.</p>
+  <table>
+    <thead>
+      <tr><th>Feature</th><th>Abstract Class (<code>abstract class</code>)</th><th>Interface (<code>interface</code>)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Methods</strong></td><td>Can have both abstract and concrete (implemented) methods</td><td>All methods are <code>public abstract</code> by default (plus <code>default</code>/<code>static</code> since Java 8)</td></tr>
+      <tr><td><strong>Fields</strong></td><td>Can have instance (non-final) variables</td><td>Only <code>public static final</code> constants</td></tr>
+      <tr><td><strong>Constructors</strong></td><td>Yes, can have constructors</td><td>No constructors</td></tr>
+      <tr><td><strong>Multiple Inheritance</strong></td><td>A class can <code>extends</code> only one abstract class</td><td>A class can <code>implements</code> multiple interfaces</td></tr>
+    </tbody>
+  </table>
+
+  <pre><code>// Dynamic Method Dispatch + Abstract Class + Interface Demo
+interface Printable {
+    void print(); // implicitly public abstract
+}
+
+abstract class Shape {
+    abstract double area(); // abstract method
+    void display() { System.out.println("Area = " + area()); } // concrete method
+}
+
+class Circle extends Shape implements Printable {
+    double r;
+    Circle(double r) { this.r = r; }
+    @Override double area() { return Math.PI * r * r; }
+    @Override public void print() { System.out.println("Printing Circle"); }
+}
+
+class Rectangle extends Shape {
+    double l, b;
+    Rectangle(double l, double b) { this.l = l; this.b = b; }
+    @Override double area() { return l * b; }
+}
+
+public class PolymorphismDemo {
+    public static void main(String[] args) {
+        Shape s; // Superclass reference
+        s = new Circle(5);
+        s.display(); // Calls Circle.area() at runtime
+        s = new Rectangle(4, 6);
+        s.display(); // Calls Rectangle.area() at runtime
+    }
+}</code></pre>
+
+  <h3 id="u3-exceptions">3.3 Exception Handling in Java</h3>
+  <div class="concept-box">
+    <span class="box-title">Exception &amp; Exception Handling</span>
+    <p><strong>Exam Definition:</strong> An exception is an abnormal runtime event that disrupts the normal flow of a program. Exception handling uses <code>try</code>, <code>catch</code>, <code>finally</code>, <code>throw</code>, and <code>throws</code> to handle runtime errors gracefully without crashing.</p>
+    <p><strong>In Simple Words:</strong> Like a safety net under a trapeze artist &mdash; if something goes wrong in the <code>try</code> block, the <code>catch</code> block catches it safely.</p>
   </div>
 
-  <section class="unit-short-notes" id="u3-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit III Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Polymorphism, exception hierarchy, and multithreading lifecycle.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Keyword Rules</h4>
-          <ul>
-            <li><code>final</code> variable: Constant (cannot reassign)</li>
-            <li><code>final</code> method: Cannot be overridden</li>
-            <li><code>final</code> class: Cannot be inherited (e.g., <code>String</code> class)</li>
-            <li><code>super()</code>: Invokes superclass constructor (must be 1st statement)</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Exception Flow</h4>
-          <ul>
-            <li><code>try</code>: Encloses code that might throw exception</li>
-            <li><code>catch</code>: Specific subclass exceptions must precede superclass <code>Exception</code></li>
-            <li><code>finally</code>: Always executes (clean up resources)</li>
-            <li><code>throw</code>: Explicitly throws an exception object</li>
-            <li><code>throws</code>: Declares exceptions in method signature</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Creating Threads in Java</h4>
-          <ul>
-            <li>Method 1: <code>class T extends Thread { public void run() {...} }</code></li>
-            <li>Method 2 (Preferred): <code>class R implements Runnable { public void run() {...} }</code></li>
-            <li>Start thread via <code>t.start()</code> (never call <code>run()</code> directly!)</li>
-            <li><code>wait()</code>, <code>notify()</code>, <code>notifyAll()</code> belong to <code>Object</code> class</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Exam Traps in Java Questions</h4>
-          <ul>
-            <li>Multiple inheritance of classes is NOT supported in Java (ambiguity diamond problem)</li>
-            <li>Interfaces can declare methods with bodies using <code>default</code> keyword (Java 8+)</li>
-            <li>Unchecked exceptions do NOT require mandatory <code>try-catch</code></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <ul>
+    <li><strong>Exception Types:</strong> All exceptions inherit from <code>Throwable</code> &rarr; <code>Error</code> (serious JVM failures like <code>OutOfMemoryError</code>) and <code>Exception</code>:
+      <ul>
+        <li><strong>Checked Exceptions (Compile-time):</strong> Must be caught or declared with <code>throws</code> (e.g., <code>IOException</code>, <code>SQLException</code>).</li>
+        <li><strong>Unchecked Exceptions (Runtime):</strong> Subclasses of <code>RuntimeException</code> (e.g., <code>ArithmeticException</code>, <code>NullPointerException</code>, <code>ArrayIndexOutOfBoundsException</code>).</li>
+      </ul>
+    </li>
+    <li><strong>Five Keywords:</strong> <code>try</code> (risky code), <code>catch</code> (handler; can have multiple catches from specific to general, or nested <code>try</code>), <code>finally</code> (always executes for cleanup), <code>throw</code> (explicitly throws an exception object), <code>throws</code> (declares exceptions a method might pass to its caller).</li>
+  </ul>
+
+  <pre><code>// Multiple catch, nested try, throw, throws, and finally
+class InsufficientFundsException extends Exception {
+    InsufficientFundsException(String msg) { super(msg); }
+}
+
+public class ExceptionDemo {
+    static void withdraw(double bal, double amt) throws InsufficientFundsException {
+        if (amt &gt; bal) throw new InsufficientFundsException("Low balance!");
+        System.out.println("Withdrawn: Rs. " + amt);
+    }
+
+    public static void main(String[] args) {
+        try {
+            int[] arr = {10, 20};
+            try {
+                int x = arr[5] / 0;
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Inner catch: Invalid index!");
+            }
+            withdraw(500, 1000);
+        } catch (InsufficientFundsException e) {
+            System.out.println("Caught custom exception: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("General catch: " + e);
+        } finally {
+            System.out.println("Finally block: Closing resources.");
+        }
+    }
+}</code></pre>
+
+  <h3 id="u3-threads">3.4 Multithreading &amp; Java Thread Lifecycle</h3>
+  <p><strong>Java Thread Model &amp; Main Thread:</strong> A thread is a lightweight sub-process (smallest unit of execution) sharing the same heap memory. When a Java program starts, the JVM automatically creates the <strong>Main Thread</strong> to execute <code>main()</code>.</p>
+  <ul>
+    <li><strong>Two Ways to Create a Thread:</strong>
+      <ol>
+        <li><strong>Extend <code>Thread</code> class:</strong> Override <code>run()</code> and call <code>t.start()</code>.</li>
+        <li><strong>Implement <code>Runnable</code> interface (Preferred):</strong> Pass instance to <code>new Thread(runnable).start()</code> &mdash; allows extending another class too.</li>
+      </ol>
+    </li>
+    <li><strong>Important Methods:</strong> <code>start()</code> (creates OS thread &amp; calls <code>run()</code>), <code>Thread.sleep(ms)</code>, <code>t.join()</code> (wait for thread to finish).</li>
+  </ul>
+
+  <figure class="svg-box">
+    <svg style="max-width:100%;height:auto;" viewBox="0 0 760 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Java Thread Lifecycle Diagram">
+      <rect x="0" y="0" width="760" height="220" rx="8" fill="#FAF7F4"/>
+      <!-- States -->
+      <rect x="20" y="80" width="105" height="48" rx="8" fill="#EAEFFE" stroke="#4B5FD1" stroke-width="2"/>
+      <text x="72" y="109" fill="#171717" font-size="13" font-weight="bold" text-anchor="middle">NEW</text>
+
+      <rect x="175" y="80" width="125" height="48" rx="8" fill="#E4F2EC" stroke="#226D51" stroke-width="2"/>
+      <text x="237" y="109" fill="#171717" font-size="13" font-weight="bold" text-anchor="middle">RUNNABLE</text>
+
+      <rect x="355" y="80" width="120" height="48" rx="8" fill="#FBF4DC" stroke="#9C7710" stroke-width="2"/>
+      <text x="415" y="109" fill="#171717" font-size="13" font-weight="bold" text-anchor="middle">RUNNING</text>
+
+      <rect x="335" y="158" width="160" height="44" rx="8" fill="#FBECE8" stroke="#B8432B" stroke-width="2"/>
+      <text x="415" y="185" fill="#171717" font-size="12" font-weight="bold" text-anchor="middle">WAITING / BLOCKED</text>
+
+      <rect x="550" y="80" width="160" height="48" rx="8" fill="#EFE4DC" stroke="#6A625B" stroke-width="2"/>
+      <text x="630" y="109" fill="#171717" font-size="13" font-weight="bold" text-anchor="middle">TERMINATED</text>
+
+      <!-- Arrows -->
+      <line x1="125" y1="104" x2="170" y2="104" stroke="#4B5FD1" stroke-width="2"/>
+      <polygon points="175,104 166,99 166,109" fill="#4B5FD1"/>
+      <text x="150" y="95" fill="#3749AD" font-size="11" text-anchor="middle">start()</text>
+
+      <line x1="300" y1="96" x2="350" y2="96" stroke="#226D51" stroke-width="2"/>
+      <polygon points="355,96 346,91 346,101" fill="#226D51"/>
+      <text x="327" y="87" fill="#226D51" font-size="10" text-anchor="middle">Scheduler</text>
+
+      <line x1="355" y1="115" x2="305" y2="115" stroke="#9C7710" stroke-width="2"/>
+      <polygon points="300,115 309,110 309,120" fill="#9C7710"/>
+      <text x="327" y="130" fill="#9C7710" font-size="10" text-anchor="middle">yield()</text>
+
+      <line x1="475" y1="104" x2="545" y2="104" stroke="#6A625B" stroke-width="2"/>
+      <polygon points="550,104 541,99 541,109" fill="#6A625B"/>
+      <text x="512" y="95" fill="#6A625B" font-size="10" text-anchor="middle">run() ends</text>
+
+      <!-- Running to Blocked and back to Runnable -->
+      <line x1="415" y1="128" x2="415" y2="153" stroke="#B8432B" stroke-width="2"/>
+      <polygon points="415,158 410,149 420,149" fill="#B8432B"/>
+      <text x="470" y="146" fill="#B8432B" font-size="10">sleep() / wait()</text>
+
+      <polyline points="335,180 237,180 237,133" fill="none" stroke="#226D51" stroke-width="2"/>
+      <polygon points="237,128 232,137 242,137" fill="#226D51"/>
+      <text x="275" y="196" fill="#226D51" font-size="10" text-anchor="middle">notify() / timeout</text>
+    </svg>
+    <figcaption>Figure 3.2: Java Thread Lifecycle &mdash; Transitions between New, Runnable, Running, Waiting/Blocked, and Terminated states.</figcaption>
+  </figure>
+
+  <pre><code>// Creating multiple threads using Runnable
+class Task implements Runnable {
+    private String name;
+    Task(String name) { this.name = name; }
+    public void run() {
+        for (int i = 1; i &lt;= 3; i++) {
+            System.out.println(name + " step " + i);
+            try { Thread.sleep(200); } catch (InterruptedException e) {}
+        }
+    }
+}
+
+public class MultiThreadDemo {
+    public static void main(String[] args) throws InterruptedException {
+        Thread t1 = new Thread(new Task("Download"));
+        Thread t2 = new Thread(new Task("Render"));
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        System.out.println("Main thread: All tasks finished!");
+    }
+}</code></pre>
+
+  <h3 id="u3-casestudy">3.5 Case Study &amp; Important SPPU Exam Questions</h3>
+  <div class="card">
+    <h4>Case Study: Online Banking System (Inheritance + Exceptions + Multithreading)</h4>
+    <p>A base <code>Account</code> class is extended by <code>SavingsAccount</code> and <code>CurrentAccount</code> (Inheritance &amp; Dynamic Dispatch for <code>calculateInterest()</code>). Withdrawals validate balance and throw a custom <code>InsufficientBalanceException</code> (Exception Handling). Concurrent fund transfers run on separate <code>Thread</code> instances with synchronized balance updates (Multithreading).</p>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-q">Q1. What are abstract classes and abstract methods? How are they different from interfaces? <span class="marks-badge">SPPU Oct 2025 &bull; 4M</span></div>
+    <p>Define abstract class/method (2M), then give the 4-point comparison table (concrete vs abstract methods, variables vs constants, constructors, single vs multiple inheritance) (2M).</p>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-q">Q2. Explain try, catch, throw, throws, and finally keywords with example code. <span class="marks-badge">SPPU Oct 2025 &bull; 5M</span></div>
+    <p>Give 1-line role of each of the 5 keywords (2.5M) and a short, clean Java snippet showing <code>throws</code> in a method signature, <code>throw</code> inside it, and <code>try-catch-finally</code> in <code>main()</code> (2.5M).</p>
+  </div>
 </section>
 
-<section id="unit-4" class="unit-section">
-  <div class="unit-badge">Unit IV &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit IV: Graphics Primitives, Scan Conversion &amp; 2D Clipping</h2>
-  
-  <div class="topic-block" id="u4-primitives">
-    <h3>4.1 Graphics Primitives &amp; Display Devices</h3>
-    <p>A frame buffer stores color values for every pixel on screen. Frame buffer memory is calculated as:</p>
-    <div class="formula-box">$$\text{Buffer Size (Bytes)} = \frac{\text{Resolution}_X \times \text{Resolution}_Y \times \text{Color Depth (bits)}{8}$$</div>
-    <p>Example: $1920 \times 1080$ screen with 24-bit TrueColor requires $\frac{1920 \times 1080 \times 24}{8} = 6,220,800 \text{ Bytes} \approx 5.93 \text{ MB}$.</p>
-  </div>
+<section id="unit-4">
+  <h2 class="unit-title">Unit IV: Graphics Primitives, Scan Conversion, Windowing &amp; Clipping</h2>
 
-  <div class="topic-block" id="u4-scan">
-    <h3>4.2 Line &amp; Circle Scan Conversion Algorithms</h3>
-    <h4>1. Digital Differential Analyzer (DDA) Line Algorithm</h4>
-    <p>Incremental algorithm: $\Delta x = x_2 - x_1, \Delta y = y_2 - y_1$. Steps $N = \max(|\Delta x|, |\Delta y|)$.<br>
-    $x_{k+1} = x_k + \Delta x / N, \quad y_{k+1} = y_k + \Delta y / N$. Uses floating-point math and round function.</p>
-
-    <h4>2. Bresenham's Line Algorithm (Pure Integer Arithmetic)</h4>
-    <p>For slope $0 &lt; m &lt; 1$: Initial decision parameter $P_0 = 2\Delta y - \Delta x$.</p>
-    <ul>
-      <li>If $P_k &lt; 0$: Choose $E$ (East) pixel $(x_k + 1, y_k)$. Update: $P_{k+1} = P_k + 2\Delta y$.</li>
-      <li>If $P_k \ge 0$: Choose $NE$ (North-East) pixel $(x_k + 1, y_k + 1)$. Update: $P_{k+1} = P_k + 2\Delta y - 2\Delta x$.</li>
-    </ul>
-
-    <div class="qa-card">
-      <div class="qa-q">Solved SPPU Numerical: Rasterize line from (20, 10) to (30, 18) using Bresenham's Algorithm.</div>
-      <div class="sol-box">
-        <p>$\Delta x = 30 - 20 = 10, \, \Delta y = 18 - 10 = 8$. Slope $m = 8/10 = 0.8 &lt; 1$.<br>
-        $2\Delta y = 16, \, 2\Delta y - 2\Delta x = 16 - 20 = -4$. Initial: $P_0 = 2(8) - 10 = 6 &gt; 0$.</p>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Step $k$</th><th>$P_k$</th><th>Plot Pixel</th><th>$P_{k+1}$ Calculation</th></tr></thead>
-            <tbody>
-              <tr><td>0</td><td>6 (&ge;0)</td><td>(20, 10)</td><td>$6 + (-4) = 2$</td></tr>
-              <tr><td>1</td><td>2 (&ge;0)</td><td>(21, 11)</td><td>$2 + (-4) = -2$</td></tr>
-              <tr><td>2</td><td>-2 (&lt;0)</td><td>(22, 12)</td><td>$-2 + 16 = 14$</td></tr>
-              <tr><td>3</td><td>14 (&ge;0)</td><td>(23, 12)</td><td>$14 + (-4) = 10$</td></tr>
-              <tr><td>4</td><td>10 (&ge;0)</td><td>(24, 13)</td><td>$10 + (-4) = 6$</td></tr>
-              <tr><td>5</td><td>6 (&ge;0)</td><td>(25, 14)</td><td>$6 + (-4) = 2$</td></tr>
-              <tr><td>6</td><td>2 (&ge;0)</td><td>(26, 15)</td><td>$2 + (-4) = -2$</td></tr>
-              <tr><td>7</td><td>-2 (&lt;0)</td><td>(27, 16)</td><td>$-2 + 16 = 14$</td></tr>
-              <tr><td>8</td><td>14 (&ge;0)</td><td>(28, 16)</td><td>$14 + (-4) = 10$</td></tr>
-              <tr><td>9</td><td>10 (&ge;0)</td><td>(29, 17)</td><td>Plot (30, 18) Final</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+  <h3 id="u4-primitives">4.1 Graphics Primitives, Display Devices &amp; Applications</h3>
+  <div class="grid-2">
+    <div class="concept-box">
+      <span class="box-title">Pixel &amp; Resolution</span>
+      <p><strong>Exam Definition:</strong> A <strong>pixel</strong> (picture element) is the smallest addressable screen element. <strong>Resolution</strong> is the maximum number of points (pixels) that can be displayed without overlap on a screen (e.g., $1920 \times 1080$).</p>
+      <p><strong>In Simple Words:</strong> A pixel is a single tiny colored tile in a mosaic; resolution is how many tiles wide and tall the mosaic is.</p>
     </div>
+    <div class="concept-box">
+      <span class="box-title">Aspect Ratio &amp; Frame Buffer</span>
+      <p><strong>Exam Definition:</strong> <strong>Aspect ratio</strong> is the ratio of horizontal points to vertical points needed to produce equal-length lines (e.g., $16:9$ or $4:3$). A <strong>frame buffer</strong> (refresh buffer) is a block of video memory storing intensity/color values for every pixel.</p>
+      <p><strong>In Simple Words:</strong> Aspect ratio is screen shape (width vs height); frame buffer is the digital canvas holding what is currently on screen.</p>
+    </div>
+  </div>
 
-    <h4>3. Midpoint Circle Algorithm (8-Way Symmetry)</h4>
-    <p>Circle centered at $(0, 0)$ with radius $R$. Initial: $(0, R)$, $P_0 = 1 - R$.</p>
+  <p><strong>Display Devices:</strong></p>
+  <ul>
+    <li><strong>Raster-Scan CRT:</strong> Electron beam sweeps row-by-row (scan lines) from top to bottom. Stores image in a frame buffer. Great for realistic shaded images and photos.</li>
+    <li><strong>Random-Scan (Vector) CRT:</strong> Electron beam draws lines directly from point to point like a pen plotter. Sharp lines, no jagged edges, but cannot display realistic shaded scenes.</li>
+    <li><strong>Flat-Panel Displays (LCD / LED / OLED):</strong> Thin, low-power matrix displays using liquid crystals or light-emitting diodes.</li>
+  </ul>
+  <p><strong>Applications of Computer Graphics:</strong> CAD/CAM (AutoCAD), Medical Imaging (MRI/CT 3D), Entertainment &amp; Gaming, Data Visualization, Virtual Reality &amp; Simulation, and GUI/OS interfaces.</p>
+
+  <h3 id="u4-lines">4.2 Line Drawing Algorithms: DDA &amp; Bresenham</h3>
+  <p><strong>Scan Conversion (Rasterization)</strong> is converting continuous geometric objects (lines, circles) into discrete pixels on a grid.</p>
+
+  <h4>1. Digital Differential Analyzer (DDA) Line Algorithm</h4>
+  <div class="formula-box">
+    <span class="box-title">DDA Formulas</span>
+    <p>Given endpoints $(x_1, y_1)$ and $(x_2, y_2)$: $\Delta x = x_2 - x_1$, $\Delta y = y_2 - y_1$, and $\text{steps} = \max(|\Delta x|, |\Delta y|)$.</p>
+    $$x_{\text{inc}} = \frac{\Delta x}{\text{steps}}, \quad y_{\text{inc}} = \frac{\Delta y}{\text{steps}}$$
+    <p>At each step $k = 1 \dots \text{steps}$: $x_{k+1} = x_k + x_{\text{inc}}$, $y_{k+1} = y_k + y_{\text{inc}}$, plot $(\text{round}(x), \text{round}(y))$.</p>
+  </div>
+
+  <div class="card">
+    <h4>Solved Numerical (SPPU Oct 2025): Rasterize line from $A(-2, -1)$ to $B(6, 3)$ using DDA</h4>
+    <p>$\Delta x = 6 - (-2) = 8$, $\Delta y = 3 - (-1) = 4$. $\text{steps} = \max(8, 4) = 8$.</p>
+    <p>$x_{\text{inc}} = 8/8 = 1.0$, $y_{\text{inc}} = 4/8 = 0.5$.</p>
+    <table>
+      <thead><tr><th>Step $k$</th><th>$x$</th><th>$y$</th><th>Plot $(\text{round}(x), \text{round}(y))$</th></tr></thead>
+      <tbody>
+        <tr><td>0</td><td>$-2.0$</td><td>$-1.0$</td><td>$(-2, -1)$</td></tr>
+        <tr><td>1</td><td>$-1.0$</td><td>$-0.5$</td><td>$(-1, 0)$</td></tr>
+        <tr><td>2</td><td>$0.0$</td><td>$0.0$</td><td>$(0, 0)$</td></tr>
+        <tr><td>3</td><td>$1.0$</td><td>$0.5$</td><td>$(1, 1)$</td></tr>
+        <tr><td>4</td><td>$2.0$</td><td>$1.0$</td><td>$(2, 1)$</td></tr>
+        <tr><td>5</td><td>$3.0$</td><td>$1.5$</td><td>$(3, 2)$</td></tr>
+        <tr><td>6</td><td>$4.0$</td><td>$2.0$</td><td>$(4, 2)$</td></tr>
+        <tr><td>7</td><td>$5.0$</td><td>$2.5$</td><td>$(5, 3)$</td></tr>
+        <tr><td>8</td><td>$6.0$</td><td>$3.0$</td><td>$(6, 3)$</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>2. Bresenham's Line Drawing Algorithm</h4>
+  <p>DDA uses slow floating-point addition and rounding. <strong>Bresenham's algorithm</strong> uses <strong>only fast integer arithmetic</strong>! For slope $0 \le m \le 1$:</p>
+  <div class="formula-box">
+    <span class="box-title">Bresenham Line Decision Parameter ($0 \le m \le 1$)</span>
+    <p>Initial decision parameter: $p_0 = 2\Delta y - \Delta x$.</p>
     <ul>
-      <li>If $P_k &lt; 0$: Choose $E$ $(x_k + 1, y_k)$. Update: $P_{k+1} = P_k + 2x_k + 3$.</li>
-      <li>If $P_k \ge 0$: Choose $SE$ $(x_k + 1, y_k - 1)$. Update: $P_{k+1} = P_k + 2x_k - 2y_k + 5$.</li>
+      <li>If $p_k &lt; 0$: next pixel is $(x_k + 1, y_k)$ and $p_{k+1} = p_k + 2\Delta y$.</li>
+      <li>If $p_k \ge 0$: next pixel is $(x_k + 1, y_k + 1)$ and $p_{k+1} = p_k + 2\Delta y - 2\Delta x$.</li>
     </ul>
   </div>
 
-  <div class="topic-block" id="u4-clipping">
-    <h3>4.3 Windowing &amp; Cohen-Sutherland Line Clipping</h3>
-    <p>Clipping eliminates graphics primitives outside the viewing window boundaries ($x_{wmin}, x_{wmax}, y_{wmin}, y_{wmax}$).</p>
-    
-    <div class="figure-box"><svg viewBox="0 0 760 240" class="svg-diagram" xmlns="http://www.w3.org/2000/svg" id="oop-svg-2">
-  <rect width="760" height="240" fill="#FFFFFF" rx="8"/>
-  <style>#oop-svg-2 .win { fill: #EFF6FF; stroke: #2563EB; stroke-width: 2.5; stroke-dasharray: 6 3; }#oop-svg-2 .grid-l { stroke: #CBD5E1; stroke-width: 1.5; stroke-dasharray: 3 3; }#oop-svg-2 .line-vis { stroke: #059669; stroke-width: 2.5; }#oop-svg-2 .line-clip { stroke: #DC2626; stroke-width: 2; stroke-dasharray: 4 3; }#oop-svg-2 .txt-t { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #1E293B; }#oop-svg-2 .txt-c { font-family: monospace; font-size: 12px; fill: #1E293B; text-anchor: middle; }#oop-svg-2 .txt-code { font-family: monospace; font-size: 13px; font-weight: bold; fill: #2563EB; text-anchor: middle; }
-  </style>
-  <text x="30" y="30" class="txt-t">Cohen-Sutherland Line Clipping: 9-Region 4-Bit Outcodes (Top, Bottom, Right, Left: TBRL)</text>
-  
-  <g transform="translate(180, 50)">
-    <!-- Dividing grid lines -->
-    <line x1="120" y1="0" x2="120" y2="160" class="grid-l"/>
-    <line x1="280" y1="0" x2="280" y2="160" class="grid-l"/>
-    <line x1="0" y1="45" x2="400" y2="45" class="grid-l"/>
-    <line x1="0" y1="115" x2="400" y2="115" class="grid-l"/>
-    
-    <!-- Clipping Window Rect -->
-    <rect x="120" y="45" width="160" height="70" class="win"/>
-    <text x="200" y="85" class="txt-code" fill="#059669">0000 (Window)</text>
-    <text x="200" y="102" class="txt-c" font-size="10px">Trivially Accept</text>
-    
-    <!-- Surrounding 8 Outcode Regions -->
-    <text x="60" y="30" class="txt-code">1001 (Top-Left)</text>
-    <text x="200" y="30" class="txt-code">1000 (Top)</text>
-    <text x="340" y="30" class="txt-code">1010 (Top-Right)</text>
-    
-    <text x="60" y="85" class="txt-code">0001 (Left)</text>
-    <text x="340" y="85" class="txt-code">0010 (Right)</text>
-    
-    <text x="60" y="145" class="txt-code">0101 (Btm-Left)</text>
-    <text x="200" y="145" class="txt-code">0100 (Bottom)</text>
-    <text x="340" y="145" class="txt-code">0110 (Btm-Right)</text>
-  </g>
-  
-  <text x="30" y="225" class="txt-c" text-anchor="start" fill="#475569">Trivial Accept: Code1 | Code2 == 0 &bull; Trivial Reject: Code1 &amp; Code2 != 0 &bull; Otherwise compute edge intersection.</text>
-</svg><div class="figure-caption">Figure 4.1: Cohen-Sutherland 2D Clipping Window and 4-Bit Region Outcodes (Bit 4: Top, Bit 3: Bottom, Bit 2: Right, Bit 1: Left)</div></div>
+  <figure class="figure-box">
+    <img src="assets/bresenham_line.png" alt="Bresenham Line Rasterization Grid">
+    <figcaption>Figure 4.1: Bresenham's Line Drawing Algorithm &mdash; Selecting the closest discrete pixel along a continuous line using integer decision parameters.</figcaption>
+  </figure>
 
-    <h4>Cohen-Sutherland Algorithm Steps</h4>
+  <pre><code>// Java Implementation: Bresenham Line Algorithm (0 &lt;= slope &lt;= 1)
+public class BresenhamLine {
+    public static void drawLine(int x1, int y1, int x2, int y2) {
+        int dx = Math.abs(x2 - x1);
+        int dy = Math.abs(y2 - y1);
+        int p = 2 * dy - dx;
+        int x = x1, y = y1;
+        System.out.println("Plot: (" + x + ", " + y + ")");
+        while (x &lt; x2) {
+            x++;
+            if (p &lt; 0) {
+                p += 2 * dy;
+            } else {
+                y++;
+                p += 2 * (dy - dx);
+            }
+            System.out.println("Plot: (" + x + ", " + y + ")");
+        }
+    }
+    public static void main(String[] args) { drawLine(2, 2, 8, 5); }
+}</code></pre>
+
+  <h3 id="u4-circles">4.3 Circle Drawing Algorithms: DDA, Bresenham &amp; Midpoint</h3>
+  <p>Circles have <strong>8-way symmetry</strong>: if $(x, y)$ is on a circle centered at $(0, 0)$, then $(\pm x, \pm y)$ and $(\pm y, \pm x)$ are also on it! So we only compute the first octant ($x = 0$ to $x = y$).</p>
+  <ul>
+    <li><strong>DDA Circle:</strong> Uses small angular steps $\Delta \theta = 1/r$ or parametric equations $x_{n+1} = x_n + \varepsilon y_n$, $y_{n+1} = y_n - \varepsilon x_{n+1}$ (floating-point heavy).</li>
+    <li><strong>Bresenham's Circle:</strong> Uses integer decision parameter $d_0 = 3 - 2r$; if $d &lt; 0$, $d = d + 4x + 6$; else $d = d + 4(x - y) + 10$ and $y$ decrements.</li>
+    <li><strong>Midpoint Circle Algorithm:</strong> Tests the midpoint $(x_k + 1, y_k - \frac{1}{2})$ against $f(x, y) = x^2 + y^2 - r^2$.</li>
+  </ul>
+
+  <div class="formula-box">
+    <span class="box-title">Midpoint Circle Algorithm (Integer Version)</span>
+    <p>Start at $(0, r)$ with initial decision parameter: $p_0 = 1 - r$.</p>
+    <ul>
+      <li>If $p_k &lt; 0$: next point is $(x_k + 1, y_k)$, and $p_{k+1} = p_k + 2x_{k+1} + 1$.</li>
+      <li>If $p_k \ge 0$: next point is $(x_k + 1, y_k - 1)$, and $p_{k+1} = p_k + 2x_{k+1} + 1 - 2y_{k+1}$.</li>
+    </ul>
+    <p>Repeat while $x &lt; y$, plotting all 8 symmetric points at each step.</p>
+  </div>
+
+  <div class="card">
+    <h4>Solved Numerical: Midpoint Circle for $r = 10$ centered at $(0, 0)$</h4>
+    <p>Start: $(x_0, y_0) = (0, 10)$, $p_0 = 1 - 10 = -9$.</p>
+    <table>
+      <thead><tr><th>$k$</th><th>$p_k$</th><th>$(x_{k+1}, y_{k+1})$</th><th>$2x_{k+1}$</th><th>$2y_{k+1}$</th></tr></thead>
+      <tbody>
+        <tr><td>0</td><td>$-9 &lt; 0$</td><td>$(1, 10)$</td><td>2</td><td>20</td></tr>
+        <tr><td>1</td><td>$-9 + 2 + 1 = -6 &lt; 0$</td><td>$(2, 10)$</td><td>4</td><td>20</td></tr>
+        <tr><td>2</td><td>$-6 + 4 + 1 = -1 &lt; 0$</td><td>$(3, 10)$</td><td>6</td><td>20</td></tr>
+        <tr><td>3</td><td>$-1 + 6 + 1 = 6 \ge 0$</td><td>$(4, 9)$</td><td>8</td><td>18</td></tr>
+        <tr><td>4</td><td>$6 + 8 + 1 - 18 = -3 &lt; 0$</td><td>$(5, 9)$</td><td>10</td><td>18</td></tr>
+        <tr><td>5</td><td>$-3 + 10 + 1 = 8 \ge 0$</td><td>$(6, 8)$</td><td>12</td><td>16</td></tr>
+        <tr><td>6</td><td>$8 + 12 + 1 - 16 = 5 \ge 0$</td><td>$(7, 7)$</td><td>14</td><td>14 (Stop, $x \ge y$)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <figure class="figure-box">
+    <img src="assets/midpoint_circle.png" alt="Midpoint Circle Rasterization for radius 23">
+    <figcaption>Figure 4.2: Midpoint Circle Algorithm &mdash; 8-way symmetric rasterized pixels forming a discrete circle.</figcaption>
+  </figure>
+
+  <h3 id="u4-polygons">4.4 Polygons, Inside-Outside Test &amp; Polygon Filling</h3>
+  <ul>
+    <li><strong>Types of Polygons:</strong>
+      <ul>
+        <li><strong>Convex:</strong> All interior angles $\le 180^\circ$; any line joining two interior points lies completely inside.</li>
+        <li><strong>Concave:</strong> At least one interior angle $&gt; 180^\circ$.</li>
+        <li><strong>Complex:</strong> Edges intersect/cross each other.</li>
+      </ul>
+    </li>
+    <li><strong>Inside-Outside Test:</strong>
+      <ul>
+        <li><strong>Even-Odd (Parity) Rule:</strong> Cast a ray from point $P$ to infinity. Count edge intersections: <strong>Odd</strong> = Inside, <strong>Even</strong> = Outside.</li>
+        <li><strong>Winding Number Rule:</strong> Assign $+1$ or $-1$ to directed edges crossing the ray. Non-zero sum = Inside.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <table>
+    <thead><tr><th>Algorithm</th><th>How It Works</th><th>Pros / Cons</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Flood Fill</strong></td><td>Starts at interior seed pixel and replaces all connected pixels of <code>oldColor</code> with <code>newColor</code> (4-connected or 8-connected).</td><td>Works for any boundary color; uses recursion stack (memory heavy).</td></tr>
+      <tr><td><strong>Boundary (Seed) Fill</strong></td><td>Spreads from seed until it hits a specific <code>boundaryColor</code>.</td><td>Simple, but fails if interior already contains boundary color.</td></tr>
+      <tr><td><strong>Scan Line Fill</strong></td><td>Intersects horizontal scan lines with polygon edges, sorts $x$-intersections, and fills between odd-even pairs.</td><td>Fastest for large polygons; uses Active Edge Table (AET), no stack overflow.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="u4-clipping">4.5 Windowing &amp; 2D Clipping Algorithms</h3>
+  <p><strong>Windowing</strong> selects a rectangular region in world coordinates (the <em>Window</em>) and maps it to a screen area (the <em>Viewport</em>). <strong>Clipping</strong> removes portions of graphics outside the window.</p>
+  <div class="formula-box">
+    <span class="box-title">Window-to-Viewport Transformation</span>
+    $$x_v = x_{vmin} + (x_w - x_{wmin})\frac{x_{vmax} - x_{vmin}}{x_{wmax} - x_{wmin}}, \quad y_v = y_{vmin} + (y_w - y_{wmin})\frac{y_{vmax} - y_{vmin}}{y_{wmax} - y_{wmin}}$$
+  </div>
+
+  <h4>1. Cohen-Sutherland Line Clipping Algorithm</h4>
+  <p>Divides 2D space into 9 regions using a <strong>4-bit region code (TBRL: Top, Bottom, Right, Left)</strong>:</p>
+  <ul>
+    <li>Bit 1 (MSB, Top): $y &gt; y_{\max}$, Bit 2 (Bottom): $y &lt; y_{\min}$, Bit 3 (Right): $x &gt; x_{\max}$, Bit 4 (LSB, Left): $x &lt; x_{\min}$.</li>
+    <li><strong>Trivial Accept:</strong> $\text{code}(P_1) = 0000$ AND $\text{code}(P_2) = 0000$.</li>
+    <li><strong>Trivial Reject:</strong> $(\text{code}(P_1) \text{ \&amp; } \text{code}(P_2)) \neq 0000$ (both outside same edge).</li>
+    <li><strong>Partial / Clip:</strong> Otherwise, find intersection with window edge using slope $m = \frac{y_2 - y_1}{x_2 - x_1}$:
+      $y = y_1 + m(x_{\text{edge}} - x_1)$ and $x = x_1 + \frac{y_{\text{edge}} - y_1}{m}$.</li>
+  </ul>
+
+  <figure class="figure-box">
+    <img src="assets/cohen_sutherland.png" alt="Cohen-Sutherland 9-Region Outcodes">
+    <figcaption>Figure 4.3: Cohen-Sutherland 4-bit Region Outcodes (TBRL) for the Clipping Window and surrounding 8 regions.</figcaption>
+  </figure>
+
+  <h4>2. Sutherland-Hodgman Polygon Clipping Algorithm</h4>
+  <p>Clips a polygon sequentially against 4 infinite clip boundaries (<strong>Left &rarr; Right &rarr; Bottom &rarr; Top</strong>). For each directed edge from $V_1$ to $V_2$:</p>
+  <ol>
+    <li><strong>Out &rarr; In:</strong> Output intersection $I$ and $V_2$.</li>
+    <li><strong>In &rarr; In:</strong> Output $V_2$.</li>
+    <li><strong>In &rarr; Out:</strong> Output intersection $I$.</li>
+    <li><strong>Out &rarr; Out:</strong> Output nothing.</li>
+  </ol>
+
+  <h3 id="u4-casestudy">4.6 Case Studies &amp; Important SPPU Exam Questions</h3>
+  <div class="card">
+    <h4>Case Studies</h4>
+    <ul>
+      <li><strong>Real-Time Map Rendering in GPS Navigation:</strong> Roads are rasterized as polylines using Bresenham's integer line algorithm (ultra-fast on embedded chips), and roundabouts/radar radii use Midpoint Circle.</li>
+      <li><strong>3D Pipeline &amp; Polygonal Modeling:</strong> Objects are represented as triangle meshes; clipped against the view frustum before scan-line rasterization.</li>
+    </ul>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-q">Q1. Write Bresenham circle drawing algorithm and explain its mathematical foundation. <span class="marks-badge">SPPU Oct 2025 &bull; 5M</span></div>
+    <p>State $f(x, y) = x^2 + y^2 - r^2$ (1M), explain 8-way symmetry (1M), derive decision parameter $d_0 = 3 - 2r$ and update rules (2M), and write the loop steps (1M).</p>
+  </div>
+
+  <div class="qa-block">
+    <div class="qa-q">Q2. Explain Scan Line Polygon Fill algorithm and compare it with Flood Fill and Seed Fill. <span class="marks-badge">SPPU Oct 2025 &bull; 5M</span></div>
+    <p>Explain Sorted Edge Table / Active Edge Table + parity toggle filling (3M), followed by the comparison table on speed, memory/recursion, and boundary dependency (2M).</p>
+  </div>
+</section>
+
+<section id="unit-5">
+  <h2 class="unit-title">Unit V: 2D, 3D Transformations and Projections</h2>
+
+  <h3 id="u5-2d">5.1 2D Transformations &amp; Homogeneous Coordinates</h3>
+  <div class="concept-box">
+    <span class="box-title">Homogeneous Coordinates</span>
+    <p><strong>Exam Definition:</strong> Homogeneous coordinates represent a 2D point $(x, y)$ as a 3-element vector $(x, y, 1)$ (or $(X, Y, W)$ where $x = X/W, y = Y/W$) so that translation, scaling, rotation, and shear can all be expressed uniformly as $3 \times 3$ matrix multiplications.</p>
+    <p><strong>In Simple Words:</strong> Adding a dummy <code>1</code> at the end turns addition (translation) into matrix multiplication, letting us chain multiple transformations into a single composite matrix.</p>
+  </div>
+
+  <div class="formula-box">
+    <span class="box-title">2D Homogeneous Transformation Matrices (Column-Vector Convention $P' = M \cdot P$)</span>
+    $$T(t_x, t_y) = \begin{bmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1 \end{bmatrix}, \quad
+      S(s_x, s_y) = \begin{bmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{bmatrix}, \quad
+      R(\theta) = \begin{bmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
+    $$\text{X-Shear: } SH_x = \begin{bmatrix} 1 & sh_x & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}, \quad
+      \text{Y-Shear: } SH_y = \begin{bmatrix} 1 & 0 & 0 \\ sh_y & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
+  </div>
+
+  <h4>Rotation About an Arbitrary Pivot Point $(x_f, y_f)$</h4>
+  <p>Standard $R(\theta)$ rotates around the origin $(0,0)$. To rotate around an arbitrary pivot $(x_f, y_f)$ by angle $\theta$, compose three steps:</p>
+  <ol>
+    <li>Translate pivot to origin: $T(-x_f, -y_f)$</li>
+    <li>Rotate by $\theta$ around origin: $R(\theta)$</li>
+    <li>Translate back to $(x_f, y_f)$: $T(x_f, y_f)$</li>
+  </ol>
+  <div class="formula-box">
+    <span class="box-title">Composite Pivot Rotation Matrix</span>
+    $$M = T(x_f, y_f) \cdot R(\theta) \cdot T(-x_f, -y_f)$$
+  </div>
+
+  <div class="card">
+    <h4>Solved Numerical 1 (SPPU Oct 2025, 4M): Perform X-Shear on triangle $A(2,1), B(4,3), C(2,3)$ with $sh_x = 2$</h4>
+    <p>Using $x' = x + sh_x \cdot y$ and $y' = y$:</p>
+    $$P' = \begin{bmatrix} 1 & 2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} 2 & 4 & 2 \\ 1 & 3 & 3 \\ 1 & 1 & 1 \end{bmatrix} = \begin{bmatrix} 2+2(1) & 4+2(3) & 2+2(3) \\ 1 & 3 & 3 \\ 1 & 1 & 1 \end{bmatrix} = \begin{bmatrix} 4 & 10 & 8 \\ 1 & 3 & 3 \\ 1 & 1 & 1 \end{bmatrix}$$
+    <p><strong>Transformed Triangle:</strong> $A'(4, 1)$, $B'(10, 3)$, $C'(8, 3)$.</p>
+  </div>
+
+  <div class="card">
+    <h4>Solved Numerical 2: Rotate point $P(4, 2)$ by $90^\circ$ CCW about pivot $(1, 1)$</h4>
     <ol>
-      <li>Assign 4-bit region code (TBRL) to endpoints $P_1$ and $P_2$.</li>
-      <li><strong>Trivial Accept:</strong> If $\text{code}_1 | \text{code}_2 == 0000_2$ (Both points inside window &rarr; draw line).</li>
-      <li><strong>Trivial Reject:</strong> If $\text{code}_1 \, \& \, \text{code}_2 \ne 0000_2$ (Both points lie outside same edge &rarr; discard line).</li>
-      <li><strong>Clip:</strong> If neither, choose an endpoint outside window, compute intersection with window boundary line:
-        $$x = x_1 + \frac{y_{clip} - y_1}{m}, \quad y = y_1 + m(x_{clip} - x_1)$$
-        Replace clipped endpoint and repeat.
-      </li>
+      <li>Translate by $(-1, -1)$: $(4-1, 2-1) = (3, 1)$.</li>
+      <li>Rotate by $90^\circ$ ($\cos 90^\circ = 0, \sin 90^\circ = 1$): $(-y, x) = (-1, 3)$.</li>
+      <li>Translate back by $(+1, +1)$: $(-1+1, 3+1) = (0, 4)$.</li>
     </ol>
-
-    <h4>Sutherland-Hodgman Polygon Clipping Algorithm</h4>
-    <p>Unlike line clipping, polygon clipping must preserve closed polygon boundaries. The <strong>Sutherland-Hodgman</strong> algorithm sequentially clips a polygon vertex list against all 4 window boundaries in order: <strong>Left &rarr; Right &rarr; Bottom &rarr; Top</strong>. For each directed edge from $V_1$ to $V_2$:</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Case ($V_1 \to V_2$)</th><th>Condition Relative to Clip Edge</th><th>Vertices Appended to Output List</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Case 1: In &rarr; In</strong></td><td>Both $V_1$ and $V_2$ inside boundary</td><td>Output <strong>$V_2$</strong> only.</td></tr>
-          <tr><td><strong>Case 2: In &rarr; Out</strong></td><td>$V_1$ inside, $V_2$ outside boundary</td><td>Output intersection vertex <strong>$V'$</strong> only.</td></tr>
-          <tr><td><strong>Case 3: Out &rarr; Out</strong></td><td>Both $V_1$ and $V_2$ outside boundary</td><td>Output <strong>Nothing</strong>.</td></tr>
-          <tr><td><strong>Case 4: Out &rarr; In</strong></td><td>$V_1$ outside, $V_2$ inside boundary</td><td>Output <strong>$V'$</strong> followed by <strong>$V_2$</strong>.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
+    <p><strong>Result:</strong> $P'(0, 4)$.</p>
   </div>
 
-  <section class="unit-short-notes" id="u4-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit IV Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Scan conversion formulas, midpoint circle steps, and clipping rules.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Bresenham's Decision Parameters</h4>
-          <ul>
-            <li>Initial: $P_0 = 2\Delta y - \Delta x$</li>
-            <li>If $P_k &lt; 0$: Next pixel $(x+1, y)$, $P_{k+1} = P_k + 2\Delta y$</li>
-            <li>If $P_k \ge 0$: Next pixel $(x+1, y+1)$, $P_{k+1} = P_k + 2\Delta y - 2\Delta x$</li>
-            <li>Midpoint Circle: $P_0 = 1 - R$. If $P_k &lt; 0$, plot $(x+1, y)$, $P_{k+1} = P_k + 2x + 3$</li>
-            <li>If $P_k \ge 0$, plot $(x+1, y-1)$, $P_{k+1} = P_k + 2x - 2y + 5$</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Cohen-Sutherland Outcodes (TBRL)</h4>
-          <ul>
-            <li>Bit 4 (Top): $y &gt; y_{max}$</li>
-            <li>Bit 3 (Bottom): $y &lt; y_{min}$</li>
-            <li>Bit 2 (Right): $x &gt; x_{max}$</li>
-            <li>Bit 1 (Left): $x &lt; x_{min}$</li>
-            <li>Accept: $C_1 | C_2 == 0$; Reject: $C_1 \& C_2 \ne 0$</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Polygon Clipping (Sutherland-Hodgeman)</h4>
-          <ul>
-            <li>Clips against 4 boundaries in order: Left &rarr; Right &rarr; Bottom &rarr; Top</li>
-            <li>In &rarr; In: Output $V_2$</li>
-            <li>In &rarr; Out: Output intersection $V'$</li>
-            <li>Out &rarr; Out: Output nothing</li>
-            <li>Out &rarr; In: Output intersection $V'$ and $V_2$</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Polygon Filling Methods</h4>
-          <ul>
-            <li>Flood Fill: 4-connected (cross) vs 8-connected (diagonal) recursive stack</li>
-            <li>Boundary Fill: Recursively fills interior until boundary color encountered</li>
-            <li>Scan-Line Fill: Edge Table (ET) sorted by $y_{min}$ + Active Edge Table (AET) parity</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-</section>
-
-<section id="unit-5" class="unit-section">
-  <div class="unit-badge">Unit V &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit V: 2D, 3D Transformations and Projections</h2>
-  
-  <div class="topic-block" id="u5-2d">
-    <h3>5.1 2D Affine Transformations (Homogeneous Coordinate Matrices)</h3>
-    <p>Using $3 \times 3$ homogeneous coordinate matrices, all 2D affine transformations are expressed as matrix multiplications:</p>
-
-    <div class="formula-box">
-      <strong>Translation:</strong> $\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} 1 &amp; 0 &amp; t_x \\ 0 &amp; 1 &amp; t_y \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$<br><br>
-      <strong>Scaling:</strong> $\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} s_x &amp; 0 &amp; 0 \\ 0 &amp; s_y &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$<br><br>
-      <strong>Counter-Clockwise Rotation:</strong> $\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} \cos\theta &amp; -\sin\theta &amp; 0 \\ \sin\theta &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}$
-    </div>
-
-    <h4>Composite Rotation About an Arbitrary Point $(x_p, y_p)$</h4>
-    <p>To rotate an object about an arbitrary pivot $(x_p, y_p)$, chain three transformations:</p>
-    <div class="formula-box">
-      $$M = T(x_p, y_p) \cdot R(\theta) \cdot T(-x_p, -y_p)$$<br>
-      $$M = \begin{bmatrix} 1 &amp; 0 &amp; x_p \\ 0 &amp; 1 &amp; y_p \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} \cos\theta &amp; -\sin\theta &amp; 0 \\ \sin\theta &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} 1 &amp; 0 &amp; -x_p \\ 0 &amp; 1 &amp; -y_p \\ 0 &amp; 0 &amp; 1 \end{bmatrix}$$<br>
-      $$M = \begin{bmatrix} \cos\theta &amp; -\sin\theta &amp; x_p(1-\cos\theta) + y_p\sin\theta \\ \sin\theta &amp; \cos\theta &amp; y_p(1-\cos\theta) - x_p\sin\theta \\ 0 &amp; 0 &amp; 1 \end{bmatrix}$$
-    </div>
+  <h3 id="u5-3d">5.2 3D Transformations &amp; Rotation About an Arbitrary Axis</h3>
+  <p>In 3D, points use $4$-element homogeneous vectors $(x, y, z, 1)^T$ and $4 \times 4$ matrices:</p>
+  <div class="formula-box">
+    <span class="box-title">3D Translation, Scaling &amp; Axis Rotations</span>
+    $$T = \begin{bmatrix} 1 & 0 & 0 & t_x \\ 0 & 1 & 0 & t_y \\ 0 & 0 & 1 & t_z \\ 0 & 0 & 0 & 1 \end{bmatrix}, \quad
+      S = \begin{bmatrix} s_x & 0 & 0 & 0 \\ 0 & s_y & 0 & 0 \\ 0 & 0 & s_z & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}, \quad
+      R_z(\theta) = \begin{bmatrix} \cos\theta & -\sin\theta & 0 & 0 \\ \sin\theta & \cos\theta & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
+    $$R_x(\theta) = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & \cos\theta & -\sin\theta & 0 \\ 0 & \sin\theta & \cos\theta & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}, \quad
+      R_y(\theta) = \begin{bmatrix} \cos\theta & 0 & \sin\theta & 0 \\ 0 & 1 & 0 & 0 \\ -\sin\theta & 0 & \cos\theta & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$
+    <p><strong>3D Z-Shear:</strong> $x' = x + sh_x \cdot z$, $y' = y + sh_y \cdot z$, $z' = z$.</p>
   </div>
 
-  <div class="topic-block" id="u5-3d">
-    <h3>5.2 3D Transformations &amp; Rotation About an Arbitrary Axis</h3>
-    <p>3D transformations use $4 \times 4$ homogeneous matrices. To rotate by angle $\theta$ about an arbitrary line in 3D space:</p>
-    <ol>
-      <li>Translate line to pass through coordinate origin: $T(-x_0, -y_0, -z_0)$.</li>
-      <li>Rotate around X-axis into XZ plane: $R_x(\alpha)$.</li>
-      <li>Rotate around Y-axis to align with Z-axis: $R_y(\beta)$.</li>
-      <li>Rotate around Z-axis by required angle: $R_z(\theta)$.</li>
-      <li>Apply inverse rotations and translation: $R_y(-\beta) \cdot R_x(-\alpha) \cdot T(x_0, y_0, z_0)$.</li>
-    </ol>
+  <h4>Rotation About an Arbitrary Axis in 3D (5-Step Pipeline)</h4>
+  <p>To rotate by $\theta$ around an arbitrary axis passing through $P_1(x_1, y_1, z_1)$ and $P_2(x_2, y_2, z_2)$:</p>
+  <ol>
+    <li><strong>Translate</strong> $P_1$ to origin: $T(-x_1, -y_1, -z_1)$.</li>
+    <li><strong>Rotate around X-axis</strong> by $\alpha$ to bring axis into $xz$-plane: $R_x(\alpha)$.</li>
+    <li><strong>Rotate around Y-axis</strong> by $-\beta$ to align axis with $+Z$-axis: $R_y(-\beta)$.</li>
+    <li><strong>Rotate around Z-axis</strong> by desired angle $\theta$: $R_z(\theta)$.</li>
+    <li><strong>Apply inverse transformations</strong> in reverse order: $T(x_1, y_1, z_1) \cdot R_x(-\alpha) \cdot R_y(\beta)$.</li>
+  </ol>
+
+  <h3 id="u5-projections">5.3 Parallel &amp; Perspective Projections</h3>
+  <p><strong>Projection</strong> maps 3D world coordinates $(x, y, z)$ onto a 2D view plane.</p>
+
+  <figure class="svg-box">
+    <svg style="max-width:100%;height:auto;" viewBox="0 0 740 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Taxonomy of Planar Geometric Projections">
+      <rect x="0" y="0" width="740" height="210" rx="8" fill="#FAF7F4"/>
+      <rect x="275" y="14" width="190" height="34" rx="6" fill="#EAEFFE" stroke="#4B5FD1" stroke-width="2"/>
+      <text x="370" y="36" fill="#171717" font-size="13" font-weight="bold" text-anchor="middle">Planar Projections</text>
+
+      <line x1="370" y1="48" x2="370" y2="66" stroke="#6A625B" stroke-width="1.5"/>
+      <line x1="185" y1="66" x2="555" y2="66" stroke="#6A625B" stroke-width="1.5"/>
+      <line x1="185" y1="66" x2="185" y2="82" stroke="#6A625B" stroke-width="1.5"/>
+      <line x1="555" y1="66" x2="555" y2="82" stroke="#6A625B" stroke-width="1.5"/>
+
+      <rect x="105" y="82" width="160" height="32" rx="6" fill="#E4F2EC" stroke="#226D51" stroke-width="2"/>
+      <text x="185" y="103" fill="#171717" font-size="12" font-weight="bold" text-anchor="middle">Parallel (COP at inf)</text>
+
+      <rect x="465" y="82" width="180" height="32" rx="6" fill="#FBF4DC" stroke="#9C7710" stroke-width="2"/>
+      <text x="555" y="103" fill="#171717" font-size="12" font-weight="bold" text-anchor="middle">Perspective (Finite COP)</text>
+
+      <!-- Parallel branches -->
+      <line x1="185" y1="114" x2="185" y2="132" stroke="#226D51" stroke-width="1.5"/>
+      <line x1="95" y1="132" x2="275" y2="132" stroke="#226D51" stroke-width="1.5"/>
+      <rect x="20" y="144" width="150" height="46" rx="6" fill="#EFE4DC" stroke="#226D51"/>
+      <text x="95" y="164" fill="#226D51" font-size="11" font-weight="bold" text-anchor="middle">Orthographic</text>
+      <text x="95" y="180" fill="#171717" font-size="10" text-anchor="middle">Isometric, Dimetric, Trimetric</text>
+
+      <rect x="200" y="144" width="150" height="46" rx="6" fill="#EFE4DC" stroke="#226D51"/>
+      <text x="275" y="164" fill="#226D51" font-size="11" font-weight="bold" text-anchor="middle">Oblique</text>
+      <text x="275" y="180" fill="#171717" font-size="10" text-anchor="middle">Cavalier (l=1), Cabinet (l=0.5)</text>
+
+      <!-- Perspective branches -->
+      <line x1="555" y1="114" x2="555" y2="144" stroke="#9C7710" stroke-width="1.5"/>
+      <rect x="440" y="144" width="230" height="46" rx="6" fill="#EFE4DC" stroke="#9C7710"/>
+      <text x="555" y="164" fill="#9C7710" font-size="11" font-weight="bold" text-anchor="middle">Vanishing Points</text>
+      <text x="555" y="180" fill="#171717" font-size="10" text-anchor="middle">1-Point, 2-Point, 3-Point</text>
+    </svg>
+    <figcaption>Figure 5.1: Classification of Parallel (Orthographic &amp; Oblique) and Perspective Projections.</figcaption>
+  </figure>
+
+  <table>
+    <thead><tr><th>Projection Type</th><th>Projectors &amp; Angle</th><th>Key Characteristics</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Orthographic</strong> (Isometric, Dimetric, Trimetric)</td><td>Parallel projectors perpendicular ($90^\circ$) to view plane</td><td>Preserves true parallel lines; <strong>Isometric</strong> foreshortens all 3 axes equally ($120^\circ$ apart); <strong>Dimetric</strong> has 2 equal axes; <strong>Trimetric</strong> has 3 unequal axes.</td></tr>
+      <tr><td><strong>Oblique: Cavalier</strong></td><td>Parallel projectors at $45^\circ$ ($\tan\alpha = 1$)</td><td>Receding depth lines drawn at full length ($l = 1$). Looks slightly stretched.</td></tr>
+      <tr><td><strong>Oblique: Cabinet</strong></td><td>Parallel projectors at $63.4^\circ$ ($\tan\alpha = 2$)</td><td>Receding depth lines drawn at half length ($l = 0.5$). Looks more realistic.</td></tr>
+      <tr><td><strong>Perspective</strong> (1, 2, 3-Point)</td><td>Projectors converge at finite Center of Projection (COP)</td><td>Objects shrink with distance (perspective foreshortening). <strong>1-pt</strong> (1 axis cuts plane), <strong>2-pt</strong> (2 axes), <strong>3-pt</strong> (all 3 axes cut view plane).</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="u5-curves">5.4 Parametric Curves: Bezier &amp; B-Spline</h3>
+  <p>A <strong>Cubic Bezier Curve</strong> uses 4 control points $P_0, P_1, P_2, P_3$ and Bernstein blending polynomials for $t \in [0, 1]$:</p>
+  <div class="formula-box">
+    <span class="box-title">Cubic Bezier Equation</span>
+    $$P(t) = (1-t)^3 P_0 + 3t(1-t)^2 P_1 + 3t^2(1-t) P_2 + t^3 P_3$$
+  </div>
+  <p><strong>B-Spline Curves:</strong> Generalize Bezier curves by providing <em>local control</em> (moving one control point only affects a local segment) and allow choosing the curve degree independent of the number of control points.</p>
+
+  <figure class="figure-box">
+    <img src="assets/bezier_curve.png" alt="Cubic Bezier Curve Construction">
+    <figcaption>Figure 5.2: Cubic Bezier Curve &mdash; Smooth parametric curve guided by 4 control points within their convex hull.</figcaption>
+  </figure>
+
+  <h3 id="u5-casestudy">5.5 Case Studies &amp; Important SPPU Exam Questions</h3>
+  <div class="card">
+    <h4>Case Studies</h4>
+    <ul>
+      <li><strong>Affine Transformations Vlab:</strong> Interactive simulation (<a href="https://cse19-iiith.vlabs.ac.in/exp/affine-transformation/theory.html" target="_blank" rel="noopener">IIIT-H Virtual Labs</a>) demonstrating how matrix order ($T \cdot R$ vs $R \cdot T$) changes the final object position.</li>
+      <li><strong>Image Augmentation in Deep Learning:</strong> Training CNNs uses 2D affine transformations (random rotation, scaling, horizontal flip, shear) on training images to prevent overfitting.</li>
+    </ul>
   </div>
 
-  <div class="topic-block" id="u5-projections">
-    <h3>5.3 Taxonomy of Projections: Parallel vs Perspective</h3>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Feature</th><th>Parallel Projection</th><th>Perspective Projection</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Center of Projection (COP)</strong></td><td>At Infinity (Projectors are strictly parallel lines)</td><td>At a finite distance from view plane (Projectors converge at eye point)</td></tr>
-          <tr><td><strong>Vanishing Points</strong></td><td>None (Parallel lines remain parallel)</td><td>1, 2, or 3 vanishing points on horizon line</td></tr>
-          <tr><td><strong>Object Scale / Realism</strong></td><td>Preserves true dimensions; lacks realistic depth perception.</td><td>Realistic depth foreshortening: distant objects appear smaller.</td></tr>
-          <tr><td><strong>Classifications</strong></td><td><strong>Orthographic:</strong> Isometric (equal angles), Diametric, Trimetric.<br><strong>Oblique:</strong> Cavalier (angle $45^\circ$, scale 1:1), Cabinet (angle $63.4^\circ$, foreshortened 1:2).</td><td>1-Point (front view), 2-Point (corner/architectural view), 3-Point (aerial/bird's eye view).</td></tr>
-          <tr><td><strong>Applications</strong></td><td>Engineering drawings, CAD/CAM blueprints, architecture elevations.</td><td>Video games, CGI films, 3D flight simulators, virtual reality.</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="qa-block">
+    <div class="qa-q">Q1. What is Oblique projection? Explain Cavalier and Cabinet projection. <span class="marks-badge">SPPU Oct 2025 &bull; 4M</span></div>
+    <p>Define oblique projection (parallel projectors hit view plane at $\neq 90^\circ$) (1M). Explain Cavalier ($\alpha=45^\circ$, foreshortening factor $l=1$, full depth) (1.5M) and Cabinet ($\alpha=63.4^\circ$, $l=0.5$, half depth for realism) (1.5M).</p>
   </div>
 
-
-  <div class="topic-block" id="u5-curves">
-    <h3>5.4 Parametric Curves: Bezier Curves &amp; B-Spline Curves</h3>
-    <p>Parametric curves represent smooth CAD/3D surfaces mathematically for $t \in [0, 1]$ using control points $P_0, P_1, \dots, P_n$:</p>
-    <div class="formula-box">
-      <strong>Bezier Curve of Degree $n$:</strong>
-      $$P(t) = \sum_{i=0}^{n} P_i B_{i,n}(t), \qquad B_{i,n}(t) = \binom{n}{i} t^i (1-t)^{n-i} \quad (0 \le t \le 1)$$
-      <strong>Cubic Bezier ($n=3$, 4 Control Points):</strong>
-      $$P(t) = (1-t)^3 P_0 + 3t(1-t)^2 P_1 + 3t^2(1-t) P_2 + t^3 P_3$$
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Property</th><th>Bezier Curve</th><th>B-Spline Curve</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Degree Dependency</strong></td><td>Tied directly to total control points ($n$ points &rarr; degree $n-1$).</td><td><strong>Independent</strong> of control point count; choose any low degree $k$ (e.g., cubic).</td></tr>
-          <tr><td><strong>Control Locality</strong></td><td><strong>Global Control:</strong> Moving any $P_i$ shifts the entire curve.</td><td><strong>Local Control:</strong> Moving $P_i$ modifies only nearby segments defined by the knot vector.</td></tr>
-          <tr><td><strong>Properties</strong></td><td>Lies within Convex Hull of control polygon; interpolates $P_0$ and $P_n$ endpoints tangent to $P_0P_1$ and $P_{n-1}P_n$.</td><td>Provides $C^2$ continuity across piecewise segments without elevating polynomial degree.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <section class="unit-short-notes" id="u5-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit V Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Transformation matrices, composite ordering, and projection taxonomy.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>2D Transformation Matrices (Homogeneous)</h4>
-          <ul>
-            <li>Translation: $[1, 0, t_x; 0, 1, t_y; 0, 0, 1]$</li>
-            <li>Scaling: $[s_x, 0, 0; 0, s_y, 0; 0, 0, 1]$</li>
-            <li>Rotation CCW: $[\cos\theta, -\sin\theta, 0; \sin\theta, \cos\theta, 0; 0, 0, 1]$</li>
-            <li>Reflection X-axis: $[1, 0, 0; 0, -1, 0; 0, 0, 1]$</li>
-            <li>Shear X: $[1, sh_x, 0; 0, 1, 0; 0, 0, 1]$</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Arbitrary Pivot Rotation Rule</h4>
-          <ul>
-            <li>Step 1: Translate pivot to origin $T(-x_p, -y_p)$</li>
-            <li>Step 2: Rotate around origin $R(\theta)$</li>
-            <li>Step 3: Translate back to pivot $T(x_p, y_p)$</li>
-            <li>Composite: $M = T(x_p, y_p) \cdot R(\theta) \cdot T(-x_p, -y_p)$</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Parallel Projections Breakdown</h4>
-          <ul>
-            <li><strong>Isometric:</strong> All 3 principal axes make equal angles ($120^\circ$) with projection plane</li>
-            <li><strong>Cavalier (Oblique):</strong> Angle $45^\circ$, depth axis drawn at full scale ($L=1$)</li>
-            <li><strong>Cabinet (Oblique):</strong> Angle $63.4^\circ$, depth axis foreshortened to half scale ($L=0.5$)</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Perspective Vanishing Points</h4>
-          <ul>
-            <li>1-Point: View plane parallel to 2 coordinate axes (Z-axis converges)</li>
-            <li>2-Point: View plane parallel to 1 coordinate axis (X &amp; Z converge)</li>
-            <li>3-Point: View plane not parallel to any axis (X, Y, Z all converge)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-</section>
-
-<section class="flashcards-section" id="flashcards">
-  <div class="flashcards-header">
-    <div class="flashcards-title-group">
-      <span class="flashcards-badge">Active Recall Deck</span>
-      <h2>OOP &amp; Computer Graphics Master Exam Flashcards (25 Cards)</h2>
-      <p>Tap any card to flip and verify your understanding of Java OOP concepts and computer graphics algorithms.</p>
-    </div>
-    <div class="flashcards-controls">
-      <button type="button" class="fc-ctrl-btn" id="fc-flip-all">Flip All Cards</button>
-      <button type="button" class="fc-ctrl-btn" id="fc-reset-all">Reset All</button>
-      <div class="fc-filter-group">
-        <label>Filter Unit:</label>
-        <select id="fc-unit-filter">
-          <option value="all">All Units</option>
-          <option value="u1">Unit I: OOP &amp; JVM</option>
-          <option value="u2">Unit II: Classes &amp; I/O</option>
-          <option value="u3">Unit III: Inheritance &amp; Threads</option>
-          <option value="u4">Unit IV: Graphics &amp; Clipping</option>
-          <option value="u5">Unit V: Transformations &amp; Proj</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <div class="flashcards-grid">
-    <!-- Card 1 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; JVM Memory Model</div>
-          <div class="fc-q">Which JVM memory areas are shared across threads, and which are thread-private?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>Shared across all threads:</strong> Heap Memory (Objects) and Method Area (Class metadata &amp; statics).<br>
-            <strong>Thread-Private:</strong> JVM Stack (Frames), Program Counter (PC) Registers, and Native Method Stack.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; JIT Compiler</div>
-          <div class="fc-q">What is the role of the Just-In-Time (JIT) compiler in the JVM?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            The JIT compiler analyzes running bytecode to detect frequently executed "hot spots". It compiles these bytecode sequences directly into native CPU machine instructions, dramatically boosting execution speed compared to pure interpretation.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Static Method Restrictions</div>
-          <div class="fc-q">Why can't static methods use the 'this' or 'super' keywords?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Because static methods belong to the <strong>Class</strong> itself, not to any particular object instance. They can be invoked without creating an instance (<code>ClassName.method()</code>), so no <code>this</code> (current instance) or <code>super</code> object exists in context!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Byte vs Character Streams</div>
-          <div class="fc-q">When should Character streams be chosen over Byte streams in Java?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Character streams (<code>Reader/Writer</code>) process 16-bit Unicode characters, automatically handling character encodings (UTF-8, ASCII) for human-readable text. Byte streams (<code>InputStream/OutputStream</code>) process raw 8-bit bytes (images, audio, PDF).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Dynamic Method Dispatch</div>
-          <div class="fc-q">Explain Dynamic Method Dispatch in Java with a one-line example.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Runtime resolution of an overridden method call via a superclass reference variable:<br>
-            <code>SuperClass obj = new SubClass(); obj.overriddenMethod();</code><br>
-            Executes <code>SubClass</code>'s method because the actual underlying heap object is <code>SubClass</code>!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 6 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Checked vs Unchecked Exceptions</div>
-          <div class="fc-q">What is the compiler difference between Checked and Unchecked Exceptions?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>Checked:</strong> Verified at compile-time. The compiler enforces mandatory handling via <code>try-catch</code> or <code>throws</code> (e.g., <code>IOException</code>).<br>
-            <strong>Unchecked:</strong> Subclasses of <code>RuntimeException</code>. Compiler ignores them; represent logic bugs (e.g., <code>NullPointerException</code>).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 7 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Thread Creation Methods</div>
-          <div class="fc-q">Why is implementing 'Runnable' preferred over extending 'Thread'?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Because Java does not support multiple class inheritance. Extending <code>Thread</code> prevents your class from extending any other superclass. Implementing <code>Runnable</code> preserves inheritance flexibility and separates task logic from thread execution.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 8 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Framebuffer Calculation</div>
-          <div class="fc-q">Calculate the frame buffer memory required for $1024 \times 768$ resolution at 16 bits per pixel.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$\text{Size} = \frac{1024 \times 768 \times 16}{8} = 1024 \times 768 \times 2 = 1,572,864 \text{ Bytes} = 1.5 \text{ MB}$$
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 9 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Bresenham Decision Parameter</div>
-          <div class="fc-q">What is the initial decision parameter $P_0$ in Bresenham's Line Algorithm?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$P_0 = 2\Delta y - \Delta x$$<br>
-            If $P_k &lt; 0 \implies P_{k+1} = P_k + 2\Delta y$ (Choose East pixel).<br>
-            If $P_k \ge 0 \implies P_{k+1} = P_k + 2\Delta y - 2\Delta x$ (Choose North-East pixel). Pure integer math!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 10 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Midpoint Circle Initial Value</div>
-          <div class="fc-q">What is the initial decision parameter $P_0$ in Midpoint Circle Algorithm?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$P_0 = 1 - R \quad \text{(for integer arithmetic)}$$<br>
-            If $P_k &lt; 0 \implies P_{k+1} = P_k + 2x_{k+1} + 1$.<br>
-            If $P_k \ge 0 \implies P_{k+1} = P_k + 2x_{k+1} + 1 - 2y_{k+1}$. Explores $1/8$th arc via 8-way symmetry!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 11 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Cohen-Sutherland Clipping Test</div>
-          <div class="fc-q">What are the bitwise tests for Trivial Acceptance and Trivial Rejection in Cohen-Sutherland?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>Trivial Accept:</strong> <code>Code1 | Code2 == 0000</code> (Both points inside window).<br>
-            <strong>Trivial Reject:</strong> <code>Code1 &amp; Code2 != 0000</code> (Both points lie outside the same boundary).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 12 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; 2D Homogeneous Coordinates</div>
-          <div class="fc-q">Why are Homogeneous Coordinates ($3 \times 3$) necessary in Computer Graphics?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            In standard 2D Cartesian coordinates, Translation is vector addition ($P' = P + T$) while Scaling and Rotation are matrix multiplications ($P' = M \cdot P$). Homogeneous coordinates unify ALL transformations into matrix multiplications, allowing composite chaining!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 13 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; Arbitrary Point Rotation Sequence</div>
-          <div class="fc-q">Write the composite matrix multiplication equation for rotating around pivot $(x_p, y_p)$.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$M = T(x_p, y_p) \cdot R(\theta) \cdot T(-x_p, -y_p)$$<br>
-            1. Translate pivot to origin &bull; 2. Rotate by $\theta$ around origin &bull; 3. Translate origin back to pivot.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 14 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; Cavalier vs Cabinet Oblique</div>
-          <div class="fc-q">Compare Cavalier and Cabinet Oblique projections in terms of angle and depth scale.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>Cavalier:</strong> Projectors at $45^\circ$ angle; depth axis drawn at <strong>full scale ($L = 1$)</strong>. Appears elongated.<br>
-            <strong>Cabinet:</strong> Projectors at $63.4^\circ$ angle; depth axis drawn at <strong>half scale ($L = 0.5$)</strong>. Appears visually natural!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 15 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; Perspective Vanishing Points</div>
-          <div class="fc-q">What governs the number of vanishing points (1, 2, or 3) in perspective projection?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            The number of principal coordinate axes intersected by the projection view plane:<br>
-            1-point: Parallel to 2 axes (1 intersected) &bull; 2-point: Parallel to 1 axis (2 intersected) &bull; 3-point: Intersects all 3 principal axes!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 16 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; Final Keyword in Java</div>
-          <div class="fc-q">What are the three distinct meanings of the 'final' keyword in Java?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            1. <strong>Final Variable:</strong> Creates a constant whose value cannot be changed once assigned.<br>
-            2. <strong>Final Method:</strong> Prevents method overriding by subclasses.<br>
-            3. <strong>Final Class:</strong> Prevents class inheritance (cannot be subclassed, e.g., <code>String</code>).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 17 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Method Overloading Signature</div>
-          <div class="fc-q">Does changing only the return type overload a method in Java? Why?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>No!</strong> The compiler cannot distinguish which method to call when the return value is ignored: e.g., calling <code>doSomething();</code>. Overloading strictly requires a difference in number, type, or order of parameters.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 18 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Inter-Thread Communication</div>
-          <div class="fc-q">Why must wait() and notify() be called only from within a synchronized block?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            To prevent race condition bugs where <code>notify()</code> is called before <code>wait()</code> executes. The calling thread must own the object's intrinsic monitor lock before releasing it via <code>wait()</code> or waking waiting threads via <code>notify()</code>.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 19 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; DDA Line Weakness</div>
-          <div class="fc-q">What is the primary technical drawback of the DDA Line Drawing algorithm?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            DDA uses floating-point additions and a <code>round()</code> operation at every pixel step, which introduces cumulative round-off errors and executes significantly slower than Bresenham's pure integer arithmetic.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 20 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Sutherland-Hodgeman 4 Cases</div>
-          <div class="fc-q">What are the 4 vertex output cases in Sutherland-Hodgeman Polygon Clipping?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            For directed edge $V_1 \to V_2$ against a boundary clipper:<br>
-            1. <strong>In &rarr; In:</strong> Output $V_2$<br>
-            2. <strong>In &rarr; Out:</strong> Output intersection $V'$<br>
-            3. <strong>Out &rarr; Out:</strong> Output nothing<br>
-            4. <strong>Out &rarr; In:</strong> Output intersection $V'$ and vertex $V_2$.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 21 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; 2D Shear Transformation</div>
-          <div class="fc-q">Write the transformation matrix for shearing along the X-axis ($sh_x$).</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} 1 &amp; sh_x &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix} \implies x' = x + sh_x \cdot y, \, y' = y$$
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 22 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; Bytecode Portability</div>
-          <div class="fc-q">How does Java achieve platform independence?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            The Java compiler creates universal bytecode (<code>.class</code>), not native CPU machine code. Any platform having a JVM implementation for its OS can execute this bytecode without recompiling source code ("Write Once, Run Anywhere").
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 23 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Custom Exception Class</div>
-          <div class="fc-q">Write the minimal Java syntax to declare a custom checked exception.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-<pre><code class="language-java">public class InsufficientFundsException extends Exception {
-    public InsufficientFundsException(String msg) {
-        super(msg);
-    }
-}</code></pre>
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 24 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Even-Odd Polygon Test</div>
-          <div class="fc-q">Explain the Even-Odd Rule for testing whether a point lies inside a polygon.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Cast a ray from the test point to infinity in any direction. Count the number of polygon boundary edge crossings: if the count is <strong>ODD</strong>, the point is INSIDE; if the count is <strong>EVEN</strong>, the point is OUTSIDE.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 25 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; 3D Rotation About Arbitrary Axis</div>
-          <div class="fc-q">List the 5 primary transformations required to rotate about an arbitrary 3D axis.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$M = T^{-1} \cdot R_x^{-1} \cdot R_y^{-1} \cdot R_z(\theta) \cdot R_y \cdot R_x \cdot T$$<br>
-            1. Translate axis to origin &bull; 2. Rotate around X into XZ plane &bull; 3. Rotate around Y to align with Z &bull; 4. Rotate by $\theta$ around Z &bull; 5. Invert steps 3, 2, 1.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
+  <div class="qa-block">
+    <div class="qa-q">Q2. Describe rotation about an arbitrary axis in 3D. Explain the steps involved. <span class="marks-badge">SPPU Oct 2025 &bull; 5M</span></div>
+    <p>State the 5 composite transformation steps clearly with matrix notation $M = T(P_1) R_x(-\alpha) R_y(\beta) R_z(\theta) R_y(-\beta) R_x(\alpha) T(-P_1)$ (5M).</p>
   </div>
 </section>
 
-</div><!-- /main-inner -->
+<section id="references">
+  <h2 class="unit-title">References &amp; Image Credits</h2>
+
+  <h3>Official SPPU 2024 Pattern Text Books</h3>
+  <ol>
+    <li>E. Balaguruswamy, <em>Programming with Java: A Primer</em>, 7th Edition, McGraw Hill Education, 2023.</li>
+    <li>Herbert Schildt, <em>Java: The Complete Reference</em>, 13th Edition, McGraw-Hill Education, 2021.</li>
+    <li>S. Harrington, <em>Computer Graphics</em>, 2nd Edition, McGraw-Hill Publications, 1987 (ISBN 0-07-100472-6).</li>
+    <li>Donald D. Hearn and M. Pauline Baker, <em>Computer Graphics with OpenGL</em>, 4th Edition (ISBN 978-0136053583).</li>
+  </ol>
+
+  <h3>Official SPPU Reference Books</h3>
+  <ol>
+    <li>Paul Deitel and Harvey Deitel, <em>Java: How to Program</em>, 9th Edition, Pearson Publication.</li>
+    <li>Cay S. Horstmann, <em>Core Java &ndash; Vol. I: Fundamentals</em>, 12th Edition, Pearson Education, 2023.</li>
+    <li>Dr. Samit Bhattacharya, <em>Computer Graphics</em>, Oxford University Press (ISBN 978-0-19-809619-1).</li>
+    <li>David F. Rogers, <em>Procedural Elements for Computer Graphics</em>, 2nd Edition, Tata McGraw-Hill, 2001.</li>
+  </ol>
+
+  <h3>MOOC / NPTEL &amp; E-Books</h3>
+  <ul>
+    <li>NPTEL Course 1: <a href="https://archive.nptel.ac.in/courses/106/103/106103224/" target="_blank" rel="noopener">https://archive.nptel.ac.in/courses/106/103/106103224/</a></li>
+    <li>NPTEL Course 2: <a href="https://archive.nptel.ac.in/courses/106/102/106102065/" target="_blank" rel="noopener">https://archive.nptel.ac.in/courses/106/102/106102065/</a></li>
+    <li>NPTEL Course 3: <a href="https://nptel.ac.in/courses/106106090" target="_blank" rel="noopener">https://nptel.ac.in/courses/106106090</a></li>
+    <li>E-Book (IITG): <a href="https://www.iitg.ac.in/samit/Computer%20Graphics.pdf" target="_blank" rel="noopener">Computer Graphics PDF by Prof. Samit Bhattacharya</a></li>
+    <li>Open Textbook: <a href="https://open.umn.edu/opentextbooks/textbooks/introduction-to-computer-graphics" target="_blank" rel="noopener">Introduction to Computer Graphics (Open UMN)</a></li>
+  </ul>
+
+  <h3>Wikimedia Commons Image Credits (<code>assets/manifest.json</code>)</h3>
+  <table>
+    <thead><tr><th>File</th><th>Title</th><th>Author / Artist</th><th>License</th><th>Source URL</th></tr></thead>
+    <tbody>
+      <tr><td><code>assets/jvm_architecture.png</code></td><td>jvm architecture</td><td>Wikimedia Commons Contributor</td><td>CC BY-SA / Public Domain</td><td><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">commons.wikimedia.org</a></td></tr>
+      <tr><td><code>assets/oop_inheritance.png</code></td><td>oop inheritance</td><td>Wikimedia Commons Contributor</td><td>CC BY-SA / Public Domain</td><td><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">commons.wikimedia.org</a></td></tr>
+      <tr><td><code>assets/bresenham_line.png</code></td><td>Bresenham.svg</td><td>Crotalus horridus</td><td>Public domain</td><td><a href="https://commons.wikimedia.org/wiki/File:Bresenham.svg" target="_blank" rel="noopener">File:Bresenham.svg</a></td></tr>
+      <tr><td><code>assets/midpoint_circle.png</code></td><td>Midpoint circle algorithm, radius 23.png</td><td>Psi&#293;edelisto</td><td>CC0</td><td><a href="https://commons.wikimedia.org/wiki/File:Midpoint_circle_algorithm,_radius_23.png" target="_blank" rel="noopener">File:Midpoint_circle_algorithm,_radius_23.png</a></td></tr>
+      <tr><td><code>assets/cohen_sutherland.png</code></td><td>Cohen sutherland kody.svg</td><td>Wojciech mula / Krzysztof Zaj&#261;czkowski</td><td>Public domain</td><td><a href="https://commons.wikimedia.org/wiki/File:Cohen_sutherland_kody.svg" target="_blank" rel="noopener">File:Cohen_sutherland_kody.svg</a></td></tr>
+      <tr><td><code>assets/bezier_curve.png</code></td><td>B&eacute;zier 3 big.gif</td><td>Phil Tregoning</td><td>Public domain</td><td><a href="https://commons.wikimedia.org/wiki/File:B%C3%A9zier_3_big.gif" target="_blank" rel="noopener">File:B%C3%A9zier_3_big.gif</a></td></tr>
+    </tbody>
+  </table>
+</section>
+
 </main>
 
 <script src="../assets/study-data.js"></script>
 <script src="../assets/app-store.js"></script>
 <script src="../assets/guide-app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/verilog.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   if (window.hljs) {

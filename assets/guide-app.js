@@ -178,48 +178,7 @@
     });
   }
 
-  
-  function enhanceFlashcards() {
-    const cards = document.querySelectorAll('.flashcard-card');
-    cards.forEach((card) => {
-      card.addEventListener('click', (e) => {
-        // Prevent flipping if text selection was made
-        const sel = window.getSelection();
-        if (sel && sel.toString().length > 0) return;
-        card.classList.toggle('is-flipped');
-      });
-    });
-
-    const flipAll = document.getElementById('fc-flip-all');
-    if (flipAll) {
-      flipAll.addEventListener('click', () => {
-        document.querySelectorAll('.flashcard-card').forEach((c) => c.classList.add('is-flipped'));
-      });
-    }
-
-    const resetAll = document.getElementById('fc-reset-all');
-    if (resetAll) {
-      resetAll.addEventListener('click', () => {
-        document.querySelectorAll('.flashcard-card').forEach((c) => c.classList.remove('is-flipped'));
-      });
-    }
-
-    const unitFilter = document.getElementById('fc-unit-filter');
-    if (unitFilter) {
-      unitFilter.addEventListener('change', (e) => {
-        const val = e.target.value;
-        document.querySelectorAll('.flashcard-card').forEach((c) => {
-          if (val === 'all' || c.getAttribute('data-unit') === val) {
-            c.style.display = '';
-          } else {
-            c.style.display = 'none';
-          }
-        });
-      });
-    }
-  }
-
-function enhancePracticeCards() {
+  function enhancePracticeCards() {
     const main = document.getElementById("main");
     if (!main) return;
 
@@ -550,7 +509,6 @@ function enhancePracticeCards() {
     const sub = getSub();
     buildChrome(sub);
     enhanceTablesAndCode();
-    enhanceFlashcards();
     enhancePracticeCards();
     buildTrackers(sub);
     bindEvents(sub);

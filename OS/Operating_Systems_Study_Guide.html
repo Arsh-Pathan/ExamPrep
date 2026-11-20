@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Operating Systems (PCC-203-CSE) — SPPU SE 2024 Pattern Complete Master Study Guide</title>
+<title>Operating Systems (PCC-203-COM) - SPPU 2024 Pattern Complete Study Guide</title>
 <meta name="theme-color" content="#F8F9FB">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,1309 +28,1041 @@ window.MathJax = {
 
 <nav id="sidebar">
   <h2>Operating Systems</h2>
-  <p class="sb-sub">PCC-203-CSE | SPPU 2024 Pattern</p>
+  <p>SPPU 2024 Pattern &bull; PCC-203-COM</p>
   <ul>
-    <li><a href="#overview" class="nav-unit">Course Overview &amp; Strategy</a></li>
+    <li><a href="#overview">Course Overview &amp; Outcomes</a></li>
     <li>
-      <a href="#unit-1" class="nav-unit">Unit I: OS Basics &amp; Structure</a>
-      <ul class="sub-nav">
-        <li><a href="#u1-intro">Evolution &amp; System Calls</a></li>
-        <li><a href="#u1-structure">Monolithic vs Microkernel</a></li>
-        <li><a href="#u1-linux">Linux Architecture &amp; Shell</a></li>
-        <li><a href="#u1-short-notes">One-Page Unit I Short Notes</a></li>
-      </ul>
+      <a href="#unit-1">Unit I: Introduction to OS</a>
+      <div class="sub-nav">
+        <a href="#u1-basics">Objectives, Evolution &amp; Types</a>
+        <a href="#u1-syscalls">OS Services, Dual-Mode &amp; System Calls</a>
+        <a href="#u1-structures">Monolithic, Layered &amp; Microkernel</a>
+        <a href="#u1-linux">Linux OS &amp; Shell Scripting</a>
+        <a href="#u1-qa">SPPU Exam Q&amp;A</a>
+      </div>
     </li>
     <li>
-      <a href="#unit-2" class="nav-unit">Unit II: Process &amp; Threads</a>
-      <ul class="sub-nav">
-        <li><a href="#u2-process">Process States &amp; PCB</a></li>
-        <li><a href="#u2-threads">User vs Kernel Threads</a></li>
-        <li><a href="#u2-scheduling">CPU Scheduling &amp; Gantt Charts</a></li>
-        <li><a href="#u2-short-notes">One-Page Unit II Short Notes</a></li>
-      </ul>
+      <a href="#unit-2">Unit II: Process &amp; Thread Mgmt</a>
+      <div class="sub-nav">
+        <a href="#u2-process">Process States &amp; PCB</a>
+        <a href="#u2-schedulers">Context Switch &amp; Schedulers</a>
+        <a href="#u2-threads">Threads (ULT vs KLT)</a>
+        <a href="#u2-algos">CPU Scheduling &amp; Gantt Numericals</a>
+        <a href="#u2-qa">SPPU Exam Q&amp;A</a>
+      </div>
     </li>
     <li>
-      <a href="#unit-3" class="nav-unit">Unit III: IPC &amp; Deadlocks</a>
-      <ul class="sub-nav">
-        <li><a href="#u3-sync">Critical Section &amp; Semaphores</a></li>
-        <li><a href="#u3-classic">Producer-Consumer &amp; Dining Phil</a></li>
-        <li><a href="#u3-deadlocks">Banker's Algorithm &amp; RAG</a></li>
-        <li><a href="#u3-short-notes">One-Page Unit III Short Notes</a></li>
-      </ul>
+      <a href="#unit-3">Unit III: IPC &amp; Deadlocks</a>
+      <div class="sub-nav">
+        <a href="#u3-cs">Critical Section &amp; Peterson's</a>
+        <a href="#u3-sync">Semaphores, Mutexes &amp; Monitors</a>
+        <a href="#u3-classic">Classic IPC &amp; Sync Problems</a>
+        <a href="#u3-deadlock">Deadlock &amp; Coffman Conditions</a>
+        <a href="#u3-banker">Banker's Algorithm (Solved)</a>
+        <a href="#u3-qa">SPPU Exam Q&amp;A</a>
+      </div>
     </li>
     <li>
-      <a href="#unit-4" class="nav-unit">Unit IV: Memory Management</a>
-      <ul class="sub-nav">
-        <li><a href="#u4-contiguous">Contiguous Allocation &amp; Fit Strategies</a></li>
-        <li><a href="#u4-paging">Paging, TLB &amp; EMAT Formula</a></li>
-        <li><a href="#u4-page-replace">Page Replacement (FIFO, LRU, OPT)</a></li>
-        <li><a href="#u4-thrashing">Thrashing &amp; Working Set</a></li>
-        <li><a href="#u4-short-notes">One-Page Unit IV Short Notes</a></li>
-      </ul>
+      <a href="#unit-4">Unit IV: Memory Management</a>
+      <div class="sub-nav">
+        <a href="#u4-contiguous">Partitioning, Fragmentation &amp; Fits</a>
+        <a href="#u4-paging">Paging, TLB &amp; EMAT Formula</a>
+        <a href="#u4-seg">Segmentation vs Paging</a>
+        <a href="#u4-vm">Virtual Memory &amp; Page Replacement</a>
+        <a href="#u4-thrashing">Thrashing &amp; Intel Pentium</a>
+        <a href="#u4-qa">SPPU Exam Q&amp;A</a>
+      </div>
     </li>
     <li>
-      <a href="#unit-5" class="nav-unit">Unit V: File &amp; Disk Systems</a>
-      <ul class="sub-nav">
-        <li><a href="#u5-files">File Allocation &amp; Unix Inode</a></li>
-        <li><a href="#u5-disk">Disk Scheduling (SSTF, SCAN, LOOK)</a></li>
-        <li><a href="#u5-short-notes">One-Page Unit V Short Notes</a></li>
-      </ul>
+      <a href="#unit-5">Unit V: File &amp; Disk Management</a>
+      <div class="sub-nav">
+        <a href="#u5-files">File Operations, Access &amp; Directories</a>
+        <a href="#u5-alloc">Allocation Methods &amp; Inodes</a>
+        <a href="#u5-fs">FAT, NTFS, EXT &amp; HFS</a>
+        <a href="#u5-disk">Disk Scheduling &amp; Formatting</a>
+        <a href="#u5-cases">Linux &amp; Android File Systems</a>
+        <a href="#u5-qa">SPPU Exam Q&amp;A</a>
+      </div>
     </li>
-    <li><a href="#flashcards" class="nav-unit">Active Recall Flashcards (25 Cards)</a></li>
+    <li><a href="#references">Textbooks, NPTEL &amp; Image Credits</a></li>
   </ul>
 </nav>
 
 <main id="main">
-<div class="main-inner">
+  <header id="overview">
+    <span class="pill">SPPU SE Computer Engineering &bull; 2024 Pattern &bull; Sem III</span>
+    <h1>Operating Systems (PCC-203-COM)</h1>
+    <p class="subtitle">Complete Exam-Oriented Study Guide &bull; Simple Explanations, Formal Definitions, Worked Numericals, C/Shell Code &amp; Solved SPPU Questions</p>
+  </header>
 
-<header class="guide-header">
-  <div class="breadcrumb">SPPU S.E. Sem III (NEP 2024 Pattern) &bull; PCC-203-CSE</div>
-  <h1>Operating Systems Master Study Guide</h1>
-  <p class="subtitle">Complete syllabus theory, process models, CPU scheduling Gantt numericals, Banker's algorithm matrices, TLB paging derivations, one-page unit short notes, and active recall flashcard deck.</p>
-  
-  <div class="quick-nav-bar">
-    <a href="#overview">Overview &amp; Strategy</a>
-    <a href="#unit-1">Unit I</a>
-    <a href="#unit-2">Unit II</a>
-    <a href="#unit-3">Unit III</a>
-    <a href="#unit-4">Unit IV</a>
-    <a href="#unit-5">Unit V</a>
-    <a href="#u1-short-notes">Unit Short Notes</a>
-    <a href="#flashcards">Flashcards Deck</a>
-  </div>
-</header>
-
-<section id="overview" class="unit-section">
-  <div class="exam-strategy-banner">
-    <h3>SPPU Exam Scoring Blueprint &amp; Strategy (PCC-203-CSE)</h3>
-    <p>Operating Systems questions test fundamental mechanisms and algorithm calculations. High marks depend on: <strong>Full Process State / Architectural Diagrams &rarr; Detailed Semaphore synchronization code &rarr; Step-by-step Gantt charts &amp; EMAT formulas</strong>.</p>
-    <div class="strategy-grid">
-      <div class="strategy-pill">
-        <strong>Unit Structure</strong>
-        Continuous Assessment (CCE): 40 Marks | End-Sem University Exam: 60 Marks.
-        Units I-V map directly to 5 exam question pairs: Q1/Q2 (Unit I), Q3/Q4 (Unit II), Q5/Q6 (Unit III), Q7/Q8 (Unit IV), Q9/Q10 (Unit V).
-      </div>
-      <div class="strategy-pill">
-        <strong>Mandatory Gantt Charts</strong>
-        For CPU scheduling (FCFS, SJF, RR, Priority), always draw the timeline Gantt chart first, calculate completion times ($CT$), then derive Turnaround Time ($TAT = CT - AT$) and Waiting Time ($WT = TAT - BT$).
-      </div>
-      <div class="strategy-pill">
-        <strong>Banker's Algorithm Tables</strong>
-        Always construct the complete $Need$ matrix ($Need = Max - Allocation$) before running the Safety Algorithm. Show vector comparisons ($Need_i \le Available$).
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="unit-1" class="unit-section">
-  <div class="unit-badge">Unit I &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit I: Introduction to Operating System &amp; Architecture</h2>
-  
-  <div class="topic-block" id="u1-intro">
-    <h3>1.1 Objectives, Functions, Evolution &amp; System Calls</h3>
-    <p>An Operating System acts as an intermediary between computer hardware and the user, serving two primary goals: <strong>Convenience</strong> for the user and <strong>Efficiency</strong> in hardware resource utilization (CPU, memory, I/O devices, files).</p>
-
-    <h4>Evolution of Operating Systems</h4>
+  <div class="exam-tip">
+    <div class="box-title">Exam Pattern &amp; Course Outcomes (CO1&ndash;CO5)</div>
+    <p><strong>Scheme:</strong> Theory 3 Hrs/Week &bull; 3 Credits &bull; CCE: 40 Marks &bull; End-Semester: 60/70 Marks (2.5 Hours). Every unit carries equal weightage (14 Marks in 70M Endsem: Q1/Q2 Unit I, Q3/Q4 Unit II, Q5/Q6 Unit III, Q7/Q8 Unit IV, Q9/Q10 Unit V).</p>
     <ul>
-      <li><strong>Batch Systems:</strong> Jobs with similar needs batched together; operator submits to punch card reader. Severe CPU idle time waiting for mechanical I/O.</li>
-      <li><strong>Multiprogramming Systems:</strong> Keeps multiple jobs in memory simultaneously. When current job waits for I/O, OS switches CPU to another job, maximizing CPU utilization.</li>
-      <li><strong>Time-Sharing (Multitasking) Systems:</strong> CPU switches jobs so rapidly via time slicing that users interact with programs concurrently (interactive computing).</li>
-      <li><strong>Real-Time Systems (RTOS):</strong> Strict rigid time constraints (Hard RTOS: missing deadline causes catastrophic failure, e.g., missile guidance; Soft RTOS: quality degrades, e.g., video streaming).</li>
+      <li><strong>CO1:</strong> Analyze OS fundamentals, types, structures, system calls, and Linux commands.</li>
+      <li><strong>CO2:</strong> Apply process scheduling and synchronization to optimize CPU utilization.</li>
+      <li><strong>CO3:</strong> Identify mechanisms for dealing with deadlocks and concurrency concerns.</li>
+      <li><strong>CO4:</strong> Apply memory management techniques to solve memory allocation &amp; paging problems.</li>
+      <li><strong>CO5:</strong> Illustrate I/O, disk scheduling, and file management policies.</li>
     </ul>
-
-    <h4>System Calls: The User-Kernel Interface</h4>
-    <p>A <strong>System Call</strong> is the programmatic mechanism by which an application requests privileged services from the OS kernel, transitioning the processor from User Mode (Mode bit = 1) to Kernel Mode (Mode bit = 0) via a software interrupt (trap).</p>
-    
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Category</th><th>POSIX / Linux System Calls</th><th>Windows API Equivalent</th><th>Function</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Process Control</strong></td><td><code>fork()</code>, <code>exec()</code>, <code>wait()</code>, <code>exit()</code></td><td><code>CreateProcess()</code>, <code>ExitProcess()</code></td><td>Spawn child process, run program, terminate.</td></tr>
-          <tr><td><strong>File Management</strong></td><td><code>open()</code>, <code>read()</code>, <code>write()</code>, <code>close()</code></td><td><code>CreateFile()</code>, <code>ReadFile()</code></td><td>File creation, read/write byte streams.</td></tr>
-          <tr><td><strong>Device Management</strong></td><td><code>ioctl()</code>, <code>read()</code>, <code>write()</code></td><td><code>SetConsoleMode()</code></td><td>Control physical peripherals.</td></tr>
-          <tr><td><strong>Information</strong></td><td><code>getpid()</code>, <code>alarm()</code>, <code>sleep()</code></td><td><code>GetCurrentProcessId()</code></td><td>Get system time, PID, process attributes.</td></tr>
-          <tr><td><strong>Communications</strong></td><td><code>pipe()</code>, <code>shmget()</code>, <code>socket()</code></td><td><code>CreatePipe()</code>, <code>MapViewOfFile()</code></td><td>Inter-process message passing and shared memory.</td></tr>
-        </tbody>
-      </table>
-    </div>
   </div>
 
-  <div class="topic-block" id="u1-structure">
-    <h3>1.2 Operating System Structures: Monolithic vs Layered vs Microkernel</h3>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Feature</th><th>Monolithic Architecture</th><th>Layered Approach</th><th>Microkernel Architecture</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Kernel Size &amp; Location</strong></td><td>Large; entire OS (file system, device drivers, scheduler, IPC, network) runs in single kernel address space.</td><td>Modular; arranged as hierarchical layers ($N$ layers: Layer 0 is Hardware, Layer $N$ is User Interface).</td><td><strong>Minimal;</strong> only essential mechanisms (IPC, low-level memory, basic scheduling) run in kernel mode.</td></tr>
-          <tr><td><strong>Services Location</strong></td><td>All inside kernel space.</td><td>Each layer uses services of lower layers only.</td><td>File systems, device drivers, and network protocols run as <strong>User-level Servers</strong>.</td></tr>
-          <tr><td><strong>Performance</strong></td><td><strong>Fastest</strong> (Direct procedure calls within same address space, minimal context switching).</td><td>Moderate (Overhead crossing multiple layer boundaries).</td><td>Slower (Heavy message passing IPC context switches between user servers and microkernel).</td></tr>
-          <tr><td><strong>Reliability &amp; Crash Isolation</strong></td><td>Low (A bug in a 3rd-party device driver crashes the entire system with Kernel Panic / BSOD).</td><td>Moderate (Good abstraction, but hard to define layers cleanly).</td><td><strong>Highest</strong> (If file system or driver crashes, user server restarts without bringing down the OS kernel).</td></tr>
-          <tr><td><strong>Real-World Examples</strong></td><td>Linux, Traditional Unix, MS-DOS</td><td>THE Operating System (Dijkstra)</td><td>Mach, QNX, Minix, Windows NT (Hybrid)</td></tr>
-        </tbody>
-      </table>
-    </div>
+<section id="unit-1">
+  <h2 class="unit-title">Unit I: Introduction to Operating Systems (09 Hours)</h2>
+
+  <h3 id="u1-basics">1.1 Objectives, Functions &amp; Evolution of Operating Systems</h3>
+  <div class="concept-box">
+    <div class="box-title">Key Term: Operating System (OS)</div>
+    <p><strong>Exam Definition:</strong> An Operating System is a system software that acts as an intermediary between the computer user and the computer hardware, managing system resources and providing an environment for programs to execute efficiently and conveniently.</p>
+    <p><strong>In Simple Words:</strong> Think of the OS as a restaurant manager. Customers (users/apps) don't walk into the kitchen (CPU, RAM, disk) to cook; they place an order with the manager, who coordinates the chefs and tables fairly without chaos.</p>
   </div>
 
+  <h4>Core Objectives &amp; Dual Role</h4>
+  <ul>
+    <li><strong>Convenience:</strong> Hides messy hardware details (disk sectors, interrupts) behind clean interfaces (files, windows, buttons).</li>
+    <li><strong>Efficiency:</strong> Maximizes CPU, memory, and I/O utilization so expensive hardware doesn't sit idle.</li>
+    <li><strong>Ability to Evolve:</strong> Modular design allows new hardware drivers and OS updates without breaking existing apps.</li>
+    <li><strong>OS as Resource Manager:</strong> Allocates CPU time, RAM, disk space, and I/O devices fairly and resolves conflicts among competing programs.</li>
+    <li><strong>OS as Control Program:</strong> Supervises program execution to prevent errors, unauthorized access, and improper use of the computer.</li>
+  </ul>
 
-  <div class="topic-block" id="u1-linux">
-    <h3>1.3 Linux OS Architecture &amp; Essential Shell Commands</h3>
-    <p>Linux implements a <strong>Monolithic Modular Kernel</strong> layered beneath the GNU C library (<code>glibc</code>), command Shells (<code>bash</code>, <code>zsh</code>), and hierarchical Virtual File System (<code>/bin</code> binaries, <code>/etc</code> config, <code>/proc</code> runtime kernel stats, <code>/var</code> logs).</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Command / Concept</th><th>Syntax &amp; Flags Example</th><th>Function &amp; Exam Significance</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Permissions (<code>chmod</code>)</strong></td><td><code>chmod 755 script.sh</code> / <code>chmod u+x f</code></td><td>Sets Read(4), Write(2), Execute(1) bits for User/Group/Others ($7=rwx, 5=r\text{-}x$).</td></tr>
-          <tr><td><strong>Pattern Search (<code>grep</code>)</strong></td><td><code>grep -rn "deadlock" *.log</code></td><td>Searches files recursively using regex; frequently chained with pipes (<code>|</code>).</td></tr>
-          <tr><td><strong>Process Inspect &amp; Signal</strong></td><td><code>ps aux | grep python</code>, <code>kill -9 PID</code></td><td>Displays running PIDs; sends <code>SIGKILL (9)</code> to terminate hung processes.</td></tr>
-          <tr><td><strong>File &amp; Directory Ops</strong></td><td><code>ls -la</code>, <code>pwd</code>, <code>mkdir -p</code>, <code>cp -r</code>, <code>mv</code>, <code>cat</code></td><td>Navigates directories and streams files with redirection (<code>&gt;</code>, <code>&gt;&gt;</code>).</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <h4>Main Functions of an Operating System</h4>
+  <ul>
+    <li><strong>Process Management:</strong> Creating, scheduling, suspending, and terminating processes; synchronization and IPC.</li>
+    <li><strong>Memory Management:</strong> Tracking free/used RAM, allocating/deallocating memory, and handling virtual memory/swapping.</li>
+    <li><strong>File &amp; Storage Management:</strong> Creating/deleting files &amp; directories, mapping files onto secondary storage, disk scheduling.</li>
+    <li><strong>I/O &amp; Device Management:</strong> Buffering, caching, spooling, and providing device-driver interfaces.</li>
+    <li><strong>Security &amp; Protection:</strong> Authenticating users and enforcing access permissions so one process cannot corrupt another.</li>
+  </ul>
+
+  <h4>Evolution &amp; Types of Operating Systems</h4>
+  <table>
+    <thead>
+      <tr><th>OS Type</th><th>How It Works</th><th>Pros &amp; Cons</th><th>Examples</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Batch OS</strong></td><td>Similar jobs are grouped into batches and executed sequentially without user interaction.</td><td>Good for long jobs; CPU sits idle during slow I/O.</td><td>IBM OS/360</td></tr>
+      <tr><td><strong>Multiprogramming OS</strong></td><td>Keeps multiple jobs in RAM; when one waits for I/O, CPU switches to another.</td><td>High CPU utilization; no direct user interactivity.</td><td>Early UNIX, OS/MFT</td></tr>
+      <tr><td><strong>Time-Sharing (Multitasking)</strong></td><td>CPU switches rapidly among jobs using small time slices (quanta) so users get fast responses.</td><td>Interactive &amp; responsive; slight context-switch overhead.</td><td>Linux, Windows, macOS</td></tr>
+      <tr><td><strong>Real-Time OS (RTOS)</strong></td><td>Guarantees strict timing deadlines. <em>Hard RTOS</em>: missing a deadline is fatal. <em>Soft RTOS</em>: occasional miss is tolerable.</td><td>Deterministic response; limited general-purpose multitasking.</td><td>VxWorks, FreeRTOS, QNX</td></tr>
+      <tr><td><strong>Network OS</strong></td><td>Runs on a server and manages data, users, and security over a network; users know machines are separate.</td><td>Centralized administration; single point of failure if server goes down.</td><td>Windows Server, Novell NetWare</td></tr>
+      <tr><td><strong>Distributed OS</strong></td><td>Connects independent networked computers so they appear to users as a single unified system.</td><td>High reliability &amp; resource sharing; complex design &amp; security.</td><td>Amoeba, Locus, Plan 9</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="u1-syscalls">1.2 OS Services, Dual-Mode Operation &amp; System Calls</h3>
+  <p>An OS provides services for <strong>users</strong> (User Interface, Program Execution, I/O Operations, File-System Manipulation, Communications, Error Detection) and for <strong>system efficiency</strong> (Resource Allocation, Accounting, Protection &amp; Security).</p>
+
+  <div class="concept-box">
+    <div class="box-title">Key Term: Dual-Mode Operation</div>
+    <p><strong>Exam Definition:</strong> Dual-mode operation is a hardware-supported protection mechanism using a <strong>mode bit</strong> (1 = User Mode, 0 = Kernel/Supervisor Mode) to separate user-program execution from OS kernel execution, restricting privileged instructions to Kernel Mode.</p>
+    <p><strong>In Simple Words:</strong> Like a bank vault: customers (User Mode) can fill deposit slips in the lobby, but only bank staff (Kernel Mode) can open the vault (privileged hardware instructions).</p>
   </div>
 
-  <section class="unit-short-notes" id="u1-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit I Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>System call mechanics, dual-mode execution, and OS architecture trade-offs.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Dual Mode Operation</h4>
-          <ul>
-            <li>User Mode (Mode bit = 1): Restricted CPU instructions, isolated memory</li>
-            <li>Kernel Mode (Mode bit = 0): Unrestricted hardware access, privileged instructions</li>
-            <li>Transition triggered by <strong>Trap / Software Interrupt</strong> via system call</li>
-            <li>Timer Interrupt ensures OS retains CPU control against infinite loops</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Monolithic vs Microkernel</h4>
-          <ul>
-            <li>Monolithic: All drivers &amp; subsystems in kernel &rarr; Max speed, single failure point</li>
-            <li>Microkernel: Only IPC + Scheduling in kernel &rarr; Modular, highly fault-tolerant</li>
-            <li>Mach / QNX are microkernels; Linux is monolithic (with dynamic kernel modules LKM)</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Essential System Calls</h4>
-          <ul>
-            <li><code>fork()</code>: Creates exact duplicate child process (returns 0 to child, child PID to parent)</li>
-            <li><code>exec()</code>: Overwrites process memory with new executable image</li>
-            <li><code>wait()</code>: Suspends parent until child process terminates</li>
-            <li><code>exit()</code>: Terminates process and releases resources</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Linux Architecture Layers</h4>
-          <ul>
-            <li>User Space: Applications, Shell (Bash), GNU C Library (glibc)</li>
-            <li>Kernel Space: System Call Interface, VFS, Memory Mgmt, Sched, Drivers</li>
-            <li>Hardware: CPU, MMU, Physical RAM, Peripheral Controllers</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-</section>
+  <div class="svg-box">
+    <svg style="max-width:100%;height:auto;" viewBox="0 0 720 220" width="680" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="10" width="700" height="90" rx="8" fill="#EAEFFE" stroke="#4B5FD1" stroke-width="2"/>
+      <text x="30" y="35" fill="#4B5FD1" font-size="14" font-weight="bold">USER MODE (mode bit = 1)</text>
+      <rect x="40" y="48" width="160" height="38" rx="6" fill="#EFE4DC" stroke="#6A625B"/>
+      <text x="120" y="72" fill="#171717" font-size="13" text-anchor="middle">User Process (app.c)</text>
+      <rect x="500" y="48" width="180" height="38" rx="6" fill="#EFE4DC" stroke="#6A625B"/>
+      <text x="590" y="72" fill="#171717" font-size="13" text-anchor="middle">Resume User Process</text>
 
-<section id="unit-2" class="unit-section">
-  <div class="unit-badge">Unit II &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit II: Process and Thread Management</h2>
-  
-  <div class="topic-block" id="u2-process">
-    <h3>2.1 Process Concept, PCB &amp; 5-State Transition Model</h3>
-    <p>A <strong>Process</strong> is a program in execution. Its memory space comprises: <strong>Text Section</strong> (compiled code), <strong>Data Section</strong> (global/static variables), <strong>Heap</strong> (dynamically allocated memory), and <strong>Stack</strong> (local variables, function parameters, return addresses).</p>
+      <rect x="10" y="120" width="700" height="90" rx="8" fill="#E4F2EC" stroke="#226D51" stroke-width="2"/>
+      <text x="30" y="145" fill="#226D51" font-size="14" font-weight="bold">KERNEL MODE (mode bit = 0)</text>
+      <rect x="230" y="155" width="240" height="40" rx="6" fill="#EFE4DC" stroke="#226D51"/>
+      <text x="350" y="180" fill="#171717" font-size="13" text-anchor="middle">Execute System Call Handler</text>
 
-    <h4>Process Control Block (PCB / Task Descriptor)</h4>
-    <p>The PCB is the kernel data structure representing a process. Key fields:</p>
-    <ul>
-      <li><strong>Process State:</strong> New, Ready, Running, Waiting, Terminated.</li>
-      <li><strong>Process ID (PID) &amp; Parent PID (PPID).</strong></li>
-      <li><strong>Program Counter (PC):</strong> Address of next instruction to execute.</li>
-      <li><strong>CPU Registers:</strong> Accumulators, index registers, stack pointers saved during context switch.</li>
-      <li><strong>CPU Scheduling Information:</strong> Priority, scheduling queue pointers.</li>
-      <li><strong>Memory-Management Information:</strong> Page tables, segment tables, base/limit registers.</li>
-      <li><strong>Accounting &amp; I/O Status:</strong> CPU time used, open file descriptors, allocated I/O devices.</li>
-    </ul>
-
-    <div class="figure-box"><svg viewBox="0 0 760 220" class="svg-diagram" xmlns="http://www.w3.org/2000/svg" id="operating-svg-1">
-  <rect width="760" height="220" fill="#FFFFFF" rx="8"/>
-  <style>#operating-svg-1 .state { fill: #EFF6FF; stroke: #2563EB; stroke-width: 2; rx: 20; }#operating-svg-1 .state-act { fill: #FEF3C7; stroke: #D97706; stroke-width: 2; rx: 20; }#operating-svg-1 .state-term { fill: #FEE2E2; stroke: #DC2626; stroke-width: 2; rx: 20; }#operating-svg-1 .wire { stroke: #0F172A; stroke-width: 1.8; fill: none; marker-end: url(#arr-bl); }#operating-svg-1 .txt-t { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #1E293B; }#operating-svg-1 .txt-c { font-family: sans-serif; font-size: 12px; font-weight: bold; fill: #1E293B; text-anchor: middle; }#operating-svg-1 .txt-sub { font-family: sans-serif; font-size: 10px; fill: #64748B; text-anchor: middle; }
-  </style>
-  <defs>
-    <marker id="arr-bl" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 1 L 8 5 L 0 9 z" fill="#0F172A"/></marker>
-  </defs>
-  <text x="30" y="30" class="txt-t">Operating System 5-State Process Transition Diagram</text>
-  
-  <!-- New State -->
-  <rect x="30" y="80" width="90" height="45" class="state"/>
-  <text x="75" y="107" class="txt-c">NEW</text>
-  
-  <!-- Ready State -->
-  <rect x="200" y="80" width="100" height="45" class="state"/>
-  <text x="250" y="107" class="txt-c">READY</text>
-  
-  <!-- Running State -->
-  <rect x="420" y="80" width="105" height="45" class="state-act"/>
-  <text x="472" y="107" class="txt-c">RUNNING</text>
-  
-  <!-- Terminated State -->
-  <rect x="620" y="80" width="110" height="45" class="state-term"/>
-  <text x="675" y="107" class="txt-c">TERMINATED</text>
-  
-  <!-- Waiting / Blocked State -->
-  <rect x="310" y="160" width="110" height="45" class="state"/>
-  <text x="365" y="187" class="txt-c">WAITING</text>
-  
-  <!-- Transitions -->
-  <!-- New to Ready -->
-  <path d="M 120 102 L 195 102" class="wire"/>
-  <text x="157" y="95" class="txt-sub">Admitted</text>
-  
-  <!-- Ready to Running -->
-  <path d="M 300 95 L 415 95" class="wire"/>
-  <text x="357" y="88" class="txt-sub">Scheduler Dispatch</text>
-  
-  <!-- Running to Ready (Interrupt) -->
-  <path d="M 420 115 C 370 135 340 135 300 115" class="wire"/>
-  <text x="360" y="145" class="txt-sub">Interrupt / Time Quantum Expire</text>
-  
-  <!-- Running to Terminated -->
-  <path d="M 525 102 L 615 102" class="wire"/>
-  <text x="570" y="95" class="txt-sub">Exit</text>
-  
-  <!-- Running to Waiting -->
-  <path d="M 460 125 C 440 155 425 160 415 165" class="wire"/>
-  <text x="470" y="160" class="txt-sub">I/O or Event Wait</text>
-  
-  <!-- Waiting to Ready -->
-  <path d="M 310 170 C 270 160 250 145 250 130" class="wire"/>
-  <text x="240" y="170" class="txt-sub">I/O or Event Completion</text>
-</svg><div class="figure-caption">Figure 2.1: 5-State Process Model: State Transitions from Creation to Termination</div></div>
+      <line x1="160" y1="86" x2="260" y2="155" stroke="#9C7710" stroke-width="2.5"/>
+      <text x="140" y="114" fill="#9C7710" font-size="12" font-weight="bold">trap (mode = 0)</text>
+      <line x1="440" y1="155" x2="540" y2="86" stroke="#4B5FD1" stroke-width="2.5"/>
+      <text x="505" y="114" fill="#4B5FD1" font-size="12" font-weight="bold">return (mode = 1)</text>
+    </svg>
+    <div class="svg-caption">Figure 1.1: Dual-Mode Transition via System Call Trap</div>
   </div>
 
-  <div class="topic-block" id="u2-threads">
-    <h3>2.2 Threads: User-Level vs Kernel-Level Threads</h3>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Parameter</th><th>User-Level Threads (ULT)</th><th>Kernel-Level Threads (KLT)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Creation &amp; Management</strong></td><td>Managed entirely by user-space thread library without kernel awareness (POSIX pthreads).</td><td>Managed directly by the OS kernel.</td></tr>
-          <tr><td><strong>Switching Overhead</strong></td><td><strong>Extremely Fast</strong> (Pure user-space function call, no kernel mode trap).</td><td>Slower (Requires mode switch to kernel mode and PCB/TCB updates).</td></tr>
-          <tr><td><strong>Blocking System Call</strong></td><td><strong>Catastrophic:</strong> If one thread blocks on I/O, the entire process and all its threads block!</td><td><strong>Non-blocking:</strong> Kernel schedules another thread of the same process if one thread blocks.</td></tr>
-          <tr><td><strong>Multi-Core Parallelism</strong></td><td>Cannot exploit multi-core CPU (Kernel schedules process as a single unit on 1 core).</td><td><strong>True Parallelism:</strong> Kernel schedules distinct threads simultaneously across multiple CPU cores.</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="concept-box">
+    <div class="box-title">Key Term: System Call</div>
+    <p><strong>Exam Definition:</strong> A System Call is a programmatic interface through which a user-space process requests a privileged service from the Operating System kernel (triggering a software interrupt/trap to switch from User Mode to Kernel Mode).</p>
+    <p><strong>In Simple Words:</strong> It is the official "service counter" window where your C/Python program politely asks the kernel to open a file, create a process, or send network data.</p>
   </div>
 
-  <div class="topic-block" id="u2-scheduling">
-    <h3>2.3 CPU Scheduling Algorithms &amp; Solved Numerical</h3>
-    <p>CPU scheduling selects a process from the ready queue when the CPU becomes idle. Core metrics:</p>
-    <div class="formula-box">
-      $$\text{Turnaround Time (TAT)} = \text{Completion Time (CT)} - \text{Arrival Time (AT)}$$<br>
-      $$\text{Waiting Time (WT)} = \text{Turnaround Time (TAT)} - \text{Burst Time (BT)}$$
-    </div>
+  <h4>Types of System Calls (with Linux/POSIX Examples)</h4>
+  <table>
+    <thead>
+      <tr><th>Category</th><th>Purpose</th><th>Examples (Linux / Windows)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Process Control</strong></td><td>Create, terminate, load, execute, wait, allocate memory</td><td><code>fork()</code>, <code>execve()</code>, <code>exit()</code>, <code>wait()</code> / <code>CreateProcess()</code></td></tr>
+      <tr><td><strong>File Management</strong></td><td>Create, delete, open, close, read, write, reposition</td><td><code>open()</code>, <code>read()</code>, <code>write()</code>, <code>close()</code> / <code>CreateFile()</code></td></tr>
+      <tr><td><strong>Device Management</strong></td><td>Request/release device, read/write device, set attributes</td><td><code>ioctl()</code>, <code>read()</code>, <code>write()</code> / <code>SetConsoleMode()</code></td></tr>
+      <tr><td><strong>Information Maintenance</strong></td><td>Get/set time, date, system data, process attributes</td><td><code>getpid()</code>, <code>alarm()</code>, <code>time()</code> / <code>GetCurrentProcessId()</code></td></tr>
+      <tr><td><strong>Communications</strong></td><td>Create/delete connections, send/receive messages, shared memory</td><td><code>pipe()</code>, <code>shmget()</code>, <code>socket()</code> / <code>CreatePipe()</code></td></tr>
+      <tr><td><strong>Protection</strong></td><td>Control access to resources, get/set permissions</td><td><code>chmod()</code>, <code>umask()</code>, <code>chown()</code> / <code>SetFileSecurity()</code></td></tr>
+    </tbody>
+  </table>
 
-    <div class="qa-card">
-      <div class="qa-q">Solved SPPU Numerical: Given 4 processes with Arrival Times and Burst Times. Compare FCFS and Round Robin (Time Quantum = 2 ms). Calculate Average TAT and Average WT.</div>
-      <div class="sol-box">
-        <p><strong>Dataset:</strong> $P_1(AT=0, BT=5), \, P_2(AT=1, BT=3), \, P_3(AT=2, BT=1), \, P_4(AT=3, BT=2)$.</p>
-        
-        <p><strong>1. FCFS Scheduling (Non-Preemptive):</strong></p>
-        <p>Gantt Chart: <code>| P1 (0-5) | P2 (5-8) | P3 (8-9) | P4 (9-11) |</code></p>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Process</th><th>AT</th><th>BT</th><th>CT</th><th>TAT = CT - AT</th><th>WT = TAT - BT</th></tr></thead>
-            <tbody>
-              <tr><td>$P_1$</td><td>0</td><td>5</td><td>5</td><td>5</td><td>0</td></tr>
-              <tr><td>$P_2$</td><td>1</td><td>3</td><td>8</td><td>7</td><td>4</td></tr>
-              <tr><td>$P_3$</td><td>2</td><td>1</td><td>9</td><td>7</td><td>6</td></tr>
-              <tr><td>$P_4$</td><td>3</td><td>2</td><td>11</td><td>8</td><td>6</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p><strong>Average TAT:</strong> $(5+7+7+8)/4 = 27/4 = 6.75 \text{ ms}$ &bull; <strong>Average WT:</strong> $(0+4+6+6)/4 = 16/4 = 4.00 \text{ ms}$.</p>
+  <p><strong>Parameter Passing to System Calls:</strong> (1) Pass directly in <em>CPU registers</em> (fastest, limited count), (2) Store in a <em>memory block/table</em> and pass the block's address in a register (used by Linux/Solaris), or (3) Push onto the <em>program stack</em> and pop by the OS.</p>
 
-        <p><strong>2. Round Robin Scheduling (Quantum = 2 ms, Preemptive):</strong></p>
-        <p>Gantt Chart: <code>| P1 (0-2) | P2 (2-4) | P3 (4-5) | P1 (5-7) | P4 (7-9) | P2 (9-10) | P1 (10-11) |</code></p>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Process</th><th>AT</th><th>BT</th><th>CT</th><th>TAT = CT - AT</th><th>WT = TAT - BT</th></tr></thead>
-            <tbody>
-              <tr><td>$P_1$</td><td>0</td><td>5</td><td>11</td><td>11</td><td>6</td></tr>
-              <tr><td>$P_2$</td><td>1</td><td>3</td><td>10</td><td>9</td><td>6</td></tr>
-              <tr><td>$P_3$</td><td>2</td><td>1</td><td>5</td><td>3</td><td>2</td></tr>
-              <tr><td>$P_4$</td><td>3</td><td>2</td><td>9</td><td>6</td><td>4</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p><strong>Average TAT:</strong> $(11+9+3+6)/4 = 29/4 = 7.25 \text{ ms}$ &bull; <strong>Average WT:</strong> $(6+6+2+4)/4 = 18/4 = 4.50 \text{ ms}$.</p>
-        <p><em>Takeaway: Shortest Remaining Time First (SRTF) provides provably minimum average waiting time.</em></p>
-      </div>
-    </div>
-  </div>
+  <pre><code>// C Example: Process Control &amp; File Management System Calls in Linux
+#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;sys/wait.h&gt;
 
-  <section class="unit-short-notes" id="u2-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit II Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Process states, scheduler queues, and scheduling formulas.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Scheduler Classifications</h4>
-          <ul>
-            <li><strong>Long-Term (Job):</strong> Controls degree of multiprogramming (Disk &rarr; Ready queue)</li>
-            <li><strong>Short-Term (CPU):</strong> High frequency (milliseconds), dispatches Ready &rarr; Running</li>
-            <li><strong>Medium-Term:</strong> Swaps processes out to disk to relieve RAM pressure (Swapping)</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Scheduling Formulas</h4>
-          <ul>
-            <li>Turnaround Time: $TAT = \text{Completion Time} - \text{Arrival Time}$</li>
-            <li>Waiting Time: $WT = TAT - \text{Burst Time}$</li>
-            <li>Response Time: First Time Scheduled - Arrival Time</li>
-            <li>SJF / SRTF is optimal for minimizing average waiting time</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Context Switch Overhead</h4>
-          <ul>
-            <li>CPU saves registers of old process into its PCB</li>
-            <li>Loads registers of newly scheduled process from its PCB</li>
-            <li>Flushes instruction pipeline and invalidates CPU cache/TLB</li>
-            <li>Pure overhead &mdash; no useful computational work performed!</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Thread Models</h4>
-          <ul>
-            <li>Many-to-One (M:1): Fast switching, no multi-core parallelism, blocking call stops all</li>
-            <li>One-to-One (1:1): True multi-core execution (Linux default <code>clone()</code>), higher kernel load</li>
-            <li>Many-to-Many (M:N): Hybrid multiplexing across kernel threads</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-</section>
-
-<section id="unit-3" class="unit-section">
-  <div class="unit-badge">Unit III &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit III: Interprocess Communication and Deadlocks</h2>
-  
-  <div class="topic-block" id="u3-sync">
-    <h3>3.1 Critical Section Problem &amp; Synchronization Primitives</h3>
-    <p>A <strong>Critical Section</strong> is a code segment accessing shared resources (memory, file, database). Any valid solution must satisfy three mandatory criteria:</p>
-    <ol>
-      <li><strong>Mutual Exclusion:</strong> If process $P_i$ is executing in its critical section, no other processes can be executing in their critical sections.</li>
-      <li><strong>Progress:</strong> If no process is executing in its critical section and some processes wish to enter, only those processes not executing in their remainder sections can participate in deciding who enters next. Selection cannot be postponed indefinitely.</li>
-      <li><strong>Bounded Waiting:</strong> There must be a bound on the number of times other processes are allowed to enter their critical sections after a process has made a request, preventing starvation.</li>
-    </ol>
-
-    <h4>Semaphores: Wait (P) and Signal (V) Operations</h4>
-    <p>A semaphore $S$ is an integer variable accessed only through two atomic operations:</p>
-<pre><code class="language-c">void wait(Semaphore S) { // P() operation
-    while (S &lt;= 0);      // Busy wait (or block in sleep queue)
-    S--;
-}
-
-void signal(Semaphore S) { // V() operation
-    S++;
+int main() {
+    pid_t pid = fork(); // Process Control System Call
+    if (pid == 0) {
+        int fd = open("note.txt", O_CREAT | O_WRONLY, 0644); // File System Call
+        write(fd, "SPPU OS Unit 1\n", 15);
+        close(fd);
+        _exit(0);
+    } else {
+        wait(NULL); // Parent waits for child
+        printf("Child %d finished writing file.\n", pid);
+    }
+    return 0;
 }</code></pre>
 
-    <h4>Monitors (High-Level Synchronization Construct)</h4>
-    <p>Semaphores can cause deadlocks if <code>wait()</code>/<code>signal()</code> are misplaced. A <strong>Monitor</strong> is a compiler-enforced abstract data type encapsulating shared variables and procedures inside a single lock &mdash; only <strong>one process</strong> can be active inside the monitor at a time. Synchronization inside monitors uses <strong>Condition Variables</strong> (<code>x.wait()</code> suspends the caller; <code>x.signal()</code> wakes exactly one suspended process, with <em>Hoare</em> vs <em>Mesa</em> scheduling semantics).</p>
+  <h3 id="u1-structures">1.3 OS Structures: Monolithic, Layered &amp; Microkernel</h3>
+  <div class="svg-box">
+    <svg style="max-width:100%;height:auto;" viewBox="0 0 740 230" width="700" xmlns="http://www.w3.org/2000/svg">
+      <!-- Monolithic -->
+      <text x="115" y="22" fill="#4B5FD1" font-size="14" font-weight="bold" text-anchor="middle">Monolithic Kernel</text>
+      <rect x="20" y="35" width="190" height="40" rx="5" fill="#EFE4DC" stroke="#6A625B"/>
+      <text x="115" y="60" fill="#171717" font-size="12" text-anchor="middle">Applications (User Space)</text>
+      <rect x="20" y="85" width="190" height="100" rx="5" fill="#EAEFFE" stroke="#4B5FD1"/>
+      <text x="115" y="115" fill="#171717" font-size="12" text-anchor="middle">VFS, IPC, File System</text>
+      <text x="115" y="138" fill="#171717" font-size="12" text-anchor="middle">Scheduler, Memory Mgmt</text>
+      <text x="115" y="161" fill="#171717" font-size="12" text-anchor="middle">Device Drivers (Kernel)</text>
+      <rect x="20" y="192" width="190" height="28" rx="5" fill="#EFE4DC" stroke="#C9BEB4"/>
+      <text x="115" y="210" fill="#6A625B" font-size="12" text-anchor="middle">Hardware</text>
 
+      <!-- Layered -->
+      <text x="370" y="22" fill="#226D51" font-size="14" font-weight="bold" text-anchor="middle">Layered Approach</text>
+      <rect x="275" y="35" width="190" height="32" rx="4" fill="#EFE4DC" stroke="#226D51"/>
+      <text x="370" y="55" fill="#171717" font-size="11" text-anchor="middle">Layer N: User Interface</text>
+      <rect x="275" y="72" width="190" height="32" rx="4" fill="#E4F2EC" stroke="#226D51"/>
+      <text x="370" y="92" fill="#171717" font-size="11" text-anchor="middle">Layer 3: I/O Management</text>
+      <rect x="275" y="109" width="190" height="32" rx="4" fill="#E4F2EC" stroke="#226D51"/>
+      <text x="370" y="129" fill="#171717" font-size="11" text-anchor="middle">Layer 2: Memory &amp; Drum</text>
+      <rect x="275" y="146" width="190" height="32" rx="4" fill="#E4F2EC" stroke="#226D51"/>
+      <text x="370" y="166" fill="#171717" font-size="11" text-anchor="middle">Layer 1: CPU Scheduling</text>
+      <rect x="275" y="185" width="190" height="35" rx="4" fill="#EFE4DC" stroke="#C9BEB4"/>
+      <text x="370" y="207" fill="#6A625B" font-size="12" text-anchor="middle">Layer 0: Hardware</text>
+
+      <!-- Microkernel -->
+      <text x="615" y="22" fill="#9C7710" font-size="14" font-weight="bold" text-anchor="middle">Microkernel</text>
+      <rect x="520" y="35" width="58" height="72" rx="4" fill="#EFE4DC" stroke="#6A625B"/>
+      <text x="549" y="75" fill="#171717" font-size="11" text-anchor="middle">Apps</text>
+      <rect x="586" y="35" width="58" height="72" rx="4" fill="#EFE4DC" stroke="#9C7710"/>
+      <text x="615" y="75" fill="#171717" font-size="11" text-anchor="middle">FS Server</text>
+      <rect x="652" y="35" width="58" height="72" rx="4" fill="#EFE4DC" stroke="#9C7710"/>
+      <text x="681" y="75" fill="#171717" font-size="11" text-anchor="middle">Drivers</text>
+      <rect x="520" y="122" width="190" height="58" rx="5" fill="#FBF4DC" stroke="#9C7710"/>
+      <text x="615" y="148" fill="#9C7710" font-size="12" font-weight="bold" text-anchor="middle">Microkernel (Kernel Space)</text>
+      <text x="615" y="166" fill="#171717" font-size="11" text-anchor="middle">Basic IPC, Scheduling, MM</text>
+      <rect x="520" y="192" width="190" height="28" rx="5" fill="#EFE4DC" stroke="#C9BEB4"/>
+      <text x="615" y="210" fill="#6A625B" font-size="12" text-anchor="middle">Hardware</text>
+    </svg>
+    <div class="svg-caption">Figure 1.2: Monolithic vs Layered vs Microkernel OS Architectures</div>
   </div>
 
-  <div class="topic-block" id="u3-classic">
-    <h3>3.2 Classic Synchronization Problems</h3>
-    <h4>1. Producer-Consumer (Bounded Buffer Problem)</h4>
-<pre><code class="language-c">Semaphore mutex = 1; // Mutual exclusion for buffer access
-Semaphore empty = N; // Counts empty buffer slots
-Semaphore full = 0;  // Counts filled slots
+  <table>
+    <thead>
+      <tr><th>Architecture</th><th>Design Principle</th><th>Advantages</th><th>Disadvantages</th><th>Examples</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Monolithic</strong></td><td>All OS services (scheduling, memory, VFS, drivers) run together in a single kernel address space.</td><td>Very fast (direct function calls, minimal overhead).</td><td>Hard to maintain; a bug in one driver can crash the entire OS.</td><td>Linux, MS-DOS, early UNIX</td></tr>
+      <tr><td><strong>Layered</strong></td><td>OS divided into strict layers (Layer 0 = Hardware to Layer N = UI); layer $k$ only calls layer $k-1$.</td><td>Easy debugging and modular verification.</td><td>Careful layer ordering required; slower due to traversing multiple layers.</td><td>THE OS, Venus</td></tr>
+      <tr><td><strong>Microkernel</strong></td><td>Minimal kernel (only IPC, basic scheduling, low-level memory). Drivers &amp; file systems run as user-space servers.</td><td>High reliability, security, and easy extensibility.</td><td>Slower performance due to frequent user-kernel IPC message passing.</td><td>Mach, QNX, Minix 3</td></tr>
+    </tbody>
+  </table>
 
-void producer() {
-    while (true) {
-        item = produce_item();
-        wait(empty); // Decrement empty slots (blocks if buffer full)
-        wait(mutex);
-        insert_into_buffer(item);
-        signal(mutex);
-        signal(full); // Increment full slots
-    }
+  <h3 id="u1-linux">1.4 Introduction to Linux OS &amp; Basic Shell Commands</h3>
+  <p>A <strong>Linux Operating System</strong> consists of four major components: (1) <strong>Hardware</strong> (CPU, RAM, Disk), (2) <strong>Linux Kernel</strong> (monolithic modular kernel handling processes, memory, VFS, drivers), (3) <strong>System Libraries</strong> (e.g., <code>glibc</code> wrapping system calls), and (4) <strong>Shell &amp; System Utilities</strong> (<code>bash</code>/<code>zsh</code> command interpreter + user tools).</p>
+
+  <table>
+    <thead>
+      <tr><th>Command</th><th>Purpose</th><th>Example</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>ls -la</code></td><td>List all files including hidden ones with permissions</td><td><code>ls -la /home/student</code></td></tr>
+      <tr><td><code>cd / pwd</code></td><td>Change directory / Print working directory</td><td><code>cd ~/os &amp;&amp; pwd</code></td></tr>
+      <tr><td><code>mkdir / rm</code></td><td>Create directory / Remove files or directories</td><td><code>mkdir lab1 &amp;&amp; rm -rf tmp</code></td></tr>
+      <tr><td><code>cp / mv</code></td><td>Copy files / Move or rename files</td><td><code>cp a.c b.c</code></td></tr>
+      <tr><td><code>chmod</code></td><td>Change file permissions (r=4, w=2, x=1)</td><td><code>chmod 755 script.sh</code></td></tr>
+      <tr><td><code>grep / wc</code></td><td>Search pattern in files / Count lines, words, chars</td><td><code>grep "error" log.txt | wc -l</code></td></tr>
+      <tr><td><code>ps / kill</code></td><td>View running processes / Send signal (terminate PID)</td><td><code>ps -ef</code>, <code>kill -9 1234</code></td></tr>
+    </tbody>
+  </table>
+
+  <h4>Case Study 1: Automating User &amp; File Management in Linux (Shell Script)</h4>
+  <pre><code>#!/bin/bash
+# Case Study: Automated Backup &amp; Permission Audit Script
+BACKUP_DIR="/tmp/sppu_backup_$(date +%F)"
+mkdir -p "$BACKUP_DIR"
+
+for file in *.txt; do
+    [ -e "$file" ] || continue
+    cp "$file" "$BACKUP_DIR/"
+    chmod 644 "$BACKUP_DIR/$file"
+    echo "Backed up $file to $BACKUP_DIR"
+done
+
+echo "Total backed-up files: $(ls -1 "$BACKUP_DIR" | wc -l)"</code></pre>
+
+  <h3 id="u1-qa">1.5 Important SPPU Exam Questions &amp; Model Answers (Unit I)</h3>
+  <div class="qa-card">
+    <div class="qa-q">Q1. Explain the Layered approach of OS design with a neat diagram. Discuss its advantages and disadvantages. <span class="marks-badge">5 Marks (Oct 2025)</span></div>
+    <p><strong>Model Answer Points:</strong> (1) Define layered architecture (modular hierarchy from Layer 0 Hardware to Layer N UI, each layer uses services only from the layer below it). (2) Draw the stacked layer diagram (Figure 1.2). (3) <strong>Advantages (2M):</strong> Modularity, easy debugging (isolate bug to a specific layer), information hiding. (4) <strong>Disadvantages (1M):</strong> Difficulty in defining strict layer boundaries (e.g., backing store vs CPU scheduler), performance overhead of passing parameters across multiple layers.</p>
+  </div>
+  <div class="qa-card">
+    <div class="qa-q">Q2. What is a System Call? Explain its need and types in Operating Systems. <span class="marks-badge">5 Marks (Oct 2025)</span></div>
+    <p><strong>Model Answer Points:</strong> (1) Definition &amp; Need: User programs cannot access hardware directly due to Dual-Mode protection; system calls provide a safe trap-based gateway to Kernel Mode. (2) List and explain 5 types with 2 examples each: Process Control (<code>fork</code>, <code>exit</code>), File Management (<code>open</code>, <code>read</code>), Device Management (<code>ioctl</code>), Information Maintenance (<code>getpid</code>), Communications (<code>pipe</code>, <code>shmget</code>).</p>
+  </div>
+</section>
+
+<section id="unit-2">
+  <h2 class="unit-title">Unit II: Process and Thread Management (09 Hours)</h2>
+
+  <h3 id="u2-process">2.1 Process Concepts, States &amp; Process Control Block (PCB)</h3>
+  <div class="concept-box">
+    <div class="box-title">Key Term: Process</div>
+    <p><strong>Exam Definition:</strong> A Process is a program in execution. Unlike a passive program (executable file on disk), a process is an active entity containing the program counter, CPU registers, stack, heap, and data section.</p>
+    <p><strong>In Simple Words:</strong> A recipe book on the shelf is a <em>program</em>; actually cooking that recipe in the kitchen (with ingredients, timer, and stove) is a <em>process</em>.</p>
+  </div>
+
+  <p><strong>Types of Processes:</strong> (1) <em>CPU-bound</em> (spends most time computing, few I/O requests) vs <em>I/O-bound</em> (spends most time waiting for I/O, short CPU bursts), and (2) <em>Independent</em> vs <em>Cooperating</em> processes (which share data/communicate).</p>
+
+  <h4>Process States and Transitions</h4>
+  <ul>
+    <li><strong>New:</strong> Process is being created.</li>
+    <li><strong>Ready:</strong> Loaded in main memory, waiting for CPU assignment.</li>
+    <li><strong>Running:</strong> Instructions are currently being executed by a CPU core.</li>
+    <li><strong>Waiting (Blocked):</strong> Waiting for an event (e.g., disk I/O completion, semaphore).</li>
+    <li><strong>Terminated:</strong> Finished execution; OS reclaims its resources.</li>
+  </ul>
+
+  <figure class="figure-box">
+    <img src="assets/os_process_states.png" alt="Process States and Transitions Diagram">
+    <figcaption>Figure 2.1: Process State Transition Diagram (New, Ready, Running, Waiting, Terminated)</figcaption>
+  </figure>
+
+  <div class="concept-box">
+    <div class="box-title">Key Term: Process Control Block (PCB)</div>
+    <p><strong>Exam Definition:</strong> A Process Control Block (PCB), also called a Task Control Block, is a kernel data structure that stores all information needed to manage and resume a specific process.</p>
+    <p><strong>In Simple Words:</strong> It is the process's "passport and bookmark" &mdash; if the OS pauses a process, the PCB remembers exactly where it stopped so it can resume seamlessly later.</p>
+  </div>
+
+  <ul>
+    <li><strong>Process ID (PID) &amp; State:</strong> Unique identifier and current state (Ready, Running, etc.).</li>
+    <li><strong>Program Counter (PC):</strong> Address of the next instruction to execute.</li>
+    <li><strong>CPU Registers:</strong> Accumulators, index registers, stack pointers saved on interrupt.</li>
+    <li><strong>CPU Scheduling Info:</strong> Priority, scheduling queue pointers.</li>
+    <li><strong>Memory Management Info:</strong> Base/limit registers, page tables, segment tables.</li>
+    <li><strong>Accounting &amp; I/O Status Info:</strong> CPU time used, open file descriptors, allocated I/O devices.</li>
+  </ul>
+
+  <figure class="figure-box">
+    <img src="assets/pcb_process_control_block.png" alt="Process Table and Process Control Block">
+    <figcaption>Figure 2.2: Process Table and Process Control Block (PCB) Structure</figcaption>
+  </figure>
+
+  <h3 id="u2-schedulers">2.2 Context Switching &amp; Types of Schedulers</h3>
+  <p><strong>Context Switching:</strong> Saving the CPU state (registers, PC) of the currently running process into its PCB and loading the saved state of the next process from its PCB. <strong>Impact on Performance:</strong> Context switching is pure overhead (no useful user work happens during the switch), typically taking microseconds; excessive switching reduces throughput and causes TLB/cache misses.</p>
+
+  <table>
+    <thead>
+      <tr><th>Scheduler Type</th><th>Alias</th><th>Primary Function</th><th>Frequency</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Long-Term Scheduler</strong></td><td>Job Scheduler</td><td>Selects processes from disk job pool and loads them into RAM (New &rarr; Ready). Controls the <strong>degree of multiprogramming</strong>.</td><td>Infrequent (seconds/minutes)</td></tr>
+      <tr><td><strong>Short-Term Scheduler</strong></td><td>CPU Scheduler</td><td>Selects one Ready process from RAM and allocates the CPU to it (Ready &rarr; Running) via the <strong>Dispatcher</strong>.</td><td>Very frequent (milliseconds)</td></tr>
+      <tr><td><strong>Medium-Term Scheduler</strong></td><td>Swapper</td><td>Temporarily removes (swaps out) processes from RAM to disk to reduce memory pressure, and swaps them back in later.</td><td>Intermediate</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="u2-threads">2.3 Threads &amp; Multithreading (User-Level vs Kernel-Level)</h3>
+  <div class="concept-box">
+    <div class="box-title">Key Term: Thread</div>
+    <p><strong>Exam Definition:</strong> A Thread (lightweight process) is the basic unit of CPU utilization within a process, consisting of a Thread ID, Program Counter, register set, and stack, while sharing code, data, and open files with peer threads of the same process.</p>
+    <p><strong>In Simple Words:</strong> A process is a house; threads are family members living inside it &mdash; each has their own bedroom (stack &amp; registers), but they share the kitchen and living room (code &amp; heap).</p>
+  </div>
+
+  <p><strong>Multithreading Models:</strong> <em>Many-to-One</em> (many user threads mapped to 1 kernel thread; one blocking call blocks all), <em>One-to-One</em> (each user thread maps to 1 kernel thread; true parallelism, used in Linux/Windows), and <em>Many-to-Many</em> (multiplexes M user threads onto N kernel threads).</p>
+
+  <table>
+    <thead>
+      <tr><th>Feature</th><th>User-Level Threads (ULT)</th><th>Kernel-Level Threads (KLT)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Managed By</strong></td><td>User-space thread library (OS is unaware)</td><td>OS Kernel directly</td></tr>
+      <tr><td><strong>Creation &amp; Switching</strong></td><td>Very fast (no kernel mode switch)</td><td>Slower (requires system call / mode switch)</td></tr>
+      <tr><td><strong>Blocking System Call</strong></td><td>Blocks the entire process</td><td>Only the calling thread blocks; others run</td></tr>
+      <tr><td><strong>Multicore Parallelism</strong></td><td>No (kernel sees only 1 process)</td><td>Yes (kernel schedules threads across cores)</td></tr>
+    </tbody>
+  </table>
+
+  <pre><code>// C Example: Creating a Kernel-Level POSIX Thread (compile with -lpthread)
+#include &lt;stdio.h&gt;
+#include &lt;pthread.h&gt;
+
+void* worker(void* arg) {
+    printf("Hello from Thread %d\n", *(int*)arg);
+    return NULL;
 }
 
-void consumer() {
+int main() {
+    pthread_t t1;
+    int id = 1;
+    pthread_create(&amp;t1, NULL, worker, &amp;id);
+    pthread_join(t1, NULL);
+    return 0;
+}</code></pre>
+
+  <h3 id="u2-algos">2.4 CPU Scheduling Algorithms &amp; Solved Gantt Numericals</h3>
+  <p><strong>Preemptive vs Non-Preemptive:</strong> In <em>Non-Preemptive</em> scheduling (FCFS, non-preemptive SJF), once a process gets the CPU, it keeps it until it terminates or waits for I/O. In <em>Preemptive</em> scheduling (SRTF, Round Robin, Preemptive Priority), the OS can interrupt a running process when a higher-priority process arrives or a time quantum expires.</p>
+
+  <div class="formula-box">
+    <div class="box-title">Essential Scheduling Formulas</div>
+    <ul>
+      <li><strong>Completion Time ($CT$):</strong> Time at which process finishes execution.</li>
+      <li><strong>Turnaround Time ($TAT$):</strong> $TAT = CT - AT$ (Total time spent in system).</li>
+      <li><strong>Waiting Time ($WT$):</strong> $WT = TAT - BT$ (Total time spent waiting in Ready Queue).</li>
+      <li><strong>Response Time ($RT$):</strong> $RT = \text{First CPU Allocation Time} - AT$.</li>
+    </ul>
+  </div>
+
+  <h4>Solved Numerical 1 (SPPU QB): FCFS vs Non-Preemptive SJF</h4>
+  <p>Processes: $P_1(AT=0, BT=5)$, $P_2(AT=1, BT=3)$, $P_3(AT=2, BT=8)$, $P_4(AT=3, BT=6)$.</p>
+  <p><strong>1. FCFS (First-Come, First-Served):</strong> Order is $P_1 \to P_2 \to P_3 \to P_4$.</p>
+  <div class="gantt-wrap"><div class="gantt-bar">
+    <div class="gantt-cell">P1<span class="gantt-time">0 &ndash; 5</span></div>
+    <div class="gantt-cell">P2<span class="gantt-time">5 &ndash; 8</span></div>
+    <div class="gantt-cell">P3<span class="gantt-time">8 &ndash; 16</span></div>
+    <div class="gantt-cell">P4<span class="gantt-time">16 &ndash; 22</span></div>
+  </div></div>
+  <p>FCFS: $TAT = \{5, 7, 14, 19\} \Rightarrow \text{Avg TAT} = 11.25$. $WT = \{0, 4, 6, 13\} \Rightarrow \text{Avg WT} = \mathbf{5.75\text{ ms}}$. <em>Note:</em> FCFS suffers from the <strong>Convoy Effect</strong> (short processes stuck behind one long CPU-bound process).</p>
+
+  <p><strong>2. Non-Preemptive SJF (Shortest Job First):</strong> At $t=0$, only $P_1$ is available, so $P_1$ runs $0 \to 5$. At $t=5$, $P_2(3), P_3(8), P_4(6)$ are ready; shortest is $P_2(3)$, then $P_4(6)$, then $P_3(8)$.</p>
+  <div class="gantt-wrap"><div class="gantt-bar">
+    <div class="gantt-cell">P1<span class="gantt-time">0 &ndash; 5</span></div>
+    <div class="gantt-cell">P2<span class="gantt-time">5 &ndash; 8</span></div>
+    <div class="gantt-cell">P4<span class="gantt-time">8 &ndash; 14</span></div>
+    <div class="gantt-cell">P3<span class="gantt-time">14 &ndash; 22</span></div>
+  </div></div>
+  <table>
+    <thead><tr><th>Process</th><th>AT</th><th>BT</th><th>CT</th><th>TAT = CT - AT</th><th>WT = TAT - BT</th></tr></thead>
+    <tbody>
+      <tr><td>P1</td><td>0</td><td>5</td><td>5</td><td>5</td><td>0</td></tr>
+      <tr><td>P2</td><td>1</td><td>3</td><td>8</td><td>7</td><td>4</td></tr>
+      <tr><td>P3</td><td>2</td><td>8</td><td>22</td><td>20</td><td>12</td></tr>
+      <tr><td>P4</td><td>3</td><td>6</td><td>14</td><td>11</td><td>5</td></tr>
+    </tbody>
+  </table>
+  <p>SJF: $\text{Avg TAT} = (5+7+20+11)/4 = \mathbf{10.75\text{ ms}}$, $\text{Avg WT} = (0+4+12+5)/4 = \mathbf{5.25\text{ ms}}$.</p>
+
+  <h4>Solved Numerical 2 (SPPU Oct 2025 [6582]-238 Q4b): SJF &amp; Round Robin ($TQ = 0.5$)</h4>
+  <p>Given: $P_1(BT=2, AT=10)$, $P_2(BT=1, AT=10)$, $P_3(BT=1, AT=11)$, $P_4(BT=1, AT=12)$.</p>
+  <p><strong>SJF (Non-Preemptive):</strong> At $t=10$, $P_1(2)$ and $P_2(1)$ arrive. Shortest is $P_2(1)$ &rarr; runs $10 \to 11$. At $t=11$, $P_1(2)$ and $P_3(1)$ are ready; shortest is $P_3(1)$ &rarr; runs $11 \to 12$. At $t=12$, $P_1(2)$ and $P_4(1)$ are ready; shortest is $P_4(1)$ &rarr; runs $12 \to 13$, then $P_1(2)$ runs $13 \to 15$.</p>
+  <ul>
+    <li>$CT = \{15, 11, 12, 13\}$, $TAT = \{5, 1, 1, 1\} \Rightarrow \text{Avg TAT} = \mathbf{2.0}$.</li>
+    <li>$WT = \{3, 0, 0, 0\} \Rightarrow \text{Avg WT} = \mathbf{0.75}$.</li>
+  </ul>
+  <p><strong>Round Robin ($TQ = 0.5$):</strong> Ready queue starts at $t=10$ with $[P_1, P_2]$. Tracing in $0.5$ steps: $P_1(10\text{--}10.5)$, $P_2(10.5\text{--}11.0)$, $P_1(11.0\text{--}11.5)$ [$P_3$ arrives at 11], $P_2(11.5\text{--}12.0, \text{done})$ [$P_4$ arrives at 12], $P_3(12.0\text{--}12.5)$, $P_1(12.5\text{--}13.0)$, $P_4(13.0\text{--}13.5)$, $P_3(13.5\text{--}14.0, \text{done})$, $P_1(14.0\text{--}14.5, \text{done})$, $P_4(14.5\text{--}15.0, \text{done})$.</p>
+  <ul>
+    <li>$CT = \{14.5, 12.0, 14.0, 15.0\}$, $TAT = \{4.5, 2.0, 3.0, 3.0\} \Rightarrow \text{Avg TAT} = \mathbf{3.125}$.</li>
+    <li>$WT = \{2.5, 1.0, 2.0, 2.0\} \Rightarrow \text{Avg WT} = \mathbf{1.875}$.</li>
+  </ul>
+
+  <figure class="figure-box">
+    <img src="assets/cpu_scheduling_gantt.png" alt="Round Robin CPU Scheduling Gantt Chart">
+    <figcaption>Figure 2.3: Round Robin Scheduling Time-Quantum Execution</figcaption>
+  </figure>
+
+  <p><strong>SRTF (Shortest Remaining Time First) &amp; Priority Scheduling:</strong> SRTF is the preemptive version of SJF (always picks the process with smallest remaining burst time, yielding optimal minimum average waiting time). Priority scheduling assigns CPU to highest priority; it can cause <strong>Starvation</strong> (indefinite blocking of low-priority processes), which is solved by <strong>Aging</strong> (gradually increasing priority of waiting processes over time).</p>
+  <p><strong>Scheduling in UNIX &amp; Windows:</strong> Modern Linux uses the <strong>CFS (Completely Fair Scheduler)</strong> / EEVDF with virtual runtime (<code>vruntime</code>) in a red-black tree. Windows uses a <strong>32-level priority-based preemptive</strong> multilevel feedback queue (levels 16&ndash;31 real-time, 0&ndash;15 variable).</p>
+
+  <pre><code>// Complete C Program: FCFS CPU Scheduling Calculator
+#include &lt;stdio.h&gt;
+
+int main() {
+    int n = 4;
+    int at[] = {0, 1, 2, 3}, bt[] = {5, 3, 8, 6};
+    int ct[4], tat[4], wt[4], time = 0;
+    float avg_tat = 0, avg_wt = 0;
+
+    for (int i = 0; i &lt; n; i++) {
+        if (time &lt; at[i]) time = at[i];
+        time += bt[i];
+        ct[i] = time;
+        tat[i] = ct[i] - at[i];
+        wt[i] = tat[i] - bt[i];
+        avg_tat += tat[i];
+        avg_wt += wt[i];
+    }
+    printf("Avg TAT = %.2f, Avg WT = %.2f\n", avg_tat / n, avg_wt / n);
+    return 0;
+}</code></pre>
+
+  <h4>Case Studies (Unit II)</h4>
+  <ul>
+    <li><strong>Real-Time Scheduling Challenges:</strong> Meeting hard deadlines (Rate Monotonic Scheduling, Earliest Deadline First), handling <em>Priority Inversion</em> (solved by Priority Inheritance Protocol), and minimizing interrupt latency.</li>
+    <li><strong>Workload Comparison:</strong> FCFS works well for uniform batch jobs; SJF/SRTF minimizes average WT for interactive short jobs; RR ensures fairness for time-sharing; Priority suits critical real-time tasks.</li>
+  </ul>
+
+  <h3 id="u2-qa">2.5 Important SPPU Exam Questions &amp; Model Answers (Unit II)</h3>
+  <div class="qa-card">
+    <div class="qa-q">Q1. Explain Process States and Transitions diagram in detail. <span class="marks-badge">7 Marks (Oct 2025)</span></div>
+    <p><strong>Model Answer Points:</strong> (1) Define Process (1M). (2) Draw neat 5-state diagram (New, Ready, Running, Waiting, Terminated) + optional Suspended states (2M). (3) Explain each state and the exact transition triggers: Admit, Dispatch, Time-Quantum Expired, I/O Request, I/O Complete, Exit (4M).</p>
+  </div>
+  <div class="qa-card">
+    <div class="qa-q">Q2. Explain Long-Term, Short-Term, and Medium-Term Schedulers. <span class="marks-badge">7 Marks (Oct 2025)</span></div>
+    <p><strong>Model Answer Points:</strong> (1) Diagram showing Job Queue, Ready Queue, and Swapped-out Queue (2M). (2) Detailed explanation of Long-term (degree of multiprogramming, mix of I/O &amp; CPU bound), Short-term (CPU selection, millisecond speed, Dispatcher), and Medium-term (swapping to manage memory) (5M).</p>
+  </div>
+</section>
+
+<section id="unit-3">
+  <h2 class="unit-title">Unit III: Interprocess Communication &amp; Deadlock (09 Hours)</h2>
+
+  <h3 id="u3-cs">3.1 Concurrency, Critical Section Problem &amp; Peterson's Solution</h3>
+  <div class="concept-box">
+    <div class="box-title">Key Term: Critical Section &amp; Race Condition</div>
+    <p><strong>Exam Definition:</strong> A <strong>Critical Section</strong> is a code segment in which a cooperating process accesses shared resources (variables, tables, files) that must not be concurrently accessed by more than one process. A <strong>Race Condition</strong> occurs when the final outcome depends on the unpredictable execution order of concurrent processes.</p>
+    <p><strong>In Simple Words:</strong> Two people editing the same Google Doc line or withdrawing from the same bank account simultaneously without taking turns &mdash; whoever saves last overwrites the other!</p>
+  </div>
+
+  <h4>Three Requirements for a Valid Critical Section Solution</h4>
+  <ol>
+    <li><strong>Mutual Exclusion:</strong> If process $P_i$ is executing in its critical section, no other process can execute in its critical section.</li>
+    <li><strong>Progress:</strong> If no process is in its critical section and some processes wish to enter, only processes not in their remainder section can participate in deciding who enters next, and this selection cannot be postponed indefinitely.</li>
+    <li><strong>Bounded Waiting:</strong> There exists a bound (limit) on the number of times other processes are allowed to enter their critical sections after a process has made a request to enter its critical section and before that request is granted (prevents starvation).</li>
+  </ol>
+
+  <h4>Peterson's Solution (Two-Process Software Synchronization)</h4>
+  <p>Uses two shared variables: <code>int turn;</code> (whose turn it is) and <code>bool flag[2];</code> (<code>flag[i] = true</code> means $P_i$ is ready to enter). It satisfies all three requirements (Mutual Exclusion, Progress, Bounded Waiting).</p>
+  <pre><code>// Peterson's Solution for Process i (where j = 1 - i)
+bool flag[2] = {false, false};
+int turn = 0;
+
+void process(int i) {
+    int j = 1 - i;
     while (true) {
-        wait(full);  // Decrement filled slots (blocks if buffer empty)
-        wait(mutex);
-        item = remove_from_buffer();
-        signal(mutex);
-        signal(empty); // Increment empty slots
-        consume_item(item);
+        flag[i] = true;          // Express desire to enter CS
+        turn = j;                // Politely give priority to the other process
+        while (flag[j] &amp;&amp; turn == j) {
+            ; // Busy wait
+        }
+        /* --- CRITICAL SECTION --- */
+        flag[i] = false;         // Exit section
+        /* --- REMAINDER SECTION --- */
     }
 }</code></pre>
+
+  <h3 id="u3-sync">3.2 Synchronization Primitives: Semaphores, Mutexes &amp; Monitors</h3>
+  <div class="concept-box">
+    <div class="box-title">Key Term: Semaphore</div>
+    <p><strong>Exam Definition:</strong> A Semaphore $S$ is an integer synchronization variable accessed only through two indivisible (atomic) operations: <code>wait(S)</code> (or <code>P(S)</code>, which decrements $S$) and <code>signal(S)</code> (or <code>V(S)</code>, which increments $S$).</p>
+    <p><strong>In Simple Words:</strong> A semaphore is like a token bucket at a parking lot. <code>wait()</code> takes a token (if 0 tokens left, the car waits); <code>signal()</code> puts a token back when leaving.</p>
   </div>
 
-  <div class="topic-block" id="u3-deadlocks">
-    <h3>3.3 Deadlocks: 4 Conditions &amp; Banker's Algorithm</h3>
-    <p>A deadlock occurs when a set of processes are blocked because each process holds a resource and waits for another resource held by another process.</p>
-    
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Necessary Condition</th><th>Explanation &amp; Prevention Technique</th></tr></thead>
-        <tbody>
-          <tr><td><strong>1. Mutual Exclusion</strong></td><td>At least one non-shareable resource. <em>Prevention: Spooling (make shareable).</em></td></tr>
-          <tr><td><strong>2. Hold and Wait</strong></td><td>Process holds &ge;1 resource while requesting others. <em>Prevention: Request all resources before execution.</em></td></tr>
-          <tr><td><strong>3. No Preemption</strong></td><td>Resources cannot be forcibly taken away. <em>Prevention: Preempt resources if request denied.</em></td></tr>
-          <tr><td><strong>4. Circular Wait</strong></td><td>Closed chain of processes: $P_0 \to P_1 \to \dots \to P_n \to P_0$. <em>Prevention: Strictly order resources globally.</em></td></tr>
-        </tbody>
-      </table>
-    </div>
+  <pre><code>// Atomic Semaphore Operations (Blocking Implementation)
+void wait(semaphore *S) {
+    S-&gt;value--;
+    if (S-&gt;value &lt; 0) {
+        add this process to S-&gt;list;
+        block(); // Sleep instead of busy-waiting
+    }
+}
+void signal(semaphore *S) {
+    S-&gt;value++;
+    if (S-&gt;value &lt;= 0) {
+        remove a process P from S-&gt;list;
+        wakeup(P);
+    }
+}</code></pre>
 
-    <h4>Banker's Algorithm (Deadlock Avoidance)</h4>
-    <p>Banker's algorithm tests whether allocating resources keeps the system in a <strong>Safe State</strong> (where a Safe Sequence $\langle P_0, P_1, \dots, P_n \rangle$ exists allowing every process to finish).</p>
-    <div class="formula-box">$$\text{Need Matrix} = \text{Max Matrix} - \text{Allocation Matrix}$$</div>
+  <table>
+    <thead>
+      <tr><th>Feature</th><th>Mutex (Mutual Exclusion Lock)</th><th>Semaphore (Binary / Counting)</th><th>Monitor</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Type</strong></td><td>Locking mechanism (owns the lock)</td><td>Signaling mechanism (integer counter)</td><td>High-level language construct (ADT)</td></tr>
+      <tr><td><strong>Ownership</strong></td><td>Only the thread that locked it can unlock it</td><td>Any process can call <code>signal()</code></td><td>Implicit mutual exclusion; compiler-enforced</td></tr>
+      <tr><td><strong>Use Case</strong></td><td>Protecting a single critical resource</td><td>Counting resources (N instances) &amp; ordering</td><td>Complex synchronization with condition variables</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="u3-classic">3.3 Classic Synchronization Problems &amp; IPC</h3>
+  <h4>1. Producer-Consumer (Bounded Buffer) Problem</h4>
+  <p>Uses three semaphores: <code>mutex = 1</code> (buffer lock), <code>empty = N</code> (free slots), <code>full = 0</code> (filled slots).</p>
+  <pre><code>// Producer
+do {
+    // produce item
+    wait(empty);
+    wait(mutex);
+    /* add item to buffer */
+    signal(mutex);
+    signal(full);
+} while (true);
+
+// Consumer
+do {
+    wait(full);
+    wait(mutex);
+    /* remove item from buffer */
+    signal(mutex);
+    signal(empty);
+    // consume item
+} while (true);</code></pre>
+
+  <h4>2. Readers-Writers Problem (Readers Priority &mdash; SPPU Oct 2025)</h4>
+  <p>Multiple readers can read simultaneously, but a writer needs exclusive access. Uses <code>rw_mutex = 1</code>, <code>mutex = 1</code>, and <code>int read_count = 0</code>.</p>
+  <pre><code>// Writer
+wait(rw_mutex);
+/* writing is performed */
+signal(rw_mutex);
+
+// Reader (Readers Priority)
+wait(mutex);
+read_count++;
+if (read_count == 1) wait(rw_mutex); // First reader locks out writers
+signal(mutex);
+/* reading is performed */
+wait(mutex);
+read_count--;
+if (read_count == 0) signal(rw_mutex); // Last reader releases writer lock
+signal(mutex);</code></pre>
+
+  <h4>3. Dining Philosophers Problem</h4>
+  <p>5 philosophers share 5 chopsticks. If all pick up their left chopstick simultaneously, deadlock occurs. <strong>Deadlock-free solutions:</strong> (a) Allow at most 4 philosophers at the table, (b) Pick up both chopsticks only if both are free (critical section), or (c) Asymmetric rule: odd philosopher picks left first, even picks right first.</p>
+
+  <h4>Inter-Process Communication (IPC): Shared Memory vs Message Passing</h4>
+  <table>
+    <thead><tr><th>Aspect</th><th>Shared Memory</th><th>Message Passing</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Mechanism</strong></td><td>Processes share a common memory region; kernel only sets it up.</td><td>Kernel provides <code>send(msg)</code> and <code>receive(msg)</code> system calls.</td></tr>
+      <tr><td><strong>Speed</strong></td><td>Very fast (memory-speed access, no kernel per-transfer).</td><td>Slower (system call &amp; data copy on every message).</td></tr>
+      <tr><td><strong>Synchronization</strong></td><td>Programmer must synchronize manually (semaphores/mutex).</td><td>Built-in synchronization (blocking send/receive).</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="u3-deadlock">3.4 Deadlocks &amp; Coffman's 4 Necessary Conditions</h3>
+  <div class="concept-box">
+    <div class="box-title">Key Term: Deadlock</div>
+    <p><strong>Exam Definition:</strong> A Deadlock is a permanent blocking state in which a set of processes is blocked because each process holds a resource and waits for another resource currently held by another process in the same set.</p>
+    <p><strong>In Simple Words:</strong> Four cars meet at a 4-way intersection; each car occupies one corner and refuses to back up until the car in front moves &mdash; nobody moves forever!</p>
   </div>
 
-  <section class="unit-short-notes" id="u3-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit III Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Synchronization primitives, classical problem templates, and deadlock conditions.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Critical Section 3 Rules</h4>
-          <ul>
-            <li>Mutual Exclusion (Strictly 1 process in CS)</li>
-            <li>Progress (Decision made only by interested processes)</li>
-            <li>Bounded Waiting (No starvation limit)</li>
-            <li>Peterson's algorithm achieves all 3 for 2 processes using <code>flag[2]</code> and <code>turn</code></li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Semaphore Types</h4>
-          <ul>
-            <li>Binary Semaphore (Mutex): Values in {0, 1}</li>
-            <li>Counting Semaphore: Unrestricted integer range (manages resource pools)</li>
-            <li>Spinlock: Busy-waiting semaphore (efficient if lock held for brief moments)</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Banker's Algorithm Steps</h4>
-          <ul>
-            <li>Calculate: $Need[i][j] = Max[i][j] - Allocation[i][j]$</li>
-            <li>Initialize: $Work = Available$, $Finish[i] = false$</li>
-            <li>Find $i$ such that $Finish[i] == false$ and $Need_i \le Work$</li>
-            <li>Update: $Work = Work + Allocation_i$, $Finish[i] = true$</li>
-            <li>If all $Finish[i] == true$, state is SAFE!</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Deadlock Strategies</h4>
-          <ul>
-            <li>Ignorance (Ostrich Algorithm): Assume deadlocks never occur (Linux/Windows)</li>
-            <li>Prevention: Eliminate at least 1 of the 4 Coffman conditions</li>
-            <li>Avoidance: Banker's algorithm (requires prior knowledge of max claims)</li>
-            <li>Detection &amp; Recovery: Resource Allocation Graph cycle detection &rarr; Process termination</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-</section>
+  <p><strong>Coffman's Four Necessary Conditions (All 4 must hold simultaneously for deadlock):</strong></p>
+  <ol>
+    <li><strong>Mutual Exclusion:</strong> At least one resource must be held in a non-sharable mode.</li>
+    <li><strong>Hold and Wait:</strong> A process is currently holding at least one resource and waiting to acquire additional resources held by other processes.</li>
+    <li><strong>No Preemption:</strong> Resources cannot be forcibly taken away; a process releases them only voluntarily after finishing.</li>
+    <li><strong>Circular Wait:</strong> A closed chain of processes $\{P_0, P_1, \dots, P_n\}$ exists such that $P_0$ waits for $P_1$, $P_1$ waits for $P_2$, ..., and $P_n$ waits for $P_0$.</li>
+  </ol>
 
-<section id="unit-4" class="unit-section">
-  <div class="unit-badge">Unit IV &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit IV: Memory Management &amp; Virtual Memory</h2>
-  
+  <figure class="figure-box">
+    <img src="assets/deadlock_rag.png" alt="Resource Allocation Graph showing Deadlock">
+    <figcaption>Figure 3.1: Resource Allocation Graph (RAG) &mdash; Cycle Indicates Potential/Actual Deadlock</figcaption>
+  </figure>
 
-  <div class="topic-block" id="u4-contiguous">
-    <h3>4.0 Contiguous Allocation, Fragmentation &amp; Fit Strategies</h3>
-    <p>In dynamic partitioning, variable-sized partitions create free memory holes. Three placement strategies select a hole for an incoming process of size $P$:</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Strategy</th><th>Allocation Rule</th><th>Trade-Offs</th></tr></thead>
-        <tbody>
-          <tr><td><strong>First Fit</strong></td><td>Allocate the <em>first</em> free hole large enough ($H \ge P$).</td><td>Fastest search time; leaves small leftover fragments near front.</td></tr>
-          <tr><td><strong>Best Fit</strong></td><td>Allocate the <em>smallest</em> sufficient hole ($\min H \ge P$).</td><td>Minimizes immediate leftover waste, but creates tiny unusable external slivers.</td></tr>
-          <tr><td><strong>Worst Fit</strong></td><td>Allocate the <em>largest</em> available hole ($\max H \ge P$).</td><td>Leaves a large leftover hole usable by future medium processes.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p><strong>Worked Numerical:</strong> Partitions: <code>[100K, 500K, 200K, 300K, 600K]</code>; Processes: <code>P1=212K, P2=417K, P3=112K, P4=426K</code>.<br>
-    &bull; <em>First Fit:</em> P1&rarr;500K (288K left), P2&rarr;600K (183K left), P3&rarr;288K (176K left), P4&rarr;<strong>Must Wait!</strong><br>
-    &bull; <em>Best Fit:</em> P1&rarr;300K (88K), P2&rarr;500K (83K), P3&rarr;200K (88K), P4&rarr;<strong>600K (All 4 Allocated!)</strong>.<br>
-    <strong>Fragmentation:</strong> <em>Internal Fragmentation</em> is unused memory inside a fixed allocated block; <em>External Fragmentation</em> occurs when total free RAM is sufficient but split across non-contiguous holes (solved via Paging or Compaction).</p>
+  <p><strong>Deadlock Handling Methods:</strong> (1) <em>Prevention</em>: ensure at least one Coffman condition never holds (e.g., impose strict resource ordering to break Circular Wait, or request all resources upfront to break Hold &amp; Wait). (2) <em>Avoidance</em>: dynamically check resource-allocation state (Banker's Algorithm). (3) <em>Detection &amp; Recovery</em>: run detection (Wait-For Graph for single instance) and recover via process termination or resource preemption.</p>
+
+  <h3 id="u3-banker">3.5 Deadlock Avoidance: Banker's Algorithm (Solved Numerical)</h3>
+  <p><strong>Core Idea:</strong> Before granting a resource request, the OS checks if the resulting state is a <strong>Safe State</strong> (there exists at least one <em>Safe Sequence</em> $\langle P_{i_1}, P_{i_2}, \dots, P_{i_n} \rangle$ where every process can finish using currently available + released resources). Note: Unsafe state $\neq$ immediate deadlock, but deadlock may occur.</p>
+
+  <div class="formula-box">
+    <div class="box-title">Banker's Algorithm Equations</div>
+    <p>$$\text{Need}[i][j] = \text{Max}[i][j] - \text{Allocation}[i][j]$$</p>
+    <p>$$\text{Available}[j] = \text{Total}[j] - \sum_{i=0}^{n-1} \text{Allocation}[i][j]$$</p>
   </div>
 
-  <div class="topic-block" id="u4-paging">
-    <h3>4.1 Paging, TLB Hardware &amp; Effective Access Time (EMAT)</h3>
-    <p>Paging eliminates external fragmentation by breaking physical memory into fixed-size <strong>Frames</strong> and logical memory into same-sized <strong>Pages</strong>.</p>
-    
-    <div class="figure-box"><svg viewBox="0 0 760 230" class="svg-diagram" xmlns="http://www.w3.org/2000/svg" id="operating-svg-2">
-  <rect width="760" height="230" fill="#FFFFFF" rx="8"/>
-  <style>#operating-svg-2 .cpu-box { fill: #F1F5F9; stroke: #475569; stroke-width: 1.8; rx: 4; }#operating-svg-2 .tlb-box { fill: #FEF3C7; stroke: #D97706; stroke-width: 2; rx: 4; }#operating-svg-2 .pt-box { fill: #EFF6FF; stroke: #2563EB; stroke-width: 2; rx: 4; }#operating-svg-2 .ram-box { fill: #DCFCE7; stroke: #059669; stroke-width: 2; rx: 4; }#operating-svg-2 .wire { stroke: #0F172A; stroke-width: 1.6; fill: none; marker-end: url(#arr-bl); }#operating-svg-2 .wire-hit { stroke: #059669; stroke-width: 2; fill: none; marker-end: url(#arr-gr); }#operating-svg-2 .wire-miss { stroke: #DC2626; stroke-width: 2; stroke-dasharray: 4 3; fill: none; marker-end: url(#arr-rd); }#operating-svg-2 .txt-t { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #1E293B; }#operating-svg-2 .txt-c { font-family: monospace; font-size: 11px; fill: #1E293B; text-anchor: middle; }#operating-svg-2 .txt-sub { font-family: sans-serif; font-size: 10px; fill: #64748B; text-anchor: middle; }
-  </style>
-  <defs>
-    <marker id="arr-bl" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 1 L 8 5 L 0 9 z" fill="#0F172A"/></marker>
-    <marker id="arr-gr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 1 L 8 5 L 0 9 z" fill="#059669"/></marker>
-    <marker id="arr-rd" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 1 L 8 5 L 0 9 z" fill="#DC2626"/></marker>
-  </defs>
-  <text x="30" y="30" class="txt-t">Paging Hardware with Translation Lookaside Buffer (TLB)</text>
-  
-  <!-- CPU Logical Address -->
-  <g transform="translate(30, 60)">
-    <rect x="0" y="0" width="120" height="40" class="cpu-box"/>
-    <rect x="0" y="0" width="60" height="40" fill="#E2E8F0" stroke="#475569"/>
-    <text x="30" y="24" class="txt-c" font-weight="bold">p (page)</text>
-    <text x="90" y="24" class="txt-c">d (offset)</text>
-    <text x="60" y="55" class="txt-sub">Logical Address</text>
-  </g>
-  
-  <!-- TLB Cache -->
-  <g transform="translate(220, 45)">
-    <rect x="0" y="0" width="140" height="70" class="tlb-box"/>
-    <text x="70" y="22" class="txt-c" font-weight="bold" fill="#D97706">TLB Cache (Fast)</text>
-    <text x="35" y="45" class="txt-c" font-size="9px">Page #</text><text x="105" y="45" class="txt-c" font-size="9px">Frame #</text>
-  </g>
-  <path d="M 90 60 L 90 40 L 215 40 L 215 65" class="wire"/>
-  
-  <!-- Page Table in RAM -->
-  <g transform="translate(220, 145)">
-    <rect x="0" y="0" width="140" height="65" class="pt-box"/>
-    <text x="70" y="22" class="txt-c" font-weight="bold" fill="#2563EB">Page Table (RAM)</text>
-    <text x="70" y="45" class="txt-sub">Maps Page p &rarr; Frame f</text>
-  </g>
-  <path d="M 290 115 L 290 140" class="wire-miss"/>
-  <text x="325" y="130" class="txt-sub" fill="#DC2626">TLB Miss</text>
-  
-  <!-- Physical Address Register -->
-  <g transform="translate(450, 60)">
-    <rect x="0" y="0" width="120" height="40" class="ram-box"/>
-    <rect x="0" y="0" width="60" height="40" fill="#A7F3D0" stroke="#059669"/>
-    <text x="30" y="24" class="txt-c" font-weight="bold" fill="#059669">f (frame)</text>
-    <text x="90" y="24" class="txt-c">d (offset)</text>
-    <text x="60" y="55" class="txt-sub">Physical Address</text>
-  </g>
-  <path d="M 360 70 L 445 70" class="wire-hit"/>
-  <text x="400" y="65" class="txt-sub" fill="#059669">TLB Hit</text>
-  <path d="M 360 175 L 415 175 L 415 85 L 445 85" class="wire"/>
-  
-  <!-- Physical Memory -->
-  <g transform="translate(620, 45)">
-    <rect x="0" y="0" width="110" height="165" class="ram-box"/>
-    <text x="55" y="25" class="txt-c" font-weight="bold" fill="#059669">Main Memory</text>
-    <text x="55" y="42" class="txt-sub">(Physical RAM)</text>
-    <line x1="0" y1="60" x2="110" y2="60" stroke="#059669"/>
-    <line x1="0" y1="100" x2="110" y2="100" stroke="#059669"/>
-    <text x="55" y="85" class="txt-c" font-size="10px">Frame f</text>
-  </g>
-  <path d="M 570 80 L 615 80" class="wire"/>
-</svg><div class="figure-caption">Figure 4.1: Paging Address Translation Architecture with High-Speed Associative TLB Cache</div></div>
+  <h4>Solved Numerical (SPPU 2024 Question Bank Q6)</h4>
+  <p>System has 3 resource types: $A=10, B=5, C=7$. Current Allocation and Max for $P_1 \dots P_5$:</p>
+  <table>
+    <thead><tr><th>Process</th><th>Allocation (A B C)</th><th>Max (A B C)</th><th>Need = Max &minus; Alloc</th></tr></thead>
+    <tbody>
+      <tr><td><strong>P1</strong></td><td>0 &nbsp; 1 &nbsp; 0</td><td>7 &nbsp; 5 &nbsp; 3</td><td><strong>7 &nbsp; 4 &nbsp; 3</strong></td></tr>
+      <tr><td><strong>P2</strong></td><td>2 &nbsp; 0 &nbsp; 0</td><td>3 &nbsp; 2 &nbsp; 2</td><td><strong>1 &nbsp; 2 &nbsp; 2</strong></td></tr>
+      <tr><td><strong>P3</strong></td><td>3 &nbsp; 0 &nbsp; 2</td><td>9 &nbsp; 0 &nbsp; 2</td><td><strong>6 &nbsp; 0 &nbsp; 0</strong></td></tr>
+      <tr><td><strong>P4</strong></td><td>2 &nbsp; 1 &nbsp; 1</td><td>4 &nbsp; 2 &nbsp; 2</td><td><strong>2 &nbsp; 1 &nbsp; 1</strong></td></tr>
+      <tr><td><strong>P5</strong></td><td>0 &nbsp; 2 &nbsp; 1</td><td>5 &nbsp; 3 &nbsp; 3</td><td><strong>5 &nbsp; 1 &nbsp; 2</strong></td></tr>
+    </tbody>
+  </table>
+  <p><strong>Step 1 &mdash; Compute Available:</strong> Total Allocated = $(0+2+3+2+0, \; 1+0+0+1+2, \; 0+0+2+1+1) = (7, 4, 4)$. Therefore, $\text{Available} = (10, 5, 7) - (7, 4, 4) = \mathbf{(3, 1, 3)}$.</p>
+  <p><strong>Step 2 &mdash; Safety Algorithm Trace ($\text{Work} = (3, 1, 3)$):</strong></p>
+  <ul>
+    <li>$P_1$: Need $(7,4,3) \le (3,1,3)$? False.</li>
+    <li>$P_2$: Need $(1,2,2) \le (3,1,3)$? False ($B: 2 &gt; 1$).</li>
+    <li>$P_3$: Need $(6,0,0) \le (3,1,3)$? False.</li>
+    <li>$P_4$: Need $(2,1,1) \le (3,1,3)$? <strong>True!</strong> Finish $P_4 \Rightarrow \text{Work} = (3,1,3) + (2,1,1) = \mathbf{(5, 2, 4)}$.</li>
+    <li>$P_5$: Need $(5,1,2) \le (5,2,4)$? <strong>True!</strong> Finish $P_5 \Rightarrow \text{Work} = (5,2,4) + (0,2,1) = \mathbf{(5, 4, 5)}$.</li>
+    <li>$P_2$: Need $(1,2,2) \le (5,4,5)$? <strong>True!</strong> Finish $P_2 \Rightarrow \text{Work} = (5,4,5) + (2,0,0) = \mathbf{(7, 4, 5)}$.</li>
+    <li>$P_1$: Need $(7,4,3) \le (7,4,5)$? <strong>True!</strong> Finish $P_1 \Rightarrow \text{Work} = (7,4,5) + (0,1,0) = \mathbf{(7, 5, 5)}$.</li>
+    <li>$P_3$: Need $(6,0,0) \le (7,5,5)$? <strong>True!</strong> Finish $P_3 \Rightarrow \text{Work} = (7,5,5) + (3,0,2) = (10, 5, 7)$.</li>
+  </ul>
+  <p><strong>Conclusion:</strong> System is in a <strong>SAFE STATE</strong> with Safe Sequence: $\mathbf{\langle P_4, P_5, P_2, P_1, P_3 \rangle}$.</p>
+  <p><strong>Step 3 &mdash; Request Check:</strong> If $P_1$ requests $(0, 0, 2)$: (1) $(0,0,2) \le \text{Need}[P_1]=(7,4,3)$ (True), (2) $(0,0,2) \le \text{Available}=(3,1,3)$ (True). Pretend to allocate: $\text{Available} = (3,1,1)$, $\text{Alloc}[P_1] = (0,1,2)$, $\text{Need}[P_1] = (7,4,1)$. Running Safety Algorithm again: $P_4(2,1,1) \le (3,1,1) \to \text{Work}=(5,2,2) \to P_5(5,1,2) \to \text{Work}=(5,4,3) \to P_2 \to P_1 \to P_3$. Safe sequence exists, so <strong>request CAN be granted immediately</strong>!</p>
 
-    <h4>Effective Memory Access Time (EMAT) Formula</h4>
-    <p>Let $h$ be the TLB hit ratio, $t$ be the TLB associative lookup time, and $m$ be the main memory access time:</p>
-    <div class="formula-box">
-      $$T_{\text{eff}} = h \cdot (t + m) + (1 - h) \cdot (t + 2m)$$
-    </div>
-    <p>Example: If $h = 90\% = 0.90$, TLB access $t = 20 \text{ ns}$, RAM access $m = 100 \text{ ns}$:<br>
-    $T_{\text{eff}} = 0.90 \times (20 + 100) + 0.10 \times (20 + 200) = 0.90 \times 120 + 0.10 \times 220 = 108 + 22 = 130 \text{ ns}$ (vs 200 ns without TLB!).</p>
+  <pre><code>// Banker's Safety Algorithm Pseudocode
+bool isSafe(int alloc[][R], int need[][R], int avail[]) {
+    int work[R]; bool finish[P] = {false};
+    for (int j = 0; j &lt; R; j++) work[j] = avail[j];
+    int count = 0;
+    while (count &lt; P) {
+        bool found = false;
+        for (int i = 0; i &lt; P; i++) {
+            if (!finish[i] &amp;&amp; need_le_work(need[i], work)) {
+                for (int j = 0; j &lt; R; j++) work[j] += alloc[i][j];
+                finish[i] = true;
+                safeSeq[count++] = i;
+                found = true;
+            }
+        }
+        if (!found) return false; // Unsafe state
+    }
+    return true; // Safe state
+}</code></pre>
+
+  <h4>Case Studies (Unit III)</h4>
+  <ul>
+    <li><strong>IPC in a Banking System:</strong> ATM/teller processes use shared-memory account ledgers protected by mutexes/semaphores or transactional message queues to prevent race conditions during concurrent deposits/withdrawals.</li>
+    <li><strong>Deadlock in Railway Scheduling:</strong> Two trains on opposite tracks each hold one track segment and wait for the other's segment (Circular Wait). Prevented by central signaling (Wait-For Graph detection) or numbered track-lock ordering.</li>
+  </ul>
+
+  <h3 id="u3-qa">3.6 Important SPPU Exam Questions &amp; Model Answers (Unit III)</h3>
+  <div class="qa-card">
+    <div class="qa-q">Q1. Explain necessary conditions for occurrence of deadlock. <span class="marks-badge">4 Marks (Oct 2025)</span></div>
+    <p><strong>Model Answer Points:</strong> Define deadlock (1M) + explain all 4 Coffman conditions: Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait (3M). Note that all 4 must hold simultaneously.</p>
   </div>
-
-  <div class="topic-block" id="u4-page-replace">
-    <h3>4.2 Page Replacement Algorithms (FIFO, LRU, Optimal)</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Algorithm</th><th>Replacement Policy</th><th>Belady's Anomaly?</th><th>Hardware Overhead</th></tr></thead>
-        <tbody>
-          <tr><td><strong>FIFO (First-In, First-Out)</strong></td><td>Replaces the oldest page loaded into memory.</td><td><strong>Yes (Belady's Anomaly occurs:</strong> Increasing frames can cause MORE page faults!)</td><td>Lowest (Simple queue/circular pointer)</td></tr>
-          <tr><td><strong>Optimal (OPT / MIN)</strong></td><td>Replaces the page that will not be used for the longest period in the future.</td><td>No (Stack algorithm)</td><td>Impossible to implement in practice (requires future knowledge; used as benchmark)</td></tr>
-          <tr><td><strong>LRU (Least Recently Used)</strong></td><td>Replaces the page that has not been used for the longest period of past time.</td><td>No (Stack algorithm)</td><td>High (Requires hardware counter or doubly-linked stack updated on every memory reference)</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="topic-block" id="u4-thrashing">
-    <h3>4.3 Thrashing &amp; Working Set Model</h3>
-    <p><strong>Thrashing:</strong> When a system spends more time servicing page faults and swapping pages in/out than executing user instructions. Occurs when total memory demanded by processes exceeds available physical frames ($\sum \text{Working Sets} &gt; \text{Total RAM Frames}$). CPU utilization collapses toward zero.</p>
-    <p><strong>Remedy:</strong> Working Set Model ($W(t, \Delta)$) tracking the set of pages referenced in the most recent $\Delta$ time units. If $\sum W_i &gt; \text{RAM}$, suspend a process to free frames.</p>
-  </div>
-
-  <section class="unit-short-notes" id="u4-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit IV Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Address mapping math, page replacement benchmarks, and fragmentation types.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Paging Math Essentials</h4>
-          <ul>
-            <li>Logical Address: $p$ (Page Number) and $d$ (Page Offset)</li>
-            <li>If page size = $4 \text{ KB} = 2^{12} \text{ Bytes}$, then offset $d$ is 12 bits</li>
-            <li>Page Table Entry holds: Frame Number + Valid/Invalid Bit + Dirty/Modified Bit</li>
-            <li>EMAT: $T_{\text{eff}} = h(t + m) + (1-h)(t + 2m)$</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Fragmentation Types</h4>
-          <ul>
-            <li><strong>Internal Fragmentation:</strong> Allocated partition exceeds data size (last page partially filled in paging)</li>
-            <li><strong>External Fragmentation:</strong> Total free memory exists, but is fragmented into small unusable holes (segmentation, dynamic partitions)</li>
-            <li>Compaction solves external fragmentation (relocates code to single contiguous block)</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Page Replacement Anchors</h4>
-          <ul>
-            <li>FIFO: Simplest, suffers from Belady's Anomaly</li>
-            <li>LRU: Approximates Optimal; implemented via Counters or Stack</li>
-            <li>Optimal: Provably lowest page faults; theoretical upper bound</li>
-            <li>Second Chance / Clock: Uses 1 reference bit to approximate LRU with low overhead</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Thrashing Prevention</h4>
-          <ul>
-            <li>Working Set Strategy: Ensure process gets its Working Set Window $\Delta$ in RAM</li>
-            <li>Page Fault Frequency (PFF): Maintain page fault rate between upper and lower bounds</li>
-            <li>Local vs Global Replacement: Local allocation limits thrashing damage to offending process</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-</section>
-
-<section id="unit-5" class="unit-section">
-  <div class="unit-badge">Unit V &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit V: File Systems and Disk Scheduling</h2>
-  
-  <div class="topic-block" id="u5-files">
-    <h3>5.1 File Allocation Methods &amp; Unix Inode Architecture</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Allocation Method</th><th>Structure &amp; Mechanics</th><th>Direct Access?</th><th>Fragmentation &amp; Overhead</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Contiguous Allocation</strong></td><td>Each file occupies a set of contiguous disk blocks.</td><td><strong>Fastest</strong> (Block $k$ is at $\text{start} + k$)</td><td>Severe external fragmentation; file cannot grow without pre-allocation.</td></tr>
-          <tr><td><strong>Linked Allocation (FAT)</strong></td><td>Each block contains a pointer to next disk block.</td><td><strong>No (Sequential only)</strong></td><td>No external fragmentation; pointer loss corrupts file; seek latency high.</td></tr>
-          <tr><td><strong>Indexed Allocation (Inode)</strong></td><td>Each file has an Index Block (Inode) storing pointers to all allocated data blocks.</td><td><strong>Yes (Fast direct lookup)</strong></td><td>No external fragmentation; small index block pointer overhead.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h4>Unix Inode Architecture</h4>
-    <p>A standard Unix/Linux Inode contains metadata (permissions, owner, size, timestamps) and 15 block pointers:</p>
-    <ul>
-      <li><strong>12 Direct Pointers:</strong> Point directly to data blocks (Fast direct access for small files &lt; 48 KB).</li>
-      <li><strong>1 Single Indirect Pointer:</strong> Points to an index block containing pointers to data blocks.</li>
-      <li><strong>1 Double Indirect Pointer:</strong> Points to an index block containing single indirect block pointers.</li>
-      <li><strong>1 Triple Indirect Pointer:</strong> Handles multi-terabyte files!</li>
-    </ul>
-
-    <h4>Case Studies: Linux (ext4 / VFS) &amp; Android (F2FS / Scoped Storage)</h4>
-    <ul>
-      <li><strong>Linux (VFS + ext4):</strong> Linux abstracts multiple file systems (ext4, XFS, FAT32) through the <strong>Virtual File System (VFS)</strong> layer using uniform kernel objects (<code>superblock</code>, <code>inode</code>, <code>dentry</code>, <code>file</code>). <code>ext4</code> replaces deep indirect pointer trees with <strong>Extents</strong> (contiguous block descriptors) and journaling for rapid crash recovery.</li>
-      <li><strong>Android (F2FS / ext4 + Scoped Storage):</strong> Android uses <strong>F2FS (Flash-Friendly File System)</strong> or ext4 optimized for NAND flash wear-leveling, paired with <strong>Scoped Storage</strong> sandboxing where apps get isolated directories in <code>/data/data/&lt;pkg&gt;</code> without broad external storage access.</li>
-    </ul>
-
-  </div>
-
-  <div class="topic-block" id="u5-disk">
-    <h3>5.2 Disk Scheduling Algorithms</h3>
-    <p>Disk scheduling orders pending I/O requests to minimize physical read/write head seek distance.</p>
-    
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Algorithm</th><th>Head Movement Strategy</th><th>Performance / Starvation</th></tr></thead>
-        <tbody>
-          <tr><td><strong>FCFS</strong></td><td>Serves requests in arrival order.</td><td>Fair, no starvation; poor seek performance (wild head oscillations).</td></tr>
-          <tr><td><strong>SSTF</strong></td><td>Selects request closest to current head position.</td><td>Low average seek time; <strong>Causes starvation</strong> for distant requests!</td></tr>
-          <tr><td><strong>SCAN (Elevator)</strong></td><td>Moves continuously in one direction servicing requests until disk edge, then reverses.</td><td>Good throughput, bounded waiting; edge requests wait longer.</td></tr>
-          <tr><td><strong>C-SCAN (Circular)</strong></td><td>Services requests moving in one direction only; returns immediately to opposite edge without servicing on return stroke.</td><td>Provides more uniform waiting times than standard SCAN.</td></tr>
-          <tr><td><strong>LOOK / C-LOOK</strong></td><td>Like SCAN/C-SCAN, but reverses immediately at the last pending request without travelling all the way to disk physical edge.</td><td><strong>Industry standard</strong> for mechanical HDD scheduling!</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <section class="unit-short-notes" id="u5-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit V Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Disk scheduling head tracks, Inode capacity math, and directory structures.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Disk Seek Equations</h4>
-          <ul>
-            <li>Total Head Movement: $\sum |\text{Track}_{i+1} - \text{Track}_i|$</li>
-            <li>SSTF chooses minimum $|\text{Request} - \text{Current Head}|$</li>
-            <li>LOOK reverses at highest/lowest actual request (does not hit track 0 or 199)</li>
-            <li>Seek Time is the dominant mechanical delay in hard drive access</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Unix Inode File Capacity</h4>
-          <ul>
-            <li>Direct Blocks (12): $12 \times 4 \text{ KB} = 48 \text{ KB}$</li>
-            <li>Single Indirect: $(4096 / 4) \times 4 \text{ KB} = 1024 \times 4 \text{ KB} = 4 \text{ MB}$</li>
-            <li>Double Indirect: $1024 \times 1024 \times 4 \text{ KB} = 4 \text{ GB}$</li>
-            <li>Triple Indirect: $1024^3 \times 4 \text{ KB} = 4 \text{ TB}$</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Directory Structures</h4>
-          <ul>
-            <li>Single-Level: All files in 1 directory (naming collisions, no user isolation)</li>
-            <li>Two-Level: Master Directory &rarr; User File Directories (UFD)</li>
-            <li>Tree-Structured: Arbitrary hierarchical subdirectories (standard in all modern OS)</li>
-            <li>Acyclic Graph: Allows shared files and hard/symbolic links</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Disk Structure &amp; Reliability</h4>
-          <ul>
-            <li>Sector: Smallest addressable physical unit (512B or 4KB Advanced Format)</li>
-            <li>Cylinder: Set of matching tracks across all vertical platters</li>
-            <li>RAID: Redundant Array of Independent Disks (RAID 0 striping, RAID 1 mirroring, RAID 5 parity)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-</section>
-
-<section class="flashcards-section" id="flashcards">
-  <div class="flashcards-header">
-    <div class="flashcards-title-group">
-      <span class="flashcards-badge">Active Recall Deck</span>
-      <h2>Operating Systems Master Exam Flashcards (25 Cards)</h2>
-      <p>Tap any card to flip and verify your understanding of OS internals, scheduling, memory, and synchronization.</p>
-    </div>
-    <div class="flashcards-controls">
-      <button type="button" class="fc-ctrl-btn" id="fc-flip-all">Flip All Cards</button>
-      <button type="button" class="fc-ctrl-btn" id="fc-reset-all">Reset All</button>
-      <div class="fc-filter-group">
-        <label>Filter Unit:</label>
-        <select id="fc-unit-filter">
-          <option value="all">All Units</option>
-          <option value="u1">Unit I: OS Basics</option>
-          <option value="u2">Unit II: Process &amp; Threads</option>
-          <option value="u3">Unit III: IPC &amp; Deadlocks</option>
-          <option value="u4">Unit IV: Memory Management</option>
-          <option value="u5">Unit V: File &amp; Disk</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <div class="flashcards-grid">
-    <!-- Card 1 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; Dual Mode Transition</div>
-          <div class="fc-q">What physical mechanism switches CPU execution from User Mode to Kernel Mode?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            A <strong>Trap (Software Interrupt)</strong> generated by a system call or hardware interrupt. The CPU hardware flips the Mode Bit from 1 (User) to 0 (Kernel) and jumps to the kernel's Interrupt Vector Table.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; Monolithic vs Microkernel</div>
-          <div class="fc-q">Why is a Microkernel OS more resilient against device driver crashes than a Monolithic OS?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            In a Microkernel, device drivers run as isolated <strong>User-level processes</strong>. If a driver crashes, only that user server aborts and can be restarted without affecting the microkernel. In a Monolithic OS, drivers run in kernel space; a bug causes a full kernel panic / BSOD.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Context Switching Overhead</div>
-          <div class="fc-q">What happens during an OS Context Switch? Why is it considered pure overhead?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            The kernel saves the CPU register state, PC, and memory mappings of the active process into its PCB, and restores the PCB state of the next scheduled process.<br>
-            It is <strong>pure overhead</strong> because the CPU performs zero useful user computations while switching!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Optimal CPU Scheduling</div>
-          <div class="fc-q">Which CPU scheduling algorithm is mathematically proven to minimize Average Waiting Time?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>Shortest Remaining Time First (SRTF) / Shortest Job First (SJF)</strong>.<br>
-            By prioritizing short jobs, it rapidly empties the waiting queue and minimizes the cumulative delay experienced by remaining processes.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Critical Section Requirements</div>
-          <div class="fc-q">State the three mandatory criteria a Critical Section solution must satisfy.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            1. <strong>Mutual Exclusion:</strong> Only one process inside CS at a time.<br>
-            2. <strong>Progress:</strong> Selection of next process cannot be blocked by unconcerned processes.<br>
-            3. <strong>Bounded Waiting:</strong> Finite limit on requests before entry is granted (No starvation).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 6 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Four Deadlock Conditions</div>
-          <div class="fc-q">List the four Coffman conditions required for a deadlock to exist simultaneously.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            1. <strong>Mutual Exclusion:</strong> Non-shareable resource.<br>
-            2. <strong>Hold and Wait:</strong> Process holds resource while waiting for another.<br>
-            3. <strong>No Preemption:</strong> Resources released only voluntarily by holder.<br>
-            4. <strong>Circular Wait:</strong> Circular chain of processes each waiting for next.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 7 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Banker's Algorithm Need Matrix</div>
-          <div class="fc-q">How is the Need Matrix computed in Banker's Algorithm?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$\text{Need}[i][j] = \text{Max}[i][j] - \text{Allocation}[i][j]$$<br>
-            Represents the remaining resources process $P_i$ may request before completing execution.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 8 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; EMAT Formula</div>
-          <div class="fc-q">Write the Effective Memory Access Time (EMAT) formula with a TLB.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$T_{\text{eff}} = h \cdot (t + m) + (1 - h) \cdot (t + 2m)$$<br>
-            where $h$ is TLB hit ratio, $t$ is associative TLB access time, and $m$ is main memory RAM access time.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 9 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Belady's Anomaly</div>
-          <div class="fc-q">What is Belady's Anomaly? Which page replacement algorithm exhibits it?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            The counter-intuitive phenomenon where <strong>increasing the number of physical page frames results in MORE page faults</strong> for a given reference string.<br>
-            Exhibited by <strong>FIFO</strong> (Optimal and LRU are immune because they are Stack algorithms).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 10 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Thrashing Cause</div>
-          <div class="fc-q">What causes Thrashing in an operating system?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Thrashing occurs when total pages demanded by active processes exceed available physical memory ($\sum \text{Working Sets} &gt; \text{Total RAM Frames}$). The OS spends almost 100% of its time swapping pages in/out of disk rather than executing CPU instructions.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 11 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; Unix Inode Direct Pointers</div>
-          <div class="fc-q">Why does Unix Inode maintain 12 Direct Pointers instead of only indirect pointers?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Statistical studies prove that &gt; 80% of files in an OS are small (&lt; 48 KB). Direct pointers allow immediate access to file blocks in <strong>1 disk I/O</strong> without the latency of reading intermediate indirect pointer index blocks!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 12 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; SCAN vs LOOK Scheduling</div>
-          <div class="fc-q">How does LOOK disk scheduling improve upon standard SCAN (Elevator)?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            SCAN moves all the way to the physical end of the disk (track 0 or track 199) before reversing. LOOK checks ahead and <strong>reverses direction immediately at the last pending request</strong>, saving unnecessary seek travel over empty tracks.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 13 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; User vs Kernel Threads</div>
-          <div class="fc-q">Why does a blocking I/O system call in a User-Level Thread block the whole process?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Because the OS kernel is completely unaware of user-level threads; it treats the entire process as a single schedulable entity. When any thread makes a blocking kernel system call, the kernel puts the entire process into the Waiting state!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 14 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Counting vs Binary Semaphore</div>
-          <div class="fc-q">What is the distinction between a Counting Semaphore and a Binary Semaphore?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>Binary Semaphore (Mutex):</strong> Takes integer values strictly in {0, 1}; used for mutual exclusion in critical sections.<br>
-            <strong>Counting Semaphore:</strong> Takes unrestricted non-negative integer values; used to manage access to a resource pool with $N$ identical units.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 15 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Internal vs External Fragmentation</div>
-          <div class="fc-q">Contrast Internal Fragmentation and External Fragmentation.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>Internal:</strong> Memory allocated to a process is larger than requested data; unused space is wasted <em>inside</em> the partition (e.g., paging).<br>
-            <strong>External:</strong> Total free memory is sufficient to satisfy a request, but it is split into non-contiguous scattered holes <em>outside</em> partitions (e.g., dynamic partitioning).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 16 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; Fork Return Values</div>
-          <div class="fc-q">What does fork() return to the parent process and to the child process?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <code>fork()</code> returns:<br>
-            &bull; <strong>To the child process:</strong> <code>0</code><br>
-            &bull; <strong>To the parent process:</strong> The PID of the newly created child process (&gt; 0)<br>
-            &bull; <strong>On error:</strong> <code>-1</code>.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 17 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Starvation in SJF</div>
-          <div class="fc-q">Why does Shortest Job First (SJF) suffer from Starvation?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            If short jobs continuously arrive in the ready queue, long jobs will repeatedly be delayed from execution indefinitely. <strong>Remedy:</strong> Aging &mdash; gradually increasing a waiting process's priority over time.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 18 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Dining Philosophers Deadlock</div>
-          <div class="fc-q">Why does the naive solution to Dining Philosophers deadlock? How to fix it?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            If all 5 philosophers become hungry simultaneously and pick up their left chopstick, every philosopher holds 1 chopstick and waits indefinitely for their right one (Circular Wait!).<br>
-            <strong>Fix:</strong> Allow an odd philosopher to pick left first and an even philosopher to pick right first, breaking the circular wait chain!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 19 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Page Fault Interrupt Routine</div>
-          <div class="fc-q">List the key steps performed by the OS during a Page Fault trap.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            1. Hardware trap to kernel &bull; 2. Check internal table: verify valid memory reference &bull; 3. Locate page on backing store (disk) &bull; 4. Find free physical frame (or run page replacement) &bull; 5. Read page into frame via disk I/O &bull; 6. Update page table valid bit to 1 &bull; 7. Restart instruction.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 20 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; Linked Allocation Pointer Loss</div>
-          <div class="fc-q">What is the major vulnerability of Linked File Allocation?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Pointers are scattered across physical disk blocks. If a single disk sector gets damaged or a pointer is corrupted, the entire remainder of the file is permanently lost! <strong>Remedy:</strong> File Allocation Table (FAT) caching pointers in a centralized table.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 21 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Round Robin Time Quantum Choice</div>
-          <div class="fc-q">What happens if Round Robin time quantum $q$ is extremely large or extremely small?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            &bull; <strong>If $q$ is extremely large ($q \to \infty$):</strong> Degrades into FCFS (First-Come, First-Served).<br>
-            &bull; <strong>If $q$ is extremely small ($q \to 0$):</strong> CPU is overwhelmed by context switching overhead, collapsing throughput!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 22 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Safe vs Unsafe State</div>
-          <div class="fc-q">Is an Unsafe State in Banker's Algorithm necessarily a Deadlock?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>No!</strong> An unsafe state is NOT a deadlock; it is merely a state from which the OS cannot guarantee avoiding a deadlock if all processes simultaneously demand their maximum resource claims. All deadlocks are unsafe states, but not all unsafe states are deadlocks.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 23 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Inverted Page Table</div>
-          <div class="fc-q">What problem does an Inverted Page Table solve in 64-bit systems?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            In standard paging, each process has its own page table, consuming gigabytes of RAM in 64-bit address spaces. An <strong>Inverted Page Table</strong> maintains only ONE entry per physical frame indexed by $\langle \text{PID}, \text{PageNumber} \rangle$, drastically reducing memory overhead!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 24 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; Boot Block &amp; Bootstrap</div>
-          <div class="fc-q">Where is the initial bootstrap loader stored, and what is the boot block?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            A tiny bootstrap program is stored in ROM/UEFI. It reads the <strong>Boot Block</strong> (Master Boot Record / EFI System Partition on Track 0) from the boot disk, which loads the full OS kernel into RAM.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 25 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; Virtual File System (VFS)</div>
-          <div class="fc-q">What is the purpose of the Virtual File System (VFS) layer in Linux?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            VFS provides an object-oriented abstraction layer with uniform system call interfaces (<code>open, read, write</code>), allowing user applications to interact with heterogeneous file systems (EXT4, FAT32, NTFS, NFS) seamlessly without knowing disk-specific formats.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
+  <div class="qa-card">
+    <div class="qa-q">Q2. What is a Semaphore? Justify how semaphore is used to solve the Critical Section problem. <span class="marks-badge">4 Marks (Oct 2025)</span></div>
+    <p><strong>Model Answer Points:</strong> Define Semaphore and atomic <code>wait()</code>/<code>signal()</code> (2M). Show how initializing binary semaphore <code>mutex = 1</code> and wrapping the critical section with <code>wait(mutex)</code> before entry and <code>signal(mutex)</code> after exit guarantees Mutual Exclusion, Progress, and Bounded Waiting (2M).</p>
   </div>
 </section>
 
-</div><!-- /main-inner -->
+<section id="unit-4">
+  <h2 class="unit-title">Unit IV: Memory Management (09 Hours)</h2>
+
+  <h3 id="u4-contiguous">4.1 Contiguous Allocation, Partitioning, Fragmentation &amp; Fit Strategies</h3>
+  <p><strong>Logical vs Physical Address:</strong> A <em>Logical (Virtual) Address</em> is generated by the CPU; a <em>Physical Address</em> is the actual location in RAM. The <strong>MMU (Memory Management Unit)</strong> maps logical addresses to physical addresses at runtime.</p>
+  <p><strong>Contiguous vs Non-Contiguous Allocation:</strong> Contiguous allocation stores a process in one single continuous block of RAM (Fixed/Dynamic Partitioning). Non-contiguous allocation splits a process into parts scattered across RAM (Paging, Segmentation).</p>
+
+  <div class="concept-box">
+    <div class="box-title">Key Term: Internal vs External Fragmentation</div>
+    <p><strong>Exam Definition:</strong> <strong>Internal Fragmentation</strong> is unused memory wasted <em>inside</em> an allocated fixed-size partition/page when a process needs less than the partition size. <strong>External Fragmentation</strong> is wasted free memory scattered in small non-contiguous holes <em>between</em> allocated blocks, too small to satisfy a new process request even though total free memory is enough.</p>
+    <p><strong>In Simple Words:</strong> Internal = buying a 10-inch pizza box for a 6-inch pizza (wasted space inside the box). External = 5 empty single seats scattered across a cinema hall when a family of 4 wants to sit together.</p>
+  </div>
+
+  <table>
+    <thead><tr><th>Memory Partitioning</th><th>How It Works</th><th>Fragmentation</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Fixed (Static) Partitioning</strong></td><td>RAM divided into fixed-size partitions at boot time.</td><td>Suffers from <strong>Internal Fragmentation</strong>.</td></tr>
+      <tr><td><strong>Dynamic (Variable) Partitioning</strong></td><td>Partitions created dynamically to match exact process size.</td><td>No internal fragmentation, but suffers from <strong>External Fragmentation</strong> (solved by <em>Compaction</em> or Paging).</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Memory Placement Strategies (Worked Example)</h4>
+  <p>Suppose free memory holes are: <strong>100 KB, 500 KB, 200 KB, 300 KB, 600 KB</strong>. Processes arrive: <strong>P1=212 KB, P2=417 KB, P3=112 KB, P4=426 KB</strong>.</p>
+  <ul>
+    <li><strong>First Fit</strong> (allocates first hole big enough): P1&rarr;500 (288 left), P2&rarr;600 (183 left), P3&rarr;288 (176 left), P4&rarr;<em>Must Wait</em>. (Fastest).</li>
+    <li><strong>Best Fit</strong> (allocates smallest hole big enough): P1&rarr;300 (88 left), P2&rarr;500 (83 left), P3&rarr;200 (88 left), P4&rarr;600 (174 left). All 4 fit! (Leaves tiny unusable holes).</li>
+    <li><strong>Worst Fit</strong> (allocates largest hole): P1&rarr;600 (388 left), P2&rarr;500 (83 left), P3&rarr;388 (276 left), P4&rarr;<em>Must Wait</em>.</li>
+  </ul>
+
+  <h3 id="u4-paging">4.2 Paging, Page Table, TLB &amp; EMAT Formula</h3>
+  <div class="concept-box">
+    <div class="box-title">Key Term: Paging &amp; TLB</div>
+    <p><strong>Exam Definition:</strong> <strong>Paging</strong> is a non-contiguous memory management scheme that divides physical memory into fixed-size blocks called <strong>Frames</strong> and logical memory into same-size blocks called <strong>Pages</strong>, mapped via a <strong>Page Table</strong>. A <strong>TLB (Translation Lookaside Buffer)</strong> is a fast associative hardware cache that stores recent page-to-frame translations.</p>
+    <p><strong>In Simple Words:</strong> Instead of storing a book on one giant shelf, Paging tears it into equal pages and puts them in any free slots, keeping an index (Page Table). The TLB is your sticky-note cheat sheet of the most-used pages.</p>
+  </div>
+
+  <p><strong>Structure of Page Table:</strong> (1) <em>Hierarchical (Multi-level) Paging</em> (breaks page table into pages to avoid huge contiguous table), (2) <em>Hashed Page Table</em> (for 64-bit address spaces), and (3) <em>Inverted Page Table</em> (one entry per physical frame, saves RAM).</p>
+
+  <figure class="figure-box">
+    <img src="assets/tlb_translation.png" alt="Translation Lookaside Buffer (TLB) Paging Hardware">
+    <figcaption>Figure 4.1: Paging Hardware with Translation Lookaside Buffer (TLB)</figcaption>
+  </figure>
+
+  <div class="formula-box">
+    <div class="box-title">Effective Memory Access Time (EMAT) Formula</div>
+    <p>Let $\alpha$ = TLB hit ratio, $t_{\text{TLB}}$ = TLB lookup time, $t_{\text{mem}}$ = Main memory access time:</p>
+    <p>$$\text{EMAT} = \alpha (t_{\text{TLB}} + t_{\text{mem}}) + (1 - \alpha)(t_{\text{TLB}} + 2 \cdot t_{\text{mem}})$$</p>
+    <p><strong>Worked Numerical:</strong> If $\alpha = 0.80$ (80% hit), $t_{\text{TLB}} = 20\text{ ns}$, $t_{\text{mem}} = 100\text{ ns}$:<br>
+    $\text{EMAT} = 0.80(20 + 100) + 0.20(20 + 200) = 0.80(120) + 0.20(220) = 96 + 44 = \mathbf{140\text{ ns}}$.</p>
+  </div>
+
+  <h3 id="u4-seg">4.3 Segmentation vs Paging</h3>
+  <p><strong>Segmentation</strong> divides a program into variable-sized logical units (Code, Stack, Data, Heap) matching the programmer's view. A logical address is $\langle \text{segment-number}, \text{offset} \rangle$. The <strong>Segment Table</strong> stores <em>Base</em> (starting physical address) and <em>Limit</em> (length). If $\text{offset} &lt; \text{Limit}$, $\text{Physical Address} = \text{Base} + \text{offset}$; else Trap (addressing error).</p>
+
+  <table>
+    <thead><tr><th>Parameter</th><th>Paging</th><th>Segmentation</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Block Size</strong></td><td>Fixed-size Pages &amp; Frames (hardware-driven)</td><td>Variable-size Segments (programmer/logical view)</td></tr>
+      <tr><td><strong>Fragmentation</strong></td><td>Internal fragmentation (last page)</td><td>External fragmentation</td></tr>
+      <tr><td><strong>Address Format</strong></td><td>Single address split into $(p, d)$</td><td>Two-dimensional $(s, d)$</td></tr>
+      <tr><td><strong>Table Entries</strong></td><td>Frame number + protection bits</td><td>Base address + Limit (length)</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="u4-vm">4.4 Virtual Memory, Demand Paging &amp; Page Replacement</h3>
+  <p><strong>Virtual Memory</strong> separates logical memory from physical memory, allowing programs larger than physical RAM to execute. <strong>Demand Paging</strong> loads a page into RAM only when it is needed (referenced). If a referenced page has its valid-invalid bit set to <code>i</code> (not in RAM), a <strong>Page Fault</strong> trap occurs: OS finds a free frame (or evicts a victim page), loads the page from disk, updates the Page Table, and restarts the instruction.</p>
+
+  <figure class="figure-box">
+    <img src="assets/virtual_memory_paging.png" alt="Virtual Memory Paging Architecture">
+    <figcaption>Figure 4.2: Virtual Memory Mapping Pages to Physical Frames and Swap Disk</figcaption>
+  </figure>
+
+  <h4>Solved Numerical 1 (SPPU Oct 2025 Q7a): FIFO Page Replacement</h4>
+  <p>Reference string: <code>2, 3, 2, 1, 5, 4, 5, 3, 2, 2, 2, 5, 2</code>, Frames = <strong>3</strong>.</p>
+  <table>
+    <thead><tr><th>Ref</th><th>2</th><th>3</th><th>2</th><th>1</th><th>5</th><th>4</th><th>5</th><th>3</th><th>2</th><th>2</th><th>2</th><th>5</th><th>2</th></tr></thead>
+    <tbody>
+      <tr><td><strong>F1</strong></td><td>2</td><td>2</td><td>2</td><td>2</td><td>5</td><td>5</td><td>5</td><td>5</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td></tr>
+      <tr><td><strong>F2</strong></td><td>-</td><td>3</td><td>3</td><td>3</td><td>3</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>5</td><td>5</td></tr>
+      <tr><td><strong>F3</strong></td><td>-</td><td>-</td><td>-</td><td>1</td><td>1</td><td>1</td><td>1</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
+      <tr><td><strong>Hit/Fault</strong></td><td>F</td><td>F</td><td>H</td><td>F</td><td>F</td><td>F</td><td>H</td><td>F</td><td>F</td><td>H</td><td>H</td><td>F</td><td>H</td></tr>
+    </tbody>
+  </table>
+  <p>Total Page Faults (FIFO) = <strong>8</strong> (Hits = 5).</p>
+
+  <h4>Solved Numerical 2 (SPPU QB Q6): FIFO vs LRU vs Optimal</h4>
+  <p>Reference string: <code>1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5</code>, Frames = <strong>3</strong>.</p>
+  <ul>
+    <li><strong>FIFO (First-In, First-Out):</strong> Evicts oldest loaded page. Page Faults = <strong>9</strong>. <em>Note:</em> FIFO can suffer from <strong>Belady's Anomaly</strong> (more frames can paradoxically cause more page faults!).</li>
+    <li><strong>LRU (Least Recently Used):</strong> Evicts page not used for the longest time in the past. Trace: 1(F), 2(F), 3(F), 4[evict 1](F), 1[evict 2](F), 2[evict 3](F), 5[evict 4](F), 1(H), 2(H), 3[evict 5](F), 4[evict 1](F), 5[evict 2](F). Page Faults = <strong>10</strong>.</li>
+    <li><strong>Optimal (OPT):</strong> Evicts page that will not be used for the longest time in the <em>future</em> (theoretical benchmark, lowest possible faults). Trace: 1(F), 2(F), 3(F), 4[evict 3](F), 1(H), 2(H), 5[evict 4](F), 1(H), 2(H), 3[evict 1](F), 4[evict 2](F), 5(H). Page Faults = <strong>7</strong>.</li>
+  </ul>
+
+  <pre><code># Python Simulation: FIFO and LRU Page Replacement
+def simulate(pages, frames, algo="FIFO"):
+    mem, faults, recent = [], 0, {}
+    for t, p in enumerate(pages):
+        if p in mem:
+            recent[p] = t
+            continue
+        faults += 1
+        if len(mem) &lt; frames:
+            mem.append(p)
+        else:
+            victim = mem[0] if algo == "FIFO" else min(mem, key=lambda x: recent[x])
+            mem[mem.index(victim)] = p
+        recent[p] = t
+    return faults
+
+refs = [1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5]
+print("FIFO Faults:", simulate(refs, 3, "FIFO"))  # 9
+print("LRU Faults:", simulate(refs, 3, "LRU"))    # 10</code></pre>
+
+  <h3 id="u4-thrashing">4.5 Thrashing, Working Set Model &amp; Intel Pentium Case Study</h3>
+  <div class="concept-box">
+    <div class="box-title">Key Term: Thrashing</div>
+    <p><strong>Exam Definition:</strong> Thrashing is a state of severe performance degradation in which a process spends more time paging (swapping pages in and out of disk) than executing instructions, causing CPU utilization to plummet.</p>
+    <p><strong>In Simple Words:</strong> Like a chef who has a tiny cutting board and spends 95% of the time walking back and forth to the fridge instead of chopping vegetables.</p>
+  </div>
+  <p><strong>Working Set Model (Denning):</strong> The Working Set $WSS_i$ is the set of pages referenced by process $P_i$ in the most recent $\Delta$ memory references. If total demand $D = \sum WSS_i &gt; m$ (total available frames), thrashing occurs; the OS must suspend a process.</p>
+  <p><strong>Case Study &mdash; Intel Pentium Memory Management:</strong> Combines <strong>Segmentation with Two-Level Paging</strong>. A 32-bit logical address is first translated by the Segmentation Unit into a 32-bit <em>Linear Address</em>, then translated by the Paging Unit (Page Directory &rarr; Page Table &rarr; 4 KB Page, or 4 MB pages with PSE) into a Physical Address, accelerated by TLBs.</p>
+
+  <h3 id="u4-qa">4.6 Important SPPU Exam Questions &amp; Model Answers (Unit IV)</h3>
+  <div class="qa-card">
+    <div class="qa-q">Q1. What is Internal Fragmentation? Explain with a suitable diagram and example. <span class="marks-badge">7 Marks (Oct 2025)</span></div>
+    <p><strong>Model Answer Points:</strong> (1) Define Internal Fragmentation (2M). (2) Contrast briefly with External Fragmentation (1M). (3) Numerical example: 4 fixed partitions of 100 KB each; a 72 KB process wastes 28 KB inside its partition (2M). (4) Neat block diagram showing allocated vs wasted space inside the partition (2M).</p>
+  </div>
+  <div class="qa-card">
+    <div class="qa-q">Q2. Explain Placement Strategies: First Fit, Best Fit, and Worst Fit. <span class="marks-badge">7 Marks (Oct 2025)</span></div>
+    <p><strong>Model Answer Points:</strong> Define dynamic partitioning holes (1M). Explain First Fit, Best Fit, and Worst Fit with pros/cons and a numerical trace on sample holes (6M).</p>
+  </div>
+</section>
+
+<section id="unit-5">
+  <h2 class="unit-title">Unit V: File and Disk Management (09 Hours)</h2>
+
+  <h3 id="u5-files">5.1 File Operations, Access Methods &amp; Directory Structures</h3>
+  <div class="concept-box">
+    <div class="box-title">Key Term: File &amp; File System</div>
+    <p><strong>Exam Definition:</strong> A <strong>File</strong> is a named collection of related information recorded on secondary storage. A <strong>File System</strong> is the OS subsystem that provides uniform logical storage, mapping files onto physical disk blocks and managing directories, metadata, and access protection.</p>
+    <p><strong>In Simple Words:</strong> A file is a digital folder of papers; the File System is the filing cabinet with labeled drawers (directories) and an index card (metadata) telling you exactly which drawer holds each document.</p>
+  </div>
+
+  <ul>
+    <li><strong>File Attributes:</strong> Name, Identifier, Type, Location (disk pointer), Size, Protection (permissions), Time/Date &amp; User ID.</li>
+    <li><strong>File Operations:</strong> Create, Write, Read, Reposition within file (Seek), Delete, Truncate.</li>
+    <li><strong>File Organization &amp; Access Methods:</strong>
+      <ul>
+        <li><em>Sequential Access:</em> Records processed in order one after another (e.g., tape, text streams).</li>
+        <li><em>Direct (Relative) Access:</em> Fixed-length logical records read/written randomly in any order using block number (e.g., databases).</li>
+        <li><em>Indexed Access:</em> An index contains pointers to blocks; search index first, then jump directly to data block.</li>
+      </ul>
+    </li>
+    <li><strong>File System Layered Structure:</strong> Application Programs &rarr; Logical File System (metadata, FCB/inode) &rarr; File-Organization Module (logical-to-physical block translation, free-space) &rarr; Basic File System &rarr; I/O Control (device drivers) &rarr; Devices.</li>
+    <li><strong>Protection Mechanisms:</strong> <em>Access Control Lists (ACLs)</em> (per-file list of users and allowed rights) and <em>Capability Lists</em> (per-user list of objects and permitted operations).</li>
+  </ul>
+
+  <h4>Directory Structures</h4>
+  <table>
+    <thead><tr><th>Structure</th><th>Description</th><th>Pros &amp; Cons</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Single-Level</strong></td><td>All files live in one root directory.</td><td>Simple; naming collisions when multiple users share the system.</td></tr>
+      <tr><td><strong>Two-Level</strong></td><td>Separate User File Directory (UFD) for each user under a Master File Directory (MFD).</td><td>Solves name collisions; users cannot easily group files into subfolders.</td></tr>
+      <tr><td><strong>Tree-Structured</strong></td><td>Hierarchical directories and subdirectories (absolute &amp; relative paths).</td><td>Clean organization &amp; grouping; no direct file sharing without links.</td></tr>
+      <tr><td><strong>Acyclic-Graph</strong></td><td>Tree + shared subdirectories/files via links (no cycles allowed).</td><td>Supports sharing; deletion requires reference counting (dangling pointers).</td></tr>
+      <tr><td><strong>General Graph</strong></td><td>Allows cycles in directory links.</td><td>Very flexible; requires garbage collection to detect unreachable cycles.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="u5-alloc">5.2 File Allocation Methods, Inodes &amp; Free-Space Management</h3>
+  <table>
+    <thead><tr><th>Method</th><th>How Blocks Are Stored</th><th>Pros</th><th>Cons</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Contiguous Allocation</strong></td><td>Each file occupies consecutive disk blocks (start block + length).</td><td>Fast sequential &amp; direct access (minimal seek).</td><td>External fragmentation; hard to grow file size.</td></tr>
+      <tr><td><strong>Linked Allocation</strong></td><td>Each block holds a pointer to the next block; directory points to first &amp; last.</td><td>Zero external fragmentation; files grow easily.</td><td>Slow random access (must traverse pointers); pointer overhead; FAT improves this.</td></tr>
+      <tr><td><strong>Indexed Allocation</strong></td><td>An <strong>Index Block</strong> holds an array of pointers to all data blocks of the file.</td><td>Fast direct access; no external fragmentation.</td><td>Index block overhead for tiny files; multi-level index needed for huge files.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="concept-box">
+    <div class="box-title">Key Term: UNIX Inode (Index Node)</div>
+    <p><strong>Exam Definition:</strong> An <strong>Inode</strong> is a UNIX/Linux metadata structure storing file ownership, permissions, timestamps, size, and disk block pointers (typically 12 Direct pointers, 1 Single Indirect, 1 Double Indirect, and 1 Triple Indirect pointer) &mdash; everything except the filename.</p>
+    <p><strong>In Simple Words:</strong> An inode is a file's ID card + treasure map: the directory only maps <code>filename &rarr; inode#</code>, and the inode points to all data blocks on disk.</p>
+  </div>
+
+  <div class="svg-box">
+    <svg style="max-width:100%;height:auto;" viewBox="0 0 680 190" width="640" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="20" width="190" height="150" rx="6" fill="#EAEFFE" stroke="#4B5FD1" stroke-width="2"/>
+      <text x="115" y="42" fill="#4B5FD1" font-size="13" font-weight="bold" text-anchor="middle">UNIX Inode</text>
+      <text x="35" y="65" fill="#171717" font-size="11">Mode, UID, Size, Timestamps</text>
+      <line x1="20" y1="75" x2="210" y2="75" stroke="#C9BEB4"/>
+      <text x="35" y="95" fill="#226D51" font-size="11">Direct Pointers [0..11]</text>
+      <text x="35" y="116" fill="#9C7710" font-size="11">Single Indirect</text>
+      <text x="35" y="137" fill="#9C7710" font-size="11">Double Indirect</text>
+      <text x="35" y="158" fill="#B8432B" font-size="11">Triple Indirect</text>
+
+      <rect x="280" y="72" width="120" height="32" rx="4" fill="#EFE4DC" stroke="#226D51"/>
+      <text x="340" y="92" fill="#171717" font-size="11" text-anchor="middle">Data Blocks</text>
+      <line x1="210" y1="90" x2="280" y2="88" stroke="#226D51" stroke-width="2"/>
+
+      <rect x="280" y="112" width="120" height="32" rx="4" fill="#EFE4DC" stroke="#9C7710"/>
+      <text x="340" y="132" fill="#171717" font-size="11" text-anchor="middle">Index Block (Ptrs)</text>
+      <line x1="210" y1="112" x2="280" y2="128" stroke="#9C7710" stroke-width="2"/>
+
+      <rect x="460" y="112" width="140" height="32" rx="4" fill="#EFE4DC" stroke="#4B5FD1"/>
+      <text x="530" y="132" fill="#171717" font-size="11" text-anchor="middle">More Data Blocks</text>
+      <line x1="400" y1="128" x2="460" y2="128" stroke="#9C7710" stroke-width="2"/>
+    </svg>
+    <div class="svg-caption">Figure 5.1: UNIX Inode Direct and Indirect Block Pointer Hierarchy</div>
+  </div>
+
+  <p><strong>Secondary Storage Free-Space Management:</strong> (1) <em>Bit Vector / Bitmap</em> (1 bit per block: 0=allocated, 1=free), (2) <em>Linked List</em> of free blocks, (3) <em>Grouping</em> (first free block stores addresses of $n$ free blocks), and (4) <em>Counting</em> (stores starting address + count of contiguous free blocks).</p>
+
+  <h3 id="u5-fs">5.3 Comparison of File Systems: FAT, NTFS, EXT &amp; HFS</h3>
+  <table>
+    <thead><tr><th>File System</th><th>OS</th><th>Structure &amp; Allocation</th><th>Journaling &amp; Security</th><th>Performance</th></tr></thead>
+    <tbody>
+      <tr><td><strong>FAT (FAT32)</strong></td><td>Windows / USB</td><td>File Allocation Table (linked cluster table)</td><td>No journaling; no built-in ACL security; 4 GB max file size</td><td>Simple &amp; portable, fragments easily</td></tr>
+      <tr><td><strong>NTFS</strong></td><td>Windows</td><td>Master File Table (MFT) + B-trees</td><td>Yes (metadata journaling); rich ACL permissions &amp; encryption (EFS)</td><td>High reliability &amp; large volume support</td></tr>
+      <tr><td><strong>EXT (ext4)</strong></td><td>Linux</td><td>Inodes + Extents (contiguous block ranges)</td><td>Yes (journaling); POSIX permissions + ACLs</td><td>Very fast, low fragmentation, 16 TB max file</td></tr>
+      <tr><td><strong>HFS / HFS+</strong></td><td>macOS (legacy)</td><td>Catalog File (B-tree) + Extents Overflow</td><td>HFS+ supports journaling; POSIX/ACL permissions</td><td>Good for macOS; succeeded by APFS</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="u5-disk">5.4 Secondary Storage Structure, Disk Scheduling &amp; Formatting</h3>
+  <p>A magnetic hard disk consists of spinning <strong>Platters</strong> divided into concentric <strong>Tracks</strong>, which are split into <strong>Sectors</strong>. Tracks at the same arm position across all platters form a <strong>Cylinder</strong>. <strong>Disk Access Time</strong> = <em>Seek Time</em> (moving head to track) + <em>Rotational Latency</em> (waiting for sector to rotate under head) + <em>Transfer Time</em>.</p>
+
+  <figure class="figure-box">
+    <img src="assets/disk_scheduling_elevator.png" alt="Hard Disk Drive Platters, Actuator Arm, and Read/Write Head">
+    <figcaption>Figure 5.2: Hard Disk Drive Internal Structure (Platters, Spindle, Actuator Arm &amp; Read/Write Head)</figcaption>
+  </figure>
+
+  <h4>Solved Disk Scheduling Numericals (SPPU QB Q6 &amp; Q7)</h4>
+  <p>Disk queue: <code>82, 170, 43, 140, 24, 16, 190</code>. Initial head = <strong>50</strong>. Cylinders = <strong>0 to 199</strong> (moving towards higher track numbers when direction matters).</p>
+  <ul>
+    <li><strong>1. FCFS (FIFO):</strong> $50 \to 82 \to 170 \to 43 \to 140 \to 24 \to 16 \to 190$.<br>
+    Total Head Movement = $|82-50|+|170-82|+|43-170|+|140-43|+|24-140|+|16-24|+|190-16| = 32+88+127+97+116+8+174 = \mathbf{642\text{ cylinders}}$.</li>
+    <li><strong>2. SSTF (Shortest Seek Time First):</strong> Always pick closest request: $50 \to 43 \to 24 \to 16 \to 82 \to 140 \to 170 \to 190$.<br>
+    Total = $(50-16) + (190-16) = 34 + 174 = \mathbf{208\text{ cylinders}}$. (May cause starvation of distant tracks).</li>
+    <li><strong>3. SCAN (Elevator Algorithm):</strong> Moves toward end (199), services all requests, touches 199, then reverses: $50 \to 82 \to 140 \to 170 \to 190 \to 199 \to 43 \to 24 \to 16$.<br>
+    Total = $(199-50) + (199-16) = 149 + 183 = \mathbf{332\text{ cylinders}}$.</li>
+    <li><strong>4. C-SCAN (Circular SCAN):</strong> Moves toward 199, jumps back to 0 without servicing on return, then services $16 \to 24 \to 43$: $50 \to 82 \to 140 \to 170 \to 190 \to 199 \to 0 \to 16 \to 24 \to 43$.<br>
+    Total = $(199-50) + (199-0) + (43-0) = 149 + 199 + 43 = \mathbf{391\text{ cylinders}}$ (uniform wait time).</li>
+    <li><strong>5. LOOK &amp; C-LOOK:</strong> Like SCAN/C-SCAN, but reverses at the <em>last request</em> (190 and 16) instead of going all the way to the physical disk ends (199 and 0)!<br>
+    LOOK: $50 \to 82 \to 140 \to 170 \to 190 \to 43 \to 24 \to 16 \Rightarrow (190-50)+(190-16) = 140+174 = \mathbf{314\text{ cylinders}}$.<br>
+    C-LOOK: $50 \to 190 \to 16 \to 43 \Rightarrow (190-50)+(190-16)+(43-16) = 140+174+27 = \mathbf{341\text{ cylinders}}$.</li>
+  </ul>
+
+  <h4>Disk Formatting, Boot-Block, Bad Blocks, Reliability &amp; I/O</h4>
+  <ul>
+    <li><strong>Disk Formatting:</strong> <em>Low-level (Physical) Formatting</em> divides disk into sectors with header, data, and ECC trailer. <em>High-level (Logical) Formatting</em> writes the file system structures (free-space map, root directory, empty FAT/inodes) onto a partition.</li>
+    <li><strong>Boot-Block:</strong> Initial disk blocks holding the <strong>Bootstrap Loader</strong> (located via MBR/GPT) that loads the OS kernel into RAM at startup.</li>
+    <li><strong>Bad Blocks:</strong> Defective disk sectors detected during formatting or runtime; handled by <em>Sector Sparing</em> (remapping to spare sectors) or <em>Sector Slipping</em>.</li>
+    <li><strong>Disk Reliability (RAID):</strong> Redundant Array of Independent Disks uses striping (RAID 0), mirroring (RAID 1), and parity (RAID 5/6) for fault tolerance and speed.</li>
+    <li><strong>I/O Techniques:</strong> <em>Programmed I/O</em> (CPU busy-waits polling device), <em>Interrupt-Driven I/O</em> (device interrupts CPU when ready), and <em>DMA (Direct Memory Access)</em> (DMA controller transfers blocks directly between device &amp; RAM without CPU per-byte involvement).</li>
+  </ul>
+
+  <h3 id="u5-cases">5.5 Case Studies: Linux &amp; Android File Systems</h3>
+  <ul>
+    <li><strong>Case Study 1 &mdash; Linux File System:</strong> Uses <strong>VFS (Virtual File System)</strong> as a unified abstraction layer supporting <code>ext4</code>, <code>XFS</code>, <code>procfs</code>, and <code>tmpfs</code>. Follows the Filesystem Hierarchy Standard (FHS): <code>/</code> (root), <code>/bin</code> (binaries), <code>/etc</code> (configs), <code>/home</code> (users), <code>/var</code> (logs), <code>/proc</code> (virtual kernel/process info).</li>
+    <li><strong>Case Study 2 &mdash; Android File System:</strong> Built on Linux VFS using <code>ext4</code> and flash-friendly <code>F2FS</code> (formerly <code>yaffs2</code>). Key partitions include <code>/system</code> (read-only OS), <code>/data</code> (app data), <code>/cache</code>, and <code>/sdcard</code> (user media with Scoped Storage sandboxing).</li>
+  </ul>
+
+  <h3 id="u5-qa">5.6 Important SPPU Exam Questions &amp; Model Answers (Unit V)</h3>
+  <div class="qa-card">
+    <div class="qa-q">Q1. Explain LOOK scheduling. How is it different from SCAN? <span class="marks-badge">4 Marks (Oct 2025)</span></div>
+    <p><strong>Model Answer Points:</strong> (1) Define LOOK (arm moves in one direction servicing requests until the last request in that direction, then immediately reverses) (2M). (2) Difference from SCAN: SCAN travels all the way to the physical disk boundary (0 or max cylinder) even if no requests exist there, whereas LOOK stops at the furthest pending request, saving seek time (2M).</p>
+  </div>
+  <div class="qa-card">
+    <div class="qa-q">Q2. Compare FAT, NTFS, EXT, and HFS file systems based on structure, performance, and security. <span class="marks-badge">4 Marks (Oct 2025)</span></div>
+    <p><strong>Model Answer Points:</strong> Present the 4-way comparison table (Section 5.3) covering allocation structure (FAT table, MFT, Inodes/Extents, B-tree), journaling, ACL security, and performance (4M).</p>
+  </div>
+</section>
+
+<section id="references">
+  <h2 class="unit-title">References, Textbooks &amp; Image Attributions</h2>
+
+  <h3>Official SPPU 2024 Pattern Text Books</h3>
+  <ol>
+    <li>William Stallings, <em>Operating System: Internals and Design Principles</em>, Prentice Hall, 8th Edition, ISBN-13: 978-0-13-380591-8.</li>
+    <li>Abraham Silberschatz, Peter Baer Galvin, and Greg Gagne, <em>Operating System Concepts</em>, Wiley, 9th Edition, ISBN: 978-1-118-06333-0.</li>
+    <li>Arnold Robbins and Nelson H. F. Beebe, <em>Classic Shell Scripting</em>, O'Reilly Media, Inc., 2005, ISBN: 9780596005955.</li>
+  </ol>
+
+  <h3>SPPU Reference Books</h3>
+  <ol>
+    <li>Tom Adelstein and Bill Lubanovic, <em>Linux System Administration</em>, O'Reilly Media, ISBN-13: 978-0596009526.</li>
+    <li>Harvey M. Deitel, <em>Operating Systems</em>, Prentice Hall, ISBN-13: 978-0131828278.</li>
+    <li>Thomas W. Doeppner, <em>Operating Systems in Depth: Design and Programming</em>, Wiley, ISBN: 978-0-471-68723-8.</li>
+    <li>Mendel Cooper, <em>Advanced Bash-Scripting Guide</em>, Linux Documentation Project.</li>
+    <li>Andrew S. Tanenbaum and Herbert Bos, <em>Modern Operating Systems</em>, Pearson, 4th Edition, ISBN-13: 9780133592221.</li>
+  </ol>
+
+  <h3>E-Book &amp; MOOC / NPTEL Links</h3>
+  <ul>
+    <li><strong>SPPU Listed E-Book:</strong> <a href="https://repository.dinus.ac.id/docs/ajar/Operating_System.pdf" target="_blank" >Operating System Concepts PDF Repository</a></li>
+    <li><strong>NPTEL / SWAYAM Course:</strong> <a href="https://onlinecourses.nptel.ac.in/noc24_cs108/preview" target="_blank" >https://onlinecourses.nptel.ac.in/noc24_cs108/preview</a></li>
+  </ul>
+
+  <h3>Wikimedia Commons Image Attributions (OS/assets/manifest.json)</h3>
+  <table>
+    <thead><tr><th>Local File</th><th>Title</th><th>Author / Artist</th><th>License</th><th>Wikimedia Commons Source</th></tr></thead>
+    <tbody>
+      <tr><td><code>assets/pcb_process_control_block.png</code></td><td>Process table and process control block.png</td><td>&#x05d1;&#x05e8;</td><td>CC BY-SA 4.0</td><td><a href="https://commons.wikimedia.org/wiki/File:Process_table_and_process_control_block.png" target="_blank" >Commons Link</a></td></tr>
+      <tr><td><code>assets/cpu_scheduling_gantt.png</code></td><td>RoundRobin.jpg</td><td>Coolcoder</td><td>CC BY-SA 3.0</td><td><a href="https://commons.wikimedia.org/wiki/File:RoundRobin.jpg" target="_blank" >Commons Link</a></td></tr>
+      <tr><td><code>assets/deadlock_rag.png</code></td><td>Resource-allocation-graph.svg</td><td>MartinThoma</td><td>CC BY 3.0</td><td><a href="https://commons.wikimedia.org/wiki/File:Resource-allocation-graph.svg" target="_blank" >Commons Link</a></td></tr>
+      <tr><td><code>assets/virtual_memory_paging.png</code></td><td>Virtual Memory Ja 3.JPG</td><td>Wikimedia Commons Contributor</td><td>CC BY-SA 3.0</td><td><a href="https://commons.wikimedia.org/wiki/File:Virtual_Memory_Ja_3.JPG" target="_blank" >Commons Link</a></td></tr>
+      <tr><td><code>assets/tlb_translation.png</code></td><td>Translation lookaside buffer.png</td><td>Matheus Rigoni Hernandes</td><td>CC BY-SA 4.0</td><td><a href="https://commons.wikimedia.org/wiki/File:Translation_lookaside_buffer.png" target="_blank" >Commons Link</a></td></tr>
+      <tr><td><code>assets/os_process_states.png</code></td><td>Process states.svg</td><td>A3r0 (assumed)</td><td>Public domain</td><td><a href="https://commons.wikimedia.org/wiki/File:Process_states.svg" target="_blank" >Commons Link</a></td></tr>
+      <tr><td><code>assets/disk_scheduling_elevator.png</code></td><td>2019 Rozebrane dyski twarde.jpg</td><td>Jacek Halicki</td><td>CC BY-SA 4.0</td><td><a href="https://commons.wikimedia.org/wiki/File:2019_Rozebrane_dyski_twarde.jpg" target="_blank" >Commons Link</a></td></tr>
+    </tbody>
+  </table>
+</section>
 </main>
 
 <script src="../assets/study-data.js"></script>
 <script src="../assets/app-store.js"></script>
 <script src="../assets/guide-app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/verilog.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   if (window.hljs) {

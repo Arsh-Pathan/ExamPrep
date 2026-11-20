@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Discrete Mathematics (PCC-252-CSE) — SPPU SE 2024 Pattern Complete Master Study Guide</title>
+<title>Discrete Mathematics (PCC-252-CSE) - SPPU 2024 Pattern Complete Study Guide</title>
 <meta name="theme-color" content="#F8F9FB">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,1346 +17,890 @@ window.MathJax = {
     processEscapes: true
   },
   options: {
-    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code', 'svg']
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
   }
 };
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../assets/guide-theme.css">
 </head>
-<body data-subject="dmath" data-page="study-guide">
+<body data-subject="dmath">
 
 <nav id="sidebar">
   <h2>Discrete Mathematics</h2>
-  <p class="sb-sub">PCC-252-CSE | SPPU 2024 Pattern</p>
+  <p class="sidebar-sub">SPPU SE Comp (2024 Pattern) &bull; PCC-252-CSE</p>
   <ul>
-    <li><a href="#overview" class="nav-unit">Course Overview &amp; Strategy</a></li>
-    <li>
-      <a href="#unit-1" class="nav-unit">Unit I: Sets &amp; Propositions</a>
+    <li><a href="#unit-1">Unit I: Sets and Propositions</a>
       <ul class="sub-nav">
-        <li><a href="#u1-logic">Propositional Logic &amp; Truth Tables</a></li>
-        <li><a href="#u1-induction">Mathematical Induction Proofs</a></li>
-        <li><a href="#u1-sets">Sets, Power Sets &amp; Diagonalization</a></li>
-        <li><a href="#u1-short-notes">One-Page Unit I Short Notes</a></li>
+        <li><a href="#u1-logic">Propositional Logic &amp; Equivalences</a></li>
+        <li><a href="#u1-induction">Mathematical Induction</a></li>
+        <li><a href="#u1-sets">Set Theory &amp; Inclusion-Exclusion</a></li>
+        <li><a href="#u1-cardinality">Countability &amp; Diagonalization</a></li>
+        <li><a href="#u1-qa">Unit I Exam Questions</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#unit-2" class="nav-unit">Unit II: Relations &amp; Functions</a>
+    <li><a href="#unit-2">Unit II: Relations and Functions</a>
       <ul class="sub-nav">
-        <li><a href="#u2-relations">Equivalence &amp; Partial Orders</a></li>
-        <li><a href="#u2-hasse">Hasse Diagrams &amp; Lattices</a></li>
-        <li><a href="#u2-warshall">Warshall's Transitive Closure</a></li>
-        <li><a href="#u2-functions">Function Classifications</a></li>
-        <li><a href="#u2-short-notes">One-Page Unit II Short Notes</a></li>
+        <li><a href="#u2-relations">Relations, Matrices &amp; Digraphs</a></li>
+        <li><a href="#u2-posets">Equivalence, Posets, Hasse &amp; Lattices</a></li>
+        <li><a href="#u2-warshall">Transitive Closure &amp; Warshall</a></li>
+        <li><a href="#u2-functions">Functions, Inverse &amp; Growth (O, Ω, Θ)</a></li>
+        <li><a href="#u2-qa">Unit II Exam Questions</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#unit-3" class="nav-unit">Unit III: Trees &amp; Prefix Codes</a>
+    <li><a href="#unit-3">Unit III: Introduction to Trees</a>
       <ul class="sub-nav">
-        <li><a href="#u3-trees">Tree Properties &amp; Cut Sets</a></li>
-        <li><a href="#u3-huffman">Huffman Coding Compression</a></li>
-        <li><a href="#u3-maxflow">Max-Flow Min-Cut Theorem</a></li>
-        <li><a href="#u3-mst">MST: Prim's &amp; Kruskal's Algorithms</a></li>
-        <li><a href="#u3-short-notes">One-Page Unit III Short Notes</a></li>
+        <li><a href="#u3-trees">Tree Properties &amp; Traversals</a></li>
+        <li><a href="#u3-huffman">Prefix Codes &amp; Huffman Coding</a></li>
+        <li><a href="#u3-maxflow">Cut Sets &amp; Max-Flow Min-Cut</a></li>
+        <li><a href="#u3-mst">MST: Prim's &amp; Kruskal's</a></li>
+        <li><a href="#u3-qa">Unit III Exam Questions</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#unit-4" class="nav-unit">Unit IV: Graph Theory</a>
+    <li><a href="#unit-4">Unit IV: Graph Theory</a>
       <ul class="sub-nav">
-        <li><a href="#u4-graphs">Handshaking Lemma Proof</a></li>
-        <li><a href="#u4-euler">Euler &amp; Hamiltonian Paths</a></li>
-        <li><a href="#u4-planarity">Planar Graphs &amp; Kuratowski</a></li>
-        <li><a href="#u4-dijkstra">Dijkstra Shortest Path</a></li>
-        <li><a href="#u4-short-notes">One-Page Unit IV Short Notes</a></li>
+        <li><a href="#u4-graphs">Graph Types, Matrices &amp; Isomorphism</a></li>
+        <li><a href="#u4-euler-ham">Eulerian &amp; Hamiltonian Graphs</a></li>
+        <li><a href="#u4-dijkstra">Dijkstra's Shortest Path</a></li>
+        <li><a href="#u4-planar">Planar Graphs &amp; Graph Colouring</a></li>
+        <li><a href="#u4-qa">Unit IV Exam Questions</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#unit-5" class="nav-unit">Unit V: Counting &amp; Algebra</a>
+    <li><a href="#unit-5">Unit V: Counting &amp; Algebra</a>
       <ul class="sub-nav">
-        <li><a href="#u5-counting">Pigeonhole &amp; Permutations</a></li>
-        <li><a href="#u5-algebra">Group, Ring, Field Hierarchy</a></li>
-        <li><a href="#u5-lagrange">Lagrange's Theorem &amp; Subgroups</a></li>
-        <li><a href="#u5-short-notes">One-Page Unit V Short Notes</a></li>
+        <li><a href="#u5-counting">Permutations, Combinations &amp; Binomial</a></li>
+        <li><a href="#u5-pigeonhole">Pigeonhole &amp; Generating Functions</a></li>
+        <li><a href="#u5-groups">Semigroups, Monoids &amp; Groups</a></li>
+        <li><a href="#u5-rings">Rings, Integral Domains &amp; Fields</a></li>
+        <li><a href="#u5-qa">Unit V Exam Questions</a></li>
       </ul>
     </li>
-    <li><a href="#flashcards" class="nav-unit">Active Recall Flashcards (25 Cards)</a></li>
+    <li><a href="#references">References &amp; Image Credits</a></li>
   </ul>
 </nav>
 
 <main id="main">
-<div class="main-inner">
-
-<header class="guide-header">
-  <div class="breadcrumb">SPPU S.E. Sem III (NEP 2024 Pattern) &bull; PCC-252-CSE</div>
-  <h1>Discrete Mathematics Master Study Guide</h1>
-  <p class="subtitle">Complete syllabus theory, mathematical proofs, Hasse diagrams, graph algorithms, algebraic structures, one-page unit short notes, and active recall flashcards.</p>
-  
-  <div class="quick-nav-bar">
-    <a href="#overview">Overview &amp; Strategy</a>
-    <a href="#unit-1">Unit I</a>
-    <a href="#unit-2">Unit II</a>
-    <a href="#unit-3">Unit III</a>
-    <a href="#unit-4">Unit IV</a>
-    <a href="#unit-5">Unit V</a>
-    <a href="#u1-short-notes">Unit Short Notes</a>
-    <a href="#flashcards">Flashcards Deck</a>
-  </div>
-</header>
-
-<section id="overview" class="unit-section">
-  <div class="exam-strategy-banner">
-    <h3>SPPU Exam Scoring Blueprint &amp; Strategy (PCC-252-CSE)</h3>
-    <p>Discrete Mathematics is the mathematical foundation of computer science. Full marks require: <strong>Formal mathematical definitions &rarr; Standard logical notations ($\forall, \exists, \in, \subseteq$) &rarr; Step-by-step induction &amp; algebra proofs &rarr; Fully labeled graphs and Hasse diagrams</strong>.</p>
-    <div class="strategy-grid">
-      <div class="strategy-pill">
-        <strong>Unit Marks Distribution</strong>
-        Continuous Assessment (CCE): 40 Marks | End-Sem University Exam: 60 Marks.
-        5 question pairs: Q1/Q2 (Unit I), Q3/Q4 (Unit II), Q5/Q6 (Unit III), Q7/Q8 (Unit IV), Q9/Q10 (Unit V).
-      </div>
-      <div class="strategy-pill">
-        <strong>Mathematical Induction Structure</strong>
-        Always write all 3 formal steps: <strong>Base Case ($n=1$)</strong> &rarr; <strong>Inductive Hypothesis (assume true for $n=k$)</strong> &rarr; <strong>Inductive Step (prove true for $n=k+1$)</strong>. Evaluators look specifically for this 3-step proof layout!
-      </div>
-      <div class="strategy-pill">
-        <strong>Hasse Diagram Rules</strong>
-        Never draw self-loops (reflexivity implied) and never draw transitive shortcut edges. Draw upward directed lines without arrowheads.
-      </div>
+  <header>
+    <span class="pill">SPPU 2024 Pattern</span>
+    <span class="pill-secondary">PCC-252-CSE &bull; 3 Credits</span>
+    <h1>Discrete Mathematics Complete Study Guide</h1>
+    <p class="subtitle">Simple explanations, formal SPPU exam definitions, step-by-step solved numericals, Python implementations, and 2024/2019 pattern solved questions across all 5 units.</p>
+    <div class="meta-grid">
+      <div class="meta-item"><strong>Course Code</strong><span>PCC-252-CSE</span></div>
+      <div class="meta-item"><strong>Exam Scheme</strong><span>CCE: 40M | End-Sem: 60M</span></div>
+      <div class="meta-item"><strong>Total Units</strong><span>5 Units (45 Hours)</span></div>
+      <div class="meta-item"><strong>Study Focus</strong><span>Proofs, Algorithms &amp; Numericals</span></div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="unit-1" class="unit-section">
-  <div class="unit-badge">Unit I &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit I: Set Theory and Propositions</h2>
-  
-  <div class="topic-block" id="u1-logic">
-    <h3>1.1 Propositional Logic, Truth Tables &amp; Equivalences</h3>
-    <p>A proposition is a declarative statement that is either strictly True ($T$) or False ($F$), but not both.</p>
+  <!-- ======================== UNIT I ======================== -->
+  <section id="unit-1">
+    <h2>Unit I: Sets and Propositions (09 Hours)</h2>
 
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Logical Equivalence Law</th><th>Conjunction (AND Form)</th><th>Disjunction (OR Form)</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Identity Laws</strong></td><td>$p \land T \equiv p$</td><td>$p \lor F \equiv p$</td></tr>
-          <tr><td><strong>Domination (Null) Laws</strong></td><td>$p \land F \equiv F$</td><td>$p \lor T \equiv T$</td></tr>
-          <tr><td><strong>Idempotent Laws</strong></td><td>$p \land p \equiv p$</td><td>$p \lor p \equiv p$</td></tr>
-          <tr><td><strong>Double Negation</strong></td><td colspan="2">$\neg(\neg p) \equiv p$</td></tr>
-          <tr><td><strong>De Morgan's Laws</strong></td><td>$\neg(p \land q) \equiv \neg p \lor \neg q$</td><td>$\neg(p \lor q) \equiv \neg p \land \neg q$</td></tr>
-          <tr><td><strong>Distributive Laws</strong></td><td>$p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$</td><td>$p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$</td></tr>
-          <tr><td><strong>Absorption Laws</strong></td><td>$p \land (p \lor q) \equiv p$</td><td>$p \lor (p \land q) \equiv p$</td></tr>
-          <tr><td><strong>Conditional Equivalences</strong></td><td>$p \to q \equiv \neg p \lor q$</td><td>$p \to q \equiv \neg q \to \neg p$ (Contrapositive)</td></tr>
-        </tbody>
-      </table>
+    <div class="exam-tip">
+      <strong>Why Discrete Mathematics Matters:</strong> Computers do not store continuous real numbers infinitely; they work with discrete bits (0 and 1), finite sets, logical gates, and step-by-step algorithms. Discrete Mathematics gives you the exact language to prove that an algorithm works, count how many states a program can have, and model databases and networks.
     </div>
-  </div>
 
-  <div class="topic-block" id="u1-induction">
-    <h3>1.2 Principle of Mathematical Induction</h3>
+    <h3 id="u1-logic">1.1 Propositional Logic &amp; Propositional Equivalences</h3>
+
+    <div class="concept-box">
+      <strong>Exam Definition (Proposition):</strong> A proposition (or statement) is a declarative sentence that is either unambiguously true ($T$) or false ($F$), but not both.<br>
+      <strong>In Simple Words:</strong> Any sentence you can label "True" or "False" (like "5 is prime") is a proposition. Questions ("What time is it?") and commands ("Close the door") are not propositions.
+    </div>
+
+    <h4>Logical Connectives &amp; Truth Table</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>$p$</th><th>$q$</th>
+          <th>Negation ($\neg p$)</th>
+          <th>Conjunction ($p \land q$)</th>
+          <th>Disjunction ($p \lor q$)</th>
+          <th>Implication ($p \to q$)</th>
+          <th>Biconditional ($p \leftrightarrow q$)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>T</td><td>T</td><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+        <tr><td>T</td><td>F</td><td>F</td><td>F</td><td>T</td><td>F</td><td>F</td></tr>
+        <tr><td>F</td><td>T</td><td>T</td><td>F</td><td>T</td><td>T</td><td>F</td></tr>
+        <tr><td>F</td><td>F</td><td>T</td><td>F</td><td>F</td><td>T</td><td>T</td></tr>
+      </tbody>
+    </table>
+
+    <div class="formula-box">
+      <strong>Converse, Inverse, and Contrapositive of $p \to q$:</strong><br>
+      &bull; <strong>Implication:</strong> $p \to q$ ("If $p$, then $q$")<br>
+      &bull; <strong>Converse:</strong> $q \to p$ ("If $q$, then $p$")<br>
+      &bull; <strong>Inverse:</strong> $\neg p \to \neg q$ ("If not $p$, then not $q$")<br>
+      &bull; <strong>Contrapositive:</strong> $\neg q \to \neg p$ ("If not $q$, then not $p$") &mdash; <em>Always logically equivalent to $p \to q$!</em>
+    </div>
+
+    <div class="concept-box">
+      <strong>Exam Definition (Tautology, Contradiction, Contingency):</strong> A compound proposition that is always true for every truth assignment is a <strong>Tautology</strong>; one that is always false is a <strong>Contradiction</strong>; one that is neither is a <strong>Contingency</strong>.<br>
+      <strong>In Simple Words:</strong> Tautology = all T's in the last column (e.g., $p \lor \neg p$). Contradiction = all F's (e.g., $p \land \neg p$). Contingency = mix of T and F.
+    </div>
+
+    <h4>Important Logical Equivalences &amp; Normal Forms (PDNF / PCNF)</h4>
+    <ul>
+      <li><strong>Implication Law:</strong> $p \to q \equiv \neg p \lor q$</li>
+      <li><strong>De Morgan's Laws:</strong> $\neg(p \land q) \equiv \neg p \lor \neg q$ and $\neg(p \lor q) \equiv \neg p \land \neg q$</li>
+      <li><strong>Distributive Laws:</strong> $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$ and $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$</li>
+      <li><strong>PDNF (Principal Disjunctive Normal Form):</strong> Sum of minterms (rows where the formula evaluates to $T$). Each minterm is a conjunction of all variables (negated if $F$, unnegated if $T$).</li>
+      <li><strong>PCNF (Principal Conjunctive Normal Form):</strong> Product of maxterms (rows where the formula evaluates to $F$). Each maxterm is a disjunction of all variables (negated if $T$, unnegated if $F$).</li>
+    </ul>
+
+    <h4>Translating English Sentences &amp; Rules of Inference</h4>
+    <p>To check whether an argument is valid, translate English premises into logic and apply standard rules of inference such as <strong>Modus Ponens</strong> ($p, p \to q \vdash q$), <strong>Modus Tollens</strong> ($\neg q, p \to q \vdash \neg p$), and <strong>Hypothetical Syllogism</strong> ($p \to q, q \to r \vdash p \to r$).</p>
+
+    <pre><code># Python: Truth Table &amp; Tautology Checker for (p -&gt; q) &lt;-&gt; (~p | q)
+import itertools
+
+print("p\tq\tp-&gt;q\t~p|q\tEquivalent?")
+for p, q in itertools.product([True, False], repeat=2):
+    imp = (not p) or q
+    rhs = (not p) or q
+    eq = (imp == rhs)
+    print(f"{p}\t{q}\t{imp}\t{rhs}\t{eq}")</code></pre>
+
+    <h3 id="u1-induction">1.2 Mathematical Induction &amp; Strong Mathematical Induction</h3>
+
+    <div class="concept-box">
+      <strong>Exam Definition (Principle of Mathematical Induction):</strong> To prove $P(n)$ holds for all integers $n \ge n_0$: (1) <strong>Base Case:</strong> Show $P(n_0)$ is true. (2) <strong>Inductive Step:</strong> Assume $P(k)$ is true for an arbitrary $k \ge n_0$ (Inductive Hypothesis) and prove $P(k+1)$ is true.<br>
+      <strong>In Simple Words:</strong> Think of falling dominoes. Push the first domino ($P(n_0)$), and prove that any domino $k$ knocking over knocks down the next domino $k+1$. Then all dominoes fall!
+    </div>
+
+    <div class="concept-box">
+      <strong>Exam Definition (Strong Mathematical Induction):</strong> Assume $P(n_0), P(n_0+1), \dots, P(k)$ are <em>all</em> true, and use this stronger assumption to prove $P(k+1)$ is true.<br>
+      <strong>In Simple Words:</strong> Useful when $P(k+1)$ depends on earlier steps beyond just $k$ (for example, proving every integer $n \ge 2$ has a prime factorization).
+    </div>
+
+    <h3 id="u1-sets">1.3 Set Theory, Operations &amp; Inclusion-Exclusion</h3>
+
+    <div class="concept-box">
+      <strong>Exam Definition (Na&iuml;ve vs Axiomatic Set Theory):</strong> Na&iuml;ve (Cantorian) Set Theory defines a set informally as any well-defined collection of distinct objects. Because unrestricted comprehension leads to Russell's Paradox ($R = \{x \mid x \notin x\}$), Axiomatic Set Theory (ZFC) restricts set formation using formal axioms.<br>
+      <strong>In Simple Words:</strong> Na&iuml;ve set theory lets you group anything by a rule, which can cause self-contradictions like "the barber who shaves everyone who doesn't shave himself." Axiomatic set theory adds guardrails so paradoxes cannot happen.
+    </div>
+
+    <ul>
+      <li><strong>Power Set $\mathcal{P}(A)$:</strong> The set of all subsets of $A$. If $|A| = n$, then $|\mathcal{P}(A)| = 2^n$.</li>
+      <li><strong>Cartesian Product $A \times B$:</strong> $\{(a, b) \mid a \in A \text{ and } b \in B\}$, with $|A \times B| = |A| \cdot |B|$.</li>
+    </ul>
+
+    <div class="formula-box">
+      <strong>Principle of Inclusion-Exclusion (PIE):</strong><br>
+      For 2 sets: $|A \cup B| = |A| + |B| - |A \cap B|$<br>
+      For 3 sets: $|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|$
+    </div>
+
+    <figure class="figure-box">
+      <img src="assets/discrete/venn_diagram_sets.png" alt="Venn diagram illustrating set relationships and overlapping regions">
+      <figcaption>Figure 1.1: Venn diagram illustrating overlapping set regions, intersections, and subsets (Wikimedia Commons).</figcaption>
+    </figure>
+
+    <h3 id="u1-cardinality">1.4 Bounded/Unbounded Sets, Countability &amp; Cantor's Diagonalization</h3>
+    <ul>
+      <li><strong>Finite vs Infinite Sets:</strong> A set is finite if its cardinality is a non-negative integer; otherwise it is infinite.</li>
+      <li><strong>Bounded vs Unbounded Sets:</strong> A subset $S \subseteq \mathbb{R}$ is bounded if there exist $m, M \in \mathbb{R}$ such that $m \le x \le M$ for all $x \in S$ (e.g., $[0, 1]$ is bounded; $\mathbb{N}$ is unbounded).</li>
+      <li><strong>Countably Infinite Sets:</strong> A set $A$ is countably infinite if there exists a bijection $f: \mathbb{N} \to A$ (e.g., $\mathbb{N}, \mathbb{Z}, \mathbb{Q}$).</li>
+      <li><strong>Uncountably Infinite Sets:</strong> Infinite sets that cannot be put in 1-to-1 correspondence with $\mathbb{N}$ (e.g., $\mathbb{R}$, interval $(0, 1)$).</li>
+      <li><strong>Cantor's Diagonalization Argument:</strong> Suppose $(0, 1)$ were countable and listed as $r_1, r_2, r_3, \dots$ in decimal form. Construct a new number $d = 0.d_1d_2d_3\dots$ where $d_i = 5$ if the $i$-th digit of $r_i$ is not $5$, else $d_i = 4$. Then $d \in (0, 1)$ differs from every $r_i$ at position $i$, contradicting completeness of the list!</li>
+    </ul>
+
+    <figure class="svg-box">
+      <svg style="max-width:100%;height:auto;" width="520" height="190" viewBox="0 0 520 190" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="520" height="190" rx="8" fill="#FAF7F4" stroke="#C9BEB4"/>
+        <text x="260" y="26" fill="#4B5FD1" font-size="14" font-weight="bold" text-anchor="middle">Cantor's Diagonalization Argument on (0, 1)</text>
+        <text x="45" y="55" fill="#6A625B" font-size="13">r1 = 0.</text>
+        <rect x="92" y="40" width="18" height="20" fill="#FBECE8" stroke="#B8432B"/><text x="101" y="55" fill="#B8432B" font-size="13" text-anchor="middle">1</text>
+        <text x="120" y="55" fill="#171717" font-size="13">4  8  2  9 ...</text>
+
+        <text x="45" y="82" fill="#6A625B" font-size="13">r2 = 0. 3</text>
+        <rect x="112" y="67" width="18" height="20" fill="#FBECE8" stroke="#B8432B"/><text x="121" y="82" fill="#B8432B" font-size="13" text-anchor="middle">5</text>
+        <text x="138" y="82" fill="#171717" font-size="13">1  7  0 ...</text>
+
+        <text x="45" y="109" fill="#6A625B" font-size="13">r3 = 0. 7  2</text>
+        <rect x="132" y="94" width="18" height="20" fill="#FBECE8" stroke="#B8432B"/><text x="141" y="109" fill="#B8432B" font-size="13" text-anchor="middle">9</text>
+        <text x="158" y="109" fill="#171717" font-size="13">6  4 ...</text>
+
+        <text x="45" y="136" fill="#6A625B" font-size="13">r4 = 0. 0  1  4</text>
+        <rect x="152" y="121" width="18" height="20" fill="#FBECE8" stroke="#B8432B"/><text x="161" y="136" fill="#B8432B" font-size="13" text-anchor="middle">5</text>
+        <text x="178" y="136" fill="#171717" font-size="13">3 ...</text>
+
+        <line x1="250" y1="45" x2="250" y2="145" stroke="#C9BEB4" stroke-width="2"/>
+        <text x="275" y="68" fill="#226D51" font-size="13" font-weight="bold">Construct d = 0. d1 d2 d3 d4 ...</text>
+        <text x="275" y="92" fill="#171717" font-size="12">Rule: if digit != 5 pick 5, else pick 4</text>
+        <text x="275" y="116" fill="#9C7710" font-size="13" font-weight="bold">d = 0. 5  4  5  4 ... (Not in list!)</text>
+        <text x="275" y="140" fill="#6A625B" font-size="12">Therefore (0, 1) is uncountable.</text>
+      </svg>
+      <figcaption>Figure 1.2: Visual proof of Cantor's Diagonalization Argument.</figcaption>
+    </figure>
+
+    <div class="exam-tip">
+      <strong>Case Studies (Unit I):</strong><br>
+      &bull; <strong>Great Philosophers:</strong> <em>Aristotle</em> (formalized syllogistic logic), <em>Georg Cantor</em> (founded Set Theory and transfinite cardinalities), <em>Richard Dedekind</em> (Dedekind cuts and rigorous definition of infinite sets).<br>
+      &bull; <strong>Movie Recommendation Filter:</strong> Let $A(m)$ = "Action", $R(m)$ = "Rating $\ge 8$", $H(m)$ = "Horror". A user rule "Action movies rated $\ge 8$ and not Horror" is modeled as $\forall m\, \big(Recommend(m) \leftrightarrow (A(m) \land R(m) \land \neg H(m))\big)$.
+    </div>
+
+    <h3 id="u1-qa">1.5 Important SPPU Exam Questions &amp; Model Answers (Unit I)</h3>
+
     <div class="qa-card">
-      <div class="qa-q">Prove by Mathematical Induction that for all integers $n \ge 1$: $1 + 2 + 3 + \dots + n = \frac{n(n+1)}{2}$.</div>
+      <div class="qa-q">Q1. Use Mathematical Induction to prove that $1^2 + 2^2 + 3^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}$ for all integers $n \ge 1$. <span class="marks-badge">5 Marks (Oct 2025)</span></div>
       <div class="sol-box">
-        <p><strong>Step 1: Base Case ($n = 1$):</strong><br>
-        LHS = $1$. RHS = $\frac{1(1+1)}{2} = \frac{2}{2} = 1$. LHS = RHS. Base step holds.</p>
-        <p><strong>Step 2: Inductive Hypothesis:</strong><br>
-        Assume the proposition holds for $n = k$: $1 + 2 + \dots + k = \frac{k(k+1)}{2}$.</p>
-        <p><strong>Step 3: Inductive Step (Prove for $n = k + 1$):</strong><br>
-        We must show: $1 + 2 + \dots + k + (k+1) = \frac{(k+1)((k+1)+1)}{2} = \frac{(k+1)(k+2)}{2}$.<br>
-        LHS = $[1 + 2 + \dots + k] + (k+1) = \frac{k(k+1)}{2} + (k+1) = (k+1) \left[\frac{k}{2} + 1\right] = \frac{(k+1)(k+2)}{2} = \text{RHS}$.<br>
-        Therefore, by the Principle of Mathematical Induction, the formula holds for all integers $n \ge 1$. (Q.E.D.)</p>
+        <strong>Step 1 (Base Case, $n = 1$):</strong><br>
+        LHS $= 1^2 = 1$. RHS $= \frac{1(1+1)(2(1)+1)}{6} = \frac{6}{6} = 1$. Since LHS $=$ RHS, $P(1)$ holds.<br>
+        <strong>Step 2 (Inductive Hypothesis):</strong><br>
+        Assume $P(k)$ is true for some integer $k \ge 1$: $1^2 + 2^2 + \dots + k^2 = \frac{k(k+1)(2k+1)}{6}$.<br>
+        <strong>Step 3 (Inductive Step, $n = k+1$):</strong><br>
+        $$1^2 + 2^2 + \dots + k^2 + (k+1)^2 = \frac{k(k+1)(2k+1)}{6} + (k+1)^2$$
+        Factor out $\frac{k+1}{6}$:
+        $$= \frac{k+1}{6} \big[k(2k+1) + 6(k+1)\big] = \frac{k+1}{6} (2k^2 + 7k + 6) = \frac{(k+1)(k+2)(2k+3)}{6}$$
+        This matches the formula for $n = k+1$. By mathematical induction, $P(n)$ holds for all $n \ge 1$.
       </div>
     </div>
-  </div>
 
-  <div class="topic-block" id="u1-sets">
-    <h3>1.3 Sets, Cardinality &amp; Cantor's Diagonalization Argument</h3>
-    <p>A set $S$ is <strong>Countable</strong> if it is finite or has a one-to-one correspondence (bijection) with the set of natural numbers $\mathbb{N}$ (Countably Infinite: $\mathbb{Z}, \mathbb{Q}$). A set is <strong>Uncountable</strong> if no such bijection exists (e.g., Real numbers $\mathbb{R}$).</p>
-
-    <h4>Cantor's Diagonalization Proof (Uncountability of Real Numbers in [0, 1])</h4>
-    <p>Assume by contradiction that real numbers in $[0, 1]$ are countably infinite and can be listed:</p>
-    <div class="formula-box">
-      $r_1 = 0.d_{11} d_{12} d_{13} d_{14} \dots$<br>
-      $r_2 = 0.d_{21} d_{22} d_{23} d_{24} \dots$<br>
-      $r_3 = 0.d_{31} d_{32} d_{33} d_{34} \dots$<br>
-      $r_n = 0.d_{n1} d_{n2} d_{n3} d_{n4} \dots$
-    </div>
-    <p>Construct a new number $x = 0.x_1 x_2 x_3 \dots$ where $x_i = 4$ if $d_{ii} = 5$, and $x_i = 5$ if $d_{ii} \ne 5$.<br>
-    The number $x$ differs from every listed number $r_i$ at least at the $i$-th decimal place ($x_i \ne d_{ii}$). Thus $x$ is in $[0, 1]$ but not in the list, contradicting the assumption that the list was exhaustive. Hence, real numbers are <strong>uncountable</strong>! (Q.E.D.)</p>
-  </div>
-
-  <section class="unit-short-notes" id="u1-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit I Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Logic laws, induction template, and set cardinality classifications.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Propositional Connectives</h4>
-          <ul>
-            <li>Negation ($\neg p$): Inverts truth value</li>
-            <li>Conjunction ($p \land q$): True only if both true</li>
-            <li>Disjunction ($p \lor q$): False only if both false</li>
-            <li>Conditional ($p \to q$): False ONLY when $p=T, q=F$</li>
-            <li>Biconditional ($p \leftrightarrow q$): True when both match ($T-T$ or $F-F$)</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Rules of Inference</h4>
-          <ul>
-            <li>Modus Ponens: $p, \, p \to q \implies q$</li>
-            <li>Modus Tollens: $\neg q, \, p \to q \implies \neg p$</li>
-            <li>Hypothetical Syllogism: $p \to q, \, q \to r \implies p \to r$</li>
-            <li>Disjunctive Syllogism: $p \lor q, \, \neg p \implies q$</li>
-          </ul>
-        </div>
+    <div class="qa-card">
+      <div class="qa-q">Q2. A company employs 100 programmers: 45 know Java ($J$), 30 know C# ($C$), 20 know Python ($P$), 6 know $C$ and $J$, 1 knows $J$ and $P$, 5 know $C$ and $P$, and 1 knows all three. Find: (i) programmers proficient in none, (ii) proficient only in Python. <span class="marks-badge">5 Marks (Oct 2025)</span></div>
+      <div class="sol-box">
+        <strong>Given:</strong> $|U| = 100$, $|J| = 45$, $|C| = 30$, $|P| = 20$, $|C \cap J| = 6$, $|J \cap P| = 1$, $|C \cap P| = 5$, $|J \cap C \cap P| = 1$.<br>
+        <strong>(i) By Inclusion-Exclusion:</strong><br>
+        $$|J \cup C \cup P| = 45 + 30 + 20 - 6 - 1 - 5 + 1 = 84$$
+        Programmers proficient in none $= 100 - 84 = \mathbf{16}$.<br>
+        <strong>(ii) Only Python:</strong><br>
+        $$|P \text{ only}| = |P| - |J \cap P| - |C \cap P| + |J \cap C \cap P| = 20 - 1 - 5 + 1 = \mathbf{15}.$$
       </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Set Cardinality Cheat Sheet</h4>
-          <ul>
-            <li>Power Set: $|\mathcal{P}(A)| = 2^{|A|}$</li>
-            <li>Countable: $\mathbb{N}$ (Naturals), $\mathbb{Z}$ (Integers), $\mathbb{Q}$ (Rationals)</li>
-            <li>Uncountable: $\mathbb{R}$ (Reals), $[0, 1]$, Complex numbers $\mathbb{C}$</li>
-            <li>Inclusion-Exclusion: $|A \cup B| = |A| + |B| - |A \cap B|$</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Tautology vs Contradiction</h4>
-          <ul>
-            <li>Tautology: Compound proposition that is ALWAYS true ($p \lor \neg p \equiv T$)</li>
-            <li>Contradiction: Compound proposition that is ALWAYS false ($p \land \neg p \equiv F$)</li>
-            <li>Contingency: Proposition that is neither a tautology nor contradiction</li>
-          </ul>
-        </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">Q3. Check the validity of the argument: "If there was a meeting then catching the bus was difficult. If they arrived on time then catching the bus was not difficult. They arrived on time. Therefore, there was no meeting." <span class="marks-badge">4 Marks (Oct 2025)</span></div>
+      <div class="sol-box">
+        Let $M$: There was a meeting, $D$: Catching the bus was difficult, $T$: They arrived on time.<br>
+        Premises: (1) $M \to D$, (2) $T \to \neg D$, (3) $T$. Conclusion: $\neg M$.<br>
+        1. From (2) $T \to \neg D$ and (3) $T$, by <strong>Modus Ponens</strong>, we get $\neg D$.<br>
+        2. From (1) $M \to D$ and $\neg D$, by <strong>Modus Tollens</strong>, we get $\neg M$.<br>
+        Hence, the argument is <strong>valid</strong>.
       </div>
     </div>
   </section>
-</section>
 
-<section id="unit-2" class="unit-section">
-  <div class="unit-badge">Unit II &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit II: Relations and Functions</h2>
-  
-  <div class="topic-block" id="u2-relations">
-    <h3>2.1 Properties of Relations, Equivalence Relations &amp; POSETs</h3>
-    <p>A binary relation $R$ from $A$ to $A$ is a subset of $A \times A$.</p>
-    
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Property</th><th>Mathematical Condition</th><th>Matrix Representation $M_R$ Condition</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Reflexive</strong></td><td>$\forall a \in A, \, (a, a) \in R$</td><td>All main diagonal elements are $1$ ($m_{ii} = 1$).</td></tr>
-          <tr><td><strong>Symmetric</strong></td><td>$\forall a, b \in A, \, (a, b) \in R \implies (b, a) \in R$</td><td>Matrix is symmetric ($M_R = M_R^T$).</td></tr>
-          <tr><td><strong>Antisymmetric</strong></td><td>$\forall a, b \in A, \, (a, b) \in R \land (b, a) \in R \implies a = b$</td><td>If $m_{ij} = 1$ ($i \ne j$), then $m_{ji} = 0$.</td></tr>
-          <tr><td><strong>Transitive</strong></td><td>$\forall a, b, c \in A, \, (a, b) \in R \land (b, c) \in R \implies (a, c) \in R$</td><td>$M_R \odot M_R \le M_R$ (Boolean product).</td></tr>
-        </tbody>
-      </table>
+  <!-- ======================== UNIT II ======================== -->
+  <section id="unit-2">
+    <h2>Unit II: Relations and Functions (09 Hours)</h2>
+
+    <h3 id="u2-relations">2.1 Relations, Properties, Matrices &amp; Digraphs</h3>
+
+    <div class="concept-box">
+      <strong>Exam Definition (Binary Relation):</strong> A binary relation $R$ from set $A$ to set $B$ is a subset of the Cartesian product $A \times B$, i.e., $R \subseteq A \times B$. A relation on $A$ is a subset of $A \times A$.<br>
+      <strong>In Simple Words:</strong> A relation is just a rule that pairs elements from one set with elements from another (or the same) set, like "$a$ divides $b$".
     </div>
 
-    <h4>Equivalence Relation vs Partially Ordered Set (POSET)</h4>
+    <table>
+      <thead>
+        <tr><th>Property</th><th>Formal Condition ($\forall a, b, c \in A$)</th><th>Matrix $M_R$ Check</th><th>Digraph Check</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Reflexive</strong></td><td>$(a, a) \in R$</td><td>All main diagonal entries are $1$</td><td>Every vertex has a self-loop</td></tr>
+        <tr><td><strong>Irreflexive</strong></td><td>$(a, a) \notin R$</td><td>All main diagonal entries are $0$</td><td>No vertex has a self-loop</td></tr>
+        <tr><td><strong>Symmetric</strong></td><td>$(a, b) \in R \implies (b, a) \in R$</td><td>$M_R = M_R^T$</td><td>Every edge has a reverse edge</td></tr>
+        <tr><td><strong>Antisymmetric</strong></td><td>$(a, b) \in R \land (b, a) \in R \implies a = b$</td><td>If $m_{ij}=1$ ($i \neq j$), then $m_{ji}=0$</td><td>No two-way edges between distinct vertices</td></tr>
+        <tr><td><strong>Transitive</strong></td><td>$(a, b) \in R \land (b, c) \in R \implies (a, c) \in R$</td><td>$M_R^2 \le M_R$ (Boolean product)</td><td>If $a \to b \to c$, then $a \to c$ exists</td></tr>
+      </tbody>
+    </table>
+
+    <h3 id="u2-posets">2.2 Equivalence Relations, Partitions, Posets, Hasse Diagrams &amp; Lattices</h3>
+
+    <div class="concept-box">
+      <strong>Exam Definition (Equivalence Relation &amp; Partition):</strong> A relation $R$ on $A$ is an <strong>Equivalence Relation</strong> if it is Reflexive, Symmetric, and Transitive. Equivalence classes of $R$ partition $A$ into mutually disjoint, non-empty subsets whose union is $A$.<br>
+      <strong>In Simple Words:</strong> Equivalence behaves like "equals" ($=$): it groups elements into non-overlapping buckets (a partition) where everything in the same bucket is equivalent.
+    </div>
+
+    <div class="concept-box">
+      <strong>Exam Definition (Partial Order / Poset &amp; Hasse Diagram):</strong> A relation $R$ on $A$ is a <strong>Partial Order</strong> if it is Reflexive, Antisymmetric, and Transitive; $(A, R)$ is called a <strong>Poset</strong>. A <strong>Hasse Diagram</strong> is a simplified digraph of a finite poset obtained by removing all self-loops, removing transitive edges, and directing all edges upward.<br>
+      <strong>In Simple Words:</strong> A Hasse diagram is the cleanest possible "hierarchy chart" of a partial order (like divisibility or subset inclusion), drawn bottom-to-top without clutter.
+    </div>
+
     <ul>
-      <li><strong>Equivalence Relation:</strong> Reflexive + Symmetric + Transitive. Partitions set into disjoint equivalence classes.</li>
-      <li><strong>Partial Order Relation (POSET):</strong> Reflexive + <strong>Antisymmetric</strong> + Transitive (e.g., Divisibility $(\mathbb{Z}^+, |)$ and Subset $(\mathcal{P}(S), \subseteq)$).</li>
-    </ul>
-  </div>
-
-  <div class="topic-block" id="u2-hasse">
-    <h3>2.2 Hasse Diagrams and Lattices</h3>
-    <p>A <strong>Hasse Diagram</strong> is a graphical representation of a finite POSET where:</p>
-    <ul>
-      <li>Reflexive loops ($a \to a$) are eliminated.</li>
-      <li>Transitive shortcut edges ($a \to c$ if $a \to b$ and $b \to c$) are eliminated.</li>
-      <li>Edges are drawn upward without arrowheads (the higher vertex succeeds the lower vertex).</li>
+      <li><strong>Chain:</strong> A subset of a poset in which every pair of elements is comparable (e.g., $\{1, 2, 4, 8\}$ under divisibility).</li>
+      <li><strong>Antichain:</strong> A subset of a poset in which no two distinct elements are comparable (e.g., $\{2, 3, 5\}$ under divisibility).</li>
+      <li><strong>Lattice:</strong> A poset $(L, \le)$ in which every pair of elements $\{a, b\}$ has both a <strong>Least Upper Bound (Join, $a \lor b$)</strong> and a <strong>Greatest Lower Bound (Meet, $a \land b$)</strong>.</li>
     </ul>
 
-    <div class="figure-box"><svg viewBox="0 0 760 220" class="svg-diagram" xmlns="http://www.w3.org/2000/svg" id="discrete-svg-1">
-  <rect width="760" height="220" fill="#FFFFFF" rx="8"/>
-  <style>#discrete-svg-1 .node { fill: #EFF6FF; stroke: #2563EB; stroke-width: 2; }#discrete-svg-1 .node-top { fill: #FEF3C7; stroke: #D97706; stroke-width: 2; }#discrete-svg-1 .edge { stroke: #1E293B; stroke-width: 1.8; }#discrete-svg-1 .txt-t { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #1E293B; }#discrete-svg-1 .txt-c { font-family: monospace; font-size: 12px; font-weight: bold; fill: #1E293B; text-anchor: middle; }#discrete-svg-1 .txt-sub { font-family: sans-serif; font-size: 11px; fill: #64748B; }
-  </style>
-  <text x="30" y="30" class="txt-t">Hasse Diagram for Divisors of 24: D(24) = {1, 2, 3, 4, 6, 8, 12, 24} under Divisibility (|)</text>
-  
-  <g transform="translate(180, 40)">
-    <!-- Level 4: Greatest element 24 -->
-    <circle cx="200" cy="20" r="14" class="node-top"/><text x="200" y="24" class="txt-c">24</text>
-    
-    <!-- Level 3: 8, 12 -->
-    <circle cx="120" cy="65" r="13" class="node"/><text x="120" y="69" class="txt-c">8</text>
-    <circle cx="280" cy="65" r="13" class="node"/><text x="280" y="69" class="txt-c">12</text>
-    
-    <!-- Level 2: 4, 6 -->
-    <circle cx="120" cy="115" r="13" class="node"/><text x="120" y="119" class="txt-c">4</text>
-    <circle cx="280" cy="115" r="13" class="node"/><text x="280" y="119" class="txt-c">6</text>
-    
-    <!-- Level 1: 2, 3 -->
-    <circle cx="120" cy="165" r="13" class="node"/><text x="120" y="169" class="txt-c">2</text>
-    <circle cx="280" cy="165" r="13" class="node"/><text x="280" y="169" class="txt-c">3</text>
-    
-    <!-- Level 0: Least element 1 -->
-    <circle cx="200" cy="200" r="14" class="node"/><text x="200" y="204" class="txt-c">1</text>
-    
-    <!-- Edges -->
-    <line x1="200" y1="186" x2="120" y2="178" class="edge"/> <!-- 1|2 -->
-    <line x1="200" y1="186" x2="280" y2="178" class="edge"/> <!-- 1|3 -->
-    <line x1="120" y1="152" x2="120" y2="128" class="edge"/> <!-- 2|4 -->
-    <line x1="120" y1="152" x2="280" y2="128" class="edge"/> <!-- 2|6 -->
-    <line x1="280" y1="152" x2="280" y2="128" class="edge"/> <!-- 3|6 -->
-    <line x1="120" y1="102" x2="120" y2="78" class="edge"/> <!-- 4|8 -->
-    <line x1="120" y1="102" x2="280" y2="78" class="edge"/> <!-- 4|12 -->
-    <line x1="280" y1="102" x2="280" y2="78" class="edge"/> <!-- 6|12 -->
-    <line x1="120" y1="52" x2="200" y2="34" class="edge"/> <!-- 8|24 -->
-    <line x1="280" y1="52" x2="200" y2="34" class="edge"/> <!-- 12|24 -->
-  </g>
-  <text x="30" y="210" class="txt-sub">Properties: Least Element = 1 &bull; Greatest Element = 24 &bull; LUB(4, 6) = 12 &bull; GLB(4, 6) = 2. It forms a Lattice!</text>
-</svg><div class="figure-caption">Figure 2.1: Hasse Diagram for Divisor Poset (D(24), |) with Reflexive and Transitive Redundancies Removed</div></div>
+    <figure class="figure-box">
+      <img src="assets/discrete/hasse_diagram_poset.png" alt="Hasse diagram of the power set of a 3-element set ordered by subset inclusion">
+      <figcaption>Figure 2.1: Hasse diagram of the power set $\mathcal{P}(\{x, y, z\})$ ordered by subset inclusion $\subseteq$, forming a Boolean Lattice (Wikimedia Commons).</figcaption>
+    </figure>
 
-    <h4>Lattice Definition</h4>
-    <p>A POSET $(L, \le)$ is called a <strong>Lattice</strong> if every pair of elements $a, b \in L$ has a unique <strong>Least Upper Bound (LUB / Join / $a \lor b$)</strong> and a unique <strong>Greatest Lower Bound (GLB / Meet / $a \land b$)</strong>.</p>
-  </div>
-
-  <div class="topic-block" id="u2-warshall">
-    <h3>2.3 Transitive Closure &amp; Warshall's Algorithm</h3>
-    <p>Warshall's algorithm computes the transitive closure $R^*$ of a relation with $n$ elements in $O(n^3)$ bit operations using a sequence of matrices $W^{(0)}, W^{(1)}, \dots, W^{(n)}$:</p>
+    <h3 id="u2-warshall">2.3 Transitive Closure &amp; Warshall's Algorithm</h3>
+    <p>The <strong>Transitive Closure</strong> $R^+$ of a relation $R$ on an $n$-element set is the smallest transitive relation containing $R$. <strong>Warshall's Algorithm</strong> computes the reachability matrix $W_n$ in $O(n^3)$ time by iteratively allowing intermediate vertices $k = 1, 2, \dots, n$:</p>
     <div class="formula-box">
-      $$W^{(k)}[i, j] = W^{(k-1)}[i, j] \lor \left( W^{(k-1)}[i, k] \land W^{(k-1)}[k, j] \right)$$
+      <strong>Warshall's Update Formula:</strong><br>
+      $$W_k[i][j] = W_{k-1}[i][j] \lor \big(W_{k-1}[i][k] \land W_{k-1}[k][j]\big)$$
     </div>
-  </div>
 
-  <div class="topic-block" id="u2-functions">
-    <h3>2.4 Function Classifications: Injective, Surjective &amp; Bijective</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Classification</th><th>Alternative Name</th><th>Mathematical Definition</th><th>Inverse Exists?</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Injective</strong></td><td>One-to-One</td><td>$f(a) = f(b) \implies a = b$ (Distinct inputs produce distinct outputs).</td><td>No (Only if also surjective)</td></tr>
-          <tr><td><strong>Surjective</strong></td><td>Onto</td><td>$\forall y \in B, \, \exists x \in A \text{ such that } f(x) = y$ (Range = Codomain).</td><td>No (Only if also injective)</td></tr>
-          <tr><td><strong>Bijective</strong></td><td>One-to-One Correspondence</td><td>Both Injective and Surjective simultaneously.</td><td><strong>Yes (Unique inverse $f^{-1}$ exists!)</strong></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+    <pre><code># Python: Warshall's Algorithm for Transitive Closure
+def warshall(matrix):
+    n = len(matrix)
+    W = [row[:] for row in matrix]
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
+                W[i][j] = W[i][j] or (W[i][k] and W[k][j])
+    return W
 
-  <section class="unit-short-notes" id="u2-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit II Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Relation matrix criteria, POSET rules, and function taxonomy.</p>
+# Example: A = {1,2,3,4}, R = {(1,2), (2,4), (1,3), (3,2)}
+M = [
+    [0, 1, 1, 0],
+    [0, 0, 0, 1],
+    [0, 1, 0, 0],
+    [0, 0, 0, 0],
+]
+for row in warshall(M):
+    print(row)</code></pre>
+
+    <h3 id="u2-functions">2.4 Functions, Composition, Inverse, Recursion &amp; Growth</h3>
+
+    <div class="concept-box">
+      <strong>Exam Definition (Injective, Surjective, Bijective):</strong> Let $f: A \to B$.<br>
+      &bull; <strong>Injective (One-to-One):</strong> $f(a_1) = f(a_2) \implies a_1 = a_2$.<br>
+      &bull; <strong>Surjective (Onto):</strong> $\forall b \in B,\, \exists a \in A$ such that $f(a) = b$.<br>
+      &bull; <strong>Bijective:</strong> Both injective and surjective (invertible: $f^{-1}$ exists).<br>
+      <strong>In Simple Words:</strong> Injective = no two inputs share an output. Surjective = every target element is hit. Bijective = perfect 1-to-1 pairing with nothing left over.
     </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Relation Property Matrix Rules</h4>
-          <ul>
-            <li>Reflexive: Diagonal all 1s ($m_{ii} = 1$)</li>
-            <li>Irreflexive: Diagonal all 0s ($m_{ii} = 0$)</li>
-            <li>Symmetric: $m_{ij} = m_{ji}$</li>
-            <li>Antisymmetric: If $m_{ij} = 1$ ($i \ne j$), then $m_{ji} = 0$</li>
-            <li>Equivalence: Reflexive + Symmetric + Transitive</li>
-            <li>POSET: Reflexive + Antisymmetric + Transitive</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Hasse Diagram Terminology</h4>
-          <ul>
-            <li>Maximal: No element strictly succeeds it (top of branch)</li>
-            <li>Minimal: No element strictly precedes it (bottom of branch)</li>
-            <li>Greatest (Maximum): Unique element succeeding ALL other elements</li>
-            <li>Least (Minimum): Unique element preceding ALL other elements</li>
-          </ul>
-        </div>
+
+    <figure class="figure-box">
+      <img src="assets/discrete/bijection_function.png" alt="Diagram of a bijective function showing one-to-one and onto correspondence">
+      <figcaption>Figure 2.2: Bijective correspondence where each element of domain $X$ maps uniquely to an element of codomain $Y$ (Wikimedia Commons).</figcaption>
+    </figure>
+
+    <ul>
+      <li><strong>Composition:</strong> $(f \circ g)(x) = f(g(x))$. Note that generally $f \circ g \neq g \circ f$.</li>
+      <li><strong>Counting Functions:</strong> If $|A| = m$ and $|B| = n$, total functions $= n^m$; injective functions (for $m \le n$) $= \frac{n!}{(n-m)!}$; bijective functions (when $m = n$) $= n!$.</li>
+      <li><strong>Growth of Functions:</strong> $f(n) = O(g(n))$ (upper bound), $f(n) = \Omega(g(n))$ (lower bound), $f(n) = \Theta(g(n))$ (tight bound).</li>
+    </ul>
+
+    <div class="exam-tip">
+      <strong>Case Study (Unit II) &mdash; Dirichlet:</strong> Johann Peter Gustav Lejeune Dirichlet formalized the modern concept of a function $y = f(x)$ and introduced the <em>Schubfachprinzip</em> (Box/Pigeonhole Principle) in 1834 to prove results in number theory.
+    </div>
+
+    <h3 id="u2-qa">2.5 Important SPPU Exam Questions &amp; Model Answers (Unit II)</h3>
+
+    <div class="qa-card">
+      <div class="qa-q">Q1. Let $A = \{1, 2, 3, 4\}$ and $R = \{(1, 2), (2, 4), (1, 3), (3, 2)\}$. Find the transitive closure using Warshall's algorithm. <span class="marks-badge">6 Marks (Oct 2025)</span></div>
+      <div class="sol-box">
+        Initial matrix $W_0$: Row 1: $[0,1,1,0]$, Row 2: $[0,0,0,1]$, Row 3: $[0,1,0,0]$, Row 4: $[0,0,0,0]$.<br>
+        &bull; $k=1$: Column 1 is all $0$s $\implies W_1 = W_0$.<br>
+        &bull; $k=2$: Rows with $1$ in col 2 are $\{1, 3\}$; cols with $1$ in row 2 are $\{4\}$. Add $(1,4)$ and $(3,4)$.<br>
+        &bull; $k=3$: Row $1$ has $1$ in col 3; row 3 has $1$ in cols $\{2, 4\}$ (already in row 1) $\implies W_3 = W_2$.<br>
+        &bull; $k=4$: Row 4 is all $0$s $\implies W_4 = W_3$.<br>
+        <strong>Result:</strong> $R^+ = \{(1,2), (1,3), (1,4), (2,4), (3,2), (3,4)\}$.
       </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Lattice Properties</h4>
-          <ul>
-            <li>LUB ($a \lor b$): Smallest element above both $a$ and $b$ (Supremum)</li>
-            <li>GLB ($a \land b$): Largest element below both $a$ and $b$ (Infimum)</li>
-            <li>Bounded Lattice: Has universal bounds $0$ (least) and $1$ (greatest)</li>
-            <li>Complemented Lattice: Every element $a$ has $a'$ such that $a \lor a'=1$ and $a \land a'=0$</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Function Counting Formulas ($|A|=m, |B|=n$)</h4>
-          <ul>
-            <li>Total Functions: $n^m$</li>
-            <li>Injective Functions: $P(n, m) = \frac{n!}{(n-m)!}$ (Requires $n \ge m$)</li>
-            <li>Bijective Functions: $n!$ (Requires $m = n$)</li>
-            <li>Surjective Functions: $\sum_{k=0}^n (-1)^k \binom{n}{k} (n-k)^m$</li>
-          </ul>
-        </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">Q2. Show that $f: \mathbb{R} \to \mathbb{R}$ defined by $f(x) = 2x + 3$ is bijective and find $f^{-1}(x)$. <span class="marks-badge">4 Marks (Oct 2025)</span></div>
+      <div class="sol-box">
+        <strong>1. Injective:</strong> Suppose $f(x_1) = f(x_2) \implies 2x_1 + 3 = 2x_2 + 3 \implies x_1 = x_2$. Hence injective.<br>
+        <strong>2. Surjective:</strong> For any $y \in \mathbb{R}$, set $x = \frac{y-3}{2} \in \mathbb{R}$. Then $f(x) = 2\left(\frac{y-3}{2}\right) + 3 = y$. Hence surjective.<br>
+        Since $f$ is both injective and surjective, it is <strong>bijective</strong>, and $f^{-1}(x) = \frac{x-3}{2}$.
       </div>
     </div>
   </section>
-</section>
 
-<section id="unit-3" class="unit-section">
-  <div class="unit-badge">Unit III &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit III: Introduction to Trees &amp; Prefix Codes</h2>
-  
-  <div class="topic-block" id="u3-trees">
-    <h3>3.1 Tree Properties, Cut Sets &amp; Transport Networks</h3>
-    <p>A <strong>Tree</strong> is a connected undirected graph with no simple circuits.</p>
-    <div class="formula-box">
-      <strong>Core Tree Invariants (Any tree $T$ with $V$ vertices):</strong><br>
-      1. Contains exactly $E = V - 1$ edges.<br>
-      2. There exists a unique simple path between every pair of vertices.<br>
-      3. Adding any edge creates exactly one simple cycle.<br>
-      4. Removing any edge disconnects the graph into two disconnected components.
+  <!-- ======================== UNIT III ======================== -->
+  <section id="unit-3">
+    <h2>Unit III: Introduction to Trees (09 Hours)</h2>
+
+    <h3 id="u3-trees">3.1 Tree Terminology, Properties &amp; Traversals</h3>
+
+    <div class="concept-box">
+      <strong>Exam Definition (Tree &amp; Forest):</strong> A <strong>Tree</strong> is a connected, undirected, acyclic graph. A <strong>Forest</strong> is a disjoint union of trees (an acyclic graph). A rooted tree with $n$ vertices always has exactly $n - 1$ edges.<br>
+      <strong>In Simple Words:</strong> A tree is a hierarchy with a single root and no closed loops. Remove any single edge and the tree breaks into two pieces.
     </div>
 
-    <h4>Cut Sets</h4>
-    <p>A <strong>Cut Set</strong> in a connected graph $G$ is a minimal set of edges whose removal disconnects $G$. A <em>Fundamental Cut Set</em> with respect to a spanning tree $T$ contains exactly one tree edge (branch) and some non-tree edges (chords).</p>
-  </div>
-
-  <div class="topic-block" id="u3-huffman">
-    <h3>3.2 Huffman Coding Compression &amp; Prefix-Free Trees</h3>
-    <p>Huffman coding assigns optimal variable-length binary prefix codes based on character frequencies:</p>
     <ul>
-      <li>Frequent characters reside near the root &rarr; short bit codes.</li>
-      <li>Infrequent characters reside deep in the tree &rarr; longer bit codes.</li>
-      <li>Prefix-Free Property: No code is a prefix of another, enabling immediate single-pass parsing without delimiter tokens.</li>
+      <li><strong>Level of a Node:</strong> Distance (number of edges) from the root (root is at level $0$).</li>
+      <li><strong>Height of a Tree:</strong> Maximum level of any leaf node in the tree.</li>
+      <li><strong>Full (Regular) $m$-ary Tree:</strong> Every internal vertex has either $0$ or exactly $m$ children. With $i$ internal vertices, total vertices $n = mi + 1$ and leaves $l = (m - 1)i + 1$.</li>
+      <li><strong>Decision Tree:</strong> A rooted tree where each internal node represents a test/decision and each leaf represents an outcome (used to prove $\Omega(n \log n)$ lower bound for comparison sorting).</li>
+      <li><strong>Applications in File Systems:</strong> Operating systems organize directories and files as a rooted tree (root <code>/</code>, internal nodes = folders, leaves = files).</li>
+      <li><strong>Tree Traversals:</strong> <em>Preorder</em> (Root-Left-Right), <em>Inorder</em> (Left-Root-Right &mdash; gives sorted order in a Binary Search Tree), <em>Postorder</em> (Left-Right-Root &mdash; used to evaluate Algebraic Expression Trees).</li>
     </ul>
-    <div class="figure-box">
-      <svg viewBox="0 0 760 280" class="svg-diagram" xmlns="http://www.w3.org/2000/svg" aria-label="Huffman Prefix Coding Tree">
-        <defs>
-          <marker id="dm-huff-arr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-            <path d="M 0 1 L 8 5 L 0 9 z" fill="#475569"/>
-          </marker>
-        </defs>
-        <rect width="760" height="280" fill="#FFFFFF" rx="8"/>
-        <text x="24" y="26" font-family="Plus Jakarta Sans,sans-serif" font-size="13" font-weight="800" fill="#1E293B">Optimal Huffman Prefix Tree (Char Frequencies: F:45, E:16, D:13, C:12, B:9, A:5)</text>
 
-        <!-- Edges -->
-        <line x1="330" y1="62" x2="170" y2="112" stroke="#475569" stroke-width="2"/>
-        <line x1="330" y1="62" x2="490" y2="112" stroke="#475569" stroke-width="2"/>
-        <text x="235" y="78" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#2563EB">0</text>
-        <text x="420" y="78" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#059669">1</text>
+    <h3 id="u3-huffman">3.2 Prefix Codes &amp; Huffman Coding</h3>
 
-        <!-- Right subtree edges from (55) -->
-        <line x1="490" y1="112" x2="390" y2="168" stroke="#475569" stroke-width="2"/>
-        <line x1="490" y1="112" x2="590" y2="168" stroke="#475569" stroke-width="2"/>
-        <text x="428" y="134" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#2563EB">0</text>
-        <text x="550" y="134" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#059669">1</text>
+    <div class="concept-box">
+      <strong>Exam Definition (Prefix Code &amp; Huffman Coding):</strong> A <strong>Prefix Code</strong> is a variable-length binary code in which no codeword is a prefix of another codeword, ensuring unambiguous decoding. <strong>Huffman Coding</strong> is a greedy algorithm that constructs an optimal prefix-free binary tree minimizing total weighted path length $\sum w_i l_i$.<br>
+      <strong>In Simple Words:</strong> Give short binary codes to frequent characters and longer codes to rare ones, like Morse code without needing pauses between letters.
+    </div>
 
-        <!-- Under 25 (left branch of 55) -->
-        <line x1="390" y1="168" x2="335" y2="225" stroke="#475569" stroke-width="2"/>
-        <line x1="390" y1="168" x2="445" y2="225" stroke="#475569" stroke-width="2"/>
-        <text x="352" y="196" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#2563EB">0</text>
-        <text x="424" y="196" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#059669">1</text>
+    <figure class="figure-box">
+      <img src="assets/discrete/huffman_tree.png" alt="Huffman coding tree visualization showing prefix-free binary codes">
+      <figcaption>Figure 3.1: Huffman coding optimal binary tree assigning shorter prefix-free codes to higher-frequency symbols (Wikimedia Commons).</figcaption>
+    </figure>
 
-        <!-- Under 30 (right branch of 55) -->
-        <line x1="590" y1="168" x2="530" y2="225" stroke="#475569" stroke-width="2"/>
-        <line x1="590" y1="168" x2="660" y2="225" stroke="#475569" stroke-width="2"/>
-        <text x="548" y="196" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#2563EB">0</text>
-        <text x="632" y="196" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#059669">1</text>
+    <pre><code># Python: Huffman Coding Tree &amp; Prefix Codes
+import heapq
 
-        <!-- Under 14 (left of 30) -> A:5, B:9 -->
-        <line x1="530" y1="225" x2="495" y2="258" stroke="#475569" stroke-width="1.8"/>
-        <line x1="530" y1="225" x2="565" y2="258" stroke="#475569" stroke-width="1.8"/>
-        <text x="502" y="242" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#2563EB">0</text>
-        <text x="554" y="242" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#059669">1</text>
+def huffman_codes(freqs):
+    # Each heap item: [weight, [symbol, code]]
+    heap = [[w, [sym, ""]] for sym, w in freqs.items()]
+    heapq.heapify(heap)
+    while len(heap) &gt; 1:
+        lo = heapq.heappop(heap)
+        hi = heapq.heappop(heap)
+        for pair in lo[1:]:
+            pair[1] = "0" + pair[1]
+        for pair in hi[1:]:
+            pair[1] = "1" + pair[1]
+        heapq.heappush(heap, [lo[0] + hi[0]] + lo[1:] + hi[1:])
+    return sorted(heap[0][1:], key=lambda x: len(x[1]))
 
-        <!-- Internal Nodes -->
-        <circle cx="330" cy="62" r="20" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
-        <text x="330" y="66" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#1E293B">100</text>
+sample = {"A": 8, "B": 9, "C": 10, "D": 11, "E": 13, "F": 15, "G": 22}
+for sym, code in huffman_codes(sample):
+    print(f"{sym}: {code}")</code></pre>
 
-        <circle cx="490" cy="112" r="18" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
-        <text x="490" y="116" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#1E293B">55</text>
+    <h3 id="u3-maxflow">3.3 Cut Sets &amp; Max-Flow Min-Cut Theorem</h3>
 
-        <circle cx="390" cy="168" r="17" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
-        <text x="390" y="172" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#1E293B">25</text>
+    <div class="concept-box">
+      <strong>Exam Definition (Cut Set &amp; Fundamental Cut Set):</strong> A <strong>Cut Set</strong> of a connected graph $G$ is a minimal set of edges whose removal disconnects $G$ into two components. Relative to a spanning tree $T$, a <strong>Fundamental Cut Set</strong> contains exactly one tree branch of $T$ and zero or more chords.<br>
+      <strong>In Simple Words:</strong> A cut set is the smallest group of bridges you must blow up to split a road network into two disconnected islands.
+    </div>
 
-        <circle cx="590" cy="168" r="17" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
-        <text x="590" y="172" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#1E293B">30</text>
+    <div class="formula-box">
+      <strong>Max-Flow Min-Cut Theorem (Ford-Fulkerson):</strong><br>
+      In any transport network with source $s$ and sink $t$, the <strong>maximum value of an $s$-$t$ flow</strong> equals the <strong>minimum capacity of an $s$-$t$ cut</strong>:<br>
+      $$\max |f| = \min_{(S, T)} c(S, T)$$
+    </div>
 
-        <circle cx="530" cy="225" r="15" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
-        <text x="530" y="229" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#1E293B">14</text>
+    <figure class="svg-box">
+      <svg style="max-width:100%;height:auto;" width="540" height="190" viewBox="0 0 540 190" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="540" height="190" rx="8" fill="#FAF7F4" stroke="#C9BEB4"/>
+        <text x="270" y="24" fill="#4B5FD1" font-size="14" font-weight="bold" text-anchor="middle">Transport Network &amp; Min-Cut (Capacity = 19)</text>
+        <line x1="70" y1="95" x2="200" y2="48" stroke="#4B5FD1" stroke-width="2.5"/>
+        <line x1="70" y1="95" x2="200" y2="142" stroke="#4B5FD1" stroke-width="2.5"/>
+        <line x1="200" y1="48" x2="200" y2="142" stroke="#6A625B" stroke-width="2"/>
+        <line x1="200" y1="48" x2="340" y2="48" stroke="#B8432B" stroke-width="2.5"/>
+        <line x1="200" y1="142" x2="340" y2="142" stroke="#B8432B" stroke-width="2.5"/>
+        <line x1="340" y1="48" x2="470" y2="95" stroke="#226D51" stroke-width="2.5"/>
+        <line x1="340" y1="142" x2="470" y2="95" stroke="#226D51" stroke-width="2.5"/>
+        <line x1="270" y1="28" x2="270" y2="172" stroke="#9C7710" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="270" y="182" fill="#9C7710" font-size="11" text-anchor="middle">Min-Cut (S, T): 12 + 7 = 19</text>
 
-        <!-- Leaf Boxes -->
-        <rect x="135" y="96" width="70" height="34" rx="6" fill="#DCFCE7" stroke="#059669" stroke-width="2"/>
-        <text x="170" y="112" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#065F46">F : 45</text>
-        <text x="170" y="125" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="#065F46">Code: 0</text>
+        <circle cx="70" cy="95" r="18" fill="#EAEFFE" stroke="#4B5FD1" stroke-width="2"/><text x="70" y="100" fill="#171717" font-size="13" font-weight="bold" text-anchor="middle">s</text>
+        <circle cx="200" cy="48" r="18" fill="#FFFFFF" stroke="#4B5FD1" stroke-width="2"/><text x="200" y="53" fill="#171717" font-size="13" text-anchor="middle">A</text>
+        <circle cx="200" cy="142" r="18" fill="#FFFFFF" stroke="#4B5FD1" stroke-width="2"/><text x="200" y="147" fill="#171717" font-size="13" text-anchor="middle">B</text>
+        <circle cx="340" cy="48" r="18" fill="#FFFFFF" stroke="#226D51" stroke-width="2"/><text x="340" y="53" fill="#171717" font-size="13" text-anchor="middle">C</text>
+        <circle cx="340" cy="142" r="18" fill="#FFFFFF" stroke="#226D51" stroke-width="2"/><text x="340" y="147" fill="#171717" font-size="13" text-anchor="middle">D</text>
+        <circle cx="470" cy="95" r="18" fill="#E4F2EC" stroke="#226D51" stroke-width="2"/><text x="470" y="100" fill="#171717" font-size="13" font-weight="bold" text-anchor="middle">t</text>
 
-        <rect x="302" y="210" width="66" height="32" rx="6" fill="#DCFCE7" stroke="#059669" stroke-width="2"/>
-        <text x="335" y="224" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10.5" font-weight="700" fill="#065F46">C : 12</text>
-        <text x="335" y="236" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#065F46">100</text>
-
-        <rect x="412" y="210" width="66" height="32" rx="6" fill="#DCFCE7" stroke="#059669" stroke-width="2"/>
-        <text x="445" y="224" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10.5" font-weight="700" fill="#065F46">D : 13</text>
-        <text x="445" y="236" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#065F46">101</text>
-
-        <rect x="628" y="210" width="66" height="32" rx="6" fill="#DCFCE7" stroke="#059669" stroke-width="2"/>
-        <text x="661" y="224" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10.5" font-weight="700" fill="#065F46">E : 16</text>
-        <text x="661" y="236" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#065F46">111</text>
-
-        <rect x="462" y="248" width="58" height="26" rx="5" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
-        <text x="491" y="264" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" font-weight="700" fill="#92400E">A:5 (1100)</text>
-
-        <rect x="536" y="248" width="58" height="26" rx="5" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
-        <text x="565" y="264" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" font-weight="700" fill="#92400E">B:9 (1101)</text>
-
-        <!-- Summary Box -->
-        <rect x="24" y="155" width="235" height="92" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
-        <text x="36" y="176" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="700" fill="#1E293B">Weighted Path Cost (Bits):</text>
-        <text x="36" y="196" font-family="JetBrains Mono,monospace" font-size="10" fill="#334155">F: 45&times;1 = 45 | C,D,E: 41&times;3 = 123</text>
-        <text x="36" y="214" font-family="JetBrains Mono,monospace" font-size="10" fill="#334155">A,B: (5+9)&times;4 = 56</text>
-        <text x="36" y="234" font-family="JetBrains Mono,monospace" font-size="10.5" font-weight="700" fill="#2563EB">Total = 224 bits (2.24 bits/char)</text>
+        <text x="128" y="64" fill="#171717" font-size="11">16</text>
+        <text x="128" y="134" fill="#171717" font-size="11">13</text>
+        <text x="212" y="100" fill="#6A625B" font-size="11">4</text>
+        <text x="250" y="42" fill="#B8432B" font-size="11" font-weight="bold">12</text>
+        <text x="250" y="160" fill="#B8432B" font-size="11" font-weight="bold">7</text>
+        <text x="410" y="64" fill="#171717" font-size="11">20</text>
+        <text x="410" y="134" fill="#171717" font-size="11">10</text>
       </svg>
-      <div class="figure-caption">Figure 3.1: Huffman Coding Tree &mdash; merging the two lowest frequency subtrees produces an optimal prefix-free encoding (2.24 vs 3.00 fixed bits/char).</div>
+      <figcaption>Figure 3.2: Max-Flow Min-Cut Theorem &mdash; bottleneck cut edges A&rarr;C (12) and B&rarr;D (7) cap total flow at 19.</figcaption>
+    </figure>
+
+    <h3 id="u3-mst">3.4 Minimum Spanning Tree: Prim's &amp; Kruskal's Algorithms</h3>
+    <table>
+      <thead>
+        <tr><th>Feature</th><th>Prim's Algorithm</th><th>Kruskal's Algorithm</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Strategy</strong></td><td>Grows a single tree vertex-by-vertex from a start node</td><td>Sorts all edges by weight and adds cheapest non-cyclic edge</td></tr>
+        <tr><td><strong>Intermediate State</strong></td><td>Always connected (a single growing tree)</td><td>May be a disconnected forest until the final step</td></tr>
+        <tr><td><strong>Data Structure</strong></td><td>Min-Heap / Priority Queue</td><td>Disjoint Set Union (Union-Find)</td></tr>
+        <tr><td><strong>Time Complexity</strong></td><td>$O(E \log V)$ with binary heap</td><td>$O(E \log E)$ for sorting edges</td></tr>
+        <tr><td><strong>Best For</strong></td><td>Dense graphs ($E \approx V^2$)</td><td>Sparse graphs ($E \approx V$)</td></tr>
+      </tbody>
+    </table>
+
+    <pre><code># Python: Kruskal's Minimum Spanning Tree (Union-Find)
+def kruskal_mst(vertices, edges):
+    parent = {v: v for v in vertices}
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+    mst, total = [], 0
+    for w, u, v in sorted(edges):
+        ru, rv = find(u), find(v)
+        if ru != rv:
+            parent[ru] = rv
+            mst.append((u, v, w))
+            total += w
+    return mst, total
+
+verts = ["A", "B", "C", "D"]
+edg = [(1, "A", "B"), (4, "A", "C"), (2, "B", "C"), (5, "B", "D"), (3, "C", "D")]
+print(kruskal_mst(verts, edg))</code></pre>
+
+    <div class="exam-tip">
+      <strong>Case Studies (Unit III):</strong><br>
+      &bull; <strong>Algebraic Expression Tree:</strong> Leaves hold operands (e.g., $a, b, c$); internal nodes hold operators ($+, -, *, /$). Postorder traversal gives Reverse Polish (Postfix) notation.<br>
+      &bull; <strong>Tic-Tac-Toe Game Tree:</strong> Root is empty $3 \times 3$ board; edges represent valid moves; leaves represent Win/Loss/Draw evaluated by Minimax.
     </div>
 
-  </div>
+    <h3 id="u3-qa">3.5 Important SPPU Exam Questions &amp; Model Answers (Unit III)</h3>
 
-  <div class="topic-block" id="u3-maxflow">
-    <h3>3.3 Max-Flow Min-Cut Theorem in Transport Networks</h3>
-    <p>In a transport network with source $s$, sink $t$, and edge capacities $c(u, v)$:</p>
-    <div class="formula-box">
-      $$\text{Maximum Flow Value} = \text{Minimum Capacity of an } s-t \text{ Cut}$$
-    </div>
-    <p>The total capacity of the bottleneck cut bounds the maximum sustainable flow through the entire network.</p>
-  </div>
-
-
-  <div class="topic-block" id="u3-mst">
-    <h3>3.4 Minimum Spanning Trees: Prim's vs Kruskal's Algorithm</h3>
-    <p>Given a connected, undirected, weighted graph $G = (V, E)$, a <strong>Minimum Spanning Tree (MST)</strong> is an acyclic subgraph spanning all $V$ vertices with exactly $V - 1$ edges and minimum total edge weight.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Feature</th><th>Kruskal's Algorithm (Edge-Greedy)</th><th>Prim's Algorithm (Vertex-Greedy)</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Core Strategy</strong></td><td>Sort all edges by ascending weight; pick cheapest edge $(u, v)$ if it does not form a cycle (checked via Disjoint-Set Union-Find).</td><td>Grow a single tree from root $r$; repeatedly extract minimum-weight edge crossing cut $(S, V \setminus S)$ using a Min-Heap.</td></tr>
-          <tr><td><strong>Intermediate State</strong></td><td>Maintains a forest of disconnected components until final step.</td><td>Always maintains a single connected tree throughout execution.</td></tr>
-          <tr><td><strong>Time Complexity</strong></td><td>$O(E \log E)$ &mdash; best for <strong>sparse graphs</strong> ($E \approx V$).</td><td>$O(E \log V)$ with Binary Heap &mdash; best for <strong>dense graphs</strong> ($E \approx V^2$).</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p><strong>Worked Kruskal Trace:</strong> Edges sorted $(u,v,w)$: $(B,D,2), (A,B,3), (C,D,4), (A,C,5), (B,C,6)$. Pick $(B,D,2)$ &rarr; pick $(A,B,3)$ &rarr; pick $(C,D,4)$ &rarr; reject $(A,C,5)$ (cycle $A-B-D-C-A$). Selected $V-1 = 3$ edges; total MST weight $= 2 + 3 + 4 = \mathbf{9}$.</p>
-  </div>
-
-  <section class="unit-short-notes" id="u3-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit III Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Tree invariants, cut set properties, and flow-cut theorem.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Tree Fundamentals</h4>
-          <ul>
-            <li>$V$ vertices $\implies V-1$ edges (Always!)</li>
-            <li>A tree is a minimally connected, maximally acyclic graph</li>
-            <li>Every tree with $V \ge 2$ has at least two pendant vertices (leaves of degree 1)</li>
-            <li>Height $h$ binary tree has at most $2^{h+1}-1$ nodes</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Cut Set Mechanics</h4>
-          <ul>
-            <li>A cut set disconnects a graph; any proper subset leaves it connected</li>
-            <li>Fundamental Cut Set: Exactly 1 branch of spanning tree $T$</li>
-            <li>Fundamental Cycle: Adding 1 chord to $T$ creates unique cycle</li>
-            <li>Rank of graph: $\rho = V - 1$; Nullity (cyclomatic number): $\mu = E - V + 1$</li>
-          </ul>
-        </div>
+    <div class="qa-card">
+      <div class="qa-q">Q1. Construct an optimal binary (Huffman) tree for the weights $\{8, 9, 10, 11, 13, 15, 22\}$. Find the total weight of the optimal tree and prefix codes. <span class="marks-badge">7 Marks (Oct 2025)</span></div>
+      <div class="sol-box">
+        <strong>Step-by-step merging of two smallest weights:</strong><br>
+        1. Merge $8 + 9 = 17$. Remaining: $\{10, 11, 13, 15, 17, 22\}$.<br>
+        2. Merge $10 + 11 = 21$. Remaining: $\{13, 15, 17, 21, 22\}$.<br>
+        3. Merge $13 + 15 = 28$. Remaining: $\{17, 21, 22, 28\}$.<br>
+        4. Merge $17 + 21 = 38$. Remaining: $\{22, 28, 38\}$.<br>
+        5. Merge $22 + 28 = 50$. Remaining: $\{38, 50\}$.<br>
+        6. Merge $38 + 50 = 88$ (Root).<br>
+        <strong>Weighted Path Length (Cost):</strong> $17 + 21 + 28 + 38 + 50 + 88 = \mathbf{242}$.<br>
+        <strong>Prefix Codes:</strong> $22 \to 10$, $13 \to 110$, $15 \to 111$, $8 \to 000$, $9 \to 001$, $10 \to 010$, $11 \to 011$.
       </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Huffman Coding Recipe</h4>
-          <ul>
-            <li>Step 1: Sort characters by frequency ascending in min-heap</li>
-            <li>Step 2: Repeatedly merge two lowest frequency nodes into new subtree</li>
-            <li>Step 3: Assign 0 to left branch and 1 to right branch</li>
-            <li>Weighted Path Length: $\sum (\text{freq}_i \times \text{code\_len}_i)$</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Transport Networks</h4>
-          <ul>
-            <li>Capacity constraint: $0 \le f(u, v) \le c(u, v)$</li>
-            <li>Flow conservation: Total in-flow = Total out-flow for all nodes except $s$ and $t$</li>
-            <li>Max-Flow Min-Cut: Max throughput is bounded by the smallest capacity cut dividing $s$ from $t$</li>
-          </ul>
-        </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">Q2. Define: (i) Forest, (ii) Fundamental Cut Set, (iii) Regular $m$-ary Tree. <span class="marks-badge">6 Marks (2019/2024 Pattern)</span></div>
+      <div class="sol-box">
+        <strong>(i) Forest:</strong> A graph containing no cycles (a disjoint collection of trees).<br>
+        <strong>(ii) Fundamental Cut Set:</strong> A minimal edge cut of a connected graph $G$ containing exactly one branch of a chosen spanning tree $T$ and zero or more chords.<br>
+        <strong>(iii) Regular (Full) $m$-ary Tree:</strong> A rooted tree in which every internal vertex has exactly $m$ children (leaves have $0$ children).
       </div>
     </div>
   </section>
-</section>
 
-<section id="unit-4" class="unit-section">
-  <div class="unit-badge">Unit IV &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit IV: Graph Theory</h2>
-  
-  <div class="topic-block" id="u4-graphs">
-    <h3>4.1 Handshaking Lemma &amp; Proof</h3>
-    <div class="formula-box">
-      <strong>Handshaking Lemma:</strong> In any undirected graph $G = (V, E)$, the sum of the degrees of all vertices equals twice the number of edges:
-      $$\sum_{v \in V} \deg(v) = 2|E|$$
-      <strong>Corollary:</strong> In any undirected graph, the number of vertices with odd degree is always <strong>EVEN</strong>!
+  <!-- ======================== UNIT IV ======================== -->
+  <section id="unit-4">
+    <h2>Unit IV: Introduction to Graph Theory (09 Hours)</h2>
+
+    <h3 id="u4-graphs">4.1 Graph Terminology, Representations &amp; Isomorphism</h3>
+
+    <div class="concept-box">
+      <strong>Exam Definition (Graph &amp; Handshaking Lemma):</strong> A graph $G = (V, E)$ consists of a non-empty set of vertices $V$ and a set of edges $E$. The <strong>Handshaking Lemma</strong> states that the sum of degrees of all vertices equals twice the number of edges: $\sum_{v \in V} \deg(v) = 2|E|$.<br>
+      <strong>In Simple Words:</strong> Every edge has two endpoints, so adding up how many edges touch every vertex always counts each edge twice. Corollary: every graph has an <em>even</em> number of odd-degree vertices!
     </div>
 
-    <h4>Proof of Corollary</h4>
-    <p>Partition $V$ into $V_{even}$ (even degree vertices) and $V_{odd}$ (odd degree vertices):</p>
-    <div class="formula-box">
-      $$\sum_{v \in V_{even}} \deg(v) + \sum_{v \in V_{odd}} \deg(v) = 2|E|$$<br>
-      $$\sum_{v \in V_{odd}} \deg(v) = 2|E| - \sum_{v \in V_{even}} \deg(v)$$
-    </div>
-    <p>Since $2|E|$ is even and the sum of even numbers is even, their difference is EVEN. The sum of odd numbers can be even if and only if there are an <strong>even number of odd-degree vertices</strong>. (Q.E.D.)</p>
-  </div>
+    <ul>
+      <li><strong>Special Graphs:</strong> Complete graph $K_n$ ($\frac{n(n-1)}{2}$ edges); Bipartite graph (vertices split into $V_1, V_2$ with edges only between $V_1$ and $V_2$); Complete Bipartite $K_{m,n}$ ($m \cdot n$ edges); Weighted graph (edges carry numerical costs).</li>
+      <li><strong>Adjacency Matrix $A$ ($|V| \times |V|$):</strong> $A_{ij} = 1$ if $(v_i, v_j) \in E$, else $0$. Symmetric for undirected graphs.</li>
+      <li><strong>Incidence Matrix $M$ ($|V| \times |E|$):</strong> $M_{ij} = 1$ if vertex $v_i$ is incident to edge $e_j$, else $0$.</li>
+      <li><strong>Graph Isomorphism:</strong> $G_1 \cong G_2$ if there is a bijection $f: V_1 \to V_2$ preserving adjacency. Quick invariants to check: same $|V|$, same $|E|$, same sorted degree sequence, same cycle lengths.</li>
+    </ul>
 
-  <div class="topic-block" id="u4-euler">
-    <h3>4.2 Eulerian vs Hamiltonian Graphs</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Parameter</th><th>Eulerian Graph</th><th>Hamiltonian Graph</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Definition</strong></td><td>Visits every <strong>EDGE</strong> in the graph exactly once.</td><td>Visits every <strong>VERTEX</strong> in the graph exactly once.</td></tr>
-          <tr><td><strong>Necessary &amp; Sufficient Condition</strong></td><td>Connected graph where <strong>every vertex has an EVEN degree</strong> (Euler's Theorem).</td><td>No known simple necessary &amp; sufficient condition (NP-Complete problem).</td></tr>
-          <tr><td><strong>Sufficient Theorems</strong></td><td>Euler Path exists if and only if exactly 2 vertices have odd degree.</td><td><strong>Dirac's Theorem:</strong> If $V \ge 3$ and $\deg(v) \ge n/2$ for all $v$, then $G$ is Hamiltonian.<br><strong>Ore's Theorem:</strong> If $\deg(u) + \deg(v) \ge n$ for all non-adjacent pairs.</td></tr>
-          <tr><td><strong>Algorithm Complexity</strong></td><td>Polynomial time $O(E)$ (Fleury's / Hierholzer's algorithm).</td><td>NP-Hard (Traveling Salesman Problem).</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+    <figure class="figure-box">
+      <img src="assets/discrete/bipartite_graph.png" alt="Complete bipartite graph K3,3 representing the Three Utility Problem">
+      <figcaption>Figure 4.1: Complete Bipartite Graph $K_{3,3}$ (Three Utility Problem) &mdash; non-planar with 6 vertices and 9 edges (Wikimedia Commons).</figcaption>
+    </figure>
 
-  <div class="topic-block" id="u4-planarity">
-    <h3>4.3 Planar Graphs, Euler's Formula &amp; Kuratowski's Theorem</h3>
-    <p>A graph is <strong>Planar</strong> if it can be drawn in a plane without any intersecting edges.</p>
-    
+    <h3 id="u4-euler-ham">4.2 Connectivity, Eulerian &amp; Hamiltonian Graphs</h3>
+
+    <table>
+      <thead>
+        <tr><th>Type</th><th>Definition</th><th>Necessary &amp; Sufficient Condition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Euler Circuit</strong></td><td>Closed trail visiting every <strong>edge</strong> exactly once</td><td>Connected graph where <strong>every vertex has even degree</strong></td></tr>
+        <tr><td><strong>Euler Path</strong></td><td>Open trail visiting every <strong>edge</strong> exactly once</td><td>Connected graph with <strong>exactly 2 vertices of odd degree</strong></td></tr>
+        <tr><td><strong>Hamilton Circuit</strong></td><td>Closed cycle visiting every <strong>vertex</strong> exactly once</td><td>No simple degree condition; Dirac's sufficient condition: $\deg(v) \ge n/2$ for $n \ge 3$</td></tr>
+        <tr><td><strong>Hamilton Path</strong></td><td>Open path visiting every <strong>vertex</strong> exactly once</td><td>Must be connected; check degree-1/degree-2 forced edges</td></tr>
+      </tbody>
+    </table>
+
+    <figure class="figure-box">
+      <img src="assets/discrete/eulerian_graph.png" alt="Seven Bridges of Konigsberg model illustrating Eulerian path impossibility">
+      <figcaption>Figure 4.2: Seven Bridges of K&ouml;nigsberg &mdash; all 4 landmasses have odd degree (3, 3, 3, 5), proving no Euler path or circuit exists (Wikimedia Commons).</figcaption>
+    </figure>
+
+    <h3 id="u4-dijkstra">4.3 Single-Source Shortest Path: Dijkstra's Algorithm</h3>
+    <p><strong>Dijkstra's Algorithm</strong> finds the shortest path from a source vertex $s$ to all other vertices in a graph with <strong>non-negative edge weights</strong>. It greedily picks the unvisited vertex $u$ with minimum tentative distance $d[u]$ and relaxes all outgoing edges $(u, v)$: if $d[u] + w(u, v) &lt; d[v]$, update $d[v] = d[u] + w(u, v)$.</p>
+
+    <figure class="svg-box">
+      <svg style="max-width:100%;height:auto;" width="500" height="175" viewBox="0 0 500 175" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="500" height="175" rx="8" fill="#FAF7F4" stroke="#C9BEB4"/>
+        <text x="250" y="24" fill="#4B5FD1" font-size="14" font-weight="bold" text-anchor="middle">Dijkstra's Shortest Path Example (Source = A)</text>
+        <line x1="70" y1="90" x2="185" y2="48" stroke="#226D51" stroke-width="2.5"/>
+        <line x1="70" y1="90" x2="185" y2="132" stroke="#6A625B" stroke-width="2"/>
+        <line x1="185" y1="48" x2="185" y2="132" stroke="#226D51" stroke-width="2.5"/>
+        <line x1="185" y1="48" x2="325" y2="48" stroke="#6A625B" stroke-width="2"/>
+        <line x1="185" y1="132" x2="325" y2="132" stroke="#226D51" stroke-width="2.5"/>
+        <line x1="325" y1="48" x2="430" y2="90" stroke="#6A625B" stroke-width="2"/>
+        <line x1="325" y1="132" x2="430" y2="90" stroke="#226D51" stroke-width="2.5"/>
+
+        <circle cx="70" cy="90" r="17" fill="#EAEFFE" stroke="#4B5FD1" stroke-width="2"/><text x="70" y="95" fill="#171717" font-size="12" font-weight="bold" text-anchor="middle">A(0)</text>
+        <circle cx="185" cy="48" r="17" fill="#FFFFFF" stroke="#226D51" stroke-width="2"/><text x="185" y="53" fill="#171717" font-size="12" text-anchor="middle">B(2)</text>
+        <circle cx="185" cy="132" r="17" fill="#FFFFFF" stroke="#226D51" stroke-width="2"/><text x="185" y="137" fill="#171717" font-size="12" text-anchor="middle">C(3)</text>
+        <circle cx="325" cy="48" r="17" fill="#FFFFFF" stroke="#6A625B" stroke-width="2"/><text x="325" y="53" fill="#171717" font-size="12" text-anchor="middle">D(7)</text>
+        <circle cx="325" cy="132" r="17" fill="#FFFFFF" stroke="#226D51" stroke-width="2"/><text x="325" y="137" fill="#171717" font-size="12" text-anchor="middle">E(5)</text>
+        <circle cx="430" cy="90" r="17" fill="#E4F2EC" stroke="#226D51" stroke-width="2"/><text x="430" y="95" fill="#171717" font-size="12" font-weight="bold" text-anchor="middle">Z(8)</text>
+
+        <text x="122" y="60" fill="#226D51" font-size="11">2</text>
+        <text x="122" y="126" fill="#6A625B" font-size="11">4</text>
+        <text x="195" y="94" fill="#226D51" font-size="11">1</text>
+        <text x="255" y="42" fill="#6A625B" font-size="11">5</text>
+        <text x="255" y="148" fill="#226D51" font-size="11">2</text>
+        <text x="385" y="60" fill="#6A625B" font-size="11">3</text>
+        <text x="385" y="126" fill="#226D51" font-size="11">3</text>
+      </svg>
+      <figcaption>Figure 4.3: Shortest path A &rarr; B &rarr; C &rarr; E &rarr; Z with total cost 2 + 1 + 2 + 3 = 8.</figcaption>
+    </figure>
+
+    <pre><code># Python: Dijkstra's Algorithm using Priority Queue
+import heapq
+
+def dijkstra(graph, start):
+    dist = {node: float("inf") for node in graph}
+    dist[start] = 0
+    pq = [(0, start)]
+    while pq:
+        d, u = heapq.heappop(pq)
+        if d &gt; dist[u]:
+            continue
+        for v, w in graph[u]:
+            if d + w &lt; dist[v]:
+                dist[v] = d + w
+                heapq.heappush(pq, (dist[v], v))
+    return dist
+
+g = {
+    "A": [("B", 2), ("C", 4)],
+    "B": [("C", 1), ("D", 5)],
+    "C": [("E", 2)],
+    "D": [("Z", 3)],
+    "E": [("Z", 3)],
+    "Z": []
+}
+print(dijkstra(g, "A"))</code></pre>
+
+    <h3 id="u4-planar">4.4 Planar Graphs &amp; Graph Colouring</h3>
+
     <div class="formula-box">
-      <strong>Euler's Formula for Connected Planar Graphs:</strong>
+      <strong>Euler's Formula for Connected Planar Graphs:</strong><br>
       $$V - E + R = 2$$
-      where $V$ is vertices, $E$ is edges, and $R$ is regions (including exterior unbounded region).
+      where $V$ = vertices, $E$ = edges, $R$ = regions (faces, including the outer infinite region).<br>
+      <strong>Planarity Bounds:</strong> For simple connected planar graphs ($V \ge 3$): $E \le 3V - 6$. If triangle-free: $E \le 2V - 4$.<br>
+      <strong>Kuratowski's Theorem:</strong> A graph is non-planar if and only if it contains a subgraph homeomorphic to $K_5$ or $K_{3,3}$.
     </div>
 
-    <h4>Planarity Inequalities</h4>
+    <figure class="figure-box">
+      <img src="assets/discrete/planar_graph_k4.png" alt="Planar embedding of complete graph K4 without crossing edges">
+      <figcaption>Figure 4.4: Planar embedding of $K_4$ ($V=4, E=6, R=4$, verifying $4 - 6 + 4 = 2$) (Wikimedia Commons).</figcaption>
+    </figure>
+
     <ul>
-      <li>For any simple connected planar graph with $V \ge 3$: $$E \le 3V - 6$$</li>
-      <li>If the graph has no triangles (bipartite planar, e.g., $K_{3,3}$): $$E \le 2V - 4$$</li>
+      <li><strong>Graph Colouring &amp; Chromatic Number $\chi(G)$:</strong> Minimum number of colours needed to colour all vertices so no two adjacent vertices share a colour. $\chi(K_n) = n$; $\chi(\text{Bipartite}) = 2$; <strong>Four-Colour Theorem:</strong> Every planar graph has $\chi(G) \le 4$.</li>
+      <li><strong>Case Studies (Unit IV):</strong> Social Media Directed Graph ("Follows" is asymmetric, "Friend" is symmetric); Three Utility Problem ($K_{3,3}$ is non-planar); Web Graph (pages = nodes, hyperlinks = directed edges); Google Maps (Dijkstra/A* shortest path).</li>
     </ul>
 
-    <h4>Kuratowski's Theorem</h4>
-    <p>A graph is planar if and only if it does not contain a subgraph that is homeomorphic to (or can be formed by edge subdivision of) $K_5$ (Complete graph on 5 vertices) or $K_{3,3}$ (Complete bipartite utility graph on 3 and 3 vertices).</p>
+    <h3 id="u4-qa">4.5 Important SPPU Exam Questions &amp; Model Answers (Unit IV)</h3>
 
-    <div class="figure-box">
-      <svg viewBox="0 0 760 250" class="svg-diagram" xmlns="http://www.w3.org/2000/svg" aria-label="Kuratowski Non-Planar Graphs K5 and K3,3">
-        <rect width="760" height="250" fill="#FFFFFF" rx="8"/>
-        <text x="24" y="26" font-family="Plus Jakarta Sans,sans-serif" font-size="13" font-weight="800" fill="#1E293B">Kuratowski's Two Fundamental Non-Planar Graphs: K5 (V=5, E=10) &amp; K3,3 (V=6, E=9)</text>
+    <div class="qa-card">
+      <div class="qa-q">Q1. Show that in a connected planar graph with $6$ vertices and $12$ edges, each region is bounded by $3$ edges. <span class="marks-badge">5 Marks (Apr 2022 / Oct 2025)</span></div>
+      <div class="sol-box">
+        By Euler's Formula: $V - E + R = 2 \implies 6 - 12 + R = 2 \implies R = 8$ regions.<br>
+        Each edge bounds at most $2$ regions, so the sum of degrees of all regions is $\sum \deg(R_i) = 2E = 2(12) = 24$.<br>
+        In a simple graph, every region is bounded by at least $3$ edges, so $\sum_{i=1}^{8} \deg(R_i) \ge 3R = 3(8) = 24$.<br>
+        Since the sum is exactly $24$ and each of the $8$ regions has degree $\ge 3$, <strong>every region must be bounded by exactly $3$ edges</strong>.
+      </div>
+    </div>
 
-        <!-- K5 on Left (center 190, 138) -->
-        <text x="190" y="52" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11.5" font-weight="700" fill="#DC2626">K5: 10 &gt; 3(5) - 6 = 9 (Non-Planar)</text>
-        <!-- Pentagon outer + star inner -->
-        <polygon points="190,72 260,122 233,202 147,202 120,122" fill="none" stroke="#334155" stroke-width="2"/>
-        <line x1="190" y1="72" x2="233" y2="202" stroke="#DC2626" stroke-width="1.8"/>
-        <line x1="190" y1="72" x2="147" y2="202" stroke="#DC2626" stroke-width="1.8"/>
-        <line x1="260" y1="122" x2="147" y2="202" stroke="#DC2626" stroke-width="1.8"/>
-        <line x1="260" y1="122" x2="120" y2="122" stroke="#DC2626" stroke-width="1.8"/>
-        <line x1="120" y1="122" x2="233" y2="202" stroke="#DC2626" stroke-width="1.8"/>
-        <!-- Vertices K5 -->
-        <circle cx="190" cy="72" r="11" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/><text x="190" y="76" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#1E293B">v1</text>
-        <circle cx="260" cy="122" r="11" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/><text x="260" y="126" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#1E293B">v2</text>
-        <circle cx="233" cy="202" r="11" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/><text x="233" y="206" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#1E293B">v3</text>
-        <circle cx="147" cy="202" r="11" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/><text x="147" y="206" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#1E293B">v4</text>
-        <circle cx="120" cy="122" r="11" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/><text x="120" y="126" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#1E293B">v5</text>
+    <div class="qa-card">
+      <div class="qa-q">Q2. Under what condition will the complete bipartite graph $K_{m,n}$ have an Eulerian circuit? <span class="marks-badge">5 Marks (Apr 2022)</span></div>
+      <div class="sol-box">
+        In $K_{m,n}$, the $m$ vertices in $V_1$ each have degree $n$, and the $n$ vertices in $V_2$ each have degree $m$.<br>
+        A connected graph has an Eulerian circuit iff <strong>every vertex has even degree</strong>.<br>
+        Therefore, $K_{m,n}$ has an Eulerian circuit if and only if <strong>both $m$ and $n$ are even</strong> (with $m, n \ge 2$).
+      </div>
+    </div>
+  </section>
 
-        <!-- Divider -->
-        <line x1="380" y1="45" x2="380" y2="225" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <!-- ======================== UNIT V ======================== -->
+  <section id="unit-5">
+    <h2>Unit V: Counting Principles and Algebraic Structures (09 Hours)</h2>
 
-        <!-- K3,3 on Right (Houses at y=92, Utilities at y=195) -->
-        <text x="570" y="52" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11.5" font-weight="700" fill="#DC2626">K3,3: 9 &gt; 2(6) - 4 = 8 (Non-Planar)</text>
-        <!-- All 9 bipartite edges -->
-        <g stroke="#475569" stroke-width="1.7">
-          <line x1="470" y1="95" x2="470" y2="195"/><line x1="470" y1="95" x2="570" y2="195"/><line x1="470" y1="95" x2="670" y2="195"/>
-          <line x1="570" y1="95" x2="470" y2="195"/><line x1="570" y1="95" x2="570" y2="195"/><line x1="570" y1="95" x2="670" y2="195"/>
-          <line x1="670" y1="95" x2="470" y2="195"/><line x1="670" y1="95" x2="570" y2="195"/><line x1="670" y1="95" x2="670" y2="195"/>
-        </g>
-        <!-- House vertices -->
-        <circle cx="470" cy="95" r="12" fill="#DCFCE7" stroke="#059669" stroke-width="2"/><text x="470" y="99" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#065F46">H1</text>
-        <circle cx="570" cy="95" r="12" fill="#DCFCE7" stroke="#059669" stroke-width="2"/><text x="570" y="99" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#065F46">H2</text>
-        <circle cx="670" cy="95" r="12" fill="#DCFCE7" stroke="#059669" stroke-width="2"/><text x="670" y="99" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#065F46">H3</text>
-        <!-- Utility vertices -->
-        <rect x="454" y="182" width="32" height="24" rx="5" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/><text x="470" y="198" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#92400E">W</text>
-        <rect x="554" y="182" width="32" height="24" rx="5" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/><text x="570" y="198" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#92400E">G</text>
-        <rect x="654" y="182" width="32" height="24" rx="5" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/><text x="670" y="198" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#92400E">E</text>
+    <h3 id="u5-counting">5.1 Counting Principles, Permutations, Combinations &amp; Binomial Theorem</h3>
 
-        <text x="380" y="238" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="10.5" font-weight="600" fill="#475569">Kuratowski's Theorem: A graph is non-planar iff it contains a subgraph homeomorphic to K5 or K3,3.</text>
+    <div class="formula-box">
+      <strong>Core Counting Formulas:</strong><br>
+      &bull; <strong>Addition Principle:</strong> Disjoint tasks of $m$ and $n$ ways $\implies m + n$ ways.<br>
+      &bull; <strong>Multiplication Principle:</strong> Sequential tasks of $m$ and $n$ ways $\implies m \times n$ ways.<br>
+      &bull; <strong>Permutations (Order matters):</strong> $P(n, r) = \frac{n!}{(n-r)!}$; with repetition: $n^r$; circular: $(n-1)!$.<br>
+      &bull; <strong>Combinations (Order does NOT matter):</strong> $C(n, r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$; with repetition: $\binom{n+r-1}{r}$.<br>
+      &bull; <strong>Binomial Theorem:</strong> $(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k$. The $(k+1)$-th term is $T_{k+1} = \binom{n}{k} x^{n-k} y^k$.
+    </div>
+
+    <p><strong>Pascal's Triangle:</strong> Each entry $\binom{n}{k}$ is the sum of the two entries directly above it: $\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$ (Pascal's Identity).</p>
+
+    <h3 id="u5-pigeonhole">5.2 Pigeonhole Principle, Inclusion-Exclusion &amp; Generating Functions</h3>
+
+    <div class="concept-box">
+      <strong>Exam Definition (Pigeonhole Principle):</strong> If $k + 1$ or more objects (pigeons) are placed into $k$ boxes (pigeonholes), then at least one box contains two or more objects. <strong>Generalized Form:</strong> Placing $N$ objects into $k$ boxes guarantees at least one box has $\lceil N / k \rceil$ objects.<br>
+      <strong>In Simple Words:</strong> If 13 people are in a room, at least 2 of them must share the same birth month (12 months = 12 boxes).
+    </div>
+
+    <ul>
+      <li><strong>Inclusion-Exclusion in Counting:</strong> Count elements with none of properties $P_1, P_2, P_3$ using $|U| - |A_1 \cup A_2 \cup A_3|$, and count <strong>Derangements</strong> $D_n = n! \sum_{k=0}^{n} \frac{(-1)^k}{k!}$.</li>
+      <li><strong>Generating Functions:</strong> Represent a sequence $\{a_n\}$ as a power series $G(x) = \sum_{n=0}^{\infty} a_n x^n$. Useful for solving counting problems with constraints (e.g., $\frac{1}{1-x} = 1 + x + x^2 + \dots$) and linear recurrence relations.</li>
+    </ul>
+
+    <pre><code># Python: Combinations, Binomial Coefficient &amp; Password Constraints
+import math
+
+print("C(10, 4) =", math.comb(10, 4))
+print("P(10, 4) =", math.perm(10, 4))
+
+# Password case study: 6 chars from 26 lowercase + 10 digits (36 total),
+# at least 1 digit required = Total - (only letters)
+total_pw = 36 ** 6
+only_letters = 26 ** 6
+print("Valid passwords (len 6, >=1 digit):", total_pw - only_letters)</code></pre>
+
+    <h3 id="u5-groups">5.3 Algebraic Systems: Semigroups, Monoids, Groups &amp; Homomorphisms</h3>
+
+    <div class="concept-box">
+      <strong>Exam Definition (Algebraic Hierarchy):</strong> An algebraic system $(S, *)$ has a non-empty set $S$ and a binary operation $*$ closed on $S$ ($a * b \in S$).<br>
+      &bull; <strong>Semigroup:</strong> Closed + Associative $(a * b) * c = a * (b * c)$.<br>
+      &bull; <strong>Monoid:</strong> Semigroup + Identity element $e$ ($a * e = e * a = a$).<br>
+      &bull; <strong>Group:</strong> Monoid + Every element $a$ has an Inverse $a^{-1}$ ($a * a^{-1} = e$).<br>
+      &bull; <strong>Abelian Group:</strong> Group + Commutative ($a * b = b * a$).<br>
+      <strong>In Simple Words:</strong> Each level adds one extra rule: Closure &rarr; Associativity (Semigroup) &rarr; Identity (Monoid) &rarr; Inverses (Group) &rarr; Commutativity (Abelian Group).
+    </div>
+
+    <figure class="svg-box">
+      <svg style="max-width:100%;height:auto;" width="540" height="170" viewBox="0 0 540 170" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="540" height="170" rx="8" fill="#FAF7F4" stroke="#C9BEB4"/>
+        <text x="270" y="24" fill="#4B5FD1" font-size="14" font-weight="bold" text-anchor="middle">Algebraic Structures Hierarchy (1 Binary Operation)</text>
+        <rect x="20" y="55" width="90" height="50" rx="6" fill="#FFFFFF" stroke="#6A625B"/><text x="65" y="77" fill="#171717" font-size="11" font-weight="bold" text-anchor="middle">Algebraic Sys</text><text x="65" y="94" fill="#6A625B" font-size="10" text-anchor="middle">+ Closure</text>
+        <line x1="110" y1="80" x2="128" y2="80" stroke="#4B5FD1" stroke-width="2"/>
+        <rect x="128" y="55" width="90" height="50" rx="6" fill="#FFFFFF" stroke="#4B5FD1"/><text x="173" y="77" fill="#4B5FD1" font-size="11" font-weight="bold" text-anchor="middle">Semigroup</text><text x="173" y="94" fill="#6A625B" font-size="10" text-anchor="middle">+ Associative</text>
+        <line x1="218" y1="80" x2="236" y2="80" stroke="#4B5FD1" stroke-width="2"/>
+        <rect x="236" y="55" width="84" height="50" rx="6" fill="#EAEFFE" stroke="#4B5FD1"/><text x="278" y="77" fill="#4B5FD1" font-size="11" font-weight="bold" text-anchor="middle">Monoid</text><text x="278" y="94" fill="#6A625B" font-size="10" text-anchor="middle">+ Identity e</text>
+        <line x1="320" y1="80" x2="338" y2="80" stroke="#226D51" stroke-width="2"/>
+        <rect x="338" y="55" width="80" height="50" rx="6" fill="#E4F2EC" stroke="#226D51"/><text x="378" y="77" fill="#226D51" font-size="11" font-weight="bold" text-anchor="middle">Group</text><text x="378" y="94" fill="#6A625B" font-size="10" text-anchor="middle">+ Inverse</text>
+        <line x1="418" y1="80" x2="436" y2="80" stroke="#9C7710" stroke-width="2"/>
+        <rect x="436" y="55" width="88" height="50" rx="6" fill="#FBF4DC" stroke="#9C7710"/><text x="480" y="77" fill="#9C7710" font-size="11" font-weight="bold" text-anchor="middle">Abelian</text><text x="480" y="94" fill="#171717" font-size="10" text-anchor="middle">+ Commutative</text>
+        <text x="270" y="142" fill="#6A625B" font-size="12" text-anchor="middle">Two operations (+, *): Ring -&gt; Integral Domain (no zero divisors) -&gt; Field (multiplicative inverses)</text>
       </svg>
-      <div class="figure-caption">Figure 4.1: Kuratowski's Forbidden Non-Planar Subgraphs (K5 Complete Graph and K3,3 Three-Utilities Graph).</div>
-    </div>
+      <figcaption>Figure 5.1: Stepwise axioms from Algebraic System to Abelian Group and Ring/Field.</figcaption>
+    </figure>
 
-  </div>
-
-  <div class="topic-block" id="u4-dijkstra">
-    <h3>4.4 Dijkstra's Single-Source Shortest Path Algorithm</h3>
-    <p>Greedy algorithm for finding shortest paths from a source vertex $s$ to all other vertices in a weighted graph with non-negative edge weights.</p>
-    <div class="formula-box">$$\text{Relaxation Step: If } dist[u] + weight(u, v) &lt; dist[v] \implies dist[v] = dist[u] + weight(u, v)$$</div>
-  </div>
-
-  <section class="unit-short-notes" id="u4-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit IV Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Handshaking lemma, planarity formulas, and Euler vs Hamilton rules.</p>
-    </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Degree &amp; Handshaking Formulas</h4>
-          <ul>
-            <li>$\sum \deg(v) = 2|E|$ (Sum of degrees = $2 \times$ edges)</li>
-            <li>Number of odd degree vertices is always EVEN</li>
-            <li>Complete Graph $K_n$: $E = \frac{n(n-1)}{2}$, $\deg(v) = n-1$</li>
-            <li>Complete Bipartite $K_{m,n}$: $E = m \cdot n$, $V = m + n$</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Planar Graph Inequalities</h4>
-          <ul>
-            <li>Euler's Formula: $V - E + R = 2$</li>
-            <li>General Planar: $E \le 3V - 6$ (Proof for non-planarity of $K_5$: $V=5, E=10 &gt; 3(5)-6=9$)</li>
-            <li>Bipartite Planar: $E \le 2V - 4$ (Proof for $K_{3,3}$: $V=6, E=9 &gt; 2(6)-4=8$)</li>
-            <li>Kuratowski non-planar forbidden subgraphs: $K_5$ and $K_{3,3}$</li>
-          </ul>
-        </div>
-      </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Euler vs Hamiltonian Criteria</h4>
-          <ul>
-            <li>Euler Circuit: Connected + ALL vertices have EVEN degrees</li>
-            <li>Euler Path: Connected + Exactly 2 vertices have ODD degrees</li>
-            <li>Hamiltonian: Visits every vertex once (Dirac: $\deg(v) \ge n/2$)</li>
-            <li>Chromatic Number $\chi(G)$: Min colors to color vertices so no adjacent vertices share color</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Graph Coloring Bounds</h4>
-          <ul>
-            <li>Bipartite Graph: $\chi(G) = 2$</li>
-            <li>Complete Graph $K_n$: $\chi(K_n) = n$</li>
-            <li>Cycle $C_n$: $\chi = 2$ if $n$ is even; $\chi = 3$ if $n$ is odd</li>
-            <li>Four Color Theorem: Any planar graph can be colored using at most 4 colors!</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-</section>
-
-<section id="unit-5" class="unit-section">
-  <div class="unit-badge">Unit V &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
-  <h2>Unit V: Counting Principles &amp; Algebraic Structures</h2>
-  
-  <div class="topic-block" id="u5-counting">
-    <h3>5.1 Pigeonhole Principle, Combinatorics &amp; Inclusion-Exclusion</h3>
-    <h4>Pigeonhole Principle (PHP)</h4>
-    <p>If $k+1$ or more pigeons are placed into $k$ pigeonholes, then at least one pigeonhole must contain two or more pigeons.</p>
-    <div class="formula-box">
-      <strong>Generalized Pigeonhole Principle:</strong> If $N$ objects are placed into $k$ boxes, then at least one box contains at least:
-      $$\left\lceil \frac{N}{k} \right\rceil \quad \text{objects}$$
-    </div>
-
-    <h4>Permutations, Combinations &amp; Binomial Theorem</h4>
-    <div class="formula-box">
-      $$P(n, r) = \frac{n!}{(n-r)!}, \quad C(n, r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$$<br>
-      $$(x + y)^n = \sum_{k=0}^n \binom{n}{k} x^{n-k} y^k$$
-    </div>
-
-    <h4>Generating Functions for Counting Problems</h4>
-    <p>The <strong>Ordinary Generating Function (OGF)</strong> encodes an infinite combinatorial sequence $(a_0, a_1, a_2, \dots)$ as coefficients of a formal power series:</p>
-    <div class="formula-box">
-      $$G(x) = \sum_{n=0}^{\infty} a_n x^n = a_0 + a_1 x + a_2 x^2 + \dots, \qquad \frac{1}{1 - x} = 1 + x + x^2 + x^3 + \dots$$
-      <strong>Selection Rule:</strong> Choosing objects with repetition allows factors like $(1 + x + x^2 + \dots)$.<br>
-      <em>Example:</em> Ways to pick $r=4$ fruits from unlimited apples, bananas, and oranges with at least 1 apple is the coefficient of $x^4$ in $(x + x^2 + \dots)(1 + x + x^2 + \dots)^2 = \frac{x}{(1-x)^3}$, giving $\binom{4-1+3-1}{3-1} = \binom{5}{2} = \mathbf{10}$.
-    </div>
-
-  </div>
-
-  <div class="topic-block" id="u5-algebra">
-    <h3>5.2 Algebraic Systems: Semigroups, Monoids, Groups, Rings &amp; Fields</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Algebraic Structure</th><th>Closure</th><th>Associative</th><th>Identity Element</th><th>Inverse Element</th><th>Commutative</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Groupoid</strong></td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
-          <tr><td><strong>Semi-Group</strong></td><td>Yes</td><td><strong>Yes</strong></td><td>No</td><td>No</td><td>No</td></tr>
-          <tr><td><strong>Monoid</strong></td><td>Yes</td><td>Yes</td><td><strong>Yes ($e$)</strong></td><td>No</td><td>No</td></tr>
-          <tr><td><strong>Group</strong></td><td>Yes</td><td>Yes</td><td>Yes</td><td><strong>Yes ($a^{-1}$)</strong></td><td>No</td></tr>
-          <tr><td><strong>Abelian Group</strong></td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td><strong>Yes ($a*b = b*a$)</strong></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h4>Rings, Integral Domains &amp; Fields</h4>
     <ul>
-      <li><strong>Ring $(R, +, \cdot)$:</strong> $(R, +)$ is an Abelian Group, $(R, \cdot)$ is a Semi-Group, and multiplication distributes over addition ($a(b+c) = ab+ac$).</li>
-      <li><strong>Integral Domain:</strong> A commutative ring with identity element that has <strong>no zero divisors</strong> ($ab = 0 \implies a = 0 \lor b = 0$). (e.g., Integers $\mathbb{Z}$).</li>
-      <li><strong>Field $(F, +, \cdot)$:</strong> An integral domain in which every non-zero element has a multiplicative inverse ($(F \setminus \{0\}, \cdot)$ is an Abelian group). (e.g., $\mathbb{Q}, \mathbb{R}, \mathbb{C}, \mathbb{Z}_p$ where $p$ is prime).</li>
+      <li><strong>Subgroup:</strong> A non-empty subset $H \subseteq G$ that is itself a group under the same operation.</li>
+      <li><strong>Normal Subgroup:</strong> A subgroup $N \trianglelefteq G$ such that $g N g^{-1} = N$ for all $g \in G$ (left cosets equal right cosets: $gN = Ng$).</li>
+      <li><strong>Group Homomorphism:</strong> A map $f: (G, *) \to (G', \circ)$ such that $f(a * b) = f(a) \circ f(b)$.</li>
+      <li><strong>Congruence Relation:</strong> An equivalence relation $\equiv$ compatible with the operation: $a \equiv b$ and $c \equiv d \implies (a * c) \equiv (b * d)$ (e.g., congruence modulo $n$ on $\mathbb{Z}$).</li>
     </ul>
-  </div>
 
-  <div class="topic-block" id="u5-lagrange">
-    <h3>5.3 Lagrange's Theorem on Subgroups</h3>
-    <div class="formula-box">
-      <strong>Lagrange's Theorem:</strong> If $H$ is a subgroup of a finite group $G$, then the order of $H$ divides the order of $G$:
-      $$|G| = [G : H] \cdot |H| \implies \frac{|G|}{|H|} = k \in \mathbb{Z}$$
-      <strong>Corollaries:</strong><br>
-      1. The order of every element $a \in G$ divides $|G|$.<br>
-      2. Any group of prime order $p$ is strictly <strong>Cyclic and Abelian</strong>, with no non-trivial subgroups!
-    </div>
-  </div>
+    <h3 id="u5-rings">5.4 Rings, Integral Domains &amp; Fields</h3>
+    <table>
+      <thead>
+        <tr><th>Structure $(R, +, \cdot)$</th><th>Addition $(R, +)$</th><th>Multiplication $(R, \cdot)$</th><th>Example</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Ring</strong></td><td>Abelian Group</td><td>Semigroup + Distributive over $+$</td><td>$(\mathbb{Z}, +, \cdot)$, $M_n(\mathbb{R})$</td></tr>
+        <tr><td><strong>Integral Domain</strong></td><td>Abelian Group</td><td>Commutative Monoid + No Zero Divisors ($ab=0 \implies a=0 \text{ or } b=0$)</td><td>$(\mathbb{Z}, +, \cdot)$</td></tr>
+        <tr><td><strong>Field</strong></td><td>Abelian Group</td><td>$(R \setminus \{0\}, \cdot)$ is an Abelian Group</td><td>$(\mathbb{Q}, +, \cdot)$, $(\mathbb{R}, +, \cdot)$, $\mathbb{Z}_p$ ($p$ prime)</td></tr>
+      </tbody>
+    </table>
 
-  <section class="unit-short-notes" id="u5-short-notes">
-    <div class="short-notes-header">
-      <div class="sn-badge">One-Page Rapid Revision</div>
-      <h3>Unit V Short Notes &amp; High-Yield Cheat Sheet</h3>
-      <p>Pigeonhole applications, group hierarchy, and ring/field axioms.</p>
+    <div class="exam-tip">
+      <strong>Case Studies (Unit V):</strong><br>
+      &bull; <strong>Handshake Puzzle:</strong> At a party of $n$ people, if everyone shakes hands with everyone else once, total handshakes $= \binom{n}{2} = \frac{n(n-1)}{2}$.<br>
+      &bull; <strong>Sudoku Solving &amp; Generation:</strong> A $9 \times 9$ Sudoku is a constrained Latin Square solved via backtracking with row/column/box bitmask sets.<br>
+      &bull; <strong>Password Combinations:</strong> Use Multiplication Principle minus invalid cases (Inclusion-Exclusion) when constraints require at least 1 uppercase, 1 digit, or no repeated characters.
     </div>
-    <div class="short-notes-grid">
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Pigeonhole Rules</h4>
-          <ul>
-            <li>$N$ items into $k$ bins &rarr; at least one bin has $\lceil N/k \rceil$</li>
-            <li>In group of 13 people, at least 2 share a birth month ($\lceil 13/12 \rceil = 2$)</li>
-            <li>In group of 367 people, at least 2 share a birthday</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Group Axioms ($G, *$)</h4>
-          <ul>
-            <li>Closure: $\forall a, b \in G, \, a * b \in G$</li>
-            <li>Associativity: $(a * b) * c = a * (b * c)$</li>
-            <li>Identity: $\exists e \in G, \, a * e = e * a = a$</li>
-            <li>Inverse: $\forall a \in G, \, \exists a^{-1} \in G, \, a * a^{-1} = e$</li>
-            <li>Abelian: Commutative ($a * b = b * a$)</li>
-          </ul>
-        </div>
+
+    <h3 id="u5-qa">5.5 Important SPPU Exam Questions &amp; Model Answers (Unit V)</h3>
+
+    <div class="qa-card">
+      <div class="qa-q">Q1. Prove that the set $\mathbb{Z}$ of all integers forms an abelian group under $a * b = a + b + 1$ for all $a, b \in \mathbb{Z}$. <span class="marks-badge">5 Marks (Apr 2022 / Oct 2025)</span></div>
+      <div class="sol-box">
+        1. <strong>Closure:</strong> For $a, b \in \mathbb{Z}$, $a + b + 1 \in \mathbb{Z}$.<br>
+        2. <strong>Associativity:</strong> $(a * b) * c = (a + b + 1) + c + 1 = a + b + c + 2 = a + (b + c + 1) + 1 = a * (b * c)$.<br>
+        3. <strong>Identity:</strong> Let $a * e = a \implies a + e + 1 = a \implies e = -1 \in \mathbb{Z}$.<br>
+        4. <strong>Inverse:</strong> Let $a * a^{-1} = e = -1 \implies a + a^{-1} + 1 = -1 \implies a^{-1} = -a - 2 \in \mathbb{Z}$.<br>
+        5. <strong>Commutativity:</strong> $a * b = a + b + 1 = b + a + 1 = b * a$.<br>
+        Hence $(\mathbb{Z}, *)$ is an <strong>Abelian Group</strong>.
       </div>
-      <div class="sn-col">
-        <div class="sn-card">
-          <h4>Rings vs Fields</h4>
-          <ul>
-            <li>Ring: Abelian under $+$, Semi-group under $\cdot$, Distributive</li>
-            <li>Commutative Ring: $a \cdot b = b \cdot a$</li>
-            <li>Integral Domain: Commutative ring with $1$, no zero divisors ($ab=0 \implies a=0 \lor b=0$)</li>
-            <li>Field: Every non-zero element has multiplicative inverse</li>
-            <li>Every finite integral domain is a Field!</li>
-          </ul>
-        </div>
-        <div class="sn-card">
-          <h4>Lagrange's Theorem Anchors</h4>
-          <ul>
-            <li>Subgroup order $|H|$ MUST divide group order $|G|$</li>
-            <li>If $|G| = 12$, possible subgroup orders are only: 1, 2, 3, 4, 6, 12</li>
-            <li>A group of order 7 can have subgroups of size only 1 and 7 (Prime &rarr; Cyclic)</li>
-          </ul>
-        </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">Q2. From a group of $7$ men and $6$ women, a committee of $5$ members is to be formed containing at least $3$ men. In how many ways can this be done? <span class="marks-badge">5 Marks (Oct 2025)</span></div>
+      <div class="sol-box">
+        Possible cases:<br>
+        &bull; 3 men, 2 women: $\binom{7}{3} \times \binom{6}{2} = 35 \times 15 = 525$<br>
+        &bull; 4 men, 1 woman: $\binom{7}{4} \times \binom{6}{1} = 35 \times 6 = 210$<br>
+        &bull; 5 men, 0 women: $\binom{7}{5} \times \binom{6}{0} = 21 \times 1 = 21$<br>
+        <strong>Total ways:</strong> $525 + 210 + 21 = \mathbf{756}$.
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">Q3. Find the $8$-th term in the binomial expansion of $(x + y)^{13}$. <span class="marks-badge">5 Marks (Oct 2025)</span></div>
+      <div class="sol-box">
+        General term $T_{k+1} = \binom{n}{k} x^{n-k} y^k$. For the $8$-th term, $k + 1 = 8 \implies k = 7$, $n = 13$.<br>
+        $$T_8 = \binom{13}{7} x^{13-7} y^7 = \frac{13!}{7!\,6!} x^6 y^7 = \mathbf{1716\, x^6 y^7}.$$
       </div>
     </div>
   </section>
-</section>
 
-<section class="flashcards-section" id="flashcards">
-  <div class="flashcards-header">
-    <div class="flashcards-title-group">
-      <span class="flashcards-badge">Active Recall Deck</span>
-      <h2>Discrete Mathematics Master Exam Flashcards (25 Cards)</h2>
-      <p>Tap any card to flip and verify your understanding of logic, relations, trees, graph theory, and abstract algebra.</p>
-    </div>
-    <div class="flashcards-controls">
-      <button type="button" class="fc-ctrl-btn" id="fc-flip-all">Flip All Cards</button>
-      <button type="button" class="fc-ctrl-btn" id="fc-reset-all">Reset All</button>
-      <div class="fc-filter-group">
-        <label>Filter Unit:</label>
-        <select id="fc-unit-filter">
-          <option value="all">All Units</option>
-          <option value="u1">Unit I: Logic &amp; Sets</option>
-          <option value="u2">Unit II: Relations &amp; Functions</option>
-          <option value="u3">Unit III: Trees &amp; Prefix</option>
-          <option value="u4">Unit IV: Graph Theory</option>
-          <option value="u5">Unit V: Counting &amp; Algebra</option>
-        </select>
-      </div>
-    </div>
-  </div>
+  <!-- ======================== REFERENCES ======================== -->
+  <section id="references">
+    <h2>References, Syllabus Books &amp; Image Credits</h2>
 
-  <div class="flashcards-grid">
-    <!-- Card 1 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; Contrapositive Equivalence</div>
-          <div class="fc-q">What is the Contrapositive of the implication $p \to q$? Is it logically equivalent?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$\neg q \to \neg p$$<br>
-            <strong>Yes!</strong> An implication is ALWAYS logically equivalent to its contrapositive: $p \to q \equiv \neg q \to \neg p$. (Converse $q \to p$ and Inverse $\neg p \to \neg q$ are NOT equivalent).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
+    <h3>Official SPPU 2024 Pattern Textbooks</h3>
+    <ol>
+      <li>Kenneth H. Rosen, <em>Discrete Mathematics and its Applications</em>, Tata McGraw-Hill, ISBN 978-0-07-288008-3.</li>
+      <li>Bernard Kolman, Robert C. Busby, and Sharon Ross, <em>Discrete Mathematical Structures</em>, Prentice-Hall of India / Pearson, ISBN 978-0-13-207845-0.</li>
+      <li>Narsingh Deo, <em>Graph Theory with Applications to Engineering and Computer Science</em>, Prentice-Hall of India, 1990, ISBN 0-87692-145-4.</li>
+      <li>Eric Gossett, <em>Discrete Mathematical Structures with Proofs</em>, Wiley India Ltd, ISBN 978-81-265-2758-8.</li>
+      <li>Sriram Pemmaraju and Steven Skiena, <em>Computational Discrete Mathematics</em>, Cambridge University Press, ISBN 978-0-521-73311-3.</li>
+      <li>I. N. Herstein, <em>Topics in Algebra</em>, 2nd ed., Indian Adaptation, Wiley India Pvt. Ltd., 2006, ISBN 978-81-265-1018-4.</li>
+    </ol>
 
-    <!-- Card 2 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; Cantor's Diagonalization</div>
-          <div class="fc-q">What did Georg Cantor prove using his Diagonalization Argument?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            He proved that the set of <strong>Real Numbers $\mathbb{R}$ is strictly Uncountable</strong>, establishing that there exist different sizes of infinity ($|\mathbb{R}| = c &gt; |\mathbb{N}| = \aleph_0$).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
+    <h3>Open E-Books &amp; NPTEL / SWAYAM MOOC Links</h3>
+    <ul>
+      <li>Open Math Books: <a href="http://discrete.openmathbooks.org/pdfs/dmoi-tablet.pdf" target="_blank" rel="noopener">Discrete Mathematics: An Open Introduction (dmoi-tablet.pdf)</a></li>
+      <li>IIT Kanpur Notes: <a href="http://home.iitk.ac.in/~arlal/book/mth202.pdf" target="_blank" rel="noopener">MTH202 Discrete Mathematics Notes</a></li>
+      <li>Stanford CS103X: <a href="https://web.stanford.edu/class/cs103x/cs103x-notes.pdf" target="_blank" rel="noopener">CS103X Discrete Structures Notes</a></li>
+      <li>NPTEL Course 1: <a href="https://onlinecourses.nptel.ac.in/noc20_cs82/preview" target="_blank" rel="noopener">noc20_cs82 &mdash; Discrete Mathematics</a></li>
+      <li>NPTEL Course 2: <a href="https://nptel.ac.in/courses/106108227" target="_blank" rel="noopener">NPTEL 106108227</a></li>
+      <li>NPTEL Course 3: <a href="https://nptel.ac.in/courses/106106094" target="_blank" rel="noopener">NPTEL 106106094</a></li>
+    </ul>
 
-    <!-- Card 3 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; POSET Definition</div>
-          <div class="fc-q">Which three mathematical properties define a Partially Ordered Set (POSET)?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            1. <strong>Reflexive:</strong> $(a, a) \in R \, \forall a$<br>
-            2. <strong>Antisymmetric:</strong> $(a, b) \in R \land (b, a) \in R \implies a = b$<br>
-            3. <strong>Transitive:</strong> $(a, b) \in R \land (b, c) \in R \implies (a, c) \in R$.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Lattice Definition</div>
-          <div class="fc-q">What condition elevates a POSET to a Lattice?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Every pair of elements $a, b$ in the POSET must possess both a unique <strong>Least Upper Bound (LUB / Join / $a \lor b$)</strong> and a unique <strong>Greatest Lower Bound (GLB / Meet / $a \land b$)</strong>.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Warshall's Algorithm Complexity</div>
-          <div class="fc-q">What is the time complexity of Warshall's algorithm for finding Transitive Closure?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$O(n^3)$$<br>
-            Uses 3 nested loops running from $k=1$ to $n$, updating $W^{(k)}[i, j] = W^{(k-1)}[i, j] \lor (W^{(k-1)}[i, k] \land W^{(k-1)}[k, j])$.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 6 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Tree Invariant</div>
-          <div class="fc-q">How many edges exist in any tree with $V$ vertices?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$E = V - 1$$<br>
-            Always! A connected graph with $V$ vertices and $V-1$ edges is guaranteed to be a tree (contains zero cycles).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 7 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Max-Flow Min-Cut</div>
-          <div class="fc-q">State the Max-Flow Min-Cut Theorem for transport networks.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            The maximum volume of flow that can pass from source $s$ to sink $t$ in a capacitated network equals the minimum capacity of all cuts separating $s$ from $t$.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 8 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Handshaking Lemma</div>
-          <div class="fc-q">State the Handshaking Lemma and explain why odd-degree vertices must be even.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$\sum_{v \in V} \deg(v) = 2|E|$$<br>
-            Since each edge connects two endpoints, it contributes 2 to the total degree sum. The total sum is even, so the sum of odd degrees must be even, forcing the count of odd-degree vertices to be an <strong>EVEN number</strong>!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 9 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Euler Circuit Theorem</div>
-          <div class="fc-q">What is the exact condition for a connected graph to contain an Euler Circuit?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            A connected graph contains an Euler Circuit if and only if <strong>EVERY vertex has an EVEN degree</strong>! (If exactly 2 vertices have odd degrees, an Euler Path exists between them).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 10 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Planar Inequality</div>
-          <div class="fc-q">State Euler's Formula and the maximum edge inequality for simple planar graphs.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Euler's Formula: $$V - E + R = 2$$<br>
-            Planarity Inequality (for $V \ge 3$): $$E \le 3V - 6$$
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 11 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Kuratowski's Theorem</div>
-          <div class="fc-q">Which two non-planar graphs are the forbidden subgraphs in Kuratowski's theorem?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>$K_5$</strong> (Complete graph on 5 vertices) and <strong>$K_{3,3}$</strong> (Complete bipartite utility graph). A graph is planar if and only if it contains no subgraph homeomorphic to $K_5$ or $K_{3,3}$.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 12 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; Generalized Pigeonhole</div>
-          <div class="fc-q">If 100 students take an exam scored 0 to 100, what does PHP guarantee?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            There are 101 possible scores (pigeonholes) and 100 students (pigeons). PHP cannot guarantee two students share a score! But if there are <strong>102 students</strong>, at least one score is shared by at least $\lceil 102/101 \rceil = 2$ students!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 13 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; Monoid vs Group</div>
-          <div class="fc-q">What extra axiom promotes a Monoid to a Group?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>The Inverse Element axiom!</strong><br>
-            A Monoid has Closure, Associativity, and Identity. A Group additionally guarantees that every element $a$ possesses a unique inverse $a^{-1}$ such that $a * a^{-1} = e$.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 14 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; Lagrange's Theorem</div>
-          <div class="fc-q">State Lagrange's Theorem and its implication for groups of prime order.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            The order of any subgroup $H$ must divide the order of finite group $G$: $|G| = k \cdot |H|$.<br>
-            <strong>Implication:</strong> If $|G| = p$ (prime), the only possible subgroup orders are $1$ and $p$. Hence, any group of prime order is strictly <strong>Cyclic and Abelian</strong>!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 15 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; Ring vs Field</div>
-          <div class="fc-q">What is the distinction between an Integral Domain and a Field?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            In an <strong>Integral Domain</strong>, there are no zero divisors ($ab=0 \implies a=0 \lor b=0$), but elements need not have multiplicative inverses (e.g., Integers $\mathbb{Z}$).<br>
-            In a <strong>Field</strong>, EVERY non-zero element has a multiplicative inverse $a^{-1}$ (e.g., $\mathbb{Q}, \mathbb{R}$).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 16 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; Modus Ponens vs Tollens</div>
-          <div class="fc-q">Write the symbolic inference form for Modus Ponens and Modus Tollens.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>Modus Ponens:</strong> $p, \, p \to q \vdash q$<br>
-            <strong>Modus Tollens:</strong> $\neg q, \, p \to q \vdash \neg p$
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 17 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Total Number of Relations</div>
-          <div class="fc-q">If set $A$ has $n$ elements, how many distinct binary relations can be defined on $A$?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$2^{n^2}$$<br>
-            Because $|A \times A| = n^2$, and any relation is a subset of $A \times A$. Total relations equals the size of the power set: $|\mathcal{P}(A \times A)| = 2^{n^2}$.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 18 -->
-    <div class="flashcard-card" data-unit="u3">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit III &bull; Spanning Tree Definition</div>
-          <div class="fc-q">What is a Spanning Tree of a connected graph $G$?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            A subgraph of $G$ that contains <strong>ALL vertices of $G$</strong> and is a tree (connected, acyclic, with exactly $V - 1$ edges).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 19 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Dirac's Theorem</div>
-          <div class="fc-q">State Dirac's Theorem for Hamiltonian Circuits.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            If $G$ is a simple graph with $n \ge 3$ vertices such that the degree of every vertex is at least $n/2$:<br>
-            $$\deg(v) \ge \frac{n}{2} \quad \forall v \in V$$<br>
-            then $G$ is guaranteed to contain a Hamiltonian Circuit!
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 20 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Bipartite Graph Chromatic Number</div>
-          <div class="fc-q">What is the chromatic number of any non-trivial Bipartite Graph?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$\chi(G) = 2$$<br>
-            Vertices can be partitioned into two independent sets $V_1$ and $V_2$ such that edges only cross between sets. Assign color 1 to all vertices in $V_1$ and color 2 to all in $V_2$.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 21 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; Derangements Formula</div>
-          <div class="fc-q">What is a Derangement ($D_n$)? State its formula.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            A permutation of $n$ elements such that NO element appears in its original position:<br>
-            $$D_n = n! \sum_{k=0}^n \frac{(-1)^k}{k!} = n! \left(1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \dots + \frac{(-1)^n}{n!}\right)$$
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 22 -->
-    <div class="flashcard-card" data-unit="u1">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit I &bull; Translating English to Logic</div>
-          <div class="fc-q">Express 'Every student who studies passes the exam' in predicate logic.</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            $$\forall x \, (S(x) \land E(x) \to P(x))$$<br>
-            where $S(x)$ is '$x$ is a student', $E(x)$ is '$x$ studies', and $P(x)$ is '$x$ passes the exam'.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 23 -->
-    <div class="flashcard-card" data-unit="u2">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit II &bull; Antisymmetric vs Symmetric</div>
-          <div class="fc-q">Can a relation be both Symmetric and Antisymmetric at the same time?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            <strong>Yes!</strong> A relation consisting solely of identity diagonal pairs (e.g., $R = \{(1, 1), (2, 2)\}$ or the empty relation $\emptyset$) is both symmetric ($m_{ij} = m_{ji}$) and antisymmetric (no off-diagonal pairs where $i \ne j$).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 24 -->
-    <div class="flashcard-card" data-unit="u5">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit V &bull; Cyclic Group Generator</div>
-          <div class="fc-q">What defines a Cyclic Group? What are the generators of $(\mathbb{Z}_6, +_6)$?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            A group $G$ is cyclic if every element can be expressed as a power (or multiple) of a single element $g \in G$ ($G = \langle g \rangle$).<br>
-            For $(\mathbb{Z}_6, +_6)$, generators are elements coprime to 6: <strong>1 and 5</strong>.
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 25 -->
-    <div class="flashcard-card" data-unit="u4">
-      <div class="flashcard-inner">
-        <div class="flashcard-front">
-          <div class="fc-tag">Unit IV &bull; Dijkstra Limitation</div>
-          <div class="fc-q">Why does Dijkstra's algorithm fail on graphs with Negative Edge Weights?</div>
-          <div class="fc-hint">Tap to flip &rarr;</div>
-        </div>
-        <div class="flashcard-back">
-          <div class="fc-tag">Model Answer</div>
-          <div class="fc-a">
-            Dijkstra assumes greedily that once a vertex distance is finalized (visited), no shorter path to it can ever be found. Negative edge weights violate this greedy monotonicity property! <strong>Alternative:</strong> Bellman-Ford Algorithm ($O(VE)$).
-          </div>
-          <div class="fc-return">Tap to flip back</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-</div><!-- /main-inner -->
+    <h3>Wikimedia Commons Image Attributions</h3>
+    <table>
+      <thead>
+        <tr><th>File</th><th>Title</th><th>Author / Artist</th><th>License</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>venn_diagram_sets.png</code></td><td>Triangle classification using Venn diagram.svg</td><td>Michel Bakni</td><td>Public domain</td><td><a href="https://commons.wikimedia.org/wiki/File:Triangle_classification_using_Venn_diagram.svg" target="_blank" rel="noopener">Wikimedia Commons</a></td></tr>
+        <tr><td><code>hasse_diagram_poset.png</code></td><td>Hasse diagram of powerset of 3.svg</td><td>KSmrq</td><td>CC BY-SA 3.0</td><td><a href="https://commons.wikimedia.org/wiki/File:Hasse_diagram_of_powerset_of_3.svg" target="_blank" rel="noopener">Wikimedia Commons</a></td></tr>
+        <tr><td><code>bijection_function.png</code></td><td>Bijection correspodence.png</td><td>jr.etxebarria, Ksarasola</td><td>CC BY-SA 4.0</td><td><a href="https://commons.wikimedia.org/wiki/File:Bijection_correspodence.png" target="_blank" rel="noopener">Wikimedia Commons</a></td></tr>
+        <tr><td><code>huffman_tree.png</code></td><td>Huffman coding visualisation.svg</td><td>Cmglee</td><td>CC BY-SA 4.0</td><td><a href="https://commons.wikimedia.org/wiki/File:Huffman_coding_visualisation.svg" target="_blank" rel="noopener">Wikimedia Commons</a></td></tr>
+        <tr><td><code>eulerian_graph.png</code></td><td>Tabuleiro representando as sete pontes de K&ouml;nigsberg 02.jpg</td><td>Estes Objethos Atelier / Rodrigo Tetsuo Argenton</td><td>CC BY-SA 4.0</td><td><a href="https://commons.wikimedia.org/wiki/File:Tabuleiro_representando_as_sete_pontes_de_K%C3%B6nigsberg_02.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></td></tr>
+        <tr><td><code>bipartite_graph.png</code></td><td>Complete bipartite graph K3,3.svg</td><td>Wikimedia Commons Contributor</td><td>Public domain</td><td><a href="https://commons.wikimedia.org/wiki/File:Complete_bipartite_graph_K3,3.svg" target="_blank" rel="noopener">Wikimedia Commons</a></td></tr>
+        <tr><td><code>planar_graph_k4.png</code></td><td>K4 planar.svg</td><td>Original: MlaWU / Vector: Marlus Gancher</td><td>GFDL</td><td><a href="https://commons.wikimedia.org/wiki/File:K4_planar.svg" target="_blank" rel="noopener">Wikimedia Commons</a></td></tr>
+      </tbody>
+    </table>
+  </section>
 </main>
 
 <script src="../assets/study-data.js"></script>
 <script src="../assets/app-store.js"></script>
 <script src="../assets/guide-app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/verilog.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.hljs) {
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+  }
+});
+</script>
 </body>
 </html>
