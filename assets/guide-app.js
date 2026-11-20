@@ -69,7 +69,7 @@
       quickLinksHtml += `<a class="gtb-btn gtb-hide-sm" href="#u1-short-notes">Short Notes</a>`;
     }
     if (!isSolvedQb && document.getElementById("flashcards")) {
-      quickLinksHtml += `<a class="gtb-btn gtb-hide-sm" href="#flashcards">Flashcards</a>`;
+      quickLinksHtml += `<button id="gtb-fc-btn" class="gtb-btn gtb-hide-sm" type="button" title="Open blurred flashcard focus overlay">Flashcards</button>`;
     }
 
     let siblingLinkHtml = "";
@@ -289,6 +289,8 @@
     });
   }
 
+  let fcOverlayController = null;
+
   function syncFlashcardsUI(sub) {
     const sec = document.getElementById("flashcards");
     if (!sec || !Store) return;
@@ -310,6 +312,9 @@
     if (pill) {
       pill.textContent = `${masteredCount}/${cards.length} Mastered`;
     }
+    if (fcOverlayController) {
+      fcOverlayController.syncMastery();
+    }
   }
 
   function initFlashcards(sub) {
@@ -328,6 +333,18 @@
       controls.prepend(statsPill);
     }
 
+    if (controls && !controls.querySelector('[data-fc-action="open-overlay"]')) {
+      const openBtn = document.createElement("button");
+      openBtn.type = "button";
+      openBtn.className = "fc-ctrl-btn fc-launch-btn";
+      openBtn.dataset.fcAction = "open-overlay";
+      openBtn.textContent = "Focus Overlay";
+      const statsEl = document.getElementById("fc-stats-pill");
+      if (statsEl) statsEl.insertAdjacentElement("afterend", openBtn);
+      else controls.prepend(openBtn);
+    }
+
+    const deck = [];
     cards.forEach((card, idx) => {
       const fcId = card.dataset.fcId || `fc-${idx + 1}`;
       card.dataset.fcId = fcId;
@@ -356,19 +373,336 @@
         back.appendChild(actions);
       }
 
-      const flipHandler = (e) => {
+      const tagEl = card.querySelector(".flashcard-front .fc-tag");
+      const qEl = card.querySelector(".fc-q");
+      const aEl = card.querySelector(".fc-a");
+      deck.push({
+        idx,
+        id: fcId,
+        unit: card.dataset.unit || "1",
+        tag: tagEl ? tagEl.textContent.trim() : `Card ${idx + 1}`,
+        qEl,
+        aEl,
+        cardEl: card,
+      });
+
+      const openFromGrid = (e) => {
         if (e.target.closest("[data-fc-know]")) return;
-        card.classList.toggle("is-flipped");
-        setTimeout(fitWideMath, 60);
+        if (fcOverlayController) {
+          fcOverlayController.openAtDeckIndex(idx);
+        }
       };
-      card.addEventListener("click", flipHandler);
+      card.addEventListener("click", openFromGrid);
       card.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          flipHandler(e);
+          openFromGrid(e);
         }
       });
     });
+
+    // Build Centered Blurred Flashcard Focus Overlay
+    const gridFilter = document.getElementById("fc-unit-filter");
+    const unitOptionsHtml = gridFilter
+      ? gridFilter.innerHTML
+      : '<option value="all">All Units</option>';
+
+    const overlay = document.createElement("div");
+    overlay.id = "fc-overlay";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-label", "Flashcard Focus Mode");
+    overlay.innerHTML = `
+      <div class="fco-shell">
+        <div class="fco-topbar">
+          <div class="fco-top-left">
+            <select id="fco-unit-sel" class="fco-select" aria-label="Filter flashcards by unit">${unitOptionsHtml}</select>
+            <span id="fco-counter" class="fco-pill">1 / ${deck.length}</span>
+            <span id="fco-mastered-pill" class="fco-pill">0/${deck.length} Mastered</span>
+          </div>
+          <div class="fco-top-right">
+            <button id="fco-shuffle-btn" class="fc-ctrl-btn" type="button">Shuffle</button>
+            <button id="fco-reset-btn" class="fc-ctrl-btn" type="button">Reset</button>
+            <button id="fco-close-btn" class="fco-close-btn" type="button" aria-label="Close flashcard overlay">&times;</button>
+          </div>
+        </div>
+        <div class="fco-progress-track"><div id="fco-progress-fill" class="fco-progress-fill"></div></div>
+        <div id="fco-card" class="fco-card" tabindex="0" role="button" aria-label="Flashcard stage, click or press Space to flip"></div>
+        <div class="fco-controls">
+          <button id="fco-prev-btn" class="fco-btn" type="button">&larr; Prev</button>
+          <button id="fco-flip-btn" class="fco-btn primary" type="button">Reveal Answer</button>
+          <button id="fco-know-btn" class="fco-btn" type="button">Mark Mastered</button>
+          <button id="fco-next-btn" class="fco-btn" type="button">Next &rarr;</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    const oState = {
+      open: false,
+      unit: gridFilter ? gridFilter.value : "all",
+      order: deck.map((_, i) => i),
+      pos: 0,
+      showingAnswer: false,
+    };
+
+    const fcoCard = document.getElementById("fco-card");
+    const fcoUnitSel = document.getElementById("fco-unit-sel");
+    const fcoCounter = document.getElementById("fco-counter");
+    const fcoMasteredPill = document.getElementById("fco-mastered-pill");
+    const fcoProgressFill = document.getElementById("fco-progress-fill");
+    const fcoFlipBtn = document.getElementById("fco-flip-btn");
+    const fcoKnowBtn = document.getElementById("fco-know-btn");
+
+    function getFilteredDeckIndices() {
+      return oState.order.filter((dIdx) => oState.unit === "all" || deck[dIdx].unit === oState.unit);
+    }
+
+    function countAllMastered() {
+      if (!Store) return 0;
+      return deck.filter((c) => Store.isFlashcardMastered(sub.id, c.id)).length;
+    }
+
+    function updateOverlayMasteryOnly() {
+      const mTotal = countAllMastered();
+      if (fcoMasteredPill) fcoMasteredPill.textContent = `${mTotal}/${deck.length} Mastered`;
+      const visible = getFilteredDeckIndices();
+      if (!visible.length) return;
+      const cur = deck[visible[Math.min(oState.pos, visible.length - 1)]];
+      const isMast = Store ? Store.isFlashcardMastered(sub.id, cur.id) : false;
+      fcoCard.classList.toggle("is-mastered", isMast);
+      fcoKnowBtn.classList.toggle("mastered", isMast);
+      fcoKnowBtn.innerHTML = isMast ? "Mastered &#10003;" : "Mark Mastered";
+      const badge = fcoCard.querySelector(".fco-status-tag");
+      if (badge) {
+        badge.textContent = isMast ? "Mastered" : "Reviewing";
+        badge.style.color = isMast ? "#16A34A" : "var(--ink-muted)";
+      }
+    }
+
+    function renderOverlayCard(pulse) {
+      const visible = getFilteredDeckIndices();
+      if (!visible.length) {
+        fcoCounter.textContent = "0 / 0";
+        fcoProgressFill.style.width = "0%";
+        fcoCard.className = "fco-card";
+        fcoCard.innerHTML = '<div class="fco-q-text">No flashcards match this filter.</div>';
+        return;
+      }
+      if (oState.pos < 0) oState.pos = visible.length - 1;
+      if (oState.pos >= visible.length) oState.pos = 0;
+
+      const cur = deck[visible[oState.pos]];
+      const isMast = Store ? Store.isFlashcardMastered(sub.id, cur.id) : false;
+
+      if (pulse) {
+        fcoCard.classList.add("fco-flipping");
+        setTimeout(() => fcoCard.classList.remove("fco-flipping"), 130);
+      }
+
+      fcoCard.classList.toggle("is-answer", oState.showingAnswer);
+      fcoCard.classList.toggle("is-mastered", isMast);
+      fcoCard.innerHTML = "";
+
+      const meta = document.createElement("div");
+      meta.className = "fco-meta-row";
+      meta.innerHTML = `
+        <span class="fco-face-badge">${esc(cur.tag)} &middot; ${oState.showingAnswer ? "Answer" : "Prompt"}</span>
+        <span class="fco-face-badge fco-status-tag" style="background:var(--surface-soft);border:1px solid var(--border);color:${isMast ? "#16A34A" : "var(--ink-muted)"}">${isMast ? "Mastered" : "Reviewing"}</span>
+      `;
+      fcoCard.appendChild(meta);
+
+      const bodyWrap = document.createElement("div");
+      bodyWrap.style.margin = "auto 0";
+      if (!oState.showingAnswer) {
+        const qBox = document.createElement("div");
+        qBox.className = "fco-q-text";
+        if (cur.qEl) {
+          Array.from(cur.qEl.childNodes).forEach((n) => qBox.appendChild(n.cloneNode(true)));
+        }
+        bodyWrap.appendChild(qBox);
+      } else {
+        const qRecap = document.createElement("div");
+        qRecap.className = "fco-q-recap";
+        if (cur.qEl) {
+          Array.from(cur.qEl.childNodes).forEach((n) => qRecap.appendChild(n.cloneNode(true)));
+        }
+        const aBox = document.createElement("div");
+        aBox.className = "fco-a-text";
+        if (cur.aEl) {
+          Array.from(cur.aEl.childNodes).forEach((n) => aBox.appendChild(n.cloneNode(true)));
+        }
+        bodyWrap.appendChild(qRecap);
+        bodyWrap.appendChild(aBox);
+      }
+      fcoCard.appendChild(bodyWrap);
+
+      const hint = document.createElement("div");
+      hint.className = "fco-tap-hint";
+      hint.innerHTML = `
+        <span>${oState.showingAnswer ? "Click card or Space for Question" : "Click card or Space to Reveal Answer"}</span>
+        <span>&larr; / &rarr; Navigate &bull; M Mastered &bull; Esc Close</span>
+      `;
+      fcoCard.appendChild(hint);
+
+      fcoCounter.textContent = `${oState.pos + 1} / ${visible.length}`;
+      fcoProgressFill.style.width = `${Math.round(((oState.pos + 1) / visible.length) * 100)}%`;
+      fcoFlipBtn.textContent = oState.showingAnswer ? "Show Question" : "Reveal Answer";
+      updateOverlayMasteryOnly();
+
+      const needsTypeset = !fcoCard.querySelector("mjx-container") && /\$|\\\(|\\\[/.test(fcoCard.textContent || "");
+      if (needsTypeset && global.MathJax && global.MathJax.typesetPromise) {
+        global.MathJax.typesetPromise([fcoCard]).then(() => setTimeout(fitWideMath, 30)).catch(() => {});
+      } else {
+        setTimeout(fitWideMath, 20);
+      }
+    }
+
+    function openOverlayAt(deckIdx) {
+      oState.unit = gridFilter ? gridFilter.value : "all";
+      if (fcoUnitSel) fcoUnitSel.value = oState.unit;
+      const visible = getFilteredDeckIndices();
+      if (typeof deckIdx === "number") {
+        const foundPos = visible.indexOf(deckIdx);
+        oState.pos = foundPos >= 0 ? foundPos : 0;
+      }
+      oState.showingAnswer = false;
+      oState.open = true;
+      overlay.classList.add("open");
+      document.body.classList.add("fc-overlay-open");
+      renderOverlayCard(false);
+      setTimeout(() => fcoCard.focus(), 40);
+    }
+
+    function closeOverlay() {
+      oState.open = false;
+      overlay.classList.remove("open");
+      document.body.classList.remove("fc-overlay-open");
+    }
+
+    fcOverlayController = {
+      open: () => openOverlayAt(),
+      openAtDeckIndex: (dIdx) => openOverlayAt(dIdx),
+      syncMastery: updateOverlayMasteryOnly,
+    };
+
+    fcoCard.addEventListener("click", () => {
+      oState.showingAnswer = !oState.showingAnswer;
+      renderOverlayCard(true);
+    });
+    fcoFlipBtn.addEventListener("click", () => {
+      oState.showingAnswer = !oState.showingAnswer;
+      renderOverlayCard(true);
+    });
+    document.getElementById("fco-prev-btn").addEventListener("click", () => {
+      oState.pos -= 1;
+      oState.showingAnswer = false;
+      renderOverlayCard(true);
+    });
+    document.getElementById("fco-next-btn").addEventListener("click", () => {
+      oState.pos += 1;
+      oState.showingAnswer = false;
+      renderOverlayCard(true);
+    });
+    fcoKnowBtn.addEventListener("click", () => {
+      if (!Store) return;
+      const visible = getFilteredDeckIndices();
+      if (!visible.length) return;
+      const cur = deck[visible[oState.pos]];
+      const mastered = Store.toggleFlashcardMastered(sub.id, cur.id);
+      showToast(mastered ? "Flashcard marked mastered" : "Flashcard unmarked");
+    });
+    document.getElementById("fco-close-btn").addEventListener("click", closeOverlay);
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeOverlay();
+    });
+
+    if (fcoUnitSel) {
+      fcoUnitSel.addEventListener("change", () => {
+        oState.unit = fcoUnitSel.value;
+        if (gridFilter) {
+          gridFilter.value = oState.unit;
+          gridFilter.dispatchEvent(new Event("change"));
+        }
+        oState.pos = 0;
+        oState.showingAnswer = false;
+        renderOverlayCard(false);
+      });
+    }
+
+    document.getElementById("fco-shuffle-btn").addEventListener("click", () => {
+      for (let i = oState.order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = oState.order[i];
+        oState.order[i] = oState.order[j];
+        oState.order[j] = tmp;
+      }
+      oState.order.forEach((dIdx) => grid.appendChild(deck[dIdx].cardEl));
+      oState.pos = 0;
+      oState.showingAnswer = false;
+      renderOverlayCard(true);
+      showToast("Flashcards shuffled");
+    });
+
+    document.getElementById("fco-reset-btn").addEventListener("click", () => {
+      oState.unit = "all";
+      oState.order = deck.map((_, i) => i);
+      oState.order.forEach((dIdx) => {
+        deck[dIdx].cardEl.classList.remove("fc-hidden", "is-flipped");
+        grid.appendChild(deck[dIdx].cardEl);
+      });
+      if (fcoUnitSel) fcoUnitSel.value = "all";
+      if (gridFilter) gridFilter.value = "all";
+      if (Store) Store.resetFlashcards(sub.id);
+      oState.pos = 0;
+      oState.showingAnswer = false;
+      renderOverlayCard(false);
+      showToast("Flashcard deck reset");
+    });
+
+    // Keyboard & Touch Swipe Support
+    document.addEventListener("keydown", (e) => {
+      if (!oState.open) return;
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeOverlay();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        oState.pos += 1;
+        oState.showingAnswer = false;
+        renderOverlayCard(true);
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        oState.pos -= 1;
+        oState.showingAnswer = false;
+        renderOverlayCard(true);
+      } else if (e.key.toLowerCase() === "m" && !e.target.closest("select, input, textarea")) {
+        e.preventDefault();
+        fcoKnowBtn.click();
+      } else if ((e.key === " " || e.key === "Enter") && !e.target.closest("button, select, a, input")) {
+        e.preventDefault();
+        oState.showingAnswer = !oState.showingAnswer;
+        renderOverlayCard(true);
+      }
+    });
+
+    let touchX = 0;
+    let touchY = 0;
+    fcoCard.addEventListener("touchstart", (e) => {
+      if (!e.touches.length) return;
+      touchX = e.touches[0].clientX;
+      touchY = e.touches[0].clientY;
+    }, { passive: true });
+    fcoCard.addEventListener("touchend", (e) => {
+      if (!e.changedTouches.length) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      const dy = e.changedTouches[0].clientY - touchY;
+      if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)) {
+        oState.pos += dx < 0 ? 1 : -1;
+        oState.showingAnswer = false;
+        renderOverlayCard(true);
+      }
+    }, { passive: true });
 
     sec.addEventListener("click", (e) => {
       const knowBtn = e.target.closest("[data-fc-know]");
@@ -384,14 +718,16 @@
       const act = actBtn.dataset.fcAction;
       const currentCards = Array.from(grid.querySelectorAll(".flashcard-card"));
 
-      if (act === "shuffle") {
-        for (let i = currentCards.length - 1; i > 0; i--) {
+      if (act === "open-overlay") {
+        openOverlayAt(0);
+      } else if (act === "shuffle") {
+        for (let i = oState.order.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
-          const tmp = currentCards[i];
-          currentCards[i] = currentCards[j];
-          currentCards[j] = tmp;
+          const tmp = oState.order[i];
+          oState.order[i] = oState.order[j];
+          oState.order[j] = tmp;
         }
-        currentCards.forEach((c) => grid.appendChild(c));
+        oState.order.forEach((dIdx) => grid.appendChild(deck[dIdx].cardEl));
         showToast("Flashcards shuffled");
       } else if (act === "flip-all") {
         const visible = currentCards.filter((c) => !c.classList.contains("fc-hidden"));
@@ -399,20 +735,24 @@
         visible.forEach((c) => c.classList.toggle("is-flipped", !allFlipped));
         setTimeout(fitWideMath, 60);
       } else if (act === "reset-deck") {
-        const sel = document.getElementById("fc-unit-filter");
-        if (sel) sel.value = "all";
-        currentCards.forEach((c) => {
-          c.classList.remove("fc-hidden", "is-flipped");
+        oState.unit = "all";
+        oState.order = deck.map((_, i) => i);
+        oState.order.forEach((dIdx) => {
+          deck[dIdx].cardEl.classList.remove("fc-hidden", "is-flipped");
+          grid.appendChild(deck[dIdx].cardEl);
         });
+        if (gridFilter) gridFilter.value = "all";
+        if (fcoUnitSel) fcoUnitSel.value = "all";
         if (Store) Store.resetFlashcards(sub.id);
         showToast("Flashcard deck reset");
       }
     });
 
-    const unitSel = document.getElementById("fc-unit-filter");
-    if (unitSel) {
-      unitSel.addEventListener("change", () => {
-        const val = unitSel.value;
+    if (gridFilter) {
+      gridFilter.addEventListener("change", () => {
+        const val = gridFilter.value;
+        oState.unit = val;
+        if (fcoUnitSel) fcoUnitSel.value = val;
         grid.querySelectorAll(".flashcard-card").forEach((c) => {
           c.classList.toggle("fc-hidden", val !== "all" && c.dataset.unit !== val);
         });
@@ -716,6 +1056,15 @@
 
   function bindEvents(sub) {
     document.getElementById("gtb-practice-btn")?.addEventListener("click", togglePracticeMode);
+    document.getElementById("gtb-fc-btn")?.addEventListener("click", () => {
+      if (fcOverlayController) fcOverlayController.open();
+    });
+    document.querySelector(".quick-nav-bar a[href='#flashcards']")?.addEventListener("click", (e) => {
+      if (fcOverlayController) {
+        e.preventDefault();
+        fcOverlayController.open();
+      }
+    });
     document.getElementById("gmn-practice-btn")?.addEventListener("click", togglePracticeMode);
     document.getElementById("gtb-toc-btn")?.addEventListener("click", toggleSidebar);
     document.getElementById("gmn-units-btn")?.addEventListener("click", toggleSidebar);

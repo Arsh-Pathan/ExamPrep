@@ -1392,15 +1392,17 @@ mjx-container.mjx-wide {
 .flashcards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 275px), 1fr));
-  gap: 16px;
+  gap: 14px;
 }
 
 .flashcard-card {
-  perspective: 1200px;
-  height: 255px;
+  min-height: 185px;
+  height: auto;
   cursor: pointer;
   user-select: none;
   outline: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .flashcard-card.fc-hidden {
@@ -1408,50 +1410,53 @@ mjx-container.mjx-wide {
 }
 
 .flashcard-inner {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   width: 100%;
-  height: 100%;
-  text-align: left;
-  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-style: preserve-3d;
   border-radius: 16px;
   box-shadow: var(--shadow-sm);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
 }
 
-.flashcard-card.is-flipped .flashcard-inner {
-  transform: rotateY(180deg);
+.flashcard-card:hover .flashcard-inner {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .flashcard-front, .flashcard-back {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  flex: 1;
   border-radius: 16px;
   padding: 16px;
   border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 8px;
-  overflow-y: auto;
+  gap: 10px;
 }
 
 .flashcard-front {
   background: var(--surface-soft);
 }
 
-.flashcard-card.is-mastered .flashcard-front {
-  border-color: #16A34A;
-  box-shadow: inset 0 0 0 1px rgba(22, 163, 74, 0.3);
-}
-
 .flashcard-back {
   background: var(--surface);
   border-color: var(--link-color);
-  transform: rotateY(180deg);
+  border-top: 3px solid var(--link-color);
+}
+
+.flashcard-card:not(.is-flipped) .flashcard-back {
+  display: none;
+}
+
+.flashcard-card.is-flipped .flashcard-front {
+  display: none;
+}
+
+.flashcard-card.is-mastered .flashcard-front {
+  border-color: #16A34A;
+  box-shadow: inset 0 0 0 1px rgba(22, 163, 74, 0.35);
 }
 
 .fc-tag {
@@ -1463,16 +1468,16 @@ mjx-container.mjx-wide {
 }
 
 .fc-q {
-  font-size: 0.92rem;
+  font-size: 0.93rem;
   font-weight: 700;
-  line-height: 1.44;
+  line-height: 1.45;
   color: var(--ink);
   margin: auto 0;
 }
 
 .fc-a {
-  font-size: 0.84rem;
-  line-height: 1.48;
+  font-size: 0.85rem;
+  line-height: 1.5;
   color: var(--ink-secondary);
   margin: auto 0;
 }
@@ -1494,12 +1499,12 @@ mjx-container.mjx-wide {
 }
 
 .fc-know-btn {
-  padding: 4px 10px;
+  padding: 5px 11px;
   border-radius: 9999px;
   border: 1px solid var(--border);
   background: var(--surface-soft);
   color: var(--ink);
-  font-size: 0.71rem;
+  font-size: 0.72rem;
   font-weight: 700;
   cursor: pointer;
 }
@@ -1514,6 +1519,290 @@ mjx-container.mjx-wide {
   font-size: 0.72rem;
   color: var(--link-color);
   font-weight: 700;
+}
+
+.fc-launch-btn {
+  background: var(--accent-btn) !important;
+  color: var(--accent-btn-ink) !important;
+  border-color: var(--accent-btn) !important;
+}
+
+/* ==========================================================================
+   FLASHCARD FOCUS OVERLAY MODAL (BLURRED BACKDROP)
+   ========================================================================== */
+body.fc-overlay-open {
+  overflow: hidden;
+}
+
+@keyframes fcoFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#fc-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1400;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(15, 23, 42, 0.46);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+html[data-theme="warm"] #fc-overlay {
+  background: rgba(28, 22, 18, 0.48);
+}
+
+html[data-theme="dark"] #fc-overlay {
+  background: rgba(0, 0, 0, 0.68);
+}
+
+#fc-overlay.open {
+  display: flex;
+  animation: fcoFadeIn 0.18s ease-out;
+}
+
+.fco-shell {
+  width: min(94vw, 680px);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fco-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 10px 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.fco-top-left, .fco-top-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fco-select {
+  padding: 6px 11px;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  max-width: 195px;
+}
+
+.fco-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 11px;
+  border-radius: 9999px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.fco-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.fco-close-btn:hover {
+  border-color: var(--link-color);
+  color: var(--link-color);
+}
+
+.fco-progress-track {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.fco-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--link-color);
+  border-radius: 9999px;
+  transition: width 0.2s ease;
+}
+
+.fco-card {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--border-strong);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  min-height: min(350px, 50vh);
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  transition: transform 0.16s ease, opacity 0.16s ease, border-color 0.2s ease;
+}
+
+.fco-card.is-answer {
+  border-color: var(--link-color);
+  border-top: 4px solid var(--link-color);
+}
+
+.fco-card.is-mastered {
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28), inset 0 0 0 1.5px rgba(22, 163, 74, 0.45);
+}
+
+.fco-card.fco-flipping {
+  transform: scale(0.975);
+  opacity: 0.85;
+}
+
+.fco-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fco-face-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  background: var(--subject-bg);
+  color: var(--subject-ink);
+}
+
+.fco-q-recap {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  border-left: 3px solid var(--border-strong);
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.fco-q-text {
+  font-size: clamp(1.06rem, 2.2vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.48;
+  color: var(--ink);
+  margin: auto 0;
+}
+
+.fco-a-text {
+  font-size: 0.98rem;
+  line-height: 1.62;
+  color: var(--ink-secondary);
+  margin: auto 0;
+}
+
+.fco-tap-hint {
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.fco-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fco-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.fco-btn:hover {
+  border-color: var(--link-color);
+  color: var(--link-color);
+}
+
+.fco-btn.primary {
+  background: var(--accent-btn);
+  color: var(--accent-btn-ink);
+  border-color: var(--accent-btn);
+}
+
+.fco-btn.primary:hover {
+  opacity: 0.92;
+  color: var(--accent-btn-ink);
+}
+
+.fco-btn.mastered {
+  background: #16A34A;
+  color: #FFFFFF;
+  border-color: #16A34A;
+}
+
+.fco-btn.mastered:hover {
+  color: #FFFFFF;
+}
+
+@media (max-width: 640px) {
+  .fco-card {
+    padding: 18px 16px;
+    min-height: 270px;
+  }
+  .fco-btn {
+    height: 37px;
+    padding: 0 13px;
+    font-size: 0.77rem;
+  }
+  .fco-select {
+    max-width: 155px;
+  }
 }
 
 /* ==========================================================================
