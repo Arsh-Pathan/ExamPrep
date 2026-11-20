@@ -109,10 +109,9 @@
     deld: `<svg class="bento-art" viewBox="0 0 90 90" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M24 22h18a18 18 0 0 1 0 36H24V22z"/><line x1="12" y1="32" x2="24" y2="32"/><line x1="12" y1="48" x2="24" y2="48"/><line x1="60" y1="40" x2="76" y2="40"/><polyline points="16,74 28,74 28,64 44,64 44,74 58,74 58,64 74,64"/></svg>`,
     uhv: `<svg class="bento-art" viewBox="0 0 90 90" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M45 74V36"/><path d="M45 58c-14 0-22-9-22-21 12 0 22 8 22 21z"/><path d="M45 48c14 0 22-9 22-21-12 0-22 8-22 21z"/><circle cx="45" cy="22" r="7"/></svg>`,
     dm: `<svg class="bento-art" viewBox="0 0 90 90" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 24h58L52 50v20l-14 6V50L16 24z"/><circle cx="34" cy="14" r="3"/><circle cx="54" cy="14" r="2"/></svg>`,
-    dmath: `<svg class="bento-art" viewBox="0 0 90 90" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="6"/><circle cx="66" cy="24" r="6"/><circle cx="24" cy="66" r="6"/><circle cx="66" cy="66" r="6"/><path d="M30 24h30M24 30v30M66 30v30M30 66h30M29 29l32 32"/></svg>`,
   };
 
-  // Document-type grouping for the 112 PDFs
+  // Document-type grouping for the PDF library
   const PDF_SECTIONS = [
     { id: "syllabus",  title: "Syllabus & Official Timetable",                  sub: "Official NEP 2024 curriculum & Winter 2026 exam timetable", icon: "calendar" },
     { id: "qpapers24", title: "Question Papers (2024 Pattern — End-Sem)",       sub: "Core Computer Engg / CSE & allied branch Oct 2025 papers", icon: "fileText" },
@@ -151,10 +150,8 @@
     return { label: `${hrs}h ${mins}m left`, past: false, diffMs: diff };
   }
 
-  function getVisibleSubjects(includeSem4Override) {
-    const prefs = Store.getPreferences();
-    const inc = typeof includeSem4Override === "boolean" ? includeSem4Override : Boolean(prefs.includeSem4);
-    return DATA.subjects.filter((s) => inc || !s.isSem4);
+  function getVisibleSubjects() {
+    return DATA.subjects || [];
   }
 
   function getNextExamSubject() {
@@ -186,7 +183,6 @@
 
   function renderHome() {
     const user = Store.getActiveUser();
-    const prefs = Store.getPreferences();
     const overall = Store.getOverallStats();
     const next = getNextExamSubject();
     const today = Store.todayKey();
@@ -195,6 +191,7 @@
     const bookmarks = Store.getBookmarks();
     const greetingName = esc(user.name.split(" ")[0]);
     const solvedQbSubs = subs.filter((s) => Boolean(s.solvedQbHref));
+    const totalTopicsCount = subs.reduce((acc, s) => acc + (s.totalTopics || 0), 0);
 
     return `
       <div class="hero-strip">
@@ -208,7 +205,7 @@
           </div>
           <h1 class="display-heading">Hello, ${greetingName} &mdash;<br>Ready to master <strong>your exams?</strong></h1>
           <div class="hero-search-pill" data-action="open-search" role="button" tabindex="0">
-            <input type="text" placeholder="Search 193 topics, formulas, or 112 PDFs..." readonly />
+            <input type="text" placeholder="Search ${totalTopicsCount} topics, formulas, or ${DATA.pdfs.length} PDFs..." readonly />
             <button class="pill-arrow-btn" type="button" aria-label="Open global search">${ICONS.arrowNE}</button>
           </div>
         </section>
@@ -220,7 +217,7 @@
           </div>
           <div class="progress-hero-row">
             <div class="big-kpi">${overall.pct}%</div>
-            <div class="kpi-caption">Of ${prefs.includeSem4 ? "Sem III + IV" : "Semester III"} syllabus completed</div>
+            <div class="kpi-caption">Of Semester III (6 subjects) completed</div>
           </div>
           <div class="dot-matrix" aria-hidden="true">${renderDotMatrix(overall.pct)}</div>
         </section>
@@ -251,11 +248,7 @@
           <span class="eyebrow">Interactive Study Guides</span>
           <h2 class="section-heading">Courses based on <strong>your timetable</strong></h2>
         </div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
-          <button class="filter-chip ${prefs.includeSem4 ? "active" : ""}" data-action="toggle-sem4" type="button">
-            ${prefs.includeSem4 ? "Hide Discrete Math (Sem IV)" : "+ Discrete Math (Sem IV)"}
-          </button>
-        </div>
+        <span class="eyebrow">6 Sem III Subjects &bull; Nov&ndash;Dec 2026</span>
       </div>
 
       <div class="bento-grid">
@@ -376,7 +369,9 @@
         <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;">
           <span class="bento-code-pill">${esc(sub.examDay)} &bull; ${esc(sub.examTime)} &bull; ${esc(sub.marks[prefs.pattern] || sub.marks.revised)}</span>
           <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            ${sub.solvedQbHref ? `<a href="${esc(sub.solvedQbHref)}" class="btn-secondary">Solved Question Bank &nearr;</a>` : ""}
+            ${sub.solvedQbHref ? `<a href="${esc(sub.solvedQbHref)}" class="btn-secondary">Solved QB &nearr;</a>` : ""}
+            <a href="${esc(sub.href)}#u1-short-notes" class="btn-secondary">1-Page Short Notes</a>
+            <a href="${esc(sub.href)}#flashcards" class="btn-secondary">Flashcards (${sub.flashcardCount || 32}+)</a>
             <a href="${esc(sub.href)}" class="btn-primary">Open Study Guide &nearr;</a>
           </div>
         </div>
@@ -490,7 +485,7 @@
           </div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;">
             <a class="btn-secondary" href="${esc(DATA.timetable.sourcePdf)}" target="_blank" rel="noopener">Timetable PDF &nearr;</a>
-            <button class="filter-chip ${prefs.includeSem4 ? "active" : ""}" data-action="toggle-sem4" type="button">${prefs.includeSem4 ? "Sem IV Included" : "+ Discrete Math (Nov 26)"}</button>
+            <a class="btn-secondary" href="${esc(DATA.timetable.syllabusPdf)}" target="_blank" rel="noopener">Syllabus PDF &nearr;</a>
           </div>
         </div>
       </section>
@@ -534,6 +529,19 @@
             </div>
             <ul style="padding-left:18px;font-size:0.83rem;color:var(--ink-secondary);display:flex;flex-direction:column;gap:6px;">
               ${DATA.timetable.rules.map((r) => `<li>${esc(r)}</li>`).join("")}
+            </ul>
+          </section>
+
+          <section class="surface-card" style="margin-top:14px;">
+            <div class="card-title-row">
+              <span class="card-label">SPPU 6-Subject Exam Strategy</span>
+              <span class="eyebrow">Nov 25 &rarr; Dec 7</span>
+            </div>
+            <ul style="padding-left:18px;font-size:0.83rem;color:var(--ink-secondary);display:flex;flex-direction:column;gap:6px;">
+              <li><strong>Exam Order:</strong> DS (Nov 25) &rarr; OOP &amp; CG (Nov 27, 1 gap day) &rarr; OS (Nov 30, 2 gap days) &rarr; DELD (Dec 2, 1 gap day) &rarr; UHV (Dec 4, 1 gap day) &rarr; Digital Marketing (Dec 7, 2 gap days).</li>
+              <li><strong>Gap-Day Allocation:</strong> Finish heavy DS units (Hashing, MSTs, BSTs) by Nov 24 so you only need evening + 1-day sprints for OOP &amp; CG on Nov 26; use the 2 gap days before OS (Nov 28&ndash;29) to drill Scheduling Gantt charts, Banker's safety traces, TLB EMAT &amp; Page Replacement numericals.</li>
+              <li><strong>Hall Time Budget:</strong> For 60M/70M papers (2.5 hrs, 5 questions), spend <strong>25 mins/question</strong> + 15 mins final review &amp; diagram labeling. For 30M/35M papers (2 hrs: UHV &amp; Digital Marketing), spend <strong>22 mins/question</strong>.</li>
+              <li><strong>Full-Marks Answer Formula:</strong> Definition (1M) + Labelled Diagram / Schematic / Waveform (2M) + Step-by-Step Working / Truth Table / Numerical (3&ndash;4M).</li>
             </ul>
           </section>
         </div>
@@ -746,15 +754,14 @@
 
   function renderBubbleClusterSVG(subs) {
     const layout = [
-      { cx: 105, cy: 112, baseR: 48 },
-      { cx: 196, cy: 108, baseR: 46 },
-      { cx: 152, cy: 176, baseR: 44 },
-      { cx: 74, cy: 174, baseR: 34 },
-      { cx: 224, cy: 172, baseR: 34 },
-      { cx: 148, cy: 56, baseR: 35 },
-      { cx: 235, cy: 56, baseR: 30 },
+      { cx: 100, cy: 104, baseR: 48 },
+      { cx: 200, cy: 104, baseR: 46 },
+      { cx: 150, cy: 174, baseR: 43 },
+      { cx: 68,  cy: 170, baseR: 34 },
+      { cx: 232, cy: 170, baseR: 34 },
+      { cx: 150, cy: 48,  baseR: 35 },
     ];
-    const circles = subs.slice(0, 7).map((s, idx) => {
+    const circles = subs.slice(0, 6).map((s, idx) => {
       const st = Store.getSubjectStats(s.id);
       const pos = layout[idx];
       const r = Math.round(pos.baseR * (0.78 + (st.pct / 100) * 0.28));
@@ -1157,9 +1164,6 @@
       const inputEl = document.getElementById("reflection-input");
       Store.setMood(today, target.dataset.mood, inputEl ? inputEl.value : undefined);
       showToast("Daily study vibe saved");
-    } else if (act === "toggle-sem4") {
-      const prefs = Store.getPreferences();
-      Store.updatePreferences({ includeSem4: !prefs.includeSem4 });
     } else if (act === "select-subject") {
       uiState.selectedSubjectId = target.dataset.sub;
       renderMain();
@@ -1352,6 +1356,12 @@
     else if (validTabs.includes(hash)) uiState.tab = hash;
     if (params.get("sub") && DATA.subjects.some((s) => s.id === params.get("sub"))) {
       uiState.selectedSubjectId = params.get("sub");
+    }
+
+    const gsInput = document.getElementById("global-search-input");
+    if (gsInput && DATA && DATA.subjects) {
+      const totalTopicsCount = DATA.subjects.reduce((acc, s) => acc + (s.totalTopics || 0), 0);
+      gsInput.placeholder = `Search ${totalTopicsCount} topics, formulas, or ${(DATA.pdfs || []).length} PDFs...`;
     }
 
     Store.subscribe(renderMain);

@@ -48,13 +48,13 @@
       papers: {},
       bookmarks: [],
       notes: {},
+      flashcards: {},
       moodLog: {},
       studyLog: {},
       planTasks: defaultPlanClone(),
       preferences: {
         pattern: "revised",
         branch: "CSE",
-        includeSem4: false,
         theme: "light",
       },
     };
@@ -66,13 +66,16 @@
     if (!user.papers) user.papers = {};
     if (!Array.isArray(user.bookmarks)) user.bookmarks = [];
     if (!user.notes) user.notes = {};
+    if (!user.flashcards || typeof user.flashcards !== "object") user.flashcards = {};
     if (!user.moodLog) user.moodLog = {};
     if (!user.studyLog) user.studyLog = {};
     if (!user.planTasks || Object.keys(user.planTasks).length === 0) {
       user.planTasks = defaultPlanClone();
     }
     if (!user.preferences) {
-      user.preferences = { pattern: "revised", branch: "CSE", includeSem4: false, theme: "light" };
+      user.preferences = { pattern: "revised", branch: "CSE", theme: "light" };
+    } else if ("includeSem4" in user.preferences) {
+      delete user.preferences.includeSem4;
     }
     if (!THEMES.includes(user.preferences.theme)) {
       user.preferences.theme = "light";
@@ -333,6 +336,35 @@
     saveState(state);
   }
 
+  // Flashcards
+  function isFlashcardMastered(subId, fcId) {
+    const u = getActiveUser();
+    return Boolean(u.flashcards && u.flashcards[subId] && u.flashcards[subId][fcId]);
+  }
+
+  function toggleFlashcardMastered(subId, fcId) {
+    const u = getActiveUser();
+    if (!u.flashcards) u.flashcards = {};
+    if (!u.flashcards[subId]) u.flashcards[subId] = {};
+    const next = !u.flashcards[subId][fcId];
+    if (next) u.flashcards[subId][fcId] = true;
+    else delete u.flashcards[subId][fcId];
+    saveState(state);
+    return next;
+  }
+
+  function resetFlashcards(subId) {
+    const u = getActiveUser();
+    if (!u.flashcards) u.flashcards = {};
+    u.flashcards[subId] = {};
+    saveState(state);
+  }
+
+  function getFlashcardCount(subId) {
+    const u = getActiveUser();
+    return u.flashcards && u.flashcards[subId] ? Object.keys(u.flashcards[subId]).length : 0;
+  }
+
   // Mood Log
   function getMood(dateKey) {
     const k = dateKey || todayKey();
@@ -497,12 +529,11 @@
     };
   }
 
-  function getOverallStats(includeSem4Override) {
+  function getOverallStats() {
     const data = global.EXAM_DATA;
     const u = getActiveUser();
     if (!data) return { done: 0, total: 0, pct: 0, practicedPapers: 0, totalPapers: 0, totalMinutes: 0, activeDays: 0 };
-    const incSem4 = typeof includeSem4Override === "boolean" ? includeSem4Override : Boolean(u.preferences.includeSem4);
-    const subs = data.subjects.filter((s) => incSem4 || !s.isSem4);
+    const subs = data.subjects || [];
 
     let done = 0;
     let total = 0;
@@ -586,6 +617,10 @@
     getBookmarks,
     getNote,
     setNote,
+    isFlashcardMastered,
+    toggleFlashcardMastered,
+    resetFlashcards,
+    getFlashcardCount,
     getMood,
     setMood,
     getRecentMoods,

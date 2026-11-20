@@ -64,6 +64,14 @@
     scrollBar.id = "guide-scroll-bar";
     document.body.prepend(scrollBar);
 
+    let quickLinksHtml = "";
+    if (!isSolvedQb && document.getElementById("u1-short-notes")) {
+      quickLinksHtml += `<a class="gtb-btn gtb-hide-sm" href="#u1-short-notes">Short Notes</a>`;
+    }
+    if (!isSolvedQb && document.getElementById("flashcards")) {
+      quickLinksHtml += `<a class="gtb-btn gtb-hide-sm" href="#flashcards">Flashcards</a>`;
+    }
+
     let siblingLinkHtml = "";
     if (!isSolvedQb && sub.solvedQbHref) {
       siblingLinkHtml = `<a class="gtb-btn gtb-hide-sm" href="../${esc(sub.solvedQbHref)}">Solved QB</a>`;
@@ -82,6 +90,7 @@
         <span class="gtb-hide-sm" style="font-size:0.86rem;font-weight:700;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${esc(sub.name)}${isSolvedQb ? " &middot; Solved QB" : ""}</span>
       </div>
       <div class="gtb-right">
+        ${quickLinksHtml}
         ${siblingLinkHtml}
         <button id="gtb-practice-btn" class="gtb-btn" type="button" title="Hide answers to quiz yourself">Practice</button>
         <button id="gtb-notes-btn" class="gtb-btn gtb-hide-sm" type="button">Notes</button>
@@ -137,6 +146,278 @@
     modal.addEventListener("click", (e) => {
       if (e.target === modal) modal.classList.remove("open");
     });
+
+    const btt = document.createElement("button");
+    btt.id = "guide-btt-btn";
+    btt.type = "button";
+    btt.title = "Back to top";
+    btt.setAttribute("aria-label", "Back to top");
+    btt.innerHTML = "&#8593;";
+    btt.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    document.body.appendChild(btt);
+  }
+
+  function enhanceSidebar() {
+    const sb = document.getElementById("sidebar");
+    if (!sb) return;
+    const ul = sb.querySelector(":scope > ul");
+    if (!ul) return;
+
+    if (!document.getElementById("sb-search-wrap")) {
+      const sw = document.createElement("div");
+      sw.id = "sb-search-wrap";
+      sw.innerHTML = `<input id="sb-search-input" type="search" placeholder="Filter topics..." aria-label="Filter sidebar topics" />`;
+      sb.insertBefore(sw, ul);
+
+      const input = sw.querySelector("#sb-search-input");
+      input.addEventListener("input", () => {
+        const q = input.value.trim().toLowerCase();
+        ul.querySelectorAll(":scope > li").forEach((li) => {
+          const subLinks = Array.from(li.querySelectorAll(".sub-nav a"));
+          const headLink = li.querySelector(":scope > .sb-unit-row > a, :scope > a");
+          if (!q) {
+            li.classList.remove("sb-hidden");
+            subLinks.forEach((a) => a.classList.remove("sb-hidden"));
+            return;
+          }
+          const headMatch = headLink && headLink.textContent.toLowerCase().includes(q);
+          let anySubMatch = false;
+          subLinks.forEach((a) => {
+            const match = headMatch || a.textContent.toLowerCase().includes(q);
+            a.classList.toggle("sb-hidden", !match);
+            if (match) anySubMatch = true;
+          });
+          const showLi = headMatch || anySubMatch;
+          li.classList.toggle("sb-hidden", !showLi);
+          if (showLi && li.classList.contains("sb-unit-group")) {
+            li.classList.remove("collapsed");
+            const btn = li.querySelector(".sb-toggle-btn");
+            if (btn) btn.innerHTML = "&#9662;";
+          }
+        });
+      });
+    }
+
+    ul.querySelectorAll(":scope > li").forEach((li) => {
+      const subNav = li.querySelector(":scope > .sub-nav");
+      const headLink = li.querySelector(":scope > a");
+      if (!subNav || !headLink || li.classList.contains("sb-unit-group")) return;
+
+      li.classList.add("sb-unit-group");
+      const row = document.createElement("div");
+      row.className = "sb-unit-row";
+      li.insertBefore(row, headLink);
+      row.appendChild(headLink);
+
+      const tbtn = document.createElement("button");
+      tbtn.type = "button";
+      tbtn.className = "sb-toggle-btn";
+      tbtn.setAttribute("aria-label", "Toggle unit topics");
+      tbtn.innerHTML = "&#9662;";
+      tbtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const collapsed = li.classList.toggle("collapsed");
+        tbtn.innerHTML = collapsed ? "&#9656;" : "&#9662;";
+      });
+      row.appendChild(tbtn);
+    });
+  }
+
+  function enhanceUnitPagers() {
+    if (document.body.dataset.page === "solved-qb") return;
+    const units = Array.from(document.querySelectorAll('#main > section[id^="unit-"]'));
+    if (!units.length) return;
+    const hasStrategy = Boolean(document.getElementById("exam-strategy"));
+    const hasSolved = Boolean(document.getElementById("solved-paper"));
+    const hasCards = Boolean(document.getElementById("flashcards"));
+
+    units.forEach((sec, idx) => {
+      if (sec.querySelector(".unit-pager")) return;
+      const pager = document.createElement("div");
+      pager.className = "unit-pager";
+
+      const prevHref = idx > 0 ? `#${units[idx - 1].id}` : hasStrategy ? "#exam-strategy" : "#overview";
+      const prevLabel = idx > 0 ? `&larr; Unit ${idx}` : hasStrategy ? "&larr; Exam Strategy" : "&larr; Overview";
+
+      const snId = `u${idx + 1}-short-notes`;
+      const snEl = document.getElementById(snId);
+
+      let nextHref = "#references";
+      let nextLabel = "References &rarr;";
+      if (idx + 1 < units.length) {
+        nextHref = `#${units[idx + 1].id}`;
+        nextLabel = `Unit ${idx + 2} &rarr;`;
+      } else if (hasSolved) {
+        nextHref = "#solved-paper";
+        nextLabel = "Solved Paper &rarr;";
+      } else if (hasCards) {
+        nextHref = "#flashcards";
+        nextLabel = "Flashcards &rarr;";
+      }
+
+      pager.innerHTML = `
+        <a class="unit-pager-btn" href="${prevHref}">${prevLabel}</a>
+        ${snEl ? `<a class="unit-pager-btn" href="#${snId}">1-Page Short Notes</a>` : ""}
+        <a class="unit-pager-btn" href="${nextHref}">${nextLabel}</a>
+      `;
+      sec.appendChild(pager);
+    });
+  }
+
+  function enhanceShortNotes() {
+    document.querySelectorAll(".unit-short-notes").forEach((card, idx) => {
+      const hdr = card.querySelector(".short-notes-header");
+      if (!hdr || hdr.querySelector(".sn-print-btn")) return;
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "sn-print-btn";
+      btn.textContent = "Print 1-Page Sheet";
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".unit-short-notes.printing-now").forEach((el) => el.classList.remove("printing-now"));
+        card.classList.add("printing-now");
+        document.body.dataset.printUnit = card.id || `unit-${idx + 1}`;
+        const cleanup = () => {
+          card.classList.remove("printing-now");
+          delete document.body.dataset.printUnit;
+        };
+        window.addEventListener("afterprint", cleanup, { once: true });
+        window.print();
+        setTimeout(cleanup, 1200);
+      });
+      hdr.appendChild(btn);
+    });
+  }
+
+  function syncFlashcardsUI(sub) {
+    const sec = document.getElementById("flashcards");
+    if (!sec || !Store) return;
+    const cards = Array.from(sec.querySelectorAll(".flashcard-card"));
+    let masteredCount = 0;
+    cards.forEach((card, idx) => {
+      const fcId = card.dataset.fcId || `fc-${idx + 1}`;
+      card.dataset.fcId = fcId;
+      const mastered = Store.isFlashcardMastered(sub.id, fcId);
+      if (mastered) masteredCount += 1;
+      card.classList.toggle("is-mastered", mastered);
+      const knowBtn = card.querySelector("[data-fc-know]");
+      if (knowBtn) {
+        knowBtn.classList.toggle("mastered", mastered);
+        knowBtn.innerHTML = mastered ? "Mastered &#10003;" : "Mark Mastered";
+      }
+    });
+    const pill = document.getElementById("fc-stats-pill");
+    if (pill) {
+      pill.textContent = `${masteredCount}/${cards.length} Mastered`;
+    }
+  }
+
+  function initFlashcards(sub) {
+    const sec = document.getElementById("flashcards");
+    if (!sec) return;
+    const grid = sec.querySelector(".flashcards-grid") || document.getElementById("flashcards-grid");
+    const controls = sec.querySelector(".flashcards-controls");
+    const cards = Array.from(sec.querySelectorAll(".flashcard-card"));
+    if (!grid || !cards.length) return;
+
+    if (controls && !document.getElementById("fc-stats-pill")) {
+      const statsPill = document.createElement("span");
+      statsPill.id = "fc-stats-pill";
+      statsPill.className = "fc-stats-pill";
+      statsPill.textContent = `0/${cards.length} Mastered`;
+      controls.prepend(statsPill);
+    }
+
+    cards.forEach((card, idx) => {
+      const fcId = card.dataset.fcId || `fc-${idx + 1}`;
+      card.dataset.fcId = fcId;
+      if (!card.hasAttribute("tabindex")) card.setAttribute("tabindex", "0");
+      card.setAttribute("role", "button");
+
+      const back = card.querySelector(".flashcard-back");
+      if (back && !back.querySelector("[data-fc-know]")) {
+        const oldRet = back.querySelector(".fc-return");
+        const actions = document.createElement("div");
+        actions.className = "fc-back-actions";
+        const kbtn = document.createElement("button");
+        kbtn.type = "button";
+        kbtn.className = "fc-know-btn";
+        kbtn.dataset.fcKnow = fcId;
+        kbtn.textContent = "Mark Mastered";
+        actions.appendChild(kbtn);
+        if (oldRet) {
+          actions.appendChild(oldRet);
+        } else {
+          const ret = document.createElement("span");
+          ret.className = "fc-return";
+          ret.textContent = "Tap to flip back";
+          actions.appendChild(ret);
+        }
+        back.appendChild(actions);
+      }
+
+      const flipHandler = (e) => {
+        if (e.target.closest("[data-fc-know]")) return;
+        card.classList.toggle("is-flipped");
+        setTimeout(fitWideMath, 60);
+      };
+      card.addEventListener("click", flipHandler);
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          flipHandler(e);
+        }
+      });
+    });
+
+    sec.addEventListener("click", (e) => {
+      const knowBtn = e.target.closest("[data-fc-know]");
+      if (knowBtn && Store) {
+        e.stopPropagation();
+        const mastered = Store.toggleFlashcardMastered(sub.id, knowBtn.dataset.fcKnow);
+        showToast(mastered ? "Flashcard marked mastered" : "Flashcard unmarked");
+        return;
+      }
+
+      const actBtn = e.target.closest("[data-fc-action]");
+      if (!actBtn) return;
+      const act = actBtn.dataset.fcAction;
+      const currentCards = Array.from(grid.querySelectorAll(".flashcard-card"));
+
+      if (act === "shuffle") {
+        for (let i = currentCards.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          const tmp = currentCards[i];
+          currentCards[i] = currentCards[j];
+          currentCards[j] = tmp;
+        }
+        currentCards.forEach((c) => grid.appendChild(c));
+        showToast("Flashcards shuffled");
+      } else if (act === "flip-all") {
+        const visible = currentCards.filter((c) => !c.classList.contains("fc-hidden"));
+        const allFlipped = visible.length > 0 && visible.every((c) => c.classList.contains("is-flipped"));
+        visible.forEach((c) => c.classList.toggle("is-flipped", !allFlipped));
+        setTimeout(fitWideMath, 60);
+      } else if (act === "reset-deck") {
+        const sel = document.getElementById("fc-unit-filter");
+        if (sel) sel.value = "all";
+        currentCards.forEach((c) => {
+          c.classList.remove("fc-hidden", "is-flipped");
+        });
+        if (Store) Store.resetFlashcards(sub.id);
+        showToast("Flashcard deck reset");
+      }
+    });
+
+    const unitSel = document.getElementById("fc-unit-filter");
+    if (unitSel) {
+      unitSel.addEventListener("change", () => {
+        const val = unitSel.value;
+        grid.querySelectorAll(".flashcard-card").forEach((c) => {
+          c.classList.toggle("fc-hidden", val !== "all" && c.dataset.unit !== val);
+        });
+      });
+    }
   }
 
   function enhanceTablesAndCode() {
@@ -291,6 +572,8 @@
       dot.textContent = user.name.charAt(0).toUpperCase();
     }
     if (uname && user) uname.textContent = user.name;
+
+    syncFlashcardsUI(sub);
 
     if (document.body.dataset.page === "solved-qb") return;
 
@@ -494,6 +777,9 @@
       const bar = document.getElementById("guide-scroll-bar");
       if (bar) bar.style.width = `${pct}%`;
 
+      const btt = document.getElementById("guide-btt-btn");
+      if (btt) btt.classList.toggle("visible", window.scrollY > 420);
+
       const links = document.querySelectorAll("#sidebar a[href^='#']");
       let current = "";
       for (const link of links) {
@@ -501,16 +787,31 @@
         const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top <= 140) current = id;
       }
-      links.forEach((l) => l.classList.toggle("active", l.getAttribute("href") === `#${current}`));
+      links.forEach((l) => {
+        const isAct = l.getAttribute("href") === `#${current}`;
+        l.classList.toggle("active", isAct);
+        if (isAct) {
+          const grp = l.closest(".sb-unit-group.collapsed");
+          if (grp) {
+            grp.classList.remove("collapsed");
+            const tb = grp.querySelector(".sb-toggle-btn");
+            if (tb) tb.innerHTML = "&#9662;";
+          }
+        }
+      });
     });
   }
 
   document.addEventListener("DOMContentLoaded", () => {
     const sub = getSub();
     buildChrome(sub);
+    enhanceSidebar();
+    enhanceUnitPagers();
+    enhanceShortNotes();
     enhanceTablesAndCode();
     enhancePracticeCards();
     buildTrackers(sub);
+    initFlashcards(sub);
     bindEvents(sub);
     if (Store) {
       Store.subscribe(() => syncUI(sub));

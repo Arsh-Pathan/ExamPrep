@@ -24,7 +24,6 @@ html[data-theme="light"] {
   --tile-deld: #F2EEE9;    --tile-deld-ink: #3E3127;
   --tile-uhv: #E4EED9;     --tile-uhv-ink: #2B3B19;
   --tile-dm: #FCE1D8;      --tile-dm-ink: #5B2114;
-  --tile-dmath: #DCECFB;   --tile-dmath-ink: #1B3B5F;
   --tile-pill-bg: rgba(255, 255, 255, 0.72);
   --tile-track: rgba(17, 24, 39, 0.12);
   --art-opacity: 0.2;
@@ -54,7 +53,6 @@ html[data-theme="warm"] {
   --tile-deld: #E9E0D7;    --tile-deld-ink: #42352A;
   --tile-uhv: #D3DEC2;     --tile-uhv-ink: #2B3B1A;
   --tile-dm: #F0C6B9;      --tile-dm-ink: #5A2216;
-  --tile-dmath: #C7DDF4;   --tile-dmath-ink: #1C3B5E;
   --tile-pill-bg: rgba(255, 255, 255, 0.6);
   --tile-track: rgba(23, 23, 23, 0.13);
   --art-opacity: 0.36;
@@ -84,7 +82,6 @@ html[data-theme="dark"] {
   --tile-deld: #2A2522;    --tile-deld-ink: #E8DCD2;
   --tile-uhv: #252E1E;     --tile-uhv-ink: #D3E2BE;
   --tile-dm: #37231F;      --tile-dm-ink: #F5C7BA;
-  --tile-dmath: #1E2D40;   --tile-dmath-ink: #C6DFF7;
   --tile-pill-bg: rgba(255, 255, 255, 0.1);
   --tile-track: rgba(255, 255, 255, 0.14);
   --art-opacity: 0.2;
@@ -607,7 +604,6 @@ a {
 .bento-sub-deld  { background: var(--tile-deld);  color: var(--tile-deld-ink); }
 .bento-sub-uhv   { background: var(--tile-uhv);   color: var(--tile-uhv-ink); }
 .bento-sub-dm    { background: var(--tile-dm);    color: var(--tile-dm-ink); }
-.bento-sub-dmath { background: var(--tile-dmath); color: var(--tile-dmath-ink); }
 
 .bento-card {
   position: relative;
