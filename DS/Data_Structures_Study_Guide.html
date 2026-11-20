@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Data Structures (PCC-201-CSE) — SPPU SE 2024 Pattern Complete Study Guide</title>
+<title>Data Structures (PCC-201-CSE) — SPPU SE 2024 Pattern Complete Master Study Guide</title>
 <meta name="theme-color" content="#F8F9FB">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,1357 +30,1503 @@ window.MathJax = {
   <h2>Data Structures</h2>
   <p class="sb-sub">PCC-201-CSE | SPPU 2024 Pattern</p>
   <ul>
-    <li><a href="#overview" class="nav-unit">Course Overview</a></li>
+    <li><a href="#overview" class="nav-unit">Course Overview &amp; Strategy</a></li>
     <li>
       <a href="#unit-1" class="nav-unit">Unit I: Intro &amp; Complexity</a>
       <ul class="sub-nav">
-        <li><a href="#u1-adt">ADT &amp; Classifications</a></li>
+        <li><a href="#u1-adt">ADTs &amp; Classifications</a></li>
         <li><a href="#u1-complexity">Space, Time &amp; Step Count</a></li>
-        <li><a href="#u1-asymptotic">Asymptotic Notations (O, Ω, Θ)</a></li>
-        <li><a href="#u1-constructs">Loop Analysis &amp; Strategies</a></li>
-        <li><a href="#u1-casestudy">Case Studies (E-Commerce &amp; Calendar)</a></li>
-        <li><a href="#u1-qa">Unit I Exam Q&amp;A</a></li>
+        <li><a href="#u1-asymptotic">Asymptotic Notations (O, &Omega;, &Theta;)</a></li>
+        <li><a href="#u1-strategies">Divide &amp; Conquer &amp; Greedy</a></li>
+        <li><a href="#u1-short-notes">One-Page Unit I Short Notes</a></li>
       </ul>
     </li>
     <li>
       <a href="#unit-2" class="nav-unit">Unit II: Arrays, Search &amp; Sort</a>
       <ul class="sub-nav">
-        <li><a href="#u2-arrays">Array ADT &amp; Row/Col Major</a></li>
+        <li><a href="#u2-arrays">Array ADT &amp; Address Calculation</a></li>
         <li><a href="#u2-sparse">Sparse Matrix &amp; Fast Transpose</a></li>
-        <li><a href="#u2-search">Linear, Binary, Fibonacci &amp; Indexed</a></li>
-        <li><a href="#u2-sort">Sorting &amp; Stability</a></li>
-        <li><a href="#u2-casestudy">Case Study (Social Network)</a></li>
-        <li><a href="#u2-qa">Unit II Exam Q&amp;A</a></li>
+        <li><a href="#u2-search">Searching (Linear, Binary, Fib, Indexed)</a></li>
+        <li><a href="#u2-sort">Sorting (Bubble, Insertion, Select, Quick, Merge)</a></li>
+        <li><a href="#u2-short-notes">One-Page Unit II Short Notes</a></li>
       </ul>
     </li>
     <li>
       <a href="#unit-3" class="nav-unit">Unit III: Stacks, Queues &amp; Lists</a>
       <ul class="sub-nav">
-        <li><a href="#u3-stack">Stack ADT &amp; Multiple Stacks</a></li>
-        <li><a href="#u3-expr">Infix, Prefix &amp; Postfix</a></li>
-        <li><a href="#u3-queue">Queues, Circular &amp; Priority</a></li>
-        <li><a href="#u3-ll">Linked Lists (SLL, CLL, DLL)</a></li>
-        <li><a href="#u3-casestudy">Case Study (Linked Stack &amp; Queue)</a></li>
-        <li><a href="#u3-qa">Unit III Exam Q&amp;A</a></li>
+        <li><a href="#u3-stack">Stack ADT &amp; Infix-to-Postfix</a></li>
+        <li><a href="#u3-queue">Queues (Circular &amp; Priority)</a></li>
+        <li><a href="#u3-linked">Linked Lists (SLL, DLL, Circular Reversal)</a></li>
+        <li><a href="#u3-short-notes">One-Page Unit III Short Notes</a></li>
       </ul>
     </li>
     <li>
-      <a href="#unit-4" class="nav-unit">Unit IV: Hashing</a>
+      <a href="#unit-4" class="nav-unit">Unit IV: Hashing Techniques</a>
       <ul class="sub-nav">
-        <li><a href="#u4-concepts">Hash Table Concepts &amp; Load Factor</a></li>
-        <li><a href="#u4-functions">Hash Functions</a></li>
-        <li><a href="#u4-collision">Open Addressing &amp; Chaining</a></li>
-        <li><a href="#u4-extendible">Overflow &amp; Extendible Hashing</a></li>
-        <li><a href="#u4-casestudy">Case Study (Dictionary App)</a></li>
-        <li><a href="#u4-qa">Unit IV Exam Q&amp;A</a></li>
+        <li><a href="#u4-hash-concepts">Hash Tables &amp; Load Density</a></li>
+        <li><a href="#u4-collision">Open Addressing vs Chaining</a></li>
+        <li><a href="#u4-rehashing">Rehashing &amp; Extendible Hashing</a></li>
+        <li><a href="#u4-short-notes">One-Page Unit IV Short Notes</a></li>
       </ul>
     </li>
     <li>
-      <a href="#unit-5" class="nav-unit">Unit V: Graphs &amp; Trees</a>
+      <a href="#unit-5" class="nav-unit">Unit V: Graphs and Trees</a>
       <ul class="sub-nav">
-        <li><a href="#u5-graphs">Graph Storage, BFS &amp; DFS</a></li>
-        <li><a href="#u5-mst">MST: Prim's &amp; Kruskal's</a></li>
-        <li><a href="#u5-trees">General &amp; Binary Trees</a></li>
-        <li><a href="#u5-traversals">Tree Traversals &amp; BST</a></li>
-        <li><a href="#u5-casestudy">Case Studies (GPS &amp; Huffman)</a></li>
-        <li><a href="#u5-qa">Unit V Exam Q&amp;A</a></li>
+        <li><a href="#u5-trees">Binary Trees &amp; Traversals</a></li>
+        <li><a href="#u5-bst">Binary Search Tree (BST) &amp; Code</a></li>
+        <li><a href="#u5-huffman">Huffman Coding &amp; Compression</a></li>
+        <li><a href="#u5-graphs">Graph Traversals (BFS, DFS)</a></li>
+        <li><a href="#u5-mst">Minimum Spanning Trees (Prim, Kruskal)</a></li>
+        <li><a href="#u5-short-notes">One-Page Unit V Short Notes</a></li>
       </ul>
     </li>
-    <li><a href="#references" class="nav-unit">References &amp; Citations</a></li>
+    <li><a href="#flashcards" class="nav-unit">Active Recall Flashcards (25 Cards)</a></li>
   </ul>
 </nav>
 
 <main id="main">
-<header id="overview">
-  <span class="pill">SPPU SE Computer Engineering</span>
-  <span class="pill-secondary">2024 Pattern (Revised)</span>
-  <h1>Data Structures (PCC-201-CSE)</h1>
-  <p class="subtitle">Complete Exam-Focused Study Guide with Simple Intuition, Formal Definitions, Python 3 Implementations, Solved Numericals &amp; SPPU Model Answers.</p>
+<div class="main-inner">
 
-  <div class="meta-grid">
-    <div class="meta-card"><div class="label">Course Code</div><div class="value">PCC-201-CSE</div></div>
-    <div class="meta-card"><div class="label">Credits / Hours</div><div class="value">03 Credits | 45 Hours</div></div>
-    <div class="meta-card"><div class="label">Assessment</div><div class="value">CCE: 40 | End-Sem: 60</div></div>
-    <div class="meta-card"><div class="label">Language</div><div class="value">Python 3</div></div>
-  </div>
-
-  <div class="exam-tip">
-    <span class="box-title">Course Outcomes (CO1–CO5) &amp; Exam Strategy</span>
-    <ul>
-      <li><strong>CO1 (Unit I):</strong> Understand &amp; analyze data structures and algorithms ($O, \Omega, \Theta$, step count, Divide &amp; Conquer, Greedy).</li>
-      <li><strong>CO2 (Unit II):</strong> Apply searching (Linear, Binary, Fibonacci, Indexed) and sorting (Bubble, Insertion, Selection, Quick, Merge).</li>
-      <li><strong>CO3 (Unit III):</strong> Use Stacks (Multiple Stacks, Infix/Postfix), Queues (Circular, Priority), and Linked Lists (SLL, CLL, DLL).</li>
-      <li><strong>CO4 (Unit IV):</strong> Analyze hashing techniques, collision resolution (Probing, Chaining), and Extendible Hashing.</li>
-      <li><strong>CO5 (Unit V):</strong> Demonstrate operations on Graphs (BFS, DFS, Prim's, Kruskal's) and Trees (Traversals, BST, Huffman).</li>
-    </ul>
+<header class="guide-header">
+  <div class="breadcrumb">SPPU S.E. Sem III (NEP 2024 Pattern) &bull; PCC-201-CSE</div>
+  <h1>Data Structures Master Study Guide</h1>
+  <p class="subtitle">Complete syllabus theory, concrete C++ ADT structures, pointer layouts, step-by-step algorithms, solved exam numericals, one-page unit short notes, and active recall flashcards.</p>
+  
+  <div class="quick-nav-bar">
+    <a href="#overview">Overview &amp; Strategy</a>
+    <a href="#unit-1">Unit I</a>
+    <a href="#unit-2">Unit II</a>
+    <a href="#unit-3">Unit III</a>
+    <a href="#unit-4">Unit IV</a>
+    <a href="#unit-5">Unit V</a>
+    <a href="#u1-short-notes">Unit Short Notes</a>
+    <a href="#flashcards">Flashcards Deck</a>
   </div>
 </header>
 
-<section id="unit-1">
-  <h2 class="unit-title">Unit I: Introduction to Data Structures and Algorithms (09 Hours)</h2>
-
-  <h3 id="u1-adt">1.1 Data Structures, Abstract Data Types (ADT) &amp; Classifications</h3>
-  <p>A computer program is made of two things: <strong>data</strong> and <strong>algorithms</strong> (instructions that process that data). If you organize your books randomly on the floor, finding one takes forever. If you arrange them alphabetically on a shelf, finding one takes seconds. A <strong>Data Structure</strong> is that shelf.</p>
-
-  <div class="concept-box">
-    <span class="box-title">Key Term: Data Structure &amp; Abstract Data Type (ADT)</span>
-    <p><strong>Exam Definition (Data Structure):</strong> A data structure is a specialized format for organizing, processing, retrieving, and storing data in computer memory so that operations on the data can be performed efficiently.</p>
-    <p><strong>Exam Definition (ADT):</strong> An Abstract Data Type (ADT) is a mathematical model for data types defined by its behavior (semantics) from the point of view of a user—specifically in terms of possible values, possible operations on data of this type, and the behavior of these operations—without specifying how it is implemented in memory.</p>
-    <p><strong>In Simple Words:</strong> An ADT is like a car's dashboard (steering wheel, brake, accelerator): you know <em>what</em> each control does, without needing to know <em>how</em> the engine works under the hood. In Python, a <code>Stack</code> ADT specifies <code>push()</code>, <code>pop()</code>, and <code>peek()</code>, regardless of whether you implement it using a Python <code>list</code> or a <code>Linked List</code>.</p>
-  </div>
-
-  <h4>Complete Classification of Data Structures</h4>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>Dimension</th><th>Type A</th><th>Type B</th><th>Key Difference &amp; Examples</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Arrangement</strong></td>
-          <td><strong>Linear</strong></td>
-          <td><strong>Non-Linear</strong></td>
-          <td>Linear stores elements sequentially (one after another): <em>Array, Stack, Queue, Linked List</em>. Non-linear stores elements hierarchically or as networks: <em>Tree, Graph</em>.</td>
-        </tr>
-        <tr>
-          <td><strong>Memory Allocation</strong></td>
-          <td><strong>Static</strong></td>
-          <td><strong>Dynamic</strong></td>
-          <td>Static has fixed size decided at compile time (e.g., C fixed-size array). Dynamic grows/shrinks at runtime (e.g., <em>Linked List, Python list</em>).</td>
-        </tr>
-        <tr>
-          <td><strong>Version History</strong></td>
-          <td><strong>Ephemeral</strong></td>
-          <td><strong>Persistent</strong></td>
-          <td>Ephemeral updates destroy the previous version (normal Python <code>list.append()</code>). Persistent preserves previous versions when modified (e.g., Git history, immutable tuples, functional trees).</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="concept-box">
-    <span class="box-title">Linear vs Non-Linear &amp; Persistent vs Ephemeral</span>
-    <p><strong>Exam Definition (Persistent vs Ephemeral):</strong> An <em>ephemeral</em> data structure is one in which an update operation modifies the structure in place, destroying the old version. A <em>persistent</em> data structure always preserves the previous version of itself when it is modified (partially persistent allows querying old versions; fully persistent allows both querying and updating old versions).</p>
-    <p><strong>In Simple Words:</strong> Ephemeral is like writing with a pencil and erasing—only the latest version exists. Persistent is like Google Docs Version History—every edit creates a new version while keeping the old ones safe.</p>
-  </div>
-
-  <h3 id="u1-complexity">1.2 Algorithms, Space &amp; Time Complexity, and Step Count Method</h3>
-  <p>An <strong>Algorithm</strong> is a finite, step-by-step procedure to solve a well-defined computational problem. Every valid algorithm must have 5 characteristics: <strong>Input</strong> ($\ge 0$), <strong>Output</strong> ($\ge 1$), <strong>Definiteness</strong> (clear, unambiguous steps), <strong>Finiteness</strong> (terminates in finite steps), and <strong>Effectiveness</strong> (basic, doable steps).</p>
-
-  <div class="formula-box">
-    <span class="box-title">Space Complexity &amp; Time Complexity Formulas</span>
-    <p><strong>Space Complexity $S(P)$:</strong> Total memory required by a program $P$ to run to completion:</p>
-    $$S(P) = C + S_p(I)$$
-    <p>where $C$ is the <strong>fixed part</strong> (instructions, constants, simple variables) and $S_p(I)$ is the <strong>variable part</strong> (dynamically allocated memory, recursion stack space depending on input size $n$).</p>
-    <p><strong>Time Complexity $T(P)$:</strong> Total number of elementary operations (steps) executed by an algorithm as a function of input size $n$.</p>
-  </div>
-
-  <h4>Finding Complexity using the Step Count Method</h4>
-  <p>In the <strong>Step Count Method</strong> (Frequency Count), we count how many times each executable statement runs for an input of size $n$, then sum them up. Comments and declarations cost <strong>0 steps</strong>; simple assignments/returns cost <strong>1 step</strong>; a loop running $n$ times multiplies its body's step count by $n$.</p>
-
-  <pre><code>def odd_even_check(n: int) -> None:
-    # Step count analysis for SPPU Oct 2025 Exam Question
-    for num in range(1, n):       # Loop header executes n times (n-1 True + 1 False)
-        if num % 2 == 0:          # Executes (n - 1) times
-            print(num, "is Even") # Executes ~ (n - 1)/2 times
-        else:
-            print(num, "is Odd")  # Executes ~ (n - 1)/2 times
-
-# Total Step Count: T(n) = n + (n - 1) + (n - 1) = 3n - 2  => O(n) Linear!
-odd_even_check(6)</code></pre>
-
-  <div class="exam-tip">
-    <span class="box-title">Solved Step Count Example: Sum of Array Elements</span>
-    <p>Consider <code>total = 0</code> (1 step), <code>for i in range(n):</code> ($n+1$ steps), <code>total += arr[i]</code> ($n$ steps), <code>return total</code> (1 step). Total steps $= 1 + (n+1) + n + 1 = 2n + 3$. Dropping constants and lower-order terms gives <strong>$O(n)$ (Linear)</strong>.</p>
-  </div>
-
-  <h3 id="u1-asymptotic">1.3 Asymptotic Notations: Big-O, Omega, and Theta</h3>
-  <p>Instead of measuring exact seconds (which depend on CPU speed), we measure how an algorithm's runtime <strong>grows</strong> as input size $n \to \infty$.</p>
-
-  <div class="concept-box">
-    <span class="box-title">Formal Definitions of Asymptotic Notations</span>
-    <ul>
-      <li><strong>Big-O ($O$) — Upper Bound (Worst Case):</strong> $f(n) = O(g(n))$ if there exist positive constants $c$ and $n_0$ such that $0 \le f(n) \le c \cdot g(n)$ for all $n \ge n_0$. <em>In simple words:</em> "It will never take MORE than this."</li>
-      <li><strong>Big-Omega ($\Omega$) — Lower Bound (Best Case):</strong> $f(n) = \Omega(g(n))$ if there exist positive constants $c$ and $n_0$ such that $0 \le c \cdot g(n) \le f(n)$ for all $n \ge n_0$. <em>In simple words:</em> "It will take AT LEAST this much."</li>
-      <li><strong>Big-Theta ($\Theta$) — Tight Bound (Average / Exact Growth):</strong> $f(n) = \Theta(g(n))$ if there exist positive constants $c_1, c_2$ and $n_0$ such that $0 \le c_1 \cdot g(n) \le f(n) \le c_2 \cdot g(n)$ for all $n \ge n_0$. <em>In simple words:</em> "It grows at the EXACT same rate, sandwiched between $c_1 g(n)$ and $c_2 g(n)$."</li>
-    </ul>
-  </div>
-
-  <figure class="figure-box">
-    <img src="assets/big_o_complexity.png" alt="Comparison of Big-O computational complexity growth curves">
-    <figcaption>Figure 1.1: Order of Growth — Big-O Complexity Curves from O(1) to O(n!). (Source: Wikimedia Commons)</figcaption>
-  </figure>
-
-  <h3 id="u1-constructs">1.4 Analysis of Programming Constructs &amp; Algorithmic Strategies</h3>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>Complexity Class</th><th>Name</th><th>Typical Construct</th><th>Example</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>$O(1)$</td><td>Constant</td><td>Direct statement / array index</td><td><code>x = arr[5]</code></td></tr>
-        <tr><td>$O(\log n)$</td><td>Logarithmic</td><td>Problem size halved each step</td><td>Binary Search</td></tr>
-        <tr><td>$O(n)$</td><td>Linear</td><td>Single loop from $1$ to $n$</td><td>Linear Search</td></tr>
-        <tr><td>$O(n \log n)$</td><td>Linearithmic</td><td>Divide &amp; Conquer + linear merge</td><td>Merge Sort</td></tr>
-        <tr><td>$O(n^2)$</td><td>Quadratic</td><td>Two nested loops ($n \times n$)</td><td>Bubble Sort</td></tr>
-        <tr><td>$O(n^3)$</td><td>Cubic</td><td>Three nested loops ($n \times n \times n$)</td><td>Matrix Multiplication</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <pre><code># Demonstrating Logarithmic, Linear, Quadratic, and Cubic constructs
-def logarithmic_halving(n: int) -> int:
-    steps = 0
-    while n > 1:
-        n //= 2
-        steps += 1
-    return steps  # O(log n)
-
-def quadratic_pairs(arr: list[int]) -> int:
-    count = 0
-    for i in range(len(arr)):
-        for j in range(len(arr)):
-            count += 1
-    return count  # O(n^2)
-
-def cubic_triplets(n: int) -> int:
-    total = 0
-    for i in range(n):
-        for j in range(n):
-            for k in range(n):
-                total += 1
-    return total  # O(n^3)</code></pre>
-
-  <h4>Algorithmic Strategies: Divide &amp; Conquer vs Greedy</h4>
-  <ul>
-    <li><strong>Divide and Conquer:</strong> Break the problem into smaller independent subproblems (<em>Divide</em>), solve them recursively (<em>Conquer</em>), and combine their solutions (<em>Combine</em>). Examples: Binary Search, Merge Sort, Quick Sort.</li>
-    <li><strong>Greedy Strategy:</strong> Build the solution step by step, always picking the locally best (optimal) choice at the current moment without looking back, hoping it leads to a globally optimal solution. Examples: Activity Selection, Prim's MST, Kruskal's MST, Huffman Coding.</li>
-  </ul>
-
-  <h3 id="u1-casestudy">1.5 Unit I Case Studies</h3>
-  <div class="concept-box">
-    <span class="box-title">Case Study 1: E-Commerce Product Sorting using Divide &amp; Conquer</span>
-    <p>An e-commerce site (like Amazon or Flipkart) needs to sort 1,00,000+ products by price or rating in milliseconds. An $O(n^2)$ sort would take $10^{10}$ operations (too slow!). Using <strong>Merge Sort</strong> (Divide &amp; Conquer), it splits the product list in half recursively and merges sorted halves in $O(n \log n)$ time (~1.7 million operations)—plus Merge Sort is <strong>stable</strong>, preserving original relevance order for equal prices.</p>
-  </div>
-
-  <div class="concept-box">
-    <span class="box-title">Case Study 2: Google Calendar Scheduling using Greedy Strategy</span>
-    <p>Given a list of meetings with <code>(start, end)</code> times, how do you fit the <strong>maximum number of non-overlapping meetings</strong> into one room? The <strong>Greedy Choice</strong>: always pick the meeting that <strong>finishes earliest</strong>! That leaves the maximum remaining time for future meetings.</p>
-  </div>
-
-  <pre><code>def max_calendar_meetings(meetings: list[tuple[int, int, str]]) -> list[tuple[int, int, str]]:
-    # Greedy Interval Scheduling: sort by finish time and pick non-overlapping slots.
-    sorted_meetings = sorted(meetings, key=lambda m: m[1])
-    selected = []
-    last_end = -1
-    for start, end, title in sorted_meetings:
-        if start >= last_end:
-            selected.append((start, end, title))
-            last_end = end
-    return selected
-
-events = [(9, 11, "DSA Lab"), (10, 12, "Team Sync"), (11, 13, "Lunch"), (12, 14, "Project")]
-print("Scheduled:", max_calendar_meetings(events))
-# Output: [(9, 11, 'DSA Lab'), (11, 13, 'Lunch')]</code></pre>
-
-  <h3 id="u1-qa">1.6 Important SPPU Exam Questions &amp; Model Answers (Unit I)</h3>
-  <div class="qa-card">
-    <div class="qa-q">Q1. Explain Asymptotic Notations (Big-O, Omega, Theta) with graph of order of growth. <span class="marks-badge">6M / 8M (Oct 2025)</span></div>
-    <p><strong>Model Answer Points:</strong> (1) Define asymptotic analysis (hardware-independent growth rate as $n \to \infty$). (2) Give formal inequalities &amp; meanings for $O(g(n))$ (upper bound/worst case), $\Omega(g(n))$ (lower bound/best case), and $\Theta(g(n))$ (tight bound/average). (3) Draw the $f(n)$ vs $c \cdot g(n)$ graphs showing crossover point $n_0$, and order of growth hierarchy: $O(1) &lt; O(\log n) &lt; O(n) &lt; O(n \log n) &lt; O(n^2) &lt; O(2^n)$.</p>
-  </div>
-  <div class="qa-card">
-    <div class="qa-q">Q2. Define ADT. Compare Linear vs Non-Linear, Static vs Dynamic, and Persistent vs Ephemeral Data Structures. <span class="marks-badge">6M / 8M (Oct 2025)</span></div>
-    <p><strong>Model Answer Points:</strong> (1) Formal ADT definition (mathematical model + operations without implementation details). (2) 3–4 comparison points in tabular form for Linear vs Non-Linear (memory layout, traversal, examples), Static vs Dynamic (compile-time vs runtime size, memory waste/flexibility), and Persistent vs Ephemeral (version preservation vs in-place overwrite).</p>
+<section id="overview" class="unit-section">
+  <div class="exam-strategy-banner">
+    <h3>SPPU Exam Scoring Blueprint &amp; Strategy (PCC-201-CSE)</h3>
+    <p>Data Structures is a high-scoring course when answers combine: <strong>Concrete C++ Data Structure definition &rarr; Memory layout diagram &rarr; Step-by-step algorithm &rarr; Time &amp; Space Complexity proof</strong>.</p>
+    <div class="strategy-grid">
+      <div class="strategy-pill">
+        <strong>Unit Marks Distribution</strong>
+        Continuous Assessment (CCE): 40 Marks | End-Sem University Exam: 60 Marks.
+        Questions follow 5 pairs: Q1/Q2 (Unit I), Q3/Q4 (Unit II), Q5/Q6 (Unit III), Q7/Q8 (Unit IV), Q9/Q10 (Unit V).
+      </div>
+      <div class="strategy-pill">
+        <strong>Mandatory C++ Structures</strong>
+        Never write vague descriptions. Always write exact <code>struct Node</code> or <code>class ADT</code> declarations with pointer syntax. Evaluators award 40% of marks for correct struct definitions!
+      </div>
+      <div class="strategy-pill">
+        <strong>Trace Tables for Numericals</strong>
+        For Hashing, Infix-to-Postfix, Fast Transpose, and MSTs, always draw full step-by-step execution trace tables with column headers.
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="unit-2">
-  <h2 class="unit-title">Unit II: Linear Data Structures, Searching and Sorting (09 Hours)</h2>
-
-  <h3 id="u2-arrays">2.1 Array ADT, Storage Representation &amp; Row/Column-Major Order</h3>
-  <div class="concept-box">
-    <span class="box-title">Key Term: Array as an Abstract Data Type (ADT)</span>
-    <p><strong>Exam Definition:</strong> An Array ADT is a finite, ordered collection of homogeneous elements stored in contiguous memory locations, where each element is uniquely identified by an index (or tuple of indices) supporting constant-time $O(1)$ random access.</p>
-    <p><strong>In Simple Words:</strong> An array is like a row of numbered lockers. Because all lockers are the same size and sit side-by-side, if you know Locker #0's address, you can jump straight to Locker #47 in one math calculation!</p>
-  </div>
-
-  <p><strong>Core Array Operations:</strong> <code>Create(size)</code>, <code>Traverse()</code> ($O(n)$), <code>Get(index)</code> ($O(1)$), <code>Set(index, val)</code> ($O(1)$), <code>Insert(index, val)</code> ($O(n)$ due to shifting), <code>Delete(index)</code> ($O(n)$ due to shifting), and <code>Search(val)</code>.</p>
-
-  <h4>Address Calculation: 1D and 2D Arrays (Row-Major &amp; Column-Major)</h4>
-  <p>Computer RAM is a 1D strip of bytes. To store a 2D matrix $A[M][N]$ (with $M$ rows and $N$ columns, 0-based indexing, element size $W$ bytes, Base Address $B$), we flatten it in one of two ways:</p>
-  <div class="formula-box">
-    <span class="box-title">Array Address Calculation Formulas (0-based indexing)</span>
-    <ul>
-      <li><strong>1D Array $A[i]$:</strong> $\text{Addr}(A[i]) = B + i \times W$</li>
-      <li><strong>2D Row-Major Order (C, Python):</strong> Rows are stored one after another.
-        $$\text{Addr}(A[i][j]) = B + (i \times N + j) \times W$$
-      </li>
-      <li><strong>2D Column-Major Order (FORTRAN, MATLAB):</strong> Columns are stored one after another.
-        $$\text{Addr}(A[i][j]) = B + (j \times M + i) \times W$$
-      </li>
-      <li><strong>nD Array:</strong> Generalizes by multiplying each index by the product of sizes of all following (Row-Major) or preceding (Column-Major) dimensions.</li>
-    </ul>
-  </div>
-
-  <div class="exam-tip">
-    <span class="box-title">Solved Numerical: 2D Array Address Calculation</span>
-    <p><strong>Problem:</strong> Given a 2D array <code>A[4][5]</code> (4 rows, 5 columns, 0-indexed) with Base Address $B = 1000$ and element size $W = 4$ bytes. Find the address of <code>A[2][3]</code> in Row-Major and Column-Major order.</p>
-    <p><strong>Solution:</strong> Here $M = 4, N = 5, i = 2, j = 3$.</p>
-    <ul>
-      <li><strong>Row-Major:</strong> $1000 + (2 \times 5 + 3) \times 4 = 1000 + 13 \times 4 = \mathbf{1052}$.</li>
-      <li><strong>Column-Major:</strong> $1000 + (3 \times 4 + 2) \times 4 = 1000 + 14 \times 4 = \mathbf{1056}$.</li>
-    </ul>
-  </div>
-
-  <h3 id="u2-sparse">2.2 Sparse Matrix Representation &amp; Fast Transpose</h3>
-  <div class="concept-box">
-    <span class="box-title">Key Term: Sparse Matrix</span>
-    <p><strong>Exam Definition:</strong> A Sparse Matrix is a two-dimensional matrix in which the majority of elements are zero (typically more than two-thirds of the total elements). Storing all zeros wastes memory; instead, only non-zero elements are stored using a 2D triplet representation <code>[row, col, value]</code>.</p>
-    <p><strong>In Simple Words:</strong> Imagine a 1000×1000 spreadsheet where only 50 cells have numbers and the rest are 0. Instead of saving 1,000,000 cells, we just keep a compact 50-row list of <code>(row, col, value)</code>!</p>
-  </div>
-
-  <p>Row 0 of the triplet table stores metadata: <code>[num_rows, num_cols, num_nonzero_terms]</code>.</p>
-  <ul>
-    <li><strong>Simple Transpose:</strong> Scans all $t$ non-zero terms for each column $0 \dots (\text{cols}-1)$. Time complexity: <strong>$O(\text{cols} \times t)$</strong>.</li>
-    <li><strong>Fast Transpose:</strong> Uses two helper arrays—<code>row_terms[col]</code> (count of elements in each column) and <code>starting_pos[col]</code> (prefix sum telling where each column starts in the transposed matrix)—to place every term directly in its final spot in a single pass! Time complexity: <strong>$O(\text{cols} + t)$</strong>.</li>
-  </ul>
-
-  <pre><code>def fast_transpose(sparse: list[list[int]]) -> list[list[int]]:
-    # Fast Transpose of a Sparse Matrix in Triplet form: O(cols + terms).
-    rows, cols, terms = sparse[0]
-    result = [[cols, rows, terms]] + [[0, 0, 0] for _ in range(terms)]
-    if terms == 0:
-        return result
-
-    row_terms = [0] * cols
-    for i in range(1, terms + 1):
-        row_terms[sparse[i][1]] += 1
-
-    starting_pos = [1] * cols
-    for c in range(1, cols):
-        starting_pos[c] = starting_pos[c - 1] + row_terms[c - 1]
-
-    for i in range(1, terms + 1):
-        col = sparse[i][1]
-        pos = starting_pos[col]
-        result[pos] = [sparse[i][1], sparse[i][0], sparse[i][2]]
-        starting_pos[col] += 1
-    return result
-
-mat = [[4, 4, 4], [0, 2, 5], [1, 0, 8], [2, 3, 3], [3, 1, 9]]
-print("Fast Transpose:", fast_transpose(mat))</code></pre>
-
-  <h3 id="u2-search">2.3 Searching Algorithms: Linear, Binary, Fibonacci &amp; Indexed Sequential</h3>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>Algorithm</th><th>Prerequisite</th><th>Best</th><th>Average</th><th>Worst</th><th>Key Idea</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Linear (Sequential) Search</strong></td><td>None (any list)</td><td>$O(1)$</td><td>$O(n)$</td><td>$O(n)$</td><td>Check elements one by one from index $0$.</td></tr>
-        <tr><td><strong>Binary Search</strong></td><td>Sorted array</td><td>$O(1)$</td><td>$O(\log n)$</td><td>$O(\log n)$</td><td>Compare with <code>mid</code>, discard half each step.</td></tr>
-        <tr><td><strong>Fibonacci Search</strong></td><td>Sorted array</td><td>$O(1)$</td><td>$O(\log n)$</td><td>$O(\log n)$</td><td>Splits array using Fibonacci numbers (addition/subtraction only, no division!).</td></tr>
-        <tr><td><strong>Indexed Sequential Search</strong></td><td>Sorted array + Index</td><td>$O(1)$</td><td>$O(\sqrt{n})$</td><td>$O(n/b + b)$</td><td>Jump through a small index table, then linear-search one block.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="exam-tip">
-    <span class="box-title">Solved Numerical: Binary Search (SPPU Oct 2025 Q3b)</span>
-    <p><strong>Array:</strong> <code>A = [9, 17, 23, 38, 45, 50, 57, 76, 90, 100]</code> ($n=10$, indices $0 \dots 9$). Search for <strong>23</strong> and <strong>90</strong>.</p>
-    <ul>
-      <li><strong>Search 23:</strong>
-        Step 1: <code>low=0, high=9, mid=4</code> ($A[4]=45 > 23 \implies \text{high}=3$).
-        Step 2: <code>low=0, high=3, mid=1</code> ($A[1]=17 < 23 \implies \text{low}=2$).
-        Step 3: <code>low=2, high=3, mid=2</code> ($A[2]=23 == 23 \implies$ <strong>Found at index 2</strong> in 3 comparisons!).</li>
-      <li><strong>Search 90:</strong>
-        Step 1: <code>low=0, high=9, mid=4</code> ($A[4]=45 < 90 \implies \text{low}=5$).
-        Step 2: <code>low=5, high=9, mid=7</code> ($A[7]=76 < 90 \implies \text{low}=8$).
-        Step 3: <code>low=8, high=9, mid=8</code> ($A[8]=90 == 90 \implies$ <strong>Found at index 8</strong> in 3 comparisons!).</li>
-    </ul>
-  </div>
-
-  <pre><code>def binary_search(arr: list[int], target: int) -> int:
-    low, high = 0, len(arr) - 1
-    while low <= high:
-        mid = (low + high) // 2
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            low = mid + 1
-        else:
-            high = mid - 1
-    return -1
-
-def fibonacci_search(arr: list[int], target: int) -> int:
-    n = len(arr)
-    fib2, fib1 = 0, 1
-    fib = fib2 + fib1
-    while fib < n:
-        fib2, fib1 = fib1, fib
-        fib = fib2 + fib1
-
-    offset = -1
-    while fib > 1:
-        i = min(offset + fib2, n - 1)
-        if arr[i] < target:
-            fib, fib1, fib2 = fib1, fib2, fib1 - fib2
-            offset = i
-        elif arr[i] > target:
-            fib, fib1, fib2 = fib2, fib1 - fib2, fib2 - (fib1 - fib2)
-        else:
-            return i
-    if fib1 and offset + 1 < n and arr[offset + 1] == target:
-        return offset + 1
-    return -1
-
-def indexed_sequential_search(arr: list[int], target: int, block_size: int = 3) -> int:
-    n = len(arr)
-    # Build sparse index: (max_val_in_block, start_idx)
-    indices = list(range(0, n, block_size))
-    block_start = -1
-    for idx in indices:
-        if arr[idx] <= target:
-            block_start = idx
-        else:
-            break
-    if block_start == -1:
-        return -1
-    for i in range(block_start, min(block_start + block_size, n)):
-        if arr[i] == target:
-            return i
-    return -1
-
-data = [9, 17, 23, 38, 45, 50, 57, 76, 90, 100]
-print("Binary(23):", binary_search(data, 23), "| Fib(90):", fibonacci_search(data, 90), "| IdxSeq(57):", indexed_sequential_search(data, 57))</code></pre>
-
-  <h3 id="u2-sort">2.4 Sorting: Stability, Internal/External Sort &amp; Algorithms</h3>
-  <div class="concept-box">
-    <span class="box-title">Key Terms: Sorting Stability &amp; Internal vs External Sorting</span>
-    <p><strong>Sorting Stability:</strong> A sorting algorithm is <em>stable</em> if two elements with equal keys appear in the exact same relative order in the sorted output as they did in the input (e.g., sorting students by marks keeps alphabetical order for tied marks).</p>
-    <p><strong>Internal vs External Sorting:</strong> <em>Internal sorting</em> fits the entire dataset inside RAM (Bubble, Quick, Insertion). <em>External sorting</em> handles massive datasets that do not fit in RAM and reside on disk/SSD, using techniques like External Merge Sort.</p>
-  </div>
-
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>Algorithm</th><th>Best</th><th>Average</th><th>Worst</th><th>Space</th><th>Stable?</th><th>Passes (for $n$ items)</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Bubble Sort</strong></td><td>$O(n)$</td><td>$O(n^2)$</td><td>$O(n^2)$</td><td>$O(1)$</td><td>Yes</td><td>Up to $n - 1$</td></tr>
-        <tr><td><strong>Insertion Sort</strong></td><td>$O(n)$</td><td>$O(n^2)$</td><td>$O(n^2)$</td><td>$O(1)$</td><td>Yes</td><td>$n - 1$</td></tr>
-        <tr><td><strong>Selection Sort</strong></td><td>$O(n^2)$</td><td>$O(n^2)$</td><td>$O(n^2)$</td><td>$O(1)$</td><td>No</td><td>$n - 1$</td></tr>
-        <tr><td><strong>Quick Sort</strong></td><td>$O(n \log n)$</td><td>$O(n \log n)$</td><td>$O(n^2)$</td><td>$O(\log n)$</td><td>No</td><td>$O(\log n)$ levels</td></tr>
-        <tr><td><strong>Merge Sort</strong></td><td>$O(n \log n)$</td><td>$O(n \log n)$</td><td>$O(n \log n)$</td><td>$O(n)$</td><td>Yes</td><td>$\lceil \log_2 n \rceil$ levels</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <figure class="figure-box">
-    <img src="assets/quicksort_diagram.png" alt="Quick Sort partitioning and recursive sorting animation">
-    <figcaption>Figure 2.1: Quick Sort — Selecting a pivot and partitioning elements around it. (Source: Wikimedia Commons)</figcaption>
-  </figure>
-
-  <figure class="figure-box">
-    <img src="assets/merge_sort.png" alt="Merge Sort divide and conquer recursive merging">
-    <figcaption>Figure 2.2: Merge Sort — Splitting into halves and merging sorted sub-arrays. (Source: Wikimedia Commons)</figcaption>
-  </figure>
-
-  <pre><code>def bubble_sort(arr: list[int]) -> list[int]:
-    a = arr[:]
-    n = len(a)
-    for i in range(n - 1):
-        swapped = False
-        for j in range(n - 1 - i):
-            if a[j] > a[j + 1]:
-                a[j], a[j + 1] = a[j + 1], a[j]
-                swapped = True
-        if not swapped:
-            break
-    return a
-
-def insertion_sort(arr: list[int]) -> list[int]:
-    a = arr[:]
-    for i in range(1, len(a)):
-        key = a[i]
-        j = i - 1
-        while j >= 0 and a[j] > key:
-            a[j + 1] = a[j]
-            j -= 1
-        a[j + 1] = key
-    return a
-
-def selection_sort(arr: list[int]) -> list[int]:
-    a = arr[:]
-    n = len(a)
-    for i in range(n - 1):
-        min_idx = i
-        for j in range(i + 1, n):
-            if a[j] < a[min_idx]:
-                min_idx = j
-        a[i], a[min_idx] = a[min_idx], a[i]
-    return a
-
-def quick_sort(arr: list[int]) -> list[int]:
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
-    mid = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-    return quick_sort(left) + mid + quick_sort(right)
-
-def merge_sort(arr: list[int]) -> list[int]:
-    if len(arr) <= 1:
-        return arr
-    mid = len(arr) // 2
-    left = merge_sort(arr[:mid])
-    right = merge_sort(arr[mid:])
-    merged, i, j = [], 0, 0
-    while i < len(left) and j < len(right):
-        if left[i] <= right[j]:
-            merged.append(left[i]); i += 1
-        else:
-            merged.append(right[j]); j += 1
-    return merged + left[i:] + right[j:]
-
-sample = [7, 4, 10, 6, 3, 12, 1, 8, 2, 15]
-print("Quick:", quick_sort(sample))
-print("Merge:", merge_sort(sample))</code></pre>
-
-  <h3 id="u2-casestudy">2.5 Unit II Case Study: Social Network Adjacency Matrix</h3>
-  <div class="concept-box">
-    <span class="box-title">Case Study: Friendship Connections Among Millions of Users</span>
-    <p>Suppose a social network has $V = 10^6$ (1 million) users, and each user has ~200 friends. A full 2D Adjacency Matrix needs $10^6 \times 10^6 = 10^{12}$ entries (~1 Terabyte of RAM!), yet 99.98% of those entries are <code>0</code>! Storing it as a <strong>Sparse Matrix</strong> (or Adjacency List) stores only the $2 \times 10^8$ actual friendships, cutting memory by <strong>5,000x</strong>.</p>
-  </div>
-
-  <h3 id="u2-qa">2.6 Important SPPU Exam Questions &amp; Model Answers (Unit II)</h3>
-  <div class="qa-card">
-    <div class="qa-q">Q1. Define Sparse Matrix, Sorting Stability, and Internal vs External Sort. <span class="marks-badge">6M (Oct 2025)</span></div>
-    <p><strong>Model Answer Points:</strong> 2 marks each: (i) Sparse Matrix definition + triplet <code>[row, col, val]</code> example; (ii) Stability definition + example (Merge/Insertion stable vs Quick/Selection unstable); (iii) Internal (RAM) vs External (disk/tape) sorting with examples.</p>
-  </div>
-  <div class="qa-card">
-    <div class="qa-q">Q2. Explain Fast Transpose of Sparse Matrix with algorithm and time complexity. <span class="marks-badge">6M / 8M</span></div>
-    <p><strong>Model Answer Points:</strong> Explain why Simple Transpose is $O(\text{cols} \times t)$, show <code>row_terms[]</code> and <code>starting_pos[]</code> arrays, trace a 4-term matrix, and derive $O(\text{cols} + t)$ complexity.</p>
-  </div>
-</section>
-
-<section id="unit-3">
-  <h2 class="unit-title">Unit III: Stacks, Queues and Linked Lists (09 Hours)</h2>
-
-  <h3 id="u3-stack">3.1 Stack ADT, Operations &amp; Multiple Stacks</h3>
-  <div class="concept-box">
-    <span class="box-title">Key Term: Stack (LIFO)</span>
-    <p><strong>Exam Definition:</strong> A Stack is a linear data structure and Abstract Data Type (ADT) in which insertion (<code>push</code>) and deletion (<code>pop</code>) are restricted to only one end called the <strong>Top</strong>, following the <strong>Last-In, First-Out (LIFO)</strong> principle.</p>
-    <p><strong>In Simple Words:</strong> A stack of dinner plates—you always place a new plate on top and take the top plate off first.</p>
-  </div>
-
-  <figure class="figure-box">
-    <img src="assets/stack_data_structure.png" alt="Stack LIFO push and pop operations">
-    <figcaption>Figure 3.1: Stack LIFO — Push adds to the top, Pop removes from the top. (Source: Wikimedia Commons)</figcaption>
-  </figure>
-
-  <h4>Multiple Stacks in a Single Array</h4>
-  <p>When a program needs two stacks inside a fixed array of size $N$, allocating $N/2$ to each wastes space if Stack 1 overflows while Stack 2 is empty. Instead, we place <strong>Stack 1 at index $0$</strong> (growing right: <code>top1 += 1</code>) and <strong>Stack 2 at index $N-1$</strong> (growing left: <code>top2 -= 1</code>). The array is full only when <code>top1 + 1 == top2</code>!</p>
-
-  <figure class="svg-box">
-    <svg style="max-width:100%;height:auto;" width="560" height="110" viewBox="0 0 560 110" xmlns="http://www.w3.org/2000/svg">
-      <rect x="20" y="30" width="520" height="44" fill="#FFFFFF" stroke="#C9BEB4" stroke-width="2" rx="4"/>
-      <rect x="20" y="30" width="130" height="44" fill="#EAEFFE" stroke="#4B5FD1" stroke-width="1.5"/>
-      <text x="85" y="57" fill="#171717" font-size="13" font-family="sans-serif" text-anchor="middle">Stack 1 → (top1)</text>
-      <text x="280" y="57" fill="#6A625B" font-size="12" font-family="sans-serif" text-anchor="middle">Free Space (top1 + 1 == top2 =&gt; Full)</text>
-      <rect x="410" y="30" width="130" height="44" fill="#E4F2EC" stroke="#226D51" stroke-width="1.5"/>
-      <text x="475" y="57" fill="#171717" font-size="13" font-family="sans-serif" text-anchor="middle">(top2) ← Stack 2</text>
-      <text x="20" y="95" fill="#6A625B" font-size="11" font-family="monospace">0</text>
-      <text x="530" y="95" fill="#6A625B" font-size="11" font-family="monospace">N-1</text>
-    </svg>
-    <figcaption>Figure 3.2: Two Stacks sharing a single array from opposite ends.</figcaption>
-  </figure>
-
-  <pre><code>class TwoStacks:
-    def __init__(self, capacity: int):
-        self.arr = [None] * capacity
-        self.n = capacity
-        self.top1 = -1
-        self.top2 = capacity
-
-    def push1(self, val):
-        if self.top1 + 1 == self.top2:
-            raise OverflowError("Stack Overflow")
-        self.top1 += 1
-        self.arr[self.top1] = val
-
-    def push2(self, val):
-        if self.top1 + 1 == self.top2:
-            raise OverflowError("Stack Overflow")
-        self.top2 -= 1
-        self.arr[self.top2] = val
-
-    def pop1(self):
-        if self.top1 == -1:
-            raise IndexError("Stack 1 Underflow")
-        val = self.arr[self.top1]
-        self.top1 -= 1
-        return val
-
-    def pop2(self):
-        if self.top2 == self.n:
-            raise IndexError("Stack 2 Underflow")
-        val = self.arr[self.top2]
-        self.top2 += 1
-        return val</code></pre>
-
-  <h3 id="u3-expr">3.2 Expression Conversion (Infix, Prefix, Postfix) &amp; Evaluation</h3>
-  <p>Humans write <strong>Infix</strong> (<code>A + B</code>), where operator precedence and parentheses are needed. Compilers prefer <strong>Postfix</strong> (Reverse Polish: <code>AB+</code>) or <strong>Prefix</strong> (Polish: <code>+AB</code>) because they need <strong>no parentheses</strong> and evaluate in a single left-to-right (or right-to-left) scan using a stack!</p>
-
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Operator</th><th>Precedence</th><th>Associativity</th></tr></thead>
-      <tbody>
-        <tr><td><code>^</code> (Exponent)</td><td>Highest (3)</td><td>Right-to-Left</td></tr>
-        <tr><td><code>*</code>, <code>/</code>, <code>%</code></td><td>Medium (2)</td><td>Left-to-Right</td></tr>
-        <tr><td><code>+</code>, <code>-</code></td><td>Lowest (1)</td><td>Left-to-Right</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="exam-tip">
-    <span class="box-title">Solved Trace (SPPU Oct 2025 Q5b): Convert Infix (A+B)*D+E/(F+A*D)+C to Postfix</span>
+<section id="unit-1" class="unit-section">
+  <div class="unit-badge">Unit I &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
+  <h2>Unit I: Introduction to Data Structures and Algorithms</h2>
+  
+  <div class="topic-block" id="u1-adt">
+    <h3>1.1 Abstract Data Types (ADTs) &amp; Classifications</h3>
+    <p>An <strong>Abstract Data Type (ADT)</strong> is a mathematical model for data types where the type is defined by its behavior (semantics) from the point of view of a user of the data, specifically in terms of possible values, possible operations on data of this type, and the behavior of these operations, completely independent of implementation details.</p>
+    
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Symbol</th><th>Stack</th><th>Postfix Output</th></tr></thead>
+        <thead>
+          <tr><th>Classification</th><th>Definition &amp; Properties</th><th>Examples</th><th>Memory Characteristics</th></tr>
+        </thead>
         <tbody>
-          <tr><td><code>(</code></td><td><code>(</code></td><td></td></tr>
-          <tr><td><code>A</code></td><td><code>(</code></td><td><code>A</code></td></tr>
-          <tr><td><code>+</code></td><td><code>(+</code></td><td><code>A</code></td></tr>
-          <tr><td><code>B</code></td><td><code>(+</code></td><td><code>AB</code></td></tr>
-          <tr><td><code>)</code></td><td>(empty)</td><td><code>AB+</code></td></tr>
-          <tr><td><code>*</code></td><td><code>*</code></td><td><code>AB+</code></td></tr>
-          <tr><td><code>D</code></td><td><code>*</code></td><td><code>AB+D</code></td></tr>
-          <tr><td><code>+</code></td><td><code>+</code></td><td><code>AB+D*</code></td></tr>
-          <tr><td><code>E</code></td><td><code>+</code></td><td><code>AB+D*E</code></td></tr>
-          <tr><td><code>/</code></td><td><code>+/</code></td><td><code>AB+D*E</code></td></tr>
-          <tr><td><code>(</code></td><td><code>+/(</code></td><td><code>AB+D*E</code></td></tr>
-          <tr><td><code>F</code></td><td><code>+/(</code></td><td><code>AB+D*EF</code></td></tr>
-          <tr><td><code>+</code></td><td><code>+/(+</code></td><td><code>AB+D*EF</code></td></tr>
-          <tr><td><code>A</code></td><td><code>+/(+</code></td><td><code>AB+D*EFA</code></td></tr>
-          <tr><td><code>*</code></td><td><code>+/(+*</code></td><td><code>AB+D*EFA</code></td></tr>
-          <tr><td><code>D</code></td><td><code>+/(+*</code></td><td><code>AB+D*EFAD</code></td></tr>
-          <tr><td><code>)</code></td><td><code>+/</code></td><td><code>AB+D*EFAD*+</code></td></tr>
-          <tr><td><code>+</code></td><td><code>+</code></td><td><code>AB+D*EFAD*+/+</code></td></tr>
-          <tr><td><code>C</code></td><td><code>+</code></td><td><code>AB+D*EFAD*+/+C</code></td></tr>
-          <tr><td>End</td><td>(empty)</td><td><strong><code>AB+D*EFAD*+/+C+</code></strong></td></tr>
+          <tr><td><strong>Linear vs Non-Linear</strong></td><td>Linear: elements form a sequential order where every element (except first/last) has unique predecessor and successor.<br>Non-Linear: elements form hierarchical or interconnected networks.</td><td>Linear: Arrays, Stacks, Queues, Linked Lists.<br>Non-Linear: Trees, Graphs, Heaps.</td><td>Linear uses contiguous memory or single-chain pointers. Non-linear requires multi-branch pointer graphs.</td></tr>
+          <tr><td><strong>Static vs Dynamic</strong></td><td>Static: fixed memory size allocated at compile time.<br>Dynamic: memory allocated at runtime from heap, expanding or shrinking on demand.</td><td>Static: Primitive arrays (<code>int A[100]</code>).<br>Dynamic: Linked Lists, Dynamic Arrays (<code>std::vector</code>).</td><td>Static avoids heap fragmentation but causes overflow/wasted space. Dynamic has pointer overhead ($4-8$ bytes/node).</td></tr>
+          <tr><td><strong>Persistent vs Ephemeral</strong></td><td>Ephemeral: modifications destroy prior versions.<br>Persistent: always preserves previous versions when modified, allowing queries on historical states.</td><td>Ephemeral: standard C++ arrays.<br>Persistent: Git commit graphs, Functional data structures (Clojure vectors).</td><td>Persistent structures use node sharing and copy-on-write path copying.</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
-  <pre><code>def infix_to_postfix(expr: str) -> str:
-    prec = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3}
-    stack, out = [], []
-    for ch in expr:
-        if ch.isalnum():
-            out.append(ch)
-        elif ch == '(':
-            stack.append(ch)
-        elif ch == ')':
-            while stack and stack[-1] != '(':
-                out.append(stack.pop())
-            stack.pop()
-        else:
-            while stack and stack[-1] != '(' and (
-                prec[stack[-1]] > prec[ch] or (prec[stack[-1]] == prec[ch] and ch != '^')
-            ):
-                out.append(stack.pop())
-            stack.append(ch)
-    while stack:
-        out.append(stack.pop())
-    return "".join(out)
+  <div class="topic-block" id="u1-complexity">
+    <h3>1.2 Space Complexity, Time Complexity &amp; Step Count Method</h3>
+    <p>The space complexity of an algorithm $P$ is expressed as:</p>
+    <div class="formula-box">$$S(P) = c + S_p(I)$$</div>
+    <ul>
+      <li><strong>Fixed Space ($c$):</strong> Memory independent of input size (instruction space, simple variables, constants).</li>
+      <li><strong>Variable Space ($S_p(I)$):</strong> Memory dependent on instance characteristics $I$ (dynamically allocated memory, recursive call stack frames).</li>
+    </ul>
 
-def eval_postfix(expr: str) -> float:
-    stack = []
-    for tok in expr.split():
-        if tok.lstrip('-').isdigit():
-            stack.append(int(tok))
-        else:
-            b, a = stack.pop(), stack.pop()
-            if tok == '+': stack.append(a + b)
-            elif tok == '-': stack.append(a - b)
-            elif tok == '*': stack.append(a * b)
-            elif tok == '/': stack.append(a / b)
-            elif tok == '^': stack.append(a ** b)
-    return stack[0]
-
-print("Postfix:", infix_to_postfix("(A+B)*D+E/(F+A*D)+C"))
-print("Eval '5 3 + 2 *':", eval_postfix("5 3 + 2 *"))</code></pre>
-
-  <h3 id="u3-queue">3.3 Queues: Linear, Circular &amp; Priority Queue</h3>
-  <div class="concept-box">
-    <span class="box-title">Key Term: Queue (FIFO), Circular Queue &amp; Priority Queue</span>
-    <p><strong>Exam Definition (Queue):</strong> A Queue is a linear data structure following the <strong>First-In, First-Out (FIFO)</strong> principle, where insertions (<code>enqueue</code>) happen at the <strong>rear</strong> and deletions (<code>dequeue</code>) happen at the <strong>front</strong>.</p>
-    <p><strong>Circular Queue:</strong> Connects the last position back to the first using modulo arithmetic (<code>(rear + 1) % size</code>), eliminating the "false overflow" problem of a linear array queue.</p>
-    <p><strong>Priority Queue:</strong> Each element has a priority; the element with the highest (or lowest) priority is served first, regardless of arrival order. <em>Applications:</em> OS CPU scheduling, Dijkstra's shortest path, Huffman coding.</p>
+    <h4>Step Count Method for Time Complexity</h4>
+    <p>Computes the total number of basic machine operations executed as a function of input size $n$.</p>
+    
+    <div class="qa-card">
+      <div class="qa-q">Example: Step Count Matrix Multiplication ($N \times N$)</div>
+      <div class="sol-box">
+<pre><code class="language-cpp">for (int i = 0; i &lt; n; i++) {           // Steps: n + 1
+    for (int j = 0; j &lt; n; j++) {       // Steps: n * (n + 1)
+        C[i][j] = 0;                    // Steps: n * n
+        for (int k = 0; k &lt; n; k++) {   // Steps: n * n * (n + 1)
+            C[i][j] += A[i][k] * B[k][j]; // Steps: n * n * n
+        }
+    }
+}</code></pre>
+        <p>Total Step Count: $T(n) = 2n^3 + 3n^2 + 2n + 1 \implies O(n^3)$ cubic time complexity.</p>
+      </div>
+    </div>
   </div>
 
-  <figure class="figure-box">
-    <img src="assets/queue_data_structure.png" alt="Queue FIFO enqueue at rear and dequeue at front">
-    <figcaption>Figure 3.3: Queue FIFO — Enqueue at back (rear), Dequeue at front. (Source: Wikimedia Commons)</figcaption>
-  </figure>
+  <div class="topic-block" id="u1-asymptotic">
+    <h3>1.3 Asymptotic Notations: Big-O, Big-Omega, Big-Theta</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Notation</th><th>Mathematical Definition</th><th>Graphical Meaning</th><th>Complexity Bound</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Big-O ($O$)</strong></td><td>$f(n) \le c \cdot g(n) \quad \forall n \ge n_0, \, c &gt; 0$</td><td>$c \cdot g(n)$ curves strictly above $f(n)$ for large $n$.</td><td><strong>Upper Bound</strong> (Worst-case guarantee)</td></tr>
+          <tr><td><strong>Big-Omega ($\Omega$)</strong></td><td>$f(n) \ge c \cdot g(n) \quad \forall n \ge n_0, \, c &gt; 0$</td><td>$c \cdot g(n)$ curves strictly below $f(n)$ for large $n$.</td><td><strong>Lower Bound</strong> (Best-case guarantee)</td></tr>
+          <tr><td><strong>Big-Theta ($\Theta$)</strong></td><td>$c_1 g(n) \le f(n) \le c_2 g(n) \quad \forall n \ge n_0$</td><td>$f(n)$ is sandwiched tightly between $c_1 g(n)$ and $c_2 g(n)$.</td><td><strong>Tight Bound</strong> (Exact growth rate)</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-  <pre><code>class CircularQueue:
-    def __init__(self, k: int):
-        self.q = [None] * k
-        self.k = k
-        self.front = self.rear = -1
-
-    def is_full(self) -> bool:
-        return (self.rear + 1) % self.k == self.front
-
-    def is_empty(self) -> bool:
-        return self.front == -1
-
-    def enqueue(self, val) -> None:
-        if self.is_full():
-            raise OverflowError("Circular Queue is Full")
-        if self.is_empty():
-            self.front = 0
-        self.rear = (self.rear + 1) % self.k
-        self.q[self.rear] = val
-
-    def dequeue(self):
-        if self.is_empty():
-            raise IndexError("Circular Queue is Empty")
-        val = self.q[self.front]
-        if self.front == self.rear:
-            self.front = self.rear = -1
-        else:
-            self.front = (self.front + 1) % self.k
-        return val</code></pre>
-
-  <h3 id="u3-ll">3.4 Linked Lists: Singly (SLL), Circular (CLL) &amp; Doubly (DLL)</h3>
-  <div class="concept-box">
-    <span class="box-title">Key Term: Linked List</span>
-    <p><strong>Exam Definition:</strong> A Linked List is a dynamic linear data structure consisting of a sequence of <strong>nodes</strong>, where each node stores data and one or more reference/pointer fields pointing to adjacent nodes in non-contiguous memory.</p>
-    <p><strong>In Simple Words:</strong> Like a treasure hunt—each clue (node) holds a prize (data) and tells you the exact address of the next clue (<code>next</code> pointer).</p>
+    <h4>Standard Hierarchy of Growth Rates</h4>
+    <div class="formula-box">$$O(1) &lt; O(\log n) &lt; O(n) &lt; O(n \log n) &lt; O(n^2) &lt; O(n^3) &lt; O(2^n) &lt; O(n!)$$</div>
   </div>
 
-  <figure class="figure-box">
-    <img src="assets/linked_list.png" alt="Singly Linked List node structure and next pointers">
-    <figcaption>Figure 3.4: Singly Linked List (SLL) — Each node points to the next node; last node points to NULL. (Source: Wikimedia Commons)</figcaption>
-  </figure>
-
-  <figure class="figure-box">
-    <img src="assets/doubly_linked_list.png" alt="Doubly Linked List with prev and next pointers">
-    <figcaption>Figure 3.5: Doubly Linked List (DLL) — Nodes have both prev and next pointers for bidirectional traversal. (Source: Wikimedia Commons)</figcaption>
-  </figure>
-
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Feature</th><th>Singly Linked List (SLL)</th><th>Circular Linked List (CLL)</th><th>Doubly Linked List (DLL)</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Pointers per Node</strong></td><td>1 (<code>next</code>)</td><td>1 (<code>next</code>; last points to <code>head</code>)</td><td>2 (<code>prev</code>, <code>next</code>)</td></tr>
-        <tr><td><strong>Traversal</strong></td><td>Forward only</td><td>Forward (loops endlessly)</td><td>Both forward &amp; backward</td></tr>
-        <tr><td><strong>Delete given node</strong></td><td>$O(n)$ (need previous node)</td><td>$O(n)$</td><td>$O(1)$ (has <code>prev</code> pointer)</td></tr>
-        <tr><td><strong>Use Case</strong></td><td>Stacks, Queues, Polynomials</td><td>Round-Robin CPU scheduling</td><td>Browser Back/Forward, Undo/Redo</td></tr>
-      </tbody>
-    </table>
+  <div class="topic-block" id="u1-strategies">
+    <h3>1.4 Algorithmic Strategies: Divide &amp; Conquer vs Greedy</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Parameter</th><th>Divide and Conquer Strategy</th><th>Greedy Strategy</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Core Principle</strong></td><td>Divides problem into smaller independent subproblems, solves subproblems recursively, and combines subproblem solutions.</td><td>Builds solution piece by piece, always choosing the locally optimal choice that offers immediate benefit.</td></tr>
+          <tr><td><strong>Backtracking</strong></td><td>Never backtracks, but combines all sub-results.</td><td>Never backtracks; once a decision is made, it cannot be revised.</td></tr>
+          <tr><td><strong>Optimal Substructure</strong></td><td>Required.</td><td>Requires Greedy-Choice Property + Optimal Substructure.</td></tr>
+          <tr><td><strong>Examples</strong></td><td>Merge Sort, Quick Sort, Binary Search, Strassen's Matrix Multiplication.</td><td>Dijkstra's Shortest Path, Prim's &amp; Kruskal's MST, Huffman Coding, Fractional Knapsack.</td></tr>
+          <tr><td><strong>Case Study</strong></td><td>E-Commerce Catalog Sorting (Merge Sort for stable parallel sorting).</td><td>Google Calendar Meeting Scheduling (Activity Selection greedy scheduling).</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <pre><code>class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-class SinglyLinkedList:
-    def __init__(self):
-        self.head = None
-
-    def insert_end(self, data):
-        new_node = Node(data)
-        if not self.head:
-            self.head = new_node
-            return
-        curr = self.head
-        while curr.next:
-            curr = curr.next
-        curr.next = new_node
-
-    def search(self, key) -> bool:
-        curr = self.head
-        while curr:
-            if curr.data == key:
-                return True
-            curr = curr.next
-        return False
-
-    def delete(self, key):
-        if not self.head:
-            return
-        if self.head.data == key:
-            self.head = self.head.next
-            return
-        curr = self.head
-        while curr.next and curr.next.data != key:
-            curr = curr.next
-        if curr.next:
-            curr.next = curr.next.next
-
-    def concatenate(self, other: "SinglyLinkedList"):
-        if not self.head:
-            self.head = other.head
-            return
-        curr = self.head
-        while curr.next:
-            curr = curr.next
-        curr.next = other.head
-
-    def sort(self):
-        if not self.head:
-            return
-        swapped = True
-        while swapped:
-            swapped = False
-            curr = self.head
-            while curr.next:
-                if curr.data > curr.next.data:
-                    curr.data, curr.next.data = curr.next.data, curr.data
-                    swapped = True
-                curr = curr.next</code></pre>
-
-  <h3 id="u3-casestudy">3.5 Unit III Case Study: Stack &amp; Queue using Linked Lists</h3>
-  <p>Using a Linked List removes fixed capacity limits: <code>push()</code> inserts at the head in $O(1)$ and <code>pop()</code> removes from the head in $O(1)$. For a Queue, maintaining both <code>front</code> and <code>rear</code> pointers gives $O(1)$ <code>enqueue()</code> and $O(1)$ <code>dequeue()</code>.</p>
-
-  <pre><code>class LinkedStack:
-    def __init__(self):
-        self.top = None
-
-    def push(self, val):
-        node = Node(val)
-        node.next = self.top
-        self.top = node
-
-    def pop(self):
-        if not self.top:
-            raise IndexError("Empty Stack")
-        val = self.top.data
-        self.top = self.top.next
-        return val
-
-    def display(self):
-        curr, items = self.top, []
-        while curr:
-            items.append(str(curr.data))
-            curr = curr.next
-        print(" -> ".join(items) if items else "Empty")
-
-class LinkedQueue:
-    def __init__(self):
-        self.front = self.rear = None
-
-    def enqueue(self, val):
-        node = Node(val)
-        if not self.rear:
-            self.front = self.rear = node
-            return
-        self.rear.next = node
-        self.rear = node
-
-    def dequeue(self):
-        if not self.front:
-            raise IndexError("Empty Queue")
-        val = self.front.data
-        self.front = self.front.next
-        if not self.front:
-            self.rear = None
-        return val</code></pre>
-
-  <h3 id="u3-qa">3.6 Important SPPU Exam Questions &amp; Model Answers (Unit III)</h3>
-  <div class="qa-card">
-    <div class="qa-q">Q1. Explain with neat diagram: (i) SLL (ii) DLL (iii) CLL. <span class="marks-badge">6M (Oct 2025)</span></div>
-    <p><strong>Model Answer Points:</strong> Draw node structure (data + pointer(s)) for each, show <code>head</code> (and <code>NULL</code> for SLL/DLL, loop-back to <code>head</code> for CLL), and state 1 advantage and 1 application of each.</p>
-  </div>
-  <div class="qa-card">
-    <div class="qa-q">Q2. Write pseudo-code for Stack implementation using Linked List (Create, Push, Pop, Display). <span class="marks-badge">8M (Oct 2025)</span></div>
-    <p><strong>Model Answer Points:</strong> Define <code>Node</code> class, initialize <code>top = NULL</code> (Create), insert at beginning for <code>push</code> ($O(1)$), check underflow and advance <code>top = top.next</code> for <code>pop</code> ($O(1)$), traverse from <code>top</code> to <code>NULL</code> for <code>display</code>.</p>
-  </div>
+  <section class="unit-short-notes" id="u1-short-notes">
+    <div class="short-notes-header">
+      <div class="sn-badge">One-Page Rapid Revision</div>
+      <h3>Unit I Short Notes &amp; High-Yield Cheat Sheet</h3>
+      <p>Complexity definitions, master theorem rules, and algorithm strategies.</p>
+    </div>
+    <div class="short-notes-grid">
+      <div class="sn-col">
+        <div class="sn-card">
+          <h4>Asymptotic Formulations</h4>
+          <ul>
+            <li>$O(g(n))$: Upper bound $\implies f(n) \le c \cdot g(n)$</li>
+            <li>$\Omega(g(n))$: Lower bound $\implies f(n) \ge c \cdot g(n)$</li>
+            <li>$\Theta(g(n))$: Tight bound $\implies c_1 g(n) \le f(n) \le c_2 g(n)$</li>
+            <li>Space: $S(P) = c + S_p(I)$ (Fixed + Instance Variable)</li>
+          </ul>
+        </div>
+        <div class="sn-card">
+          <h4>Loop Complexity Traps</h4>
+          <ul>
+            <li><code>for (i=0; i&lt;n; i+=2)</code> &rarr; $O(n)$</li>
+            <li><code>for (i=1; i&lt;n; i*=2)</code> &rarr; $O(\log_2 n)$</li>
+            <li><code>for (i=0; i&lt;n; i++) for (j=0; j&lt;i; j++)</code> &rarr; $\sum i = \frac{n(n-1)}{2} \implies O(n^2)$</li>
+            <li>Recursive Stack Space = Maximum recursion depth $\times$ frame size</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sn-col">
+        <div class="sn-card">
+          <h4>Strategy Comparison</h4>
+          <ul>
+            <li>Divide &amp; Conquer: Divide, Conquer (recursive), Combine. (Merge Sort, Binary Search)</li>
+            <li>Greedy: Locally optimal choice at each step; optimal substructure. (Dijkstra, Prim, Kruskal, Huffman)</li>
+            <li>Dynamic Programming: Overlapping subproblems + memoization.</li>
+          </ul>
+        </div>
+        <div class="sn-card">
+          <h4>SPPU Exam Writing Checklist</h4>
+          <ul>
+            <li>Always state assumptions on $n_0$ and constant $c &gt; 0$</li>
+            <li>Draw asymptotic graphs showing crossover at $n_0$</li>
+            <li>Mention step count table with: Statement | S/e | Frequency | Total</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
 
-<section id="unit-4">
-  <h2 class="unit-title">Unit IV: Hashing (09 Hours)</h2>
+<section id="unit-2" class="unit-section">
+  <div class="unit-badge">Unit II &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
+  <h2>Unit II: Linear Data Structures, Searching &amp; Sorting</h2>
+  
+  <div class="topic-block" id="u2-arrays">
+    <h3>2.1 Array ADT &amp; Multi-Dimensional Storage Representation</h3>
+    <p>An array is a contiguous collection of homogeneous elements indexed by integers.</p>
+    
+    <div class="figure-box"><svg viewBox="0 0 760 220" class="svg-diagram" xmlns="http://www.w3.org/2000/svg" id="data-svg-1">
+  <rect width="760" height="220" fill="#FFFFFF" rx="8"/>
+  <style>#data-svg-1 .cell { fill: #EFF6FF; stroke: #2563EB; stroke-width: 1.8; }#data-svg-1 .cell-hl { fill: #FEF3C7; stroke: #D97706; stroke-width: 2; }#data-svg-1 .txt-t { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #1E293B; }#data-svg-1 .txt-c { font-family: monospace; font-size: 11px; fill: #1E293B; text-anchor: middle; }#data-svg-1 .txt-f { font-family: monospace; font-size: 11px; fill: #2563EB; }#data-svg-1 .wire { stroke: #0F172A; stroke-width: 1.5; fill: none; }
+  </style>
+  <text x="30" y="30" class="txt-t">2D Array Storage: Row-Major Order vs Column-Major Order (Matrix A[3][4])</text>
+  
+  <!-- Row Major Strip -->
+  <text x="30" y="65" class="txt-t" font-size="11px" fill="#2563EB">Row-Major Sequence (Linear Memory Layout):</text>
+  <g transform="translate(30, 75)">
+    <!-- Row 0 -->
+    <rect x="0" y="0" width="55" height="32" class="cell"/><text x="27" y="20" class="txt-c">A[0][0]</text>
+    <rect x="55" y="0" width="55" height="32" class="cell"/><text x="82" y="20" class="txt-c">A[0][1]</text>
+    <rect x="110" y="0" width="55" height="32" class="cell"/><text x="137" y="20" class="txt-c">A[0][2]</text>
+    <rect x="165" y="0" width="55" height="32" class="cell"/><text x="192" y="20" class="txt-c">A[0][3]</text>
+    <!-- Row 1 -->
+    <rect x="230" y="0" width="55" height="32" class="cell"/><text x="257" y="20" class="txt-c">A[1][0]</text>
+    <rect x="285" y="0" width="55" height="32" class="cell-hl"/><text x="312" y="20" class="txt-c" font-weight="bold">A[1][1]</text>
+    <rect x="340" y="0" width="55" height="32" class="cell"/><text x="367" y="20" class="txt-c">A[1][2]</text>
+    <rect x="395" y="0" width="55" height="32" class="cell"/><text x="422" y="20" class="txt-c">A[1][3]</text>
+    <!-- Row 2 -->
+    <rect x="460" y="0" width="55" height="32" class="cell"/><text x="487" y="20" class="txt-c">A[2][0]</text>
+    <rect x="515" y="0" width="55" height="32" class="cell"/><text x="542" y="20" class="txt-c">A[2][1]</text>
+    <rect x="570" y="0" width="55" height="32" class="cell"/><text x="597" y="20" class="txt-c">A[2][2]</text>
+    <rect x="625" y="0" width="55" height="32" class="cell"/><text x="652" y="20" class="txt-c">A[2][3]</text>
+  </g>
+  <text x="30" y="130" class="txt-f">Row-Major Formula: Loc(A[i][j]) = Base + [(i - LBr) * N + (j - LBc)] * Size</text>
+  <text x="30" y="150" class="txt-f" fill="#D97706">For A[1][1] (N=4, Size=4B, Base=1000): Loc = 1000 + [(1*4) + 1]*4 = 1000 + 20 = 1020</text>
+  
+  <text x="30" y="185" class="txt-f" fill="#059669">Column-Major Formula: Loc(A[i][j]) = Base + [(j - LBc) * M + (i - LBr)] * Size</text>
+  <text x="30" y="205" class="txt-c" text-anchor="start" fill="#64748B">In C/C++/Java, arrays are stored strictly in Row-Major order; in FORTRAN/MATLAB, Column-Major order is used.</text>
+</svg><div class="figure-caption">Figure 2.1: 2D Array Memory Mapping in Row-Major vs Column-Major Order with Address Offset Derivations</div></div>
 
-  <h3 id="u4-concepts">4.1 Hash Table Concepts &amp; Terminology</h3>
-  <div class="concept-box">
-    <span class="box-title">Key Terms: Hashing, Collision, Synonym &amp; Load Factor</span>
+    <div class="formula-box">
+      <strong>1D Array Address:</strong> $\text{Loc}(A[i]) = B + (i - \text{LB}) \times S$<br>
+      <strong>2D Array Row-Major:</strong> $\text{Loc}(A[i][j]) = B + [(i - \text{LB}_r) \times N + (j - \text{LB}_c)] \times S$<br>
+      <strong>2D Array Column-Major:</strong> $\text{Loc}(A[i][j]) = B + [(j - \text{LB}_c) \times M + (i - \text{LB}_r)] \times S$
+    </div>
+  </div>
+
+  <div class="topic-block" id="u2-sparse">
+    <h3>2.2 Sparse Matrix 3-Tuple Representation &amp; Fast Transpose</h3>
+    <p>A matrix is sparse when &gt; 85% of elements are zero. Storing only non-zero triplets saves enormous memory:</p>
+    
+<pre><code class="language-cpp">struct Element {
+    int row;
+    int col;
+    int val;
+};
+
+class SparseMatrix {
+    int rows, cols, numTerms;
+    Element data[100]; // data[0] stores: row=rows, col=cols, val=numTerms
+public:
+    void fastTranspose(SparseMatrix&amp; B);
+};</code></pre>
+
+    <h4>Fast Transpose Algorithm (Linear Time O(cols + terms))</h4>
+    <p>Simple transpose takes $O(\text{cols} \times \text{terms})$ due to search passes. Fast Transpose achieves $O(\text{cols} + \text{terms})$ using two helper arrays:</p>
+    <ol>
+      <li><code>terms[col]</code>: stores count of non-zero elements in each column.</li>
+      <li><code>rpos[col]</code>: stores starting index position of each column in transposed matrix: <code>rpos[0] = 1; rpos[c] = rpos[c-1] + terms[c-1]</code>.</li>
+    </ol>
+
+<pre><code class="language-cpp">void SparseMatrix::fastTranspose(SparseMatrix&amp; B) {
+    B.rows = cols;
+    B.cols = rows;
+    B.numTerms = numTerms;
+    if (numTerms &lt;= 0) return;
+
+    int terms[100] = {0};
+    int rpos[100] = {0};
+
+    // Step 1: Count terms in each column
+    for (int i = 1; i &lt;= numTerms; i++) {
+        terms[data[i].col]++;
+    }
+
+    // Step 2: Compute starting positions
+    rpos[0] = 1;
+    for (int c = 1; c &lt; cols; c++) {
+        rpos[c] = rpos[c - 1] + terms[c - 1];
+    }
+
+    // Step 3: Direct placement in B
+    for (int i = 1; i &lt;= numTerms; i++) {
+        int j = rpos[data[i].col]++;
+        B.data[j].row = data[i].col;
+        B.data[j].col = data[i].row;
+        B.data[j].val = data[i].val;
+    }
+}</code></pre>
+  </div>
+
+  <div class="topic-block" id="u2-search">
+    <h3>2.3 Searching Algorithms</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Algorithm</th><th>Best Time</th><th>Average Time</th><th>Worst Time</th><th>Prerequisite</th><th>Key Feature</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Linear Search</strong></td><td>$O(1)$</td><td>$O(n)$</td><td>$O(n)$</td><td>None (Unsorted)</td><td>Sequential traversal, simple</td></tr>
+          <tr><td><strong>Binary Search</strong></td><td>$O(1)$</td><td>$O(\log n)$</td><td>$O(\log n)$</td><td>Sorted Array</td><td>Divide &amp; Conquer, halves search interval</td></tr>
+          <tr><td><strong>Fibonacci Search</strong></td><td>$O(1)$</td><td>$O(\log n)$</td><td>$O(\log n)$</td><td>Sorted Array</td><td>Eliminates division operator (uses only addition/subtraction)</td></tr>
+          <tr><td><strong>Indexed Sequential</strong></td><td>$O(1)$</td><td>$O(\sqrt{n})$</td><td>$O(\sqrt{n})$</td><td>Sorted Array</td><td>Two-tier search: Index table lookup then linear scan</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="topic-block" id="u2-sort">
+    <h3>2.4 Sorting Algorithms</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Algorithm</th><th>Best Time</th><th>Average Time</th><th>Worst Time</th><th>Space</th><th>Stability</th><th>Adaptive?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Bubble Sort</strong></td><td>$O(n)$</td><td>$O(n^2)$</td><td>$O(n^2)$</td><td>$O(1)$</td><td>Stable</td><td>Yes (with flag)</td></tr>
+          <tr><td><strong>Insertion Sort</strong></td><td>$O(n)$</td><td>$O(n^2)$</td><td>$O(n^2)$</td><td>$O(1)$</td><td>Stable</td><td>Yes (optimal for nearly sorted)</td></tr>
+          <tr><td><strong>Selection Sort</strong></td><td>$O(n^2)$</td><td>$O(n^2)$</td><td>$O(n^2)$</td><td>$O(1)$</td><td>Unstable</td><td>No (Min swaps $O(n)$)</td></tr>
+          <tr><td><strong>Quick Sort</strong></td><td>$O(n \log n)$</td><td>$O(n \log n)$</td><td>$O(n^2)$</td><td>$O(\log n)$</td><td>Unstable</td><td>No (Worst on sorted array)</td></tr>
+          <tr><td><strong>Merge Sort</strong></td><td>$O(n \log n)$</td><td>$O(n \log n)$</td><td>$O(n \log n)$</td><td>$O(n)$</td><td>Stable</td><td>No (Guaranteed $O(n \log n)$)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <section class="unit-short-notes" id="u2-short-notes">
+    <div class="short-notes-header">
+      <div class="sn-badge">One-Page Rapid Revision</div>
+      <h3>Unit II Short Notes &amp; High-Yield Cheat Sheet</h3>
+      <p>Array address math, fast transpose arrays, and sorting trade-offs.</p>
+    </div>
+    <div class="short-notes-grid">
+      <div class="sn-col">
+        <div class="sn-card">
+          <h4>Address Math Formulas</h4>
+          <ul>
+            <li>1D: $\text{Loc}(A[i]) = B + (i - \text{LB}) \times S$</li>
+            <li>2D Row-Major: $B + [(i - \text{LB}_r) \times N + (j - \text{LB}_c)] \times S$</li>
+            <li>2D Col-Major: $B + [(j - \text{LB}_c) \times M + (i - \text{LB}_r)] \times S$</li>
+            <li>Elements between indices: $(j - i + 1)$</li>
+          </ul>
+        </div>
+        <div class="sn-card">
+          <h4>Fast Transpose Step Rules</h4>
+          <ul>
+            <li>Size of terms &amp; rpos arrays = number of columns in original matrix</li>
+            <li><code>terms[c]</code> counts occurrences of column $c$</li>
+            <li><code>rpos[0] = 1</code>; <code>rpos[c] = rpos[c-1] + terms[c-1]</code></li>
+            <li>Placement: <code>j = rpos[data[i].col]++; B[j] = swap(data[i])</code></li>
+            <li>Time: $O(\text{cols} + \text{terms})$ vs Simple Transpose $O(\text{cols} \times \text{terms})$</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sn-col">
+        <div class="sn-card">
+          <h4>Stability of Sorting</h4>
+          <ul>
+            <li><strong>Stable:</strong> Bubble, Insertion, Merge Sort (preserves order of duplicates)</li>
+            <li><strong>Unstable:</strong> Selection, Quick Sort, Heap Sort</li>
+            <li>QuickSort Worst Case: Pivot is always min/max (sorted array) &rarr; $O(n^2)$</li>
+            <li>QuickSort Best Case: Pivot splits array into two equal halves &rarr; $O(n \log n)$</li>
+          </ul>
+        </div>
+        <div class="sn-card">
+          <h4>Search Algorithms Key Anchors</h4>
+          <ul>
+            <li>Binary Search: $T(n) = T(n/2) + 1 \implies O(\log_2 n)$</li>
+            <li>Fibonacci Search: Uses Fibonacci numbers ($F_m = F_{m-1} + F_{m-2}$), no division</li>
+            <li>Indexed Sequential: Combines block index table + sequential search</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section id="unit-3" class="unit-section">
+  <div class="unit-badge">Unit III &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
+  <h2>Unit III: Stacks, Queues and Linked Lists</h2>
+  
+  <div class="topic-block" id="u3-stack">
+    <h3>3.1 Stack ADT &amp; Infix-to-Postfix Conversion</h3>
+    <p>A stack is a Last-In, First-Out (LIFO) linear data structure where all insertions and deletions occur at one end: Top of Stack (TOS).</p>
+    
+<pre><code class="language-cpp">template &lt;typename T&gt;
+class Stack {
+    int top;
+    int capacity;
+    T* arr;
+public:
+    Stack(int cap = 100) : capacity(cap), top(-1) { arr = new T[capacity]; }
+    ~Stack() { delete[] arr; }
+    void push(T val) {
+        if (top == capacity - 1) throw runtime_error("Stack Overflow");
+        arr[++top] = val;
+    }
+    T pop() {
+        if (top == -1) throw runtime_error("Stack Underflow");
+        return arr[top--];
+    }
+    T peek() const { return arr[top]; }
+    bool isEmpty() const { return top == -1; }
+};</code></pre>
+
+    <h4>Infix to Postfix Algorithm &amp; Operator Precedence</h4>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Operator</th><th>Precedence</th><th>Associativity</th><th>In-Stack Priority</th><th>Incoming Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>^</code> (Exponent)</td><td>Highest (3)</td><td>Right-to-Left</td><td>3</td><td>4</td></tr>
+          <tr><td><code>*</code>, <code>/</code>, <code>%</code></td><td>Medium (2)</td><td>Left-to-Right</td><td>2</td><td>2</td></tr>
+          <tr><td><code>+</code>, <code>-</code></td><td>Low (1)</td><td>Left-to-Right</td><td>1</td><td>1</td></tr>
+          <tr><td><code>(</code></td><td>Brackets</td><td>N/A</td><td>0 (Never pops)</td><td>High (Pushed)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="topic-block" id="u3-queue">
+    <h3>3.2 Circular Queue &amp; Priority Queue</h3>
+    <p>In a standard linear queue, once <code>rear == MAX - 1</code>, no more elements can be inserted even if <code>front &gt; 0</code> (false overflow). Circular Queue solves this by wrapping around: <code>(index + 1) % MAX</code>.</p>
+    
+<pre><code class="language-cpp">class CircularQueue {
+    int front, rear, size;
+    int arr[100];
+public:
+    CircularQueue(int s = 100) : size(s), front(-1), rear(-1) {}
+    bool isFull() { return (rear + 1) % size == front; }
+    bool isEmpty() { return front == -1; }
+    void enqueue(int val) {
+        if (isFull()) throw runtime_error("Queue Full");
+        if (front == -1) front = rear = 0;
+        else rear = (rear + 1) % size;
+        arr[rear] = val;
+    }
+    int dequeue() {
+        if (isEmpty()) throw runtime_error("Queue Empty");
+        int val = arr[front];
+        if (front == rear) front = rear = -1; // Reset to empty
+        else front = (front + 1) % size;
+        return val;
+    }
+};</code></pre>
+  </div>
+
+  <div class="topic-block" id="u3-linked">
+    <h3>3.3 Linked Lists &amp; In-Place Reversal Algorithm</h3>
+    <p>A linked list is a dynamic collection of nodes connected by pointers, avoiding fixed capacity constraints.</p>
+    
+    <div class="figure-box"><svg viewBox="0 0 760 210" class="svg-diagram" xmlns="http://www.w3.org/2000/svg" id="data-svg-2">
+  <rect width="760" height="210" fill="#FFFFFF" rx="8"/>
+  <style>#data-svg-2 .node-d { fill: #EFF6FF; stroke: #2563EB; stroke-width: 1.8; rx: 4; }#data-svg-2 .node-p { fill: #DBEAFE; stroke: #2563EB; stroke-width: 1.8; rx: 4; }#data-svg-2 .txt-t { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #1E293B; }#data-svg-2 .txt-c { font-family: monospace; font-size: 11px; fill: #1E293B; text-anchor: middle; }#data-svg-2 .txt-ptr { font-family: monospace; font-size: 11px; fill: #DC2626; font-weight: bold; }#data-svg-2 .ptr-wire { stroke: #0F172A; stroke-width: 2; fill: none; marker-end: url(#arr-bl); }#data-svg-2 .ptr-rev { stroke: #DC2626; stroke-width: 2.2; stroke-dasharray: 4 3; fill: none; marker-end: url(#arr-rd); }
+  </style>
+  <defs>
+    <marker id="arr-bl" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 1 L 8 5 L 0 9 z" fill="#0F172A"/></marker>
+    <marker id="arr-rd" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 1 L 8 5 L 0 9 z" fill="#DC2626"/></marker>
+  </defs>
+  <text x="30" y="30" class="txt-t">Singly Linked List In-Place Reversal (3-Pointer Algorithm: prev, curr, next)</text>
+  
+  <!-- Node 1 -->
+  <rect x="50" y="80" width="50" height="40" class="node-d"/><text x="75" y="105" class="txt-c">10</text>
+  <rect x="100" y="80" width="30" height="40" class="node-p"/><circle cx="115" cy="100" r="3" fill="#2563EB"/>
+  
+  <!-- Node 2 -->
+  <rect x="200" y="80" width="50" height="40" class="node-d"/><text x="225" y="105" class="txt-c">20</text>
+  <rect x="250" y="80" width="30" height="40" class="node-p"/><circle cx="265" cy="100" r="3" fill="#2563EB"/>
+  
+  <!-- Node 3 -->
+  <rect x="350" y="80" width="50" height="40" class="node-d"/><text x="375" y="105" class="txt-c">30</text>
+  <rect x="400" y="80" width="30" height="40" class="node-p"/><circle cx="415" cy="100" r="3" fill="#2563EB"/>
+  
+  <!-- Node 4 -->
+  <rect x="500" y="80" width="50" height="40" class="node-d"/><text x="525" y="105" class="txt-c">40</text>
+  <rect x="550" y="80" width="30" height="40" class="node-p"/><text x="565" y="105" class="txt-c">X</text>
+  
+  <!-- Original forward pointers -->
+  <path d="M 115 100 L 195 100" class="ptr-wire"/>
+  <path d="M 265 100 L 345 100" class="ptr-wire"/>
+  <path d="M 415 100 L 495 100" class="ptr-wire"/>
+  
+  <!-- Pointers Labels -->
+  <text x="65" y="60" class="txt-ptr">prev</text>
+  <text x="215" y="60" class="txt-ptr" fill="#2563EB">curr</text>
+  <text x="365" y="60" class="txt-ptr" fill="#059669">next</text>
+  
+  <!-- Reversed pointer path -->
+  <path d="M 265 115 C 240 145 160 145 125 110" class="ptr-rev"/>
+  <text x="170" y="160" class="txt-ptr" font-size="10px">curr-&gt;next = prev</text>
+  
+  <text x="30" y="195" class="txt-c" text-anchor="start" fill="#1E293B">Loop Core: next = curr-&gt;next; curr-&gt;next = prev; prev = curr; curr = next; (Time: O(N), Aux Space: O(1))</text>
+</svg><div class="figure-caption">Figure 3.1: Singly Linked List In-Place Reversal using 3 Pointer Traversal (prev, curr, next)</div></div>
+
+<pre><code class="language-cpp">struct Node {
+    int data;
+    Node* next;
+    Node(int val) : data(val), next(nullptr) {}
+};
+
+// In-place reversal in O(N) time and O(1) space
+Node* reverseList(Node* head) {
+    Node* prev = nullptr;
+    Node* curr = head;
+    Node* next = nullptr;
+    while (curr != nullptr) {
+        next = curr-&gt;next; // Store next node
+        curr-&gt;next = prev; // Reverse current node's pointer
+        prev = curr;       // Advance prev to curr
+        curr = next;       // Advance curr to next
+    }
+    return prev; // New head of reversed list
+}</code></pre>
+
+    <h4>Circular Linked List (CLL) &amp; Applications</h4>
+    <p>In a <strong>Circular Linked List (CLL)</strong>, the <code>next</code> pointer of the last node points back to the first node (<code>last-&gt;next == head</code>) instead of <code>nullptr</code>. Keeping a pointer to <code>last</code> enables $O(1)$ insertion at both the beginning and the end!</p>
+<pre><code class="language-cpp">// Circular Linked List Traversal &amp; O(1) Tail Insert (maintaining last pointer)
+struct CNode { int data; CNode* next; CNode(int d) : data(d), next(this) {} };
+
+void insertAtEnd(CNode*&amp; last, int val) {
+    CNode* n = new CNode(val);
+    if (!last) { last = n; return; }
+    n-&gt;next = last-&gt;next; // point to head
+    last-&gt;next = n;      // old tail points to new node
+    last = n;            // advance tail pointer
+}
+
+void traverseCLL(CNode* last) {
+    if (!last) return;
+    CNode* curr = last-&gt;next; // start at head
+    do {
+        /* process curr-&gt;data */
+        curr = curr-&gt;next;
+    } while (curr != last-&gt;next);
+}</code></pre>
+    <p><strong>Applications:</strong> Operating System <strong>Round-Robin CPU scheduling</strong> rings, multiplayer turn rotation, and circular audio/video ring buffers.</p>
+
+  </div>
+
+  <section class="unit-short-notes" id="u3-short-notes">
+    <div class="short-notes-header">
+      <div class="sn-badge">One-Page Rapid Revision</div>
+      <h3>Unit III Short Notes &amp; High-Yield Cheat Sheet</h3>
+      <p>Stack applications, circular queue formulas, and pointer mechanics.</p>
+    </div>
+    <div class="short-notes-grid">
+      <div class="sn-col">
+        <div class="sn-card">
+          <h4>Circular Queue Formulas</h4>
+          <ul>
+            <li>Empty Condition: <code>front == -1 &amp;&amp; rear == -1</code></li>
+            <li>Full Condition: <code>(rear + 1) % MAX == front</code></li>
+            <li>Enqueue: <code>rear = (rear + 1) % MAX</code></li>
+            <li>Dequeue: <code>front = (front + 1) % MAX</code></li>
+            <li>Total Elements: <code>(rear - front + MAX) % MAX + 1</code></li>
+          </ul>
+        </div>
+        <div class="sn-card">
+          <h4>Expression Conversion Rules</h4>
+          <ul>
+            <li>Operands go directly to output string</li>
+            <li>Operators pushed to stack if priority &gt; top of stack</li>
+            <li>If incoming &le; stack top, pop operators until strictly lower</li>
+            <li><code>(</code> is pushed with lowest in-stack priority; <code>)</code> pops until matching <code>(</code></li>
+            <li>Postfix evaluation: Operand &rarr; Push; Operator &rarr; Pop two operands, compute, push result</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sn-col">
+        <div class="sn-card">
+          <h4>Linked List Operation Complexities</h4>
+          <ul>
+            <li>Insert at Head: $O(1)$</li>
+            <li>Insert at Tail: $O(1)$ with tail pointer, $O(n)$ without</li>
+            <li>Delete Head: $O(1)$</li>
+            <li>Search / Delete by Value: $O(n)$</li>
+            <li>In-Place Reversal: $O(n)$ time, $O(1)$ auxiliary space</li>
+          </ul>
+        </div>
+        <div class="sn-card">
+          <h4>Multiple Stacks in Single Array</h4>
+          <ul>
+            <li>Stack 1 grows from left ($0 \to \text{MAX}-1$, pointer <code>top1</code>)</li>
+            <li>Stack 2 grows from right ($\text{MAX}-1 \to 0$, pointer <code>top2</code>)</li>
+            <li>Overflow Condition: <code>top1 + 1 == top2</code> (Optimal shared memory utilization)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section id="unit-4" class="unit-section">
+  <div class="unit-badge">Unit IV &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
+  <h2>Unit IV: Hashing</h2>
+  
+  <div class="topic-block" id="u4-hash-concepts">
+    <h3>4.1 Hash Table Concepts, Hash Functions &amp; Load Density</h3>
+    <p>Hashing maps large search keys to small array indices in $O(1)$ average time using a mathematical hash function $h(k)$.</p>
+    
+    <div class="formula-box">
+      <strong>Load Factor:</strong> $$\alpha = \frac{n}{m} = \frac{\text{Total Keys Stored}}{\text{Total Table Buckets}}$$
+    </div>
+
+    <h4>Properties of a Good Hash Function</h4>
     <ul>
-      <li><strong>Hash Table &amp; Hash Function:</strong> A Hash Table stores key-value pairs in an array of buckets. A <strong>Hash Function</strong> $h(k)$ maps a large key $k$ directly to a table index $0 \dots (m-1)$ in $O(1)$ expected time.</li>
-      <li><strong>Bucket:</strong> A slot/storage location in the hash table capable of holding one or more records.</li>
-      <li><strong>Collision &amp; Synonym:</strong> When two distinct keys $k_1 \neq k_2$ produce the same hash address ($h(k_1) = h(k_2)$), a <strong>Collision</strong> occurs, and $k_1, k_2$ are called <strong>Synonyms</strong>.</li>
-      <li><strong>Probe:</strong> Each comparison/inspection of a hash table slot while resolving a collision.</li>
-      <li><strong>Overflow:</strong> Occurs when a new key hashes to a bucket that is already completely full.</li>
-      <li><strong>Perfect Hash Function:</strong> A hash function that maps every key to a unique slot with <strong>zero collisions</strong>.</li>
-      <li><strong>Load Factor ($\alpha$):</strong> $\alpha = \frac{n}{m}$ where $n$ is stored keys and $m$ is table size (also called <em>load density</em>). A <strong>Full Table</strong> has $\alpha = 1$. When $\alpha$ exceeds a threshold (e.g., $0.7$), <strong>Rehashing</strong> allocates a larger table (usually $\approx 2m$, next prime) and re-inserts all keys.</li>
+      <li>Uniformly distributes keys across all slots ($0$ to $m-1$) to minimize collisions.</li>
+      <li>Computes in $O(1)$ time with minimal arithmetic operations.</li>
+      <li>Minimizes clustering of synonyms.</li>
+    </ul>
+
+    <h4>Common Hash Functions</h4>
+    <ul>
+      <li><strong>Division-Remainder:</strong> $h(k) = k \pmod m$ (where $m$ is a prime number not close to a power of 2).</li>
+      <li><strong>Mid-Square Method:</strong> Square the key $k^2$ and extract the middle $r$ bits.</li>
+      <li><strong>Folding Method:</strong> Partition key into pieces matching index digit length, add pieces together, and discard carry.</li>
+      <li><strong>Multiplication Method:</strong> $h(k) = \lfloor m \cdot (k A \pmod 1) \rfloor$ where $A \approx \frac{\sqrt{5}-1}{2} \approx 0.618033$.</li>
     </ul>
   </div>
 
-  <figure class="figure-box">
-    <img src="assets/hash_table.png" alt="Hash Table mapping keys through a hash function with collision">
-    <figcaption>Figure 4.1: Hash Table — Keys John Smith and Sandra Dee collide at bucket 02 and are resolved via chaining. (Source: Wikimedia Commons)</figcaption>
-  </figure>
+  <div class="topic-block" id="u4-collision">
+    <h3>4.2 Collision Resolution Strategies</h3>
+    <p>A <strong>collision</strong> occurs when two distinct keys produce the same hash index: $h(k_1) = h(k_2)$ (synonyms).</p>
 
-  <h4>Properties of a Good Hash Function</h4>
-  <ol>
-    <li><strong>Fast to compute</strong> ($O(1)$ arithmetic/bitwise steps).</li>
-    <li><strong>Uniform distribution</strong> (spreads keys evenly across all buckets to minimize collisions).</li>
-    <li><strong>Deterministic</strong> (same key always produces the exact same index).</li>
-    <li><strong>Uses all parts of the key</strong> so small key changes alter the hash.</li>
-  </ol>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Strategy</th><th>Formula / Probe Sequence</th><th>Clustering Problem</th><th>Load Factor Limit</th><th>Deletion Complexity</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Linear Probing</strong></td><td>$h_i(k) = (h(k) + i) \pmod m$</td><td><strong>Primary Clustering:</strong> Long contiguous blocks of occupied cells form, increasing probe lengths drastically.</td><td>Must maintain $\alpha &lt; 0.7$</td><td>Requires special tombstone / deleted flag to prevent broken search chains.</td></tr>
+          <tr><td><strong>Quadratic Probing</strong></td><td>$h_i(k) = (h(k) + i^2) \pmod m$</td><td><strong>Secondary Clustering:</strong> Keys hashing to the same initial slot follow the exact same probe sequence.</td><td>Must maintain $\alpha &lt; 0.5$</td><td>Moderate complexity; may fail to find empty slot if table is &gt;50% full.</td></tr>
+          <tr><td><strong>Double Hashing</strong></td><td>$h_i(k) = (h_1(k) + i \cdot h_2(k)) \pmod m$<br>where $h_2(k) = R - (k \pmod R)$</td><td><strong>Virtually No Clustering!</strong> Each key gets an independent step size based on $h_2(k)$.</td><td>High (works well up to $\alpha \approx 0.85$)</td><td>Requires tombstone flags.</td></tr>
+          <tr><td><strong>Separate Chaining</strong></td><td>Each slot points to a Linked List of collided elements.</td><td><strong>No Clustering!</strong> Keys are appended to local slot chain.</td><td><strong>No Limit!</strong> Can exceed $\alpha &gt; 1.0$.</td><td>Trivial (standard linked list node deletion).</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-  <h3 id="u4-functions">4.2 Types of Hash Functions</h3>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Method</th><th>Formula / Rule</th><th>Example ($m = 10$ or $100$)</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Division / Modulo</strong></td><td>$h(k) = k \bmod m$ (choose $m$ as a prime number)</td><td>$k = 4371, m = 10 \implies 4371 \bmod 10 = 1$</td></tr>
-        <tr><td><strong>Mid-Square</strong></td><td>Square the key $k^2$, extract middle $r$ digits</td><td>$k = 45 \implies 45^2 = 2025 \implies$ middle 2 digits $= \mathbf{02}$</td></tr>
-        <tr><td><strong>Folding (Shift / Boundary)</strong></td><td>Split key into equal parts, add them (boundary reverses alternate parts)</td><td>$k = 123456 \implies 12 + 34 + 56 = 102 \implies 02$</td></tr>
-        <tr><td><strong>Digit Extraction</strong></td><td>Pick fixed digit positions from the key</td><td>From <code>202498</code>, take 3rd &amp; 5th digits $\implies 29$</td></tr>
-      </tbody>
-    </table>
+    <div class="qa-card">
+      <div class="qa-q">Solved SPPU Numerical: Insert keys [4371, 1323, 6173, 4199, 4344, 9679, 1989] into hash table of size m=10 using Linear Probing vs Quadratic Probing (h(k) = k mod 10).</div>
+      <div class="sol-box">
+        <p><strong>1. Linear Probing ($h_i(k) = (k + i) \pmod{10}$):</strong></p>
+        <ul>
+          <li>4371: $4371 \pmod{10} = 1$ &rarr; Index 1</li>
+          <li>1323: $1323 \pmod{10} = 3$ &rarr; Index 3</li>
+          <li>6173: $6173 \pmod{10} = 3$ (Collides with 1323) &rarr; Probe $(3+1)=4$ &rarr; Index 4</li>
+          <li>4199: $4199 \pmod{10} = 9$ &rarr; Index 9</li>
+          <li>4344: $4344 \pmod{10} = 4$ (Collides with 6173) &rarr; Probe $(4+1)=5$ &rarr; Index 5</li>
+          <li>9679: $9679 \pmod{10} = 9$ (Collides with 4199) &rarr; Probe $(9+1)=0$ &rarr; Index 0</li>
+          <li>1989: $1989 \pmod{10} = 9$ (Collides with 9, 0, 1 occupied) &rarr; Probes: 9 &rarr; 0 &rarr; 1 &rarr; 2 &rarr; Index 2</li>
+        </ul>
+        <p><strong>Final Linear Probing Table:</strong> [0: 9679, 1: 4371, 2: 1989, 3: 1323, 4: 6173, 5: 4344, 6: -, 7: -, 8: -, 9: 4199]</p>
+
+        <p><strong>2. Quadratic Probing ($h_i(k) = (k + i^2) \pmod{10}$):</strong></p>
+        <ul>
+          <li>4371 &rarr; 1; 1323 &rarr; 3; 4199 &rarr; 9</li>
+          <li>6173: $h_0=3$ (Occ) &rarr; $h_1 = (3 + 1^2) = 4$ &rarr; Index 4</li>
+          <li>4344: $h_0=4$ (Occ) &rarr; $h_1 = (4 + 1^2) = 5$ &rarr; Index 5</li>
+          <li>9679: $h_0=9$ (Occ) &rarr; $h_1 = (9 + 1^2) = 0$ &rarr; Index 0</li>
+          <li>1989: $h_0=9$ (Occ) &rarr; $h_1 = (9 + 1) = 0$ (Occ) &rarr; $h_2 = (9 + 2^2) = (9 + 4) = 13 \pmod{10} = 3$ (Occ) &rarr; $h_3 = (9 + 3^2) = (9 + 9) = 18 \pmod{10} = 8$ &rarr; Index 8 (Free!)</li>
+        </ul>
+        <p><strong>Final Quadratic Probing Table:</strong> [0: 9679, 1: 4371, 2: -, 3: 1323, 4: 6173, 5: 4344, 6: -, 7: -, 8: 1989, 9: 4199]</p>
+      </div>
+    </div>
   </div>
 
-  <h3 id="u4-collision">4.3 Collision Resolution: Open Addressing vs Separate Chaining</h3>
-  <p>There are two major families of collision resolution:</p>
-  <ul>
-    <li><strong>Open Addressing (Closed Hashing):</strong> All records live <em>inside</em> the hash table array itself. On collision, we probe alternative slots:
-      <ul>
-        <li><strong>Linear Probing:</strong> $h_i(k) = (h(k) + i) \bmod m$ for $i = 0, 1, 2, \dots$. Simple, but suffers from <strong>Primary Clustering</strong> (long runs of occupied slots grow together).</li>
-        <li><strong>Quadratic Probing:</strong> $h_i(k) = (h(k) + i^2) \bmod m$. Eliminates primary clustering, though <strong>Secondary Clustering</strong> can occur if two keys share the same initial hash.</li>
-        <li><strong>Double Hashing:</strong> $h_i(k) = (h_1(k) + i \cdot h_2(k)) \bmod m$ where $h_2(k) = R - (k \bmod R)$ ($R &lt; m$, prime). Best open addressing method—virtually eliminates clustering!</li>
-      </ul>
-    </li>
-    <li><strong>Separate Chaining (Open Hashing / Closed Addressing):</strong> Each bucket holds a pointer to a <strong>Linked List</strong> of all synonyms that hash to that bucket. Never overflows as long as memory exists!</li>
-  </ul>
+  <div class="topic-block" id="u4-rehashing">
+    <h3>4.3 Rehashing &amp; Extendible Hashing</h3>
+    <p><strong>Rehashing:</strong> When the load factor exceeds a threshold (typically $\alpha &gt; 0.75$), search operations degrade. The table size is doubled to a new prime number $M_{new} \approx 2M$, and every existing key is re-inserted using the new hash function $h_{new}(k) = k \pmod{M_{new}}$. Cost is amortized $O(1)$.</p>
+    <p><strong>Extendible Hashing:</strong> A dynamic hashing scheme for secondary storage (databases) using a directory of pointers and data buckets with <strong>Global Depth ($D$)</strong> and <strong>Local Depth ($d$)</strong>. When a bucket overflows, only that bucket splits, doubling directory size only when local depth exceeds global depth.</p>
+  </div>
 
-  <div class="exam-tip">
-    <span class="box-title">Solved Numerical (SPPU Oct 2025 Q8b): Linear vs Quadratic Probing</span>
-    <p><strong>Keys:</strong> <code>4371, 1323, 6173, 4199, 4344, 9679, 1989</code>, $m = 10$, $h(k) = k \bmod 10$.</p>
+  <section class="unit-short-notes" id="u4-short-notes">
+    <div class="short-notes-header">
+      <div class="sn-badge">One-Page Rapid Revision</div>
+      <h3>Unit IV Short Notes &amp; High-Yield Cheat Sheet</h3>
+      <p>Hashing formulas, collision trade-offs, and probing calculations.</p>
+    </div>
+    <div class="short-notes-grid">
+      <div class="sn-col">
+        <div class="sn-card">
+          <h4>Collision Probe Formulas</h4>
+          <ul>
+            <li>Linear Probing: $h_i(k) = (h(k) + i) \pmod m$</li>
+            <li>Quadratic Probing: $h_i(k) = (h(k) + i^2) \pmod m$</li>
+            <li>Double Hashing: $h_i(k) = (h_1(k) + i \cdot h_2(k)) \pmod m$</li>
+            <li>Double Hash Step: $h_2(k) = R - (k \pmod R)$ ($R$ prime $&lt; m$)</li>
+          </ul>
+        </div>
+        <div class="sn-card">
+          <h4>Clustering Comparisons</h4>
+          <ul>
+            <li><strong>Primary Clustering:</strong> Long consecutive occupied runs in Linear Probing</li>
+            <li><strong>Secondary Clustering:</strong> Identical probe paths in Quadratic Probing</li>
+            <li>Double Hashing eliminates both primary and secondary clustering</li>
+            <li>Separate Chaining: Open hashing with linked lists, $\alpha$ can exceed 1</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sn-col">
+        <div class="sn-card">
+          <h4>Load Factor &amp; Performance</h4>
+          <ul>
+            <li>Load Factor: $\alpha = n / m$</li>
+            <li>Open Addressing Avg Successful Search: $\frac{1}{2} \left(1 + \frac{1}{1-\alpha}\right)$</li>
+            <li>Chaining Avg Successful Search: $1 + \frac{\alpha}{2}$</li>
+            <li>Rehashing Trigger: Typically when $\alpha &gt; 0.75$</li>
+          </ul>
+        </div>
+        <div class="sn-card">
+          <h4>Extendible Hashing Terms</h4>
+          <ul>
+            <li>Global Depth $D$: Number of directory prefix bits</li>
+            <li>Local Depth $d$: Number of bits distinguishing keys in bucket</li>
+            <li>If bucket overflows and $d = D$: Directory doubles in size ($D \to D+1$)</li>
+            <li>If bucket overflows and $d &lt; D$: Only bucket splits ($d \to d+1$), directory unchanged</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section id="unit-5" class="unit-section">
+  <div class="unit-badge">Unit V &bull; 09 Hours &bull; NEP 2024 Syllabus</div>
+  <h2>Unit V: Graphs and Trees</h2>
+  
+  <div class="topic-block" id="u5-trees">
+    <h3>5.1 Binary Tree Properties &amp; Traversals</h3>
+    <p>A binary tree is a hierarchical non-linear data structure where each node has at most two children (left child and right child).</p>
+    
+    <div class="formula-box">
+      <strong>Theorem 1:</strong> In any non-empty binary tree, the number of leaf nodes ($n_0$) equals the number of nodes of degree 2 ($n_2$) plus 1:
+      $$n_0 = n_2 + 1$$
+      <strong>Proof:</strong> Total edges $E = n - 1$. Also $E = 1 \cdot n_1 + 2 \cdot n_2$. Total nodes $n = n_0 + n_1 + n_2$.<br>
+      Equating: $n_0 + n_1 + n_2 - 1 = n_1 + 2n_2 \implies n_0 - 1 = n_2 \implies n_0 = n_2 + 1$. (Q.E.D.)
+    </div>
+
+    <h4>Binary Tree Traversals</h4>
     <ul>
-      <li><strong>Linear Probing:</strong>
-        4371 $\to 1$; 1323 $\to 3$; 6173 $\to 3$ (occupied) $\to \mathbf{4}$; 4199 $\to 9$; 4344 $\to 4$ (occupied) $\to \mathbf{5}$; 9679 $\to 9$ (occ) $\to \mathbf{0}$; 1989 $\to 9$ (occ), $0$ (occ), $1$ (occ) $\to \mathbf{2}$.
-        Final: <code>[0:9679, 1:4371, 2:1989, 3:1323, 4:6173, 5:4344, 6:-, 7:-, 8:-, 9:4199]</code>.</li>
-      <li><strong>Quadratic Probing ($+i^2 \bmod 10$):</strong>
-        4371 $\to 1$; 1323 $\to 3$; 6173 $\to (3+1)=4$; 4199 $\to 9$; 4344 $\to (4+1)=5$; 9679 $\to (9+1)=0$; 1989 $\to 9$ (occ), $(9+1)=0$ (occ), $(9+4)=3$ (occ), $(9+9)=8$ (free) $\to \mathbf{8}$.</li>
+      <li><strong>Preorder (Root, Left, Right):</strong> Used to clone trees and prefix expression parsing.</li>
+      <li><strong>Inorder (Left, Root, Right):</strong> In a BST, produces sorted ascending key sequence!</li>
+      <li><strong>Postorder (Left, Right, Root):</strong> Used for bottom-up deletion, directory size calculation, and postfix expressions.</li>
     </ul>
   </div>
 
-  <h3 id="u4-extendible">4.4 Hash Table Overflow &amp; Extendible Hashing</h3>
-  <p>In <strong>Open Addressing</strong>, table overflow triggers <strong>Rehashing</strong> (doubling table size and reinserting). In <strong>Extendible Hashing</strong> (used in databases &amp; file systems), the hash table grows dynamically <em>without</em> rehashing the entire file!</p>
+  <div class="topic-block" id="u5-bst">
+    <h3>5.2 Binary Search Tree (BST) &amp; Deletion Implementation</h3>
+    <p>A BST maintains the property that for every node $X$: all keys in $X$'s left subtree are strictly smaller than $X$, and all keys in $X$'s right subtree are strictly greater than $X$.</p>
+    
+    <div class="figure-box"><svg viewBox="0 0 760 240" class="svg-diagram" xmlns="http://www.w3.org/2000/svg" id="data-svg-3">
+  <rect width="760" height="240" fill="#FFFFFF" rx="8"/>
+  <style>#data-svg-3 .node { fill: #EFF6FF; stroke: #2563EB; stroke-width: 2; }#data-svg-3 .node-del { fill: #FEE2E2; stroke: #DC2626; stroke-width: 2; }#data-svg-3 .node-succ { fill: #FEF3C7; stroke: #D97706; stroke-width: 2; }#data-svg-3 .edge { stroke: #64748B; stroke-width: 1.8; }#data-svg-3 .txt-t { font-family: sans-serif; font-size: 13px; font-weight: bold; fill: #1E293B; }#data-svg-3 .txt-c { font-family: monospace; font-size: 11px; fill: #1E293B; text-anchor: middle; }#data-svg-3 .txt-desc { font-family: sans-serif; font-size: 11px; fill: #475569; }
+  </style>
+  <text x="30" y="25" class="txt-t">Binary Search Tree (BST) Node Deletion: The 3 Scenarios</text>
+  
+  <!-- Case 1: Leaf Node -->
+  <g transform="translate(30, 45)">
+    <text x="60" y="15" class="txt-t" font-size="11px">Case 1: Leaf (0 Children)</text>
+    <circle cx="60" cy="50" r="16" class="node"/><text x="60" y="54" class="txt-c">50</text>
+    <line x1="48" y1="62" x2="25" y2="90" class="edge"/>
+    <circle cx="20" cy="98" r="14" class="node-del"/><text x="20" y="102" class="txt-c">30</text>
+    <text x="0" y="140" class="txt-desc">Simply delete node &amp;</text>
+    <text x="0" y="155" class="txt-desc">set parent-&gt;link = NULL.</text>
+  </g>
+  
+  <!-- Case 2: One Child -->
+  <g transform="translate(250, 45)">
+    <text x="60" y="15" class="txt-t" font-size="11px">Case 2: Node with 1 Child</text>
+    <circle cx="60" cy="50" r="16" class="node"/><text x="60" y="54" class="txt-c">50</text>
+    <line x1="48" y1="62" x2="30" y2="90" class="edge"/>
+    <circle cx="25" cy="98" r="14" class="node-del"/><text x="25" y="102" class="txt-c">30</text>
+    <line x1="33" y1="110" x2="45" y2="135" class="edge"/>
+    <circle cx="50" cy="145" r="13" class="node"/><text x="50" y="149" class="txt-c">35</text>
+    <text x="90" y="115" class="txt-desc">Bypass deleted node:</text>
+    <text x="90" y="130" class="txt-desc">Parent adopts child directly.</text>
+  </g>
+  
+  <!-- Case 3: Two Children -->
+  <g transform="translate(480, 45)">
+    <text x="70" y="15" class="txt-t" font-size="11px">Case 3: Node with 2 Children</text>
+    <circle cx="80" cy="50" r="17" class="node-del"/><text x="80" y="54" class="txt-c" font-weight="bold">50</text>
+    <line x1="68" y1="62" x2="40" y2="90" class="edge"/>
+    <circle cx="35" cy="100" r="14" class="node"/><text x="35" y="104" class="txt-c">30</text>
+    <line x1="92" y1="62" x2="120" y2="90" class="edge"/>
+    <circle cx="125" cy="100" r="14" class="node"/><text x="125" y="104" class="txt-c">70</text>
+    <line x1="115" y1="112" x2="95" y2="135" class="edge"/>
+    <circle cx="90" cy="145" r="14" class="node-succ"/><text x="90" y="149" class="txt-c" font-weight="bold">60</text>
+    <text x="135" y="150" class="txt-desc" fill="#D97706" font-weight="bold">&lt;- Inorder Successor</text>
+    <text x="0" y="185" class="txt-desc">Replace 50 with smallest key in right subtree (60), then recursively delete 60.</text>
+  </g>
+</svg><div class="figure-caption">Figure 5.1: Binary Search Tree (BST) Node Deletion Scenarios: Leaf, Single Child, and Inorder Successor Replacement</div></div>
 
-  <div class="concept-box">
-    <span class="box-title">Extendible Hashing: Directory, Global Depth &amp; Local Depth</span>
-    <p><strong>Exam Definition:</strong> Extendible Hashing is a dynamic hashing scheme that uses a <strong>directory</strong> of pointers to buckets and treats hash values as bit strings. It maintains a <strong>Global Depth ($d$)</strong> (number of bits used to index the directory of size $2^d$) and a <strong>Local Depth ($d'$)</strong> per bucket.</p>
-    <p><strong>How Splitting Works:</strong> When a bucket overflows: (1) If $d' &lt; d$, split only that bucket and increment its $d'$. (2) If $d' = d$, double the directory ($d \leftarrow d + 1$), then split the overflowing bucket.</p>
+<pre><code class="language-cpp">struct TreeNode {
+    int key;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int val) : key(val), left(nullptr), right(nullptr) {}
+};
+
+TreeNode* findMin(TreeNode* node) {
+    while (node &amp;&amp; node-&gt;left != nullptr) node = node-&gt;left;
+    return node;
+}
+
+TreeNode* deleteBST(TreeNode* root, int key) {
+    if (root == nullptr) return root;
+
+    if (key &lt; root-&gt;key) {
+        root-&gt;left = deleteBST(root-&gt;left, key);
+    } else if (key &gt; root-&gt;key) {
+        root-&gt;right = deleteBST(root-&gt;right, key);
+    } else {
+        // Node found! Handle 3 scenarios:
+        // Case 1: No left child (includes leaf node)
+        if (root-&gt;left == nullptr) {
+            TreeNode* temp = root-&gt;right;
+            delete root;
+            return temp;
+        }
+        // Case 2: No right child
+        else if (root-&gt;right == nullptr) {
+            TreeNode* temp = root-&gt;left;
+            delete root;
+            return temp;
+        }
+        // Case 3: Two children -> Replace with Inorder Successor
+        TreeNode* succ = findMin(root-&gt;right);
+        root-&gt;key = succ-&gt;key;
+        root-&gt;right = deleteBST(root-&gt;right, succ-&gt;key);
+    }
+    return root;
+}</code></pre>
   </div>
 
-  <figure class="svg-box">
-    <svg style="max-width:100%;height:auto;" width="520" height="170" viewBox="0 0 520 170" xmlns="http://www.w3.org/2000/svg">
-      <text x="85" y="22" fill="#4B5FD1" font-size="13" font-weight="bold" font-family="sans-serif" text-anchor="middle">Directory (d = 2)</text>
-      <rect x="35" y="32" width="100" height="28" fill="#EAEFFE" stroke="#4B5FD1"/><text x="85" y="51" fill="#171717" font-size="12" font-family="monospace" text-anchor="middle">00</text>
-      <rect x="35" y="60" width="100" height="28" fill="#EAEFFE" stroke="#4B5FD1"/><text x="85" y="79" fill="#171717" font-size="12" font-family="monospace" text-anchor="middle">01</text>
-      <rect x="35" y="88" width="100" height="28" fill="#EAEFFE" stroke="#4B5FD1"/><text x="85" y="107" fill="#171717" font-size="12" font-family="monospace" text-anchor="middle">10</text>
-      <rect x="35" y="116" width="100" height="28" fill="#EAEFFE" stroke="#4B5FD1"/><text x="85" y="135" fill="#171717" font-size="12" font-family="monospace" text-anchor="middle">11</text>
-
-      <line x1="135" y1="46" x2="260" y2="46" stroke="#226D51" stroke-width="2"/>
-      <line x1="135" y1="74" x2="260" y2="74" stroke="#226D51" stroke-width="2"/>
-      <line x1="135" y1="102" x2="260" y2="115" stroke="#9C7710" stroke-width="2"/>
-      <line x1="135" y1="130" x2="260" y2="122" stroke="#9C7710" stroke-width="2"/>
-
-      <rect x="260" y="30" width="220" height="30" fill="#E4F2EC" stroke="#226D51" rx="4"/>
-      <text x="370" y="50" fill="#171717" font-size="12" font-family="sans-serif" text-anchor="middle">Bucket A (d'=2): 00xx keys</text>
-      <rect x="260" y="65" width="220" height="30" fill="#E4F2EC" stroke="#226D51" rx="4"/>
-      <text x="370" y="85" fill="#171717" font-size="12" font-family="sans-serif" text-anchor="middle">Bucket B (d'=2): 01xx keys</text>
-      <rect x="260" y="103" width="220" height="34" fill="#FBF4DC" stroke="#9C7710" rx="4"/>
-      <text x="370" y="125" fill="#171717" font-size="12" font-family="sans-serif" text-anchor="middle">Bucket C (d'=1): 10xx &amp; 11xx</text>
-    </svg>
-    <figcaption>Figure 4.2: Extendible Hashing — Directory (Global Depth d=2) pointing to Buckets with Local Depth d'.</figcaption>
-  </figure>
-
-  <h3 id="u4-casestudy">4.5 Unit IV Case Study: Dictionary Application using Hash Tables</h3>
-  <pre><code>class DictionaryHashTable:
-    # Dictionary storing word -> meaning using Separate Chaining.
-    def __init__(self, size: int = 11):
-        self.size = size
-        self.buckets = [[] for _ in range(size)]
-        self.count = 0
-
-    def _hash(self, word: str) -> int:
-        # Polynomial rolling hash modulo table size
-        h = 0
-        for ch in word.lower():
-            h = (h * 31 + ord(ch)) % self.size
-        return h
-
-    def insert(self, word: str, meaning: str) -> None:
-        idx = self._hash(word)
-        for pair in self.buckets[idx]:
-            if pair[0] == word:
-                pair[1] = meaning
-                return
-        self.buckets[idx].append([word, meaning])
-        self.count += 1
-
-    def lookup(self, word: str) -> str:
-        idx = self._hash(word)
-        for k, v in self.buckets[idx]:
-            if k == word:
-                return v
-        return "Word not found"
-
-d = DictionaryHashTable()
-d.insert("Algorithm", "Step-by-step problem solving procedure")
-d.insert("Collision", "Two keys mapping to the same hash bucket")
-print("Lookup Collision:", d.lookup("Collision"))</code></pre>
-
-  <h3 id="u4-qa">4.6 Important SPPU Exam Questions &amp; Model Answers (Unit IV)</h3>
-  <div class="qa-card">
-    <div class="qa-q">Q1. Explain characteristics of a good hash function and any four types of hash functions. <span class="marks-badge">6M (Oct 2025)</span></div>
-    <p><strong>Model Answer Points:</strong> (1) 4 characteristics: fast, uniform, deterministic, uses full key. (2) Explain Division ($k \bmod m$), Mid-Square, Folding (Shift &amp; Boundary), and Multiplication/Digit Extraction with 1 numerical example each.</p>
+  <div class="topic-block" id="u5-huffman">
+    <h3>5.3 Huffman Coding &amp; Data Compression</h3>
+    <p>Huffman coding is a greedy algorithm that assigns variable-length binary prefix codes to characters based on their frequencies: frequent characters get short codes, rare characters get longer codes.</p>
+    
+    <div class="qa-card">
+      <div class="qa-q">Solved SPPU Numerical: Construct Huffman Tree for characters [A: 5, B: 9, C: 12, D: 13, E: 16, F: 45]. Calculate average code length.</div>
+      <div class="sol-box">
+        <p><strong>Step 1: Min-Priority Queue of Frequencies:</strong> [A:5, B:9, C:12, D:13, E:16, F:45]</p>
+        <p><strong>Step 2: Iterative Merges:</strong></p>
+        <ul>
+          <li>Merge A(5) + B(9) &rarr; Node1(14). Queue: [C:12, D:13, Node1:14, E:16, F:45]</li>
+          <li>Merge C(12) + D(13) &rarr; Node2(25). Queue: [Node1:14, E:16, Node2:25, F:45]</li>
+          <li>Merge Node1(14) + E(16) &rarr; Node3(30). Queue: [Node2:25, Node3:30, F:45]</li>
+          <li>Merge Node2(25) + Node3(30) &rarr; Node4(55). Queue: [F:45, Node4:55]</li>
+          <li>Merge F(45) + Node4(55) &rarr; Root(100).</li>
+        </ul>
+        <p><strong>Step 3: Assign Prefix Codes (Left=0, Right=1):</strong></p>
+        <ul>
+          <li>F (freq 45): <code>0</code> (1 bit)</li>
+          <li>C (freq 12): <code>100</code> (3 bits) &bull; D (freq 13): <code>101</code> (3 bits)</li>
+          <li>E (freq 16): <code>111</code> (3 bits)</li>
+          <li>A (freq 5): <code>1100</code> (4 bits) &bull; B (freq 9): <code>1101</code> (4 bits)</li>
+        </ul>
+        <p><strong>Weighted Total Bits:</strong> $(45 \times 1) + (12 \times 3) + (13 \times 3) + (16 \times 3) + (5 \times 4) + (9 \times 4) = 45 + 36 + 39 + 48 + 20 + 36 = 224$ bits.<br>
+        Versus Fixed-Length (3 bits per char): $100 \times 3 = 300$ bits. <strong>Compression Ratio:</strong> $224 / 300 = 74.6\%$ (25.4% bandwidth saved!).</p>
+      </div>
+    </div>
   </div>
-  <div class="qa-card">
-    <div class="qa-q">Q2. Compare Open Addressing (Linear/Quadratic/Double Hashing) vs Separate Chaining. <span class="marks-badge">6M</span></div>
-    <p><strong>Model Answer Points:</strong> Compare storage location (in-table vs external linked list), load factor limit ($\alpha \le 1$ vs $\alpha &gt; 1$ allowed), clustering issues, cache locality, and deletion complexity (tombstones vs simple node unlink).</p>
+
+  <div class="topic-block" id="u5-graphs">
+    <h3>5.4 Graph Representations &amp; Traversals (BFS, DFS)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Parameter</th><th>Breadth-First Search (BFS)</th><th>Depth-First Search (DFS)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Core Data Structure</strong></td><td><strong>Queue</strong> (FIFO)</td><td><strong>Stack</strong> (LIFO) or System Call Stack (Recursion)</td></tr>
+          <tr><td><strong>Exploration Pattern</strong></td><td>Level-by-level (radiates outward like ripples)</td><td>Explores deep along a branch until dead-end, then backtracks</td></tr>
+          <tr><td><strong>Shortest Path?</strong></td><td>Finds shortest path in unweighted graphs</td><td>Does not guarantee shortest path</td></tr>
+          <tr><td><strong>Time Complexity</strong></td><td>$O(V + E)$ (Adjacency List), $O(V^2)$ (Matrix)</td><td>$O(V + E)$ (Adjacency List), $O(V^2)$ (Matrix)</td></tr>
+          <tr><td><strong>Space Complexity</strong></td><td>$O(V)$ (Queue stores entire level width)</td><td>$O(V)$ (Stack stores maximum path depth)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="topic-block" id="u5-mst">
+    <h3>5.5 Minimum Spanning Trees: Prim's vs Kruskal's Algorithm</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Parameter</th><th>Prim's Algorithm</th><th>Kruskal's Algorithm</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Approach</strong></td><td>Vertex-based greedy approach. Starts from an arbitrary root vertex and grows the tree by adding minimum-weight crossing edge.</td><td>Edge-based greedy approach. Sorts all edges in ascending order and adds edge if it does not form a cycle.</td></tr>
+          <tr><td><strong>Cycle Prevention</strong></td><td>Automatic (Always connects an existing tree vertex to an unvisited vertex).</td><td>Requires <strong>Disjoint Set Union (Union-Find)</strong> with path compression.</td></tr>
+          <tr><td><strong>Preferred Graph Type</strong></td><td><strong>Dense Graphs</strong> ($E \approx V^2$). Time: $O(E \log V)$ with min-heap.</td><td><strong>Sparse Graphs</strong> ($E \approx V$). Time: $O(E \log E) = O(E \log V)$.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <section class="unit-short-notes" id="u5-short-notes">
+    <div class="short-notes-header">
+      <div class="sn-badge">One-Page Rapid Revision</div>
+      <h3>Unit V Short Notes &amp; High-Yield Cheat Sheet</h3>
+      <p>Tree invariants, BST deletion, and graph traversal essentials.</p>
+    </div>
+    <div class="short-notes-grid">
+      <div class="sn-col">
+        <div class="sn-card">
+          <h4>Tree Formula Invariants</h4>
+          <ul>
+            <li>Non-empty Binary Tree: $n_0 = n_2 + 1$ (Always!)</li>
+            <li>Maximum nodes at level $i$: $2^i$ (root is level 0)</li>
+            <li>Maximum nodes in tree of height $h$: $2^{h+1} - 1$</li>
+            <li>Minimum height for $n$ nodes: $\lceil \log_2(n+1) \rceil - 1$</li>
+            <li>Inorder traversal of BST is ALWAYS strictly sorted</li>
+          </ul>
+        </div>
+        <div class="sn-card">
+          <h4>BST Deletion Rules</h4>
+          <ul>
+            <li>Leaf (0 children): <code>free(node)</code>, set parent pointer NULL</li>
+            <li>1 child: Parent points directly to child, bypass node</li>
+            <li>2 children: Replace with Inorder Successor (min in right subtree) or Inorder Predecessor (max in left subtree)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sn-col">
+        <div class="sn-card">
+          <h4>BFS vs DFS Traversal</h4>
+          <ul>
+            <li>BFS uses <strong>Queue</strong> &rarr; level order, unweighted shortest path</li>
+            <li>DFS uses <strong>Stack</strong> &rarr; depth order, topological sort, cycle detection</li>
+            <li>Both have time complexity $O(V + E)$ with Adjacency List</li>
+            <li>Spanning Tree has exactly $V$ vertices and $V-1$ edges</li>
+          </ul>
+        </div>
+        <div class="sn-card">
+          <h4>MST Algorithm Selection</h4>
+          <ul>
+            <li>Prim's: Vertex-centric, grows single tree. Best for dense graphs ($E \approx V^2$).</li>
+            <li>Kruskal's: Edge-centric, uses sorted edge list &amp; Union-Find. Best for sparse graphs.</li>
+            <li>Huffman Coding: Greedy prefix-free encoding using min-heap.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="flashcards-section" id="flashcards">
+  <div class="flashcards-header">
+    <div class="flashcards-title-group">
+      <span class="flashcards-badge">Active Recall Deck</span>
+      <h2>Data Structures Master Exam Flashcards (25 Cards)</h2>
+      <p>Tap any card to flip and verify your understanding of data structures, algorithms, and complexities.</p>
+    </div>
+    <div class="flashcards-controls">
+      <button type="button" class="fc-ctrl-btn" id="fc-flip-all">Flip All Cards</button>
+      <button type="button" class="fc-ctrl-btn" id="fc-reset-all">Reset All</button>
+      <div class="fc-filter-group">
+        <label>Filter Unit:</label>
+        <select id="fc-unit-filter">
+          <option value="all">All Units</option>
+          <option value="u1">Unit I: Intro &amp; Complexity</option>
+          <option value="u2">Unit II: Arrays &amp; Sorting</option>
+          <option value="u3">Unit III: Stacks &amp; Lists</option>
+          <option value="u4">Unit IV: Hashing</option>
+          <option value="u5">Unit V: Trees &amp; Graphs</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="flashcards-grid">
+    <!-- Card 1 -->
+    <div class="flashcard-card" data-unit="u1">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit I &bull; Space Complexity</div>
+          <div class="fc-q">What is the mathematical formulation of Space Complexity $S(P)$?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            $$S(P) = c + S_p(I)$$<br>
+            <strong>$c$:</strong> Fixed space (instructions, constants, simple variables).<br>
+            <strong>$S_p(I)$:</strong> Variable space dependent on instance $I$ (heap allocations, recursion call stack frames).
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="flashcard-card" data-unit="u1">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit I &bull; Big-Theta Definition</div>
+          <div class="fc-q">State the exact mathematical definition of Big-Theta ($\Theta$) notation.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            $$c_1 g(n) \le f(n) \le c_2 g(n) \quad \forall n \ge n_0$$<br>
+            where $c_1, c_2 &gt; 0$ and $n_0 \ge 1$. Represents an asymptotically tight bound.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="flashcard-card" data-unit="u2">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit II &bull; Row-Major Address Formula</div>
+          <div class="fc-q">Write the Row-Major address calculation formula for element $A[i][j]$ in a $2D$ array.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            $$\text{Loc}(A[i][j]) = \text{Base} + [(i - \text{LB}_r) \times N + (j - \text{LB}_c)] \times S$$<br>
+            where $N$ is total columns, $S$ is element size in bytes, and $\text{LB}$ are lower bounds.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="flashcard-card" data-unit="u2">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit II &bull; Fast Transpose Complexity</div>
+          <div class="fc-q">What is the time complexity of Fast Transpose compared to Simple Transpose?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            <strong>Fast Transpose:</strong> $O(\text{cols} + \text{terms})$ using <code>terms</code> and <code>rpos</code> arrays.<br>
+            <strong>Simple Transpose:</strong> $O(\text{cols} \times \text{terms})$ due to repeated scanning across all columns.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="flashcard-card" data-unit="u2">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit II &bull; Sorting Stability</div>
+          <div class="fc-q">Define 'Stability' in sorting algorithms with an example.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            A sorting algorithm is <strong>stable</strong> if duplicate keys maintain their original relative order after sorting. For example, in $[5_a, 3, 5_b]$, a stable sort guarantees $5_a$ precedes $5_b$. Stable: Merge, Insertion, Bubble. Unstable: Quick, Selection.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="flashcard-card" data-unit="u2">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit II &bull; QuickSort Worst Case</div>
+          <div class="fc-q">When does QuickSort degrade to $O(n^2)$ time? How can it be prevented?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            Occurs when the pivot is always the extreme (minimum or maximum) element, such as sorting an already-sorted array with first/last element as pivot ($T(n) = T(n-1) + O(n) \implies O(n^2)$).<br>
+            <strong>Remedy:</strong> Randomized pivot or Median-of-Three partitioning.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="flashcard-card" data-unit="u3">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit III &bull; Circular Queue Full Condition</div>
+          <div class="fc-q">What is the condition for a Circular Queue to be FULL?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            $$(rear + 1) \% \text{MAX} == front$$<br>
+            Indicates that advancing rear by one slot would collide with front, leaving one slot unused to distinguish Full from Empty.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="flashcard-card" data-unit="u3">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit III &bull; List Reversal Algorithm</div>
+          <div class="fc-q">What are the three pointers used in in-place Singly Linked List reversal?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            <code>prev</code>, <code>curr</code>, <code>next</code>.<br>
+            In each iteration: <code>next = curr-&gt;next; curr-&gt;next = prev; prev = curr; curr = next;</code> Time: $O(N)$, Space: $O(1)$.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="flashcard-card" data-unit="u3">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit III &bull; Infix-to-Postfix Stack Role</div>
+          <div class="fc-q">What is stored in the stack during Infix-to-Postfix conversion?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            The stack holds <strong>operators</strong> and <strong>left parentheses '('</strong> waiting for their right operand. Operands bypass the stack and are appended directly to the output postfix string!
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 10 -->
+    <div class="flashcard-card" data-unit="u4">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit IV &bull; Primary vs Secondary Clustering</div>
+          <div class="fc-q">Contrast Primary Clustering and Secondary Clustering in Hash Tables.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            <strong>Primary Clustering (Linear Probing):</strong> Long runs of occupied slots merge together, causing new keys to scan entire blocks.<br>
+            <strong>Secondary Clustering (Quadratic Probing):</strong> Keys that share the same initial hash index $h(k)$ follow the exact same probe sequence.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 11 -->
+    <div class="flashcard-card" data-unit="u4">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit IV &bull; Double Hashing Formula</div>
+          <div class="fc-q">Write the probe equation for Double Hashing and the condition on $h_2(k)$.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            $$h_i(k) = (h_1(k) + i \cdot h_2(k)) \pmod m$$<br>
+            <strong>Condition:</strong> $h_2(k)$ must NEVER evaluate to $0$, and must be relatively prime to $m$. Typically $h_2(k) = R - (k \pmod R)$ where $R &lt; m$ is prime.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 12 -->
+    <div class="flashcard-card" data-unit="u4">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit IV &bull; Separate Chaining Advantage</div>
+          <div class="fc-q">Why can Separate Chaining operate with a load factor $\alpha &gt; 1.0$?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            Because each table bucket is a linked list that dynamically allocates new nodes in heap memory. There is no hard limit on the number of keys stored in each chain, unlike open addressing where slots are fixed.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 13 -->
+    <div class="flashcard-card" data-unit="u5">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit V &bull; Leaf Node Theorem</div>
+          <div class="fc-q">Prove that in any non-empty binary tree, $n_0 = n_2 + 1$.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            Total edges $E = n - 1$. Also each node of degree 1 contributes 1 edge and degree 2 contributes 2 edges: $E = n_1 + 2n_2$.<br>
+            Total nodes $n = n_0 + n_1 + n_2$.<br>
+            $n_0 + n_1 + n_2 - 1 = n_1 + 2n_2 \implies n_0 = n_2 + 1$.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 14 -->
+    <div class="flashcard-card" data-unit="u5">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit V &bull; BST Deletion with 2 Children</div>
+          <div class="fc-q">How is a node with two children deleted from a BST without violating the BST property?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            Replace the node's key with its <strong>Inorder Successor</strong> (smallest element in its right subtree) or <strong>Inorder Predecessor</strong> (largest in left subtree), then recursively delete that successor node (which has at most 1 child).
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 15 -->
+    <div class="flashcard-card" data-unit="u5">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit V &bull; Prim's vs Kruskal's MST</div>
+          <div class="fc-q">Which MST algorithm is preferred for dense graphs? Why?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            <strong>Prim's Algorithm</strong> is preferred for dense graphs ($E \approx V^2$) because its runtime depends on vertex growth with priority queue ($O(E \log V)$ or $O(V^2)$ with matrix), avoiding Kruskal's costly sorting of all $V^2$ edges.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 16 -->
+    <div class="flashcard-card" data-unit="u5">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit V &bull; Huffman Prefix Code</div>
+          <div class="fc-q">Why is a Huffman code called a 'prefix-free' code? What advantage does this provide?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            No character's binary code is a prefix of any other character's code (characters reside solely at leaf nodes of the Huffman tree).<br>
+            <strong>Advantage:</strong> The bitstream can be decoded unambiguously from left to right without any delimiter markers!
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 17 -->
+    <div class="flashcard-card" data-unit="u5">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit V &bull; BFS vs DFS Data Structures</div>
+          <div class="fc-q">Which internal data structures power BFS and DFS respectively?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            <strong>BFS:</strong> Uses a <strong>Queue</strong> (FIFO) to explore nodes level-by-level.<br>
+            <strong>DFS:</strong> Uses a <strong>Stack</strong> (LIFO) or recursive function call stack to explore deeply along each branch.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 18 -->
+    <div class="flashcard-card" data-unit="u1">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit I &bull; Ephemeral vs Persistent</div>
+          <div class="fc-q">What is the key difference between Ephemeral and Persistent data structures?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            <strong>Ephemeral:</strong> Any update destroys previous versions, leaving only the newest state (e.g., standard C++ arrays).<br>
+            <strong>Persistent:</strong> Preserves all historical versions across updates (e.g., Git commit history, copy-on-write trees).
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 19 -->
+    <div class="flashcard-card" data-unit="u2">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit II &bull; Sparse Matrix Condition</div>
+          <div class="fc-q">What is the density threshold for a matrix to be considered sparse?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            $$\text{Density} = \frac{\text{Non-Zero Elements}}{M \times N} &lt; 0.15 \quad (15\%)$$<br>
+            When density is below 15%, triplet representation saves substantial memory over 2D dense arrays.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 20 -->
+    <div class="flashcard-card" data-unit="u3">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit III &bull; Doubly Linked List Node</div>
+          <div class="fc-q">Write the C++ struct definition for a Doubly Linked List node.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+<pre><code class="language-cpp">struct DNode {
+    int data;
+    DNode* prev;
+    DNode* next;
+    DNode(int v) : data(v), prev(nullptr), next(nullptr) {}
+};</code></pre>
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 21 -->
+    <div class="flashcard-card" data-unit="u4">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit IV &bull; Rehashing Mechanism</div>
+          <div class="fc-q">What happens during Rehashing when load factor $\alpha &gt; 0.75$?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            A new table is allocated with approximately double the size ($M_{new} \approx 2M$, prime). All existing active keys are re-hashed into the new table using $h_{new}(k) = k \pmod{M_{new}}$, and old storage is freed.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 22 -->
+    <div class="flashcard-card" data-unit="u5">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit V &bull; Complete vs Full Binary Tree</div>
+          <div class="fc-q">Distinguish between a Full (Strict) Binary Tree and a Complete Binary Tree.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            <strong>Full (Strict):</strong> Every node has either strictly 0 or 2 children.<br>
+            <strong>Complete:</strong> All levels are completely filled except possibly the last level, where nodes are as far left as possible (basis of binary heaps).
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 23 -->
+    <div class="flashcard-card" data-unit="u2">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit II &bull; Merge Sort Space</div>
+          <div class="fc-q">Why is Merge Sort rarely used for in-place array sorting?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            Standard Merge Sort requires an auxiliary array of size $O(n)$ to merge two sorted halves. It is not in-place, making QuickSort preferred for memory-constrained RAM arrays (though Merge Sort excels on linked lists and external files).
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 24 -->
+    <div class="flashcard-card" data-unit="u3">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit III &bull; Queue Empty vs Full</div>
+          <div class="fc-q">In an array circular queue of size $M$, why are only $M-1$ elements stored?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            Leaving one slot empty distinguishes the <strong>Full Condition</strong> ($(rear+1)\%M == front$) from the <strong>Empty Condition</strong> ($front == rear$), avoiding an extra boolean flag.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 25 -->
+    <div class="flashcard-card" data-unit="u5">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit V &bull; Kruskal's Cycle Detection</div>
+          <div class="fc-q">How does Kruskal's algorithm detect cycles in $O(\alpha(V))$ time?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">
+            Using the <strong>Disjoint Set Union (Union-Find)</strong> data structure with path compression and rank union. If <code>find(u) == find(v)</code>, adding edge $(u, v)$ creates a cycle and is rejected; otherwise <code>union(u, v)</code> is called.
+          </div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="unit-5">
-  <h2 class="unit-title">Unit V: Graphs and Trees (09 Hours)</h2>
-
-  <h3 id="u5-graphs">5.1 Graphs: Concepts, Storage Representation, BFS &amp; DFS</h3>
-  <div class="concept-box">
-    <span class="box-title">Key Term: Graph $G = (V, E)$</span>
-    <p><strong>Exam Definition:</strong> A Graph $G = (V, E)$ is a non-linear data structure consisting of a finite non-empty set of <strong>vertices</strong> (nodes) $V$ and a set of <strong>edges</strong> $E$ connecting pairs of vertices. Graphs can be <em>undirected</em> or <em>directed (digraph)</em>, and <em>weighted</em> or <em>unweighted</em>.</p>
-    <p><strong>In Simple Words:</strong> A road map—cities are vertices ($V$) and highways between them are edges ($E$), with distances as weights.</p>
-  </div>
-
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Storage Representation</th><th>Space</th><th>Edge Lookup</th><th>Best Used When</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Adjacency Matrix</strong> ($V \times V$ 2D array)</td><td>$O(V^2)$</td><td>$O(1)$</td><td>Dense graphs ($E \approx V^2$)</td></tr>
-        <tr><td><strong>Adjacency List</strong> (Array of lists)</td><td>$O(V + E)$</td><td>$O(\text{deg}(u))$</td><td>Sparse graphs ($E \ll V^2$)</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h4>Graph Traversals: Breadth-First Search (BFS) vs Depth-First Search (DFS)</h4>
-  <ul>
-    <li><strong>BFS (Level-by-Level):</strong> Uses a <strong>Queue</strong>. Visits all immediate neighbors first before moving deeper. Finds shortest path in unweighted graphs. Time: $O(V + E)$.</li>
-    <li><strong>DFS (Go Deep First):</strong> Uses a <strong>Stack</strong> (or recursion). Explores as far down one branch as possible before backtracking. Used in cycle detection &amp; topological sort. Time: $O(V + E)$.</li>
-  </ul>
-
-  <pre><code>from collections import deque
-
-def bfs(adj: dict[int, list[int]], start: int) -> list[int]:
-    visited, order = {start}, []
-    q = deque([start])
-    while q:
-        u = q.popleft()
-        order.append(u)
-        for v in adj[u]:
-            if v not in visited:
-                visited.add(v)
-                q.append(v)
-    return order
-
-def dfs(adj: dict[int, list[int]], start: int) -> list[int]:
-    visited, order = set(), []
-    def _explore(u: int):
-        visited.add(u)
-        order.append(u)
-        for v in adj[u]:
-            if v not in visited:
-                _explore(v)
-    _explore(start)
-    return order
-
-graph = {0: [1, 2], 1: [0, 3, 4], 2: [0, 4], 3: [1], 4: [1, 2]}
-print("BFS:", bfs(graph, 0), "| DFS:", dfs(graph, 0))</code></pre>
-
-  <h3 id="u5-mst">5.2 Minimum Spanning Tree (MST): Prim's &amp; Kruskal's Algorithms</h3>
-  <div class="concept-box">
-    <span class="box-title">Key Term: Spanning Tree &amp; Minimum Spanning Tree (MST)</span>
-    <p><strong>Exam Definition:</strong> A <em>Spanning Tree</em> of a connected, undirected graph $G$ is a subgraph that is a tree and includes all $V$ vertices with exactly $V - 1$ edges. A <em>Minimum Spanning Tree (MST)</em> is a spanning tree whose sum of edge weights is minimum among all possible spanning trees.</p>
-  </div>
-
-  <figure class="figure-box">
-    <img src="assets/minimum_spanning_tree.png" alt="Minimum Spanning Tree connecting all vertices with minimum total edge weight">
-    <figcaption>Figure 5.1: Minimum Spanning Tree (MST) — Connecting all vertices with V-1 edges of minimum total weight. (Source: Wikimedia Commons)</figcaption>
-  </figure>
-
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Feature</th><th>Prim's Algorithm</th><th>Kruskal's Algorithm</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Greedy Strategy</strong></td><td>Grows 1 connected tree vertex-by-vertex from a start node.</td><td>Picks globally smallest edges one-by-one (forest merges into 1 tree).</td></tr>
-        <tr><td><strong>Data Structure</strong></td><td>Min-Heap / Priority Queue + Visited array</td><td>Sorted Edge List + Disjoint Set (Union-Find)</td></tr>
-        <tr><td><strong>Time Complexity</strong></td><td>$O(V^2)$ (matrix) or $O(E \log V)$ (heap)</td><td>$O(E \log E)$</td></tr>
-        <tr><td><strong>Best For</strong></td><td>Dense graphs</td><td>Sparse graphs</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <pre><code>import heapq
-
-def prim_mst(n: int, adj: list[list[tuple[int, int]]], start: int = 0) -> int:
-    visited = [False] * n
-    pq = [(0, start)]  # (weight, vertex)
-    total_cost = 0
-    while pq:
-        w, u = heapq.heappop(pq)
-        if visited[u]:
-            continue
-        visited[u] = True
-        total_cost += w
-        for v, weight in adj[u]:
-            if not visited[v]:
-                heapq.heappush(pq, (weight, v))
-    return total_cost
-
-def kruskal_mst(n: int, edges: list[tuple[int, int, int]]) -> int:
-    parent = list(range(n))
-    def find(x):
-        while parent[x] != x:
-            parent[x] = parent[parent[x]]
-            x = parent[x]
-        return x
-    total_cost = 0
-    for w, u, v in sorted(edges):
-        ru, rv = find(u), find(v)
-        if ru != rv:
-            parent[ru] = rv
-            total_cost += w
-    return total_cost</code></pre>
-
-  <h3 id="u5-trees">5.3 General Trees, Conversion to Binary Tree &amp; Binary Tree Properties</h3>
-  <p>A <strong>Tree</strong> is a connected, acyclic hierarchical graph with a designated <strong>Root</strong>. Unlike a general graph, a tree with $N$ nodes always has $N - 1$ edges and a unique path between any two nodes.</p>
-  <ul>
-    <li><strong>Sequential Representation:</strong> Store nodes in an array level-by-level. For node at index $i$ (0-based): Left Child $= 2i + 1$, Right Child $= 2i + 2$, Parent $= \lfloor (i - 1)/2 \rfloor$.</li>
-    <li><strong>Linked Representation:</strong> Each node stores <code>data</code>, <code>left</code> pointer, and <code>right</code> pointer.</li>
-    <li><strong>Converting General Tree to Binary Tree (Left-Child Right-Sibling):</strong>
-      <ol>
-        <li>The <strong>first (leftmost) child</strong> of a node becomes its <strong>Left Child</strong> in the Binary Tree.</li>
-        <li>The <strong>next sibling</strong> to the right becomes the <strong>Right Child</strong>.</li>
-      </ol>
-    </li>
-  </ul>
-
-  <figure class="svg-box">
-    <svg style="max-width:100%;height:auto;" width="560" height="175" viewBox="0 0 560 175" xmlns="http://www.w3.org/2000/svg">
-      <text x="125" y="20" fill="#4B5FD1" font-size="13" font-weight="bold" font-family="sans-serif" text-anchor="middle">General Tree</text>
-      <circle cx="125" cy="45" r="16" fill="#EAEFFE" stroke="#4B5FD1" stroke-width="2"/><text x="125" y="50" fill="#171717" font-size="13" text-anchor="middle">A</text>
-      <line x1="115" y1="58" x2="55" y2="95" stroke="#6A625B" stroke-width="1.5"/>
-      <line x1="125" y1="61" x2="125" y2="95" stroke="#6A625B" stroke-width="1.5"/>
-      <line x1="135" y1="58" x2="195" y2="95" stroke="#6A625B" stroke-width="1.5"/>
-      <circle cx="55" cy="110" r="16" fill="#E4F2EC" stroke="#226D51" stroke-width="2"/><text x="55" y="115" fill="#171717" font-size="13" text-anchor="middle">B</text>
-      <circle cx="125" cy="110" r="16" fill="#E4F2EC" stroke="#226D51" stroke-width="2"/><text x="125" y="115" fill="#171717" font-size="13" text-anchor="middle">C</text>
-      <circle cx="195" cy="110" r="16" fill="#E4F2EC" stroke="#226D51" stroke-width="2"/><text x="195" y="115" fill="#171717" font-size="13" text-anchor="middle">D</text>
-
-      <text x="275" y="90" fill="#9C7710" font-size="22" font-weight="bold" text-anchor="middle">→</text>
-
-      <text x="420" y="20" fill="#226D51" font-size="13" font-weight="bold" font-family="sans-serif" text-anchor="middle">Binary Tree (LCRS)</text>
-      <circle cx="380" cy="45" r="16" fill="#EAEFFE" stroke="#4B5FD1" stroke-width="2"/><text x="380" y="50" fill="#171717" font-size="13" text-anchor="middle">A</text>
-      <line x1="370" y1="58" x2="345" y2="85" stroke="#4B5FD1" stroke-width="1.8"/>
-      <circle cx="335" cy="98" r="16" fill="#E4F2EC" stroke="#226D51" stroke-width="2"/><text x="335" y="103" fill="#171717" font-size="13" text-anchor="middle">B</text>
-      <line x1="348" y1="108" x2="385" y2="128" stroke="#9C7710" stroke-width="1.8"/>
-      <circle cx="398" cy="136" r="16" fill="#E4F2EC" stroke="#226D51" stroke-width="2"/><text x="398" y="141" fill="#171717" font-size="13" text-anchor="middle">C</text>
-      <line x1="412" y1="142" x2="450" y2="155" stroke="#9C7710" stroke-width="1.8"/>
-      <circle cx="465" cy="155" r="16" fill="#E4F2EC" stroke="#226D51" stroke-width="2"/><text x="465" y="160" fill="#171717" font-size="13" text-anchor="middle">D</text>
-    </svg>
-    <figcaption>Figure 5.2: Converting a General Tree to a Binary Tree using Left-Child Right-Sibling (LCRS).</figcaption>
-  </figure>
-
-  <div class="formula-box">
-    <span class="box-title">Key Binary Tree Properties</span>
-    <ul>
-      <li>Maximum nodes at level $i$ (root at level 0): $2^i$.</li>
-      <li>Maximum nodes in a binary tree of height $h$: $2^{h+1} - 1$.</li>
-      <li>For any non-empty binary tree, if $n_0$ is leaf nodes and $n_2$ is degree-2 nodes: $n_0 = n_2 + 1$.</li>
-    </ul>
-  </div>
-
-  <h3 id="u5-traversals">5.4 Binary Tree Traversals (Recursive &amp; Non-Recursive) &amp; BST</h3>
-  <ul>
-    <li><strong>Inorder (L-V-R):</strong> Left $\to$ Root $\to$ Right (gives <strong>sorted ascending order</strong> in a BST!).</li>
-    <li><strong>Preorder (V-L-R):</strong> Root $\to$ Left $\to$ Right (used to copy/serialize a tree).</li>
-    <li><strong>Postorder (L-R-V):</strong> Left $\to$ Right $\to$ Root (used to delete a tree or evaluate expression trees).</li>
-  </ul>
-
-  <figure class="figure-box">
-    <img src="assets/binary_search_tree.png" alt="Binary Search Tree with root 8 and ordered left/right subtrees">
-    <figcaption>Figure 5.3: Binary Search Tree (BST) — Left subtree keys &lt; Root &lt; Right subtree keys. (Source: Wikimedia Commons)</figcaption>
-  </figure>
-
-  <pre><code>class TreeNode:
-    def __init__(self, val: int):
-        self.val = val
-        self.left = None
-        self.right = None
-
-# Recursive Traversals
-def inorder_rec(root):
-    return inorder_rec(root.left) + [root.val] + inorder_rec(root.right) if root else []
-
-def preorder_rec(root):
-    return [root.val] + preorder_rec(root.left) + preorder_rec(root.right) if root else []
-
-def postorder_rec(root):
-    return postorder_rec(root.left) + postorder_rec(root.right) + [root.val] if root else []
-
-# Non-Recursive (Iterative) Traversals using Stack
-def inorder_iter(root):
-    res, stack, curr = [], [], root
-    while curr or stack:
-        while curr:
-            stack.append(curr)
-            curr = curr.left
-        curr = stack.pop()
-        res.append(curr.val)
-        curr = curr.right
-    return res
-
-def preorder_iter(root):
-    if not root: return []
-    res, stack = [], [root]
-    while stack:
-        node = stack.pop()
-        res.append(node.val)
-        if node.right: stack.append(node.right)
-        if node.left: stack.append(node.left)
-    return res
-
-def postorder_iter(root):
-    if not root: return []
-    res, stack = [], [root]
-    while stack:
-        node = stack.pop()
-        res.append(node.val)
-        if node.left: stack.append(node.left)
-        if node.right: stack.append(node.right)
-    return res[::-1]
-
-# BST Operations: Insert, Search, Delete (all 3 cases)
-def bst_insert(root, key: int):
-    if not root:
-        return TreeNode(key)
-    if key < root.val:
-        root.left = bst_insert(root.left, key)
-    elif key > root.val:
-        root.right = bst_insert(root.right, key)
-    return root
-
-def bst_delete(root, key: int):
-    if not root:
-        return None
-    if key < root.val:
-        root.left = bst_delete(root.left, key)
-    elif key > root.val:
-        root.right = bst_delete(root.right, key)
-    else:
-        if not root.left: return root.right   # Case 1 & 2: 0 or 1 child
-        if not root.right: return root.left
-        # Case 3: 2 children -> replace with inorder successor
-        succ = root.right
-        while succ.left:
-            succ = succ.left
-        root.val = succ.val
-        root.right = bst_delete(root.right, succ.val)
-    return root</code></pre>
-
-  <h3 id="u5-casestudy">5.5 Unit V Case Studies: GPS Navigation &amp; ZIP/GZIP Huffman Compression</h3>
-  <div class="concept-box">
-    <span class="box-title">Case Study 1: GPS / Navigation System (Weighted Graph)</span>
-    <p>A city map is modeled as a <strong>Weighted Graph</strong> where intersections are vertices, roads are edges, and travel time/distance are weights. BFS finds fewest turns; Dijkstra/A* finds fastest route; Prim's/Kruskal's designs minimum-cost road/fiber networks.</p>
-  </div>
-
-  <div class="concept-box">
-    <span class="box-title">Case Study 2: ZIP/GZIP File Compression using Huffman Tree</span>
-    <p>Instead of using 8 bits for every character, <strong>Huffman Coding</strong> builds a greedy binary tree from character frequencies: frequent characters (like <code>'e'</code>, <code>' '</code>) get short bit codes (e.g., <code>01</code>), while rare characters (like <code>'z'</code>) get longer codes. No code is a prefix of another (prefix-free), achieving lossless compression!</p>
-  </div>
-
-  <pre><code>import heapq
-
-def huffman_codes(freq: dict[str, int]) -> dict[str, str]:
-    heap = [[wt, [ch, ""]] for ch, wt in freq.items()]
-    heapq.heapify(heap)
-    while len(heap) > 1:
-        lo = heapq.heappop(heap)
-        hi = heapq.heappop(heap)
-        for pair in lo[1:]: pair[1] = "0" + pair[1]
-        for pair in hi[1:]: pair[1] = "1" + pair[1]
-        heapq.heappush(heap, [lo[0] + hi[0]] + lo[1:] + hi[1:])
-    return dict(sorted(heapq.heappop(heap)[1:], key=lambda p: len(p[1])))
-
-print("Huffman Codes:", huffman_codes({'a': 45, 'b': 13, 'c': 12, 'd': 16, 'e': 9, 'f': 5}))</code></pre>
-
-  <h3 id="u5-qa">5.6 Important SPPU Exam Questions &amp; Model Answers (Unit V)</h3>
-  <div class="qa-card">
-    <div class="qa-q">Q1. Compare Tree and Graph. Enlist at least two real-time applications of each. <span class="marks-badge">6M (Oct 2025)</span></div>
-    <p><strong>Model Answer Points:</strong> Compare Cycles (no cycles in Tree vs allowed in Graph), Root (unique root vs no root), Edges ($N-1$ vs arbitrary), Hierarchy (parent-child vs network). Applications: Tree (File systems, HTML DOM, BST indexing); Graph (Google Maps GPS, Social Networks, Airline routing).</p>
-  </div>
-  <div class="qa-card">
-    <div class="qa-q">Q2. Write Prim's and Kruskal's algorithms to find Minimum Spanning Tree. <span class="marks-badge">8M (Oct 2025)</span></div>
-    <p><strong>Model Answer Points:</strong> State greedy rule for each, show step-by-step edge selection table, draw final MST with $V-1$ edges, and compute total minimum cost.</p>
-  </div>
-</section>
-
-<section id="references">
-  <h2 class="unit-title">References, Textbooks &amp; Image Citations</h2>
-
-  <h3>Official SPPU 2024 Pattern Textbooks</h3>
-  <ul>
-    <li>Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser — <em>Data Structures and Algorithms in Python</em>, Wiley, 1st Edition (2013), ISBN: 978-1118290279.</li>
-    <li>Bradley N. Miller &amp; David L. Ranum — <em>Problem Solving with Algorithms and Data Structures Using Python</em>, Franklin, Beedle &amp; Associates, 2nd Edition (2011), ISBN: 978-1590282571.</li>
-  </ul>
-
-  <h3>Reference Books</h3>
-  <ul>
-    <li>Dr. Basant Agarwal &amp; Benjamin Baka — <em>Hands-On Data Structures and Algorithms with Python</em>, 2nd Edition (2018), ISBN: 978-1788991933.</li>
-    <li>R. Nageswara Rao — <em>Core Python Programming</em>, Wiley, 1st Edition (2016), ISBN: 978-9351199427.</li>
-  </ul>
-
-  <h3>NPTEL / MOOC / Video Resources</h3>
-  <ul>
-    <li><a href="https://archive.nptel.ac.in/courses/106/106/106106145/" target="_blank" rel="noopener" >NPTEL: Programming, Data Structures and Algorithms using Python — Prof. Madhavan Mukund (CMI)</a></li>
-    <li><a href="https://nptel.ac.in/courses/106102064" target="_blank" rel="noopener" >NPTEL Course 106102064: Data Structures and Algorithms</a></li>
-    <li><a href="https://onlinecourses.swayam2.ac.in/cec19_cs04/preview" target="_blank" rel="noopener" >SWAYAM CEC19-CS04: Data Structures</a></li>
-  </ul>
-
-  <h3>Wikimedia Commons Image Attributions (assets/)</h3>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>File</th><th>Title</th><th>Author / Artist</th><th>License</th><th>Source URL</th></tr></thead>
-      <tbody>
-        <tr><td><code>big_o_complexity.png</code></td><td>big o complexity</td><td>Wikimedia Commons Contributor</td><td>CC BY-SA / Public Domain</td><td><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener" >commons.wikimedia.org</a></td></tr>
-        <tr><td><code>quicksort_diagram.png</code></td><td>Sorting quicksort anim.gif</td><td>Wikipedia:en:User:RolandH</td><td>CC BY-SA 3.0</td><td><a href="https://commons.wikimedia.org/wiki/File:Sorting_quicksort_anim.gif" target="_blank" rel="noopener" >File:Sorting_quicksort_anim.gif</a></td></tr>
-        <tr><td><code>merge_sort.png</code></td><td>Merge-sort-example-300px.gif</td><td>Swfung8</td><td>CC BY-SA 3.0</td><td><a href="https://commons.wikimedia.org/wiki/File:Merge-sort-example-300px.gif" target="_blank" rel="noopener" >File:Merge-sort-example-300px.gif</a></td></tr>
-        <tr><td><code>stack_data_structure.png</code></td><td>stack data structure</td><td>Wikimedia Commons Contributor</td><td>CC BY-SA / Public Domain</td><td><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener" >commons.wikimedia.org</a></td></tr>
-        <tr><td><code>queue_data_structure.png</code></td><td>queue data structure</td><td>Wikimedia Commons Contributor</td><td>CC BY-SA / Public Domain</td><td><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener" >commons.wikimedia.org</a></td></tr>
-        <tr><td><code>linked_list.png</code></td><td>linked list</td><td>Wikimedia Commons Contributor</td><td>CC BY-SA / Public Domain</td><td><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener" >commons.wikimedia.org</a></td></tr>
-        <tr><td><code>doubly_linked_list.png</code></td><td>doubly linked list</td><td>Wikimedia Commons Contributor</td><td>CC BY-SA / Public Domain</td><td><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener" >commons.wikimedia.org</a></td></tr>
-        <tr><td><code>hash_table.png</code></td><td>hash table</td><td>Wikimedia Commons Contributor</td><td>CC BY-SA / Public Domain</td><td><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener" >commons.wikimedia.org</a></td></tr>
-        <tr><td><code>minimum_spanning_tree.png</code></td><td>Minimum-spanning-tree-icon-rounded.svg</td><td>Sergey Fedotov</td><td>CC BY-SA 4.0</td><td><a href="https://commons.wikimedia.org/wiki/File:Minimum-spanning-tree-icon-rounded.svg" target="_blank" rel="noopener" >File:Minimum-spanning-tree-icon-rounded.svg</a></td></tr>
-        <tr><td><code>binary_search_tree.png</code></td><td>binary search tree</td><td>Wikimedia Commons Contributor</td><td>CC BY-SA / Public Domain</td><td><a href="https://commons.wikimedia.org/" target="_blank" rel="noopener" >commons.wikimedia.org</a></td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+</div><!-- /main-inner -->
 </main>
 
 <script src="../assets/study-data.js"></script>
 <script src="../assets/app-store.js"></script>
 <script src="../assets/guide-app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/verilog.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   if (window.hljs) {

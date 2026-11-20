@@ -17,65 +17,70 @@ window.MathJax = {
     processEscapes: true
   },
   options: {
-    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code', 'svg']
   }
 };
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link rel="stylesheet" href="../assets/guide-theme.css">
 </head>
-<body data-subject="dm">
+<body data-subject="dm" data-page="study-guide">
 
 <nav id="sidebar">
   <h2>DIGITAL MARKETING</h2>
-  <p>OEL-220C | SPPU 2024 Pattern</p>
+  <p class="sb-sub">OEL-220C / OE-203-DM &bull; SPPU 2024</p>
   <ul>
-    <li><a href="#overview">Syllabus Overview</a></li>
-    <li><a href="#unit-1">Unit 1: Fundamentals &amp; RACE</a>
-      <div class="sub-nav">
-        <a href="#u1-concepts">1.1 Core Concepts &amp; POEM</a>
-        <a href="#u1-trad-vs-dig">1.2 Traditional vs. Digital</a>
-        <a href="#u1-india">1.3 Indian Digital Ecosystem</a>
-        <a href="#u1-funnel">1.4 Digital Funnel &amp; RACE</a>
-        <a href="#u1-code">1.5 Code: Landing Page &amp; UTM</a>
-        <a href="#u1-exam-qs">1.6 Unit 1 Exam Q&amp;A</a>
-      </div>
+    <li><a href="#overview" class="nav-unit">Syllabus Overview &amp; Strategy</a></li>
+    <li><a href="#unit-1" class="nav-unit">Unit 1: Fundamentals &amp; RACE</a>
+      <ul class="sub-nav">
+        <li><a href="#u1-concepts">1.1 Core Concepts &amp; POEM</a></li>
+        <li><a href="#u1-trad-vs-dig">1.2 Traditional vs. Digital</a></li>
+        <li><a href="#u1-india">1.3 Indian Digital Ecosystem</a></li>
+        <li><a href="#u1-funnel">1.4 Funnel, RACE, ZMOT &amp; Personas</a></li>
+        <li><a href="#u1-code">1.5 Code: Landing Page &amp; UTM</a></li>
+        <li><a href="#u1-exam-qs">1.6 Unit 1 Exam Q&amp;A</a></li>
+        <li><a href="#u1-short-notes">One-Page Unit 1 Short Notes</a></li>
+      </ul>
     </li>
-    <li><a href="#unit-2">Unit 2: Metrics, PPC &amp; Analytics</a>
-      <div class="sub-nav">
-        <a href="#u2-metrics">2.1 KPI Formulas &amp; Numericals</a>
-        <a href="#u2-vickrey">2.2 Google Ads &amp; Vickrey Auction</a>
-        <a href="#u2-analytics">2.3 GA4 vs. Search Console</a>
-        <a href="#u2-email-rtb">2.4 Email Drips &amp; Programmatic RTB</a>
-        <a href="#u2-code">2.5 Code: GA4 &amp; Auction Sim</a>
-        <a href="#u2-exam-qs">2.6 Unit 2 Exam Q&amp;A</a>
-      </div>
+    <li><a href="#unit-2" class="nav-unit">Unit 2: Metrics, PPC &amp; Analytics</a>
+      <ul class="sub-nav">
+        <li><a href="#u2-metrics">2.1 KPI Formulas &amp; LTV:CAC</a></li>
+        <li><a href="#u2-vickrey">2.2 Google Ads &amp; Vickrey Auction</a></li>
+        <li><a href="#u2-analytics">2.3 GA4, GSC &amp; Attribution</a></li>
+        <li><a href="#u2-email-rtb">2.4 Email Drips &amp; Programmatic RTB</a></li>
+        <li><a href="#u2-code">2.5 Code: GA4 &amp; Auction Sim</a></li>
+        <li><a href="#u2-exam-qs">2.6 Unit 2 Exam Q&amp;A</a></li>
+        <li><a href="#u2-short-notes">One-Page Unit 2 Short Notes</a></li>
+      </ul>
     </li>
-    <li><a href="#unit-3">Unit 3: Social Media &amp; Content</a>
-      <div class="sub-nav">
-        <a href="#u3-smm">3.1 SMM &amp; Platform Matrix</a>
-        <a href="#u3-meta">3.2 Meta 3-Tier &amp; Audiences</a>
-        <a href="#u3-linkedin">3.3 LinkedIn B2B &amp; ABM</a>
-        <a href="#u3-ig-influencer">3.4 Instagram Reels &amp; Influencers</a>
-        <a href="#u3-content">3.5 Content Pillars &amp; 80/20 Rule</a>
-        <a href="#u3-code">3.6 Code: Pixel &amp; Calendar</a>
-        <a href="#u3-exam-qs">3.7 Unit 3 Exam Q&amp;A</a>
-      </div>
+    <li><a href="#unit-3" class="nav-unit">Unit 3: Social Media &amp; Content</a>
+      <ul class="sub-nav">
+        <li><a href="#u3-smm">3.1 SMM &amp; Platform Matrix</a></li>
+        <li><a href="#u3-meta">3.2 Meta 3-Tier, CAPI &amp; Audiences</a></li>
+        <li><a href="#u3-linkedin">3.3 LinkedIn B2B &amp; ABM</a></li>
+        <li><a href="#u3-ig-influencer">3.4 Reels Algorithm &amp; Influencers</a></li>
+        <li><a href="#u3-content">3.5 Content Pillars &amp; 80/20 Rule</a></li>
+        <li><a href="#u3-code">3.6 Code: Pixel &amp; Calendar</a></li>
+        <li><a href="#u3-exam-qs">3.7 Unit 3 Exam Q&amp;A</a></li>
+        <li><a href="#u3-short-notes">One-Page Unit 3 Short Notes</a></li>
+      </ul>
     </li>
-    <li><a href="#unit-4">Unit 4: SEO &amp; Emerging Channels</a>
-      <div class="sub-nav">
-        <a href="#u4-arch">4.1 Crawl, Index &amp; Rank Pipeline</a>
-        <a href="#u4-onpage">4.2 On-Page SEO &amp; Schema</a>
-        <a href="#u4-offpage">4.3 Off-Page SEO &amp; Link Equity</a>
-        <a href="#u4-tech">4.4 Technical SEO &amp; Web Vitals</a>
-        <a href="#u4-keywords">4.5 Keyword Intent Research</a>
-        <a href="#u4-video">4.6 YouTube YPP, Voice &amp; ORM</a>
-        <a href="#u4-code">4.7 Code: SEO Head &amp; JSON-LD</a>
-        <a href="#u4-exam-qs">4.8 Unit 4 Exam Q&amp;A</a>
-      </div>
+    <li><a href="#unit-4" class="nav-unit">Unit 4: SEO &amp; Emerging Channels</a>
+      <ul class="sub-nav">
+        <li><a href="#u4-arch">4.1 Crawl, Index &amp; E-E-A-T Rank</a></li>
+        <li><a href="#u4-onpage">4.2 On-Page SEO &amp; Schema</a></li>
+        <li><a href="#u4-offpage">4.3 Off-Page SEO &amp; Link Equity</a></li>
+        <li><a href="#u4-tech">4.4 Technical SEO &amp; Web Vitals</a></li>
+        <li><a href="#u4-keywords">4.5 Keyword Intent &amp; DPDP Privacy</a></li>
+        <li><a href="#u4-video">4.6 YouTube YPP, Voice &amp; ORM</a></li>
+        <li><a href="#u4-code">4.7 Code: SEO Head &amp; JSON-LD</a></li>
+        <li><a href="#u4-exam-qs">4.8 Unit 4 Exam Q&amp;A</a></li>
+        <li><a href="#u4-short-notes">One-Page Unit 4 Short Notes</a></li>
+      </ul>
     </li>
-    <li><a href="#solved-paper">Solved SPPU Model Exam Paper</a></li>
-    <li><a href="#references">References &amp; Image Credits</a></li>
+    <li><a href="#solved-paper" class="nav-unit">Solved SPPU Model Exam Paper</a></li>
+    <li><a href="#flashcards" class="nav-unit">Active Recall Flashcards (25 Cards)</a></li>
+    <li><a href="#references" class="nav-unit">References &amp; Image Credits</a></li>
   </ul>
 </nav>
 
@@ -93,7 +98,43 @@ window.MathJax = {
     <div class="meta-item"><strong>CCE / Internal</strong><span>20 Marks</span></div>
     <div class="meta-item"><strong>Total Marks</strong><span>50 Marks</span></div>
   </div>
+
+  <div class="quick-nav-bar">
+    <a href="#overview">Overview &amp; Strategy</a>
+    <a href="#unit-1">Unit 1</a>
+    <a href="#unit-2">Unit 2</a>
+    <a href="#unit-3">Unit 3</a>
+    <a href="#unit-4">Unit 4</a>
+    <a href="#u1-short-notes">Unit Short Notes</a>
+    <a href="#solved-paper">Solved Model Paper</a>
+    <a href="#flashcards">Flashcards (25)</a>
+  </div>
 </header>
+
+<section id="strategy-overview" class="unit-section">
+  <div class="exam-strategy-banner">
+    <h3>SPPU Exam Scoring Blueprint &amp; Strategy (OEL-220C / OE-203-DM)</h3>
+    <p>Digital Marketing is a high-scoring 2-Credit Open Elective (<strong>20 CCE + 30 End-Sem = 50 Marks</strong>). Full marks require: <strong>Formal Framework Definitions (POEM, RACE, AIDA) &rarr; Step-by-step Unit 2 Numericals &rarr; Clean Pipeline Diagrams &rarr; Concrete Indian D2C/Tech Case Studies (Zomato, Nykaa, UPI, ONDC)</strong>.</p>
+    <div class="strategy-grid">
+      <div class="strategy-pill">
+        <strong>Guaranteed Numericals (Unit 2)</strong>
+        Always memorize exact equations for <code>CTR</code>, <code>CPC</code>, <code>CPM</code>, <code>CR</code>, <code>CPA</code>, <code>ROAS</code> vs <code>ROI</code>, <code>LTV:CAC</code>, and <strong>Vickrey Actual CPC</strong> $= (\text{Next Ad Rank} / \text{Your QS}) + 0.01$. Write units (<code>%</code>, <code>Rs.</code>, <code>x</code>)!
+      </div>
+      <div class="strategy-pill">
+        <strong>Must-Draw Frameworks</strong>
+        Draw 4-box <strong>RACE</strong> (Reach-Act-Convert-Engage) for strategy answers, <strong>Meta 3-Tier Hierarchy</strong> for SMM answers, and <strong>Crawl &rarr; Index &rarr; Rank</strong> + <strong>Core Web Vitals thresholds</strong> for SEO questions.
+      </div>
+      <div class="strategy-pill">
+        <strong>High-Yield Thresholds</strong>
+        Exact numbers win marks: Quality Score (1&ndash;10), Title (50&ndash;60 chars), Meta Desc (150&ndash;160 chars), <strong>LCP &le; 2.5s</strong>, <strong>INP &le; 200ms</strong>, <strong>CLS &le; 0.1</strong>, TrueView skip (5s / 30s bill), Bumper (6s), LTV:CAC (&ge; 3:1).
+      </div>
+      <div class="strategy-pill">
+        <strong>Structured Answer Format</strong>
+        Use the 4-part SPPU rubric: <em>1. Formal Definition &rarr; 2. Diagram / Formula &rarr; 3. Comparison Table &rarr; 4. Indian Brand Example (Zomato / Nykaa / Flipkart)</em>.
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ========================================== -->
 <!-- UNIT 1: FUNDAMENTALS & RACE FRAMEWORK      -->
@@ -216,6 +257,11 @@ window.MathJax = {
 
   <div class="svg-diagram">
     <svg style="max-width:100%;height:auto;" viewBox="0 0 820 210" width="800" height="205" xmlns="http://www.w3.org/2000/svg" aria-label="RACE Strategic Framework Diagram">
+      <defs>
+        <marker id="dm-arrow-1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+        </marker>
+      </defs>
       <rect x="0" y="0" width="820" height="210" fill="#f1f3f4" rx="8"/>
       <!-- Stage 1: REACH -->
       <rect x="20" y="30" width="175" height="150" rx="8" fill="#1a73e8"/>
@@ -223,25 +269,21 @@ window.MathJax = {
       <text x="107" y="88" fill="#e8f0fe" font-family="sans-serif" font-size="11" text-anchor="middle">Build Awareness</text>
       <text x="107" y="114" fill="#ffffff" font-family="sans-serif" font-size="11" text-anchor="middle">SEO, Social Ads, PR</text>
       <text x="107" y="148" fill="#fdd663" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">KPI: Impressions, Reach</text>
-      <!-- Arrow 1 -->
-      <polygon points="200,105 218,95 218,115" fill="#5f6368"/>
-      <line x1="195" y1="105" x2="215" y2="105" stroke="#5f6368" stroke-width="3"/>
+      <line x1="195" y1="105" x2="217" y2="105" stroke="#475569" stroke-width="3" marker-end="url(#dm-arrow-1)"/>
       <!-- Stage 2: ACT -->
       <rect x="222" y="30" width="175" height="150" rx="8" fill="#1e8e3e"/>
       <text x="309" y="62" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle">2. ACT</text>
       <text x="309" y="88" fill="#e6f4ea" font-family="sans-serif" font-size="11" text-anchor="middle">Interact &amp; Generate Leads</text>
       <text x="309" y="114" fill="#ffffff" font-family="sans-serif" font-size="11" text-anchor="middle">Landing Pages, Blogs</text>
       <text x="309" y="148" fill="#fdd663" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">KPI: CTR, Leads, Time</text>
-      <!-- Arrow 2 -->
-      <line x1="397" y1="105" x2="417" y2="105" stroke="#5f6368" stroke-width="3"/>
+      <line x1="397" y1="105" x2="419" y2="105" stroke="#475569" stroke-width="3" marker-end="url(#dm-arrow-1)"/>
       <!-- Stage 3: CONVERT -->
       <rect x="424" y="30" width="175" height="150" rx="8" fill="#e37400"/>
       <text x="511" y="62" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle">3. CONVERT</text>
       <text x="511" y="88" fill="#fef7e0" font-family="sans-serif" font-size="11" text-anchor="middle">Achieve Online/Offline Sale</text>
       <text x="511" y="114" fill="#ffffff" font-family="sans-serif" font-size="11" text-anchor="middle">Checkout, Retargeting</text>
       <text x="511" y="148" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">KPI: CR, CPA, ROAS</text>
-      <!-- Arrow 3 -->
-      <line x1="599" y1="105" x2="619" y2="105" stroke="#5f6368" stroke-width="3"/>
+      <line x1="599" y1="105" x2="621" y2="105" stroke="#475569" stroke-width="3" marker-end="url(#dm-arrow-1)"/>
       <!-- Stage 4: ENGAGE -->
       <rect x="626" y="30" width="175" height="150" rx="8" fill="#8430ce"/>
       <text x="713" y="62" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle">4. ENGAGE</text>
@@ -254,6 +296,15 @@ window.MathJax = {
 
   <div class="exam-tip">
     <strong>SPPU Exam Tip (Unit 1):</strong> Whenever a question asks about "Digital Marketing Strategy" or "Customer Journey," always draw the 4-box <strong>RACE</strong> diagram and list 2 KPIs per stage. Examiners award full marks for connecting channels to measurable KPIs.
+  </div>
+
+  <div class="concept-box">
+    <strong>Buyer Personas, 4Cs Mix &amp; ZMOT (Zero Moment of Truth):</strong>
+    <ul>
+      <li><strong>Buyer Persona:</strong> Semi-fictional profile of an ideal customer built from demographics, pain points, goals, and buying triggers (e.g., <em>"Rohan, 20, Pune B.Tech student, searches reviews on YouTube before buying Rs. 50k laptops"</em>).</li>
+      <li><strong>Lauterborn's 4Cs (Customer-Centric Digital 4Ps):</strong> <em>Product &rarr; Customer Solution</em>, <em>Price &rarr; Cost</em>, <em>Place &rarr; Convenience</em> (UPI/10-min delivery), <em>Promotion &rarr; Communication</em> (two-way dialogue).</li>
+      <li><strong>Google's ZMOT:</strong> The pre-purchase online research phase (reading reviews, comparing specs, watching reels) triggered immediately after seeing a Stimulus, <em>before</em> visiting a store or checkout (FMOT).</li>
+    </ul>
   </div>
 
   <h3 id="u1-code">1.5 Code Examples: Semantic Landing Page &amp; UTM Campaign Link Builder</h3>
@@ -333,6 +384,41 @@ print("Trackable Campaign URL:", url)</code></pre>
       <li><strong>Earned Media (1M):</strong> Organic publicity gained through customer trust (Reviews, Shares, Backlinks, Word-of-mouth). Highest credibility, lowest cost.</li>
     </ul>
   </div>
+
+  <section class="unit-short-notes" id="u1-short-notes">
+    <div class="short-notes-header">
+      <div class="sn-badge">One-Page Rapid Revision</div>
+      <h3>Unit 1 Short Notes &amp; High-Yield Cheat Sheet</h3>
+      <p>POEM Media, Traditional vs Digital, Indian DPI Drivers, ZMOT, and the 4-Stage RACE Matrix.</p>
+    </div>
+    <div class="short-notes-grid">
+      <div class="sn-card">
+        <h4>&#9670; POEM Media Framework</h4>
+        <ul>
+          <li><strong>Paid:</strong> Sponsored reach (Google/Meta Ads) &mdash; fast scale, stops when budget ends.</li>
+          <li><strong>Owned:</strong> Brand assets (Website, App, Email list) &mdash; 100% control, long-term equity.</li>
+          <li><strong>Earned:</strong> Organic proof (Reviews, PR, Shares, Backlinks) &mdash; zero ad cost, highest trust.</li>
+        </ul>
+      </div>
+      <div class="sn-card">
+        <h4>&#9670; RACE Planning Model (Dave Chaffey)</h4>
+        <ul>
+          <li><strong>Reach:</strong> Discovery via SEO/Ads (<em>KPIs:</em> Impressions, Traffic).</li>
+          <li><strong>Act:</strong> Interaction/Leads (<em>KPIs:</em> CTR, Bounce Rate, Leads).</li>
+          <li><strong>Convert:</strong> Sale via UPI/Checkout (<em>KPIs:</em> CR, CPA, ROAS).</li>
+          <li><strong>Engage:</strong> Repeat advocacy (<em>KPIs:</em> LTV, Retention, NPS).</li>
+        </ul>
+      </div>
+      <div class="sn-card">
+        <h4>&#9670; India Ecosystem &amp; ZMOT</h4>
+        <ul>
+          <li><strong>4 Pillars:</strong> Affordable 4G/5G (Jio effect), UPI instant checkout, Vernacular/Voice search, ONDC open commerce.</li>
+          <li><strong>ZMOT:</strong> Pre-checkout online comparison &amp; review reading after initial Stimulus.</li>
+          <li><strong>UTM Tracking:</strong> <code>utm_source</code>, <code>utm_medium</code>, <code>utm_campaign</code> attribute traffic accurately.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </section>
 
 <!-- ========================================== -->
@@ -354,6 +440,15 @@ print("Trackable Campaign URL:", url)</code></pre>
       <li><strong>Cost Per Acquisition (CPA):</strong> $\text{CPA} = \frac{\text{Total Ad Spend}}{\text{Total Conversions}}$</li>
       <li><strong>Return on Ad Spend (ROAS):</strong> $\text{ROAS} = \frac{\text{Revenue from Ads}}{\text{Total Ad Spend}}$</li>
       <li><strong>Customer Acquisition Cost (CAC):</strong> $\text{CAC} = \frac{\text{Total Marketing Spend} + \text{Sales Spend}}{\text{New Customers Acquired}}$</li>
+    </ul>
+  </div>
+
+  <div class="formula-box">
+    <strong>Unit Economics Formula &mdash; LTV : CAC Ratio:</strong>
+    <ul>
+      <li><strong>Customer Lifetime Value (LTV):</strong> $\text{LTV} = \text{Avg. Order Value (AOV)} \times \text{Purchase Frequency/Year} \times \text{Retention Lifespan (Years)} \times \text{Gross Margin}$</li>
+      <li><strong>Healthy Benchmark:</strong> $\text{LTV} : \text{CAC} \ge 3 : 1$. A ratio $&lt; 1:1$ means losing money on every customer; $&gt; 5:1$ signals under-investing in growth.</li>
+      <li><em>Quick Numerical:</em> If an SaaS app charges Rs. 500/month with 80% margin and 15-month average retention, $\text{LTV} = 500 \times 15 \times 0.80 = \text{Rs. } 6,000$. If $\text{CAC} = \text{Rs. } 1,500$, ratio $= 6000 / 1500 = \mathbf{4 : 1}$ (Healthy).</li>
     </ul>
   </div>
 
@@ -510,6 +605,21 @@ print("Trackable Campaign URL:", url)</code></pre>
     </table>
   </div>
 
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Attribution Model</th><th>How Credit is Assigned to Touchpoints</th><th>Best Use Case</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Last-Click</strong></td><td>100% credit to the final touchpoint before conversion.</td><td>Measuring bottom-of-funnel converters (Branded Search).</td></tr>
+        <tr><td><strong>First-Click</strong></td><td>100% credit to the very first discovery channel.</td><td>Evaluating top-of-funnel awareness channels (Reels/PR).</td></tr>
+        <tr><td><strong>Linear</strong></td><td>Equal credit split evenly across all touchpoints (25% each for 4 clicks).</td><td>Full-funnel visibility in multi-day consideration journeys.</td></tr>
+        <tr><td><strong>Time-Decay</strong></td><td>More credit to interactions closer in time to conversion.</td><td>Short promotional sales cycles (festive flash sales).</td></tr>
+        <tr><td><strong>Data-Driven (GA4 Default)</strong></td><td>Shapley-value ML distributes credit dynamically based on incremental lift.</td><td>Enterprise multi-channel optimization (requires high volume).</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <h3 id="u2-email-rtb">2.4 Email Drip Campaigns &amp; Programmatic Advertising (RTB)</h3>
   <div class="concept-box">
     <strong>Exam Definition (Email Drip Campaign):</strong> An automated sequence of pre-written emails triggered by user actions (e.g., signup, cart abandonment) or time intervals to nurture leads toward conversion.<br>
@@ -518,6 +628,38 @@ print("Trackable Campaign URL:", url)</code></pre>
   <div class="concept-box">
     <strong>Exam Definition (Programmatic Advertising &amp; RTB):</strong> Programmatic advertising uses automated software (DSP: Demand-Side Platform, SSP: Supply-Side Platform) and <strong>Real-Time Bidding (RTB)</strong> to buy and sell display/video ad impressions in under 100 milliseconds as a webpage loads.<br>
     <strong>In Simple Words:</strong> Every time you open a news website, an invisible lightning-fast auction happens in 0.1 seconds to decide which ad banner you see!
+  </div>
+
+
+  <div class="svg-diagram">
+    <svg style="max-width:100%;height:auto;" viewBox="0 0 820 185" width="800" height="180" xmlns="http://www.w3.org/2000/svg" aria-label="Programmatic RTB Real-Time Bidding Architecture">
+      <defs>
+        <marker id="dm-arrow-rtb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+        </marker>
+      </defs>
+      <rect x="0" y="0" width="820" height="185" fill="#f1f3f4" rx="8"/>
+      <rect x="20" y="42" width="165" height="100" rx="8" fill="#1a73e8"/>
+      <text x="102" y="76" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">1. Publisher / SSP</text>
+      <text x="102" y="98" fill="#e8f0fe" font-family="sans-serif" font-size="10" text-anchor="middle">Supply-Side Platform</text>
+      <text x="102" y="116" fill="#e8f0fe" font-family="sans-serif" font-size="10" text-anchor="middle">Ad Slot Opens</text>
+      <line x1="185" y1="92" x2="225" y2="92" stroke="#475569" stroke-width="2.5" marker-end="url(#dm-arrow-rtb)"/>
+      <rect x="230" y="34" width="190" height="116" rx="8" fill="#e37400"/>
+      <text x="325" y="66" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">2. Ad Exchange</text>
+      <text x="325" y="90" fill="#fef7e0" font-family="sans-serif" font-size="10.5" text-anchor="middle">Real-Time Auction (&lt;100 ms)</text>
+      <text x="325" y="110" fill="#ffffff" font-family="sans-serif" font-size="10" text-anchor="middle">Sends Bid Request + Cookie/ID</text>
+      <text x="325" y="130" fill="#fef7e0" font-family="sans-serif" font-size="10" text-anchor="middle">Selects Highest CPM Bid</text>
+      <line x1="420" y1="92" x2="460" y2="92" stroke="#475569" stroke-width="2.5" marker-end="url(#dm-arrow-rtb)"/>
+      <rect x="465" y="42" width="165" height="100" rx="8" fill="#1e8e3e"/>
+      <text x="547" y="76" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">3. Advertiser DSP</text>
+      <text x="547" y="98" fill="#e6f4ea" font-family="sans-serif" font-size="10" text-anchor="middle">Demand-Side Platform</text>
+      <text x="547" y="116" fill="#e6f4ea" font-family="sans-serif" font-size="10" text-anchor="middle">Evaluates User + Bids</text>
+      <line x1="630" y1="92" x2="670" y2="92" stroke="#475569" stroke-width="2.5" marker-end="url(#dm-arrow-rtb)"/>
+      <rect x="675" y="42" width="125" height="100" rx="8" fill="#8430ce"/>
+      <text x="737" y="80" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">4. Winning Ad</text>
+      <text x="737" y="102" fill="#f3e8fd" font-family="sans-serif" font-size="10" text-anchor="middle">Rendered Live</text>
+    </svg>
+    <div class="svg-caption">Figure 2.4: Programmatic Real-Time Bidding (RTB) Pipeline &mdash; SSP &rarr; Ad Exchange &rarr; DSP auction in under 100 ms.</div>
   </div>
 
   <h3 id="u2-code">2.5 Code Examples: GA4 Event Tracking &amp; Python Auction Simulator</h3>
@@ -581,6 +723,37 @@ print("Auction:", vickrey_auction([("A", 20, 9), ("B", 40, 4), ("C", 50, 2)]))</
       <li><strong>Second-Price Mechanism (2M):</strong> Winner pays $\frac{\text{Next Competitor's Ad Rank}}{\text{Winner's QS}} + 0.01$, rewarding relevant ads with lower CPCs.</li>
     </ul>
   </div>
+
+  <section class="unit-short-notes" id="u2-short-notes">
+    <div class="short-notes-header">
+      <div class="sn-badge">One-Page Rapid Revision</div>
+      <h3>Unit 2 Short Notes &amp; High-Yield Cheat Sheet</h3>
+      <p>Performance KPIs, Vickrey Auction Formulas, GA4 vs GSC, Attribution, and Programmatic RTB.</p>
+    </div>
+    <div class="short-notes-grid">
+      <div class="sn-card">
+        <h4>&#9670; Essential KPI Equations</h4>
+        <div class="sn-formula">CTR = (Clicks / Impr) &times; 100 | CPC = Spend / Clicks | CPM = (Spend / Impr) &times; 1000 | CR = (Conv / Clicks) &times; 100 | CPA = Spend / Conv | ROAS = Revenue / Spend</div>
+        <p>Target <strong>LTV:CAC &ge; 3:1</strong>. Remember: ROAS measures gross ad revenue return; ROI measures net profit return after product COGS.</p>
+      </div>
+      <div class="sn-card">
+        <h4>&#9670; Vickrey Second-Price Auction</h4>
+        <ul>
+          <li><strong>Ad Rank:</strong> $\text{Max CPC Bid} \times \text{Quality Score (1&ndash;10)}$</li>
+          <li><strong>Actual CPC:</strong> $(\text{Competitor Below's Ad Rank} / \text{Your QS}) + 0.01$</li>
+          <li><strong>3 QS Factors:</strong> Expected CTR, Ad Relevance, Landing Page Experience.</li>
+        </ul>
+      </div>
+      <div class="sn-card">
+        <h4>&#9670; GA4, GSC &amp; Programmatic RTB</h4>
+        <ul>
+          <li><strong>GA4 vs GSC:</strong> GA4 = post-click on-site events (all channels); GSC = pre-click organic Search impressions &amp; indexing.</li>
+          <li><strong>RTB Stack:</strong> Publisher <strong>SSP</strong> &rarr; <strong>Ad Exchange</strong> (&lt;100ms auction) &rarr; Advertiser <strong>DSP</strong>.</li>
+          <li><strong>Email Drips:</strong> Triggered automated sequences (welcome, cart recovery, re-engagement).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </section>
 
 <!-- ========================================== -->
@@ -679,6 +852,8 @@ print("Auction:", vickrey_auction([("A", 20, 9), ("B", 40, 4), ("C", 50, 2)]))</
     <li><strong>Lookalike Audiences (LAL):</strong> Meta's AI finds new people whose profiles closely match your best existing buyers (e.g., Top 1% Lookalike of Purchasers in India).</li>
   </ul>
 
+  <p><strong>Server-Side Tracking (Meta Conversions API / CAPI):</strong> With iOS ATT and browser third-party cookie restrictions blocking client-side pixels, modern campaigns pair the browser <strong>Meta Pixel</strong> with <strong>Conversions API (CAPI)</strong> (server-to-server events deduplicated by <code>event_id</code>) to preserve attribution accuracy.</p>
+
   <h3 id="u3-linkedin">3.3 LinkedIn B2B Marketing &amp; Account-Based Marketing (ABM)</h3>
   <div class="concept-box">
     <strong>Exam Definition (Account-Based Marketing - ABM):</strong> A focused B2B strategy where marketing and sales collaborate to target a specific list of high-value companies ("accounts") with personalized campaigns rather than broad lead generation.<br>
@@ -759,6 +934,40 @@ print(f"Value Ratio: {value_posts/total:.0%} | Promo Ratio: {promo_posts/total:.
       <li><strong>Lookalike Audiences (2M):</strong> Algorithmically generated cold audience sharing traits with a high-value Custom Audience seed (e.g., 1% Lookalike of past buyers).</li>
     </ol>
   </div>
+
+  <section class="unit-short-notes" id="u3-short-notes">
+    <div class="short-notes-header">
+      <div class="sn-badge">One-Page Rapid Revision</div>
+      <h3>Unit 3 Short Notes &amp; High-Yield Cheat Sheet</h3>
+      <p>Platform Matrix, Meta 3-Tier Campaign Structure, Audience Types, LinkedIn ABM, and Content Strategy.</p>
+    </div>
+    <div class="short-notes-grid">
+      <div class="sn-card">
+        <h4>&#9670; Meta Ads 3-Tier &amp; Audiences</h4>
+        <ul>
+          <li><strong>3 Levels:</strong> <em>Campaign</em> (Objective) &rarr; <em>Ad Set</em> (Targeting, Budget, Placements) &rarr; <em>Ad</em> (Creative &amp; CTA).</li>
+          <li><strong>Core:</strong> Cold demographics &amp; interests.</li>
+          <li><strong>Custom:</strong> Warm retargeting via Pixel / CAPI / email list.</li>
+          <li><strong>Lookalike (LAL):</strong> AI-cloned cold audience resembling top 1%&ndash;5% past buyers.</li>
+        </ul>
+      </div>
+      <div class="sn-card">
+        <h4>&#9670; LinkedIn ABM &amp; Platform Fit</h4>
+        <ul>
+          <li><strong>LinkedIn ABM:</strong> Account-Based Marketing targeting named enterprise companies + Matched Audiences + 1-click Lead Gen Forms.</li>
+          <li><strong>Instagram:</strong> Reels completion rate &amp; DM shares drive organic virality.</li>
+          <li><strong>X (Twitter):</strong> Real-time PR, tech threads, crisis support.</li>
+        </ul>
+      </div>
+      <div class="sn-card">
+        <h4>&#9670; Influencers &amp; 80/20 Rule</h4>
+        <ul>
+          <li><strong>80/20 Content Rule:</strong> 80% educational/entertaining value posts, 20% direct promotional pitches.</li>
+          <li><strong>Influencer Sweet Spot:</strong> <strong>Micro-influencers (10K&ndash;100K)</strong> yield the highest conversion ROI (3%&ndash;5% engagement) for D2C brands compared to celebrity sponsorships.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </section>
 
 <!-- ========================================== -->
@@ -793,6 +1002,14 @@ print(f"Value Ratio: {value_posts/total:.0%} | Promo Ratio: {promo_posts/total:.
       <text x="680" y="114" fill="#fef7e0" font-family="sans-serif" font-size="11" text-anchor="middle">backlinks &amp; Core Web Vitals</text>
     </svg>
     <div class="svg-caption">Figure 4.2: The 3-Stage Search Engine Pipeline &mdash; Crawling &rarr; Indexing &rarr; Ranking.</div>
+  </div>
+
+  <div class="concept-box">
+    <strong>Google E-E-A-T &amp; Cookieless Privacy Compliance (DPDP Act 2023):</strong>
+    <ul>
+      <li><strong>E-E-A-T (Search Quality Rater Guidelines):</strong> <strong>Experience</strong> (first-hand usage), <strong>Expertise</strong> (credentials/depth), <strong>Authoritativeness</strong> (citations/backlinks), and <strong>Trustworthiness</strong> (HTTPS, accurate authorship, transparent policies &mdash; vital for YMYL medical/finance pages).</li>
+      <li><strong>Privacy-First / First-Party Data:</strong> Under India's <strong>Digital Personal Data Protection (DPDP) Act 2023</strong> and third-party cookie deprecation, brands must obtain explicit consent before tracking, offer clear opt-outs, and rely on zero/first-party CRM data + Server-Side tagging.</li>
+    </ul>
   </div>
 
   <h3 id="u4-onpage">4.2 On-Page SEO &amp; Structured Data (JSON-LD Schema)</h3>
@@ -887,6 +1104,40 @@ Sitemap: https://example.edu.in/sitemap.xml</code></pre>
       <li><strong>Technical SEO (2M):</strong> Backend infrastructure for crawling and speed (Core Web Vitals: LCP/INP/CLS, <code>robots.txt</code>, XML Sitemaps, HTTPS, Canonical tags).</li>
     </ul>
   </div>
+
+  <section class="unit-short-notes" id="u4-short-notes">
+    <div class="short-notes-header">
+      <div class="sn-badge">One-Page Rapid Revision</div>
+      <h3>Unit 4 Short Notes &amp; High-Yield Cheat Sheet</h3>
+      <p>Search Pipeline, On-Page/Off-Page/Technical SEO, Core Web Vitals, Search Intent, YouTube Ads, and ORM.</p>
+    </div>
+    <div class="short-notes-grid">
+      <div class="sn-card">
+        <h4>&#9670; Search Pipeline &amp; 3 Pillars of SEO</h4>
+        <ul>
+          <li><strong>Pipeline:</strong> Crawling (Googlebot + <code>sitemap.xml</code>) &rarr; Indexing (parsed DB) &rarr; Ranking (E-E-A-T, links, UX).</li>
+          <li><strong>On-Page:</strong> Title (50&ndash;60c), Meta Desc (150&ndash;160c), H1&ndash;H6, Alt text, JSON-LD Schema.</li>
+          <li><strong>Off-Page:</strong> High-DA <code>dofollow</code> backlinks (Link Equity) &amp; PR.</li>
+          <li><strong>Technical:</strong> <code>robots.txt</code>, <code>rel="canonical"</code>, HTTPS, mobile readiness.</li>
+        </ul>
+      </div>
+      <div class="sn-card">
+        <h4>&#9670; Core Web Vitals &amp; Intent</h4>
+        <ul>
+          <li><strong>LCP &le; 2.5s</strong> (loading) &bull; <strong>INP &le; 200ms</strong> (interactivity) &bull; <strong>CLS &le; 0.1</strong> (stability).</li>
+          <li><strong>4 Search Intents:</strong> Informational ("what is") &bull; Navigational ("login") &bull; Commercial ("best laptop 2026") &bull; Transactional ("buy now").</li>
+        </ul>
+      </div>
+      <div class="sn-card">
+        <h4>&#9670; Video, Voice &amp; ORM</h4>
+        <ul>
+          <li><strong>YouTube YPP:</strong> 1K subs + 4K watch hrs (or 10M Shorts views). Formats: TrueView (5s skip, pay @ 30s), Non-Skippable (15s), Bumper (6s recall).</li>
+          <li><strong>Voice / Position 0:</strong> FAQ headings win Featured Snippets &amp; Zero-Click answers.</li>
+          <li><strong>ORM &amp; Privacy:</strong> Rapid review resolution + explicit consent under DPDP Act 2023.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </section>
 
 <!-- ========================================== -->
@@ -932,6 +1183,436 @@ Sitemap: https://example.edu.in/sitemap.xml</code></pre>
       <span class="m-tag">7 Marks</span>
     </div>
     <p><strong>Solution:</strong> GA4 tracks post-click user events across all traffic sources; GSC tracks pre-click Google Search impressions, queries, and indexing health. On YouTube, <strong>TrueView Skippable Ads</strong> let viewers skip after 5 seconds (advertiser pays at 30s/completion), while <strong>Bumper Ads</strong> are 6-second non-skippable bursts ideal for high-frequency brand recall.</p>
+  </div>
+</section>
+
+
+<!-- ========================================== -->
+<!-- ACTIVE RECALL FLASHCARDS (25 CARDS)        -->
+<!-- ========================================== -->
+<section class="flashcards-section" id="flashcards">
+  <div class="flashcards-header">
+    <div class="flashcards-title-group">
+      <span class="flashcards-badge">Active Recall Deck</span>
+      <h2>Digital Marketing Master Flashcards (25 High-Yield Cards)</h2>
+      <p>Tap any card to flip and test your mastery of POEM, RACE, KPI formulas, Vickrey auctions, Meta Ads, and SEO.</p>
+    </div>
+    <div class="flashcards-controls">
+      <button type="button" class="fc-ctrl-btn" id="fc-flip-all">Flip All Cards</button>
+      <button type="button" class="fc-ctrl-btn" id="fc-reset-all">Reset All</button>
+      <div class="fc-filter-group">
+        <label for="fc-unit-filter">Filter Unit:</label>
+        <select id="fc-unit-filter">
+          <option value="all">All Units (25 Cards)</option>
+          <option value="u1">Unit 1: Landscape &amp; RACE</option>
+          <option value="u2">Unit 2: Metrics, PPC &amp; RTB</option>
+          <option value="u3">Unit 3: SMM &amp; Content</option>
+          <option value="u4">Unit 4: SEO &amp; Emerging</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="flashcards-grid">
+    <!-- Card 1 -->
+    <div class="flashcard-card" data-unit="u1">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 1 &bull; POEM Framework</div>
+          <div class="fc-q">Distinguish Paid, Owned, and Earned media with one example each.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a"><strong>Paid:</strong> Bought ad placements (Google/Instagram Ads).<br><strong>Owned:</strong> 100% brand-controlled properties (Website, App, Email list).<br><strong>Earned:</strong> Organic word-of-mouth (Reviews, PR, viral shares, backlinks).</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="flashcard-card" data-unit="u1">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 1 &bull; RACE Model</div>
+          <div class="fc-q">What do the four letters of Dave Chaffey's RACE framework stand for?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a"><strong>R</strong>each (awareness/traffic via SEO &amp; ads) &rarr; <strong>A</strong>ct (interaction/leads on landing pages) &rarr; <strong>C</strong>onvert (checkout/sales) &rarr; <strong>E</strong>ngage (retention, repeat orders, LTV).</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="flashcard-card" data-unit="u1">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 1 &bull; Indian Ecosystem</div>
+          <div class="fc-q">Why does ONDC fundamentally change Indian e-commerce discovery?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a"><strong>ONDC</strong> unbundles discovery, payments, and logistics via open protocols so neighborhood Kirana stores and SMBs appear across multiple buyer apps without paying monopoly marketplace fees.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="flashcard-card" data-unit="u1">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 1 &bull; ZMOT &amp; UTM</div>
+          <div class="fc-q">What is ZMOT and which three UTM parameters are mandatory for campaign tracking?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a"><strong>ZMOT (Zero Moment of Truth):</strong> Online research/review reading before buying.<br><strong>Mandatory UTMs:</strong> <code>utm_source</code> (origin), <code>utm_medium</code> (channel type), <code>utm_campaign</code> (campaign name).</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="flashcard-card" data-unit="u1">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 1 &bull; Traditional vs Digital</div>
+          <div class="fc-q">Compare communication flow and agility in Traditional vs Digital Marketing.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">Traditional is <strong>one-way broadcast</strong> with rigid print/TV lock-in and estimated reach. Digital is <strong>two-way interactive</strong> (comments, DMs) with live real-time pausing/editing and exact pixel/GA4 attribution.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="flashcard-card" data-unit="u2">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 2 &bull; KPI Formulas</div>
+          <div class="fc-q">Write exact formulas for CTR, CPM, and CPA.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">$\text{CTR (\%)} = \frac{\text{Clicks}}{\text{Impressions}} \times 100$<br>$\text{CPM} = \frac{\text{Ad Spend}}{\text{Impressions}} \times 1000$<br>$\text{CPA} = \frac{\text{Ad Spend}}{\text{Total Conversions}}$</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="flashcard-card" data-unit="u2">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 2 &bull; ROAS vs ROI</div>
+          <div class="fc-q">If Spend = Rs. 10k, Revenue = Rs. 40k, and COGS = Rs. 25k, compute ROAS and ROI.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a"><strong>ROAS:</strong> $40,000 / 10,000 = \mathbf{4.0\text{x}}$ ($400\%$).<br><strong>Total Cost:</strong> $10\text{k} + 25\text{k} = 35\text{k}$; Net Gain $= 40\text{k} - 35\text{k} = 5\text{k}$.<br><strong>ROI:</strong> $(5,000 / 35,000) \times 100 = \mathbf{14.29\%}$.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="flashcard-card" data-unit="u2">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 2 &bull; Vickrey Auction</div>
+          <div class="fc-q">How does Google Ads calculate Ad Rank and Actual CPC in a Vickrey Second-Price Auction?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">$\text{Ad Rank} = \text{Max Bid} \times \text{Quality Score}$.<br>$\text{Actual CPC} = \frac{\text{Next Competitor's Ad Rank}}{\text{Your Quality Score}} + 0.01$.<br>A higher Quality Score lets you pay less than a higher bidder!</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="flashcard-card" data-unit="u2">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 2 &bull; Quality Score</div>
+          <div class="fc-q">What are the three components that determine Google Ads Quality Score (1&ndash;10)?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">1. <strong>Expected Click-Through Rate (CTR)</strong><br>2. <strong>Ad Relevance</strong> (match between keyword &amp; ad copy)<br>3. <strong>Landing Page Experience</strong> (relevance, speed, mobile usability).</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 10 -->
+    <div class="flashcard-card" data-unit="u2">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 2 &bull; GA4 vs GSC</div>
+          <div class="fc-q">Contrast Google Analytics 4 (GA4) vs Google Search Console (GSC).</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a"><strong>GA4:</strong> Tracks <em>post-click</em> behavior on your site across ALL channels using an event model (<code>page_view</code>, <code>purchase</code>).<br><strong>GSC:</strong> Tracks <em>pre-click</em> Google Organic Search queries, impressions, indexing, and Core Web Vitals.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 11 -->
+    <div class="flashcard-card" data-unit="u2">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 2 &bull; Unit Economics</div>
+          <div class="fc-q">What is the healthy benchmark for the LTV : CAC ratio and what does CAC include?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">Target benchmark: <strong>LTV : CAC &ge; 3 : 1</strong>.<br><strong>CAC</strong> = (Total Marketing Spend + Sales Team/Ops Spend) / New Customers Acquired in that period.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 12 -->
+    <div class="flashcard-card" data-unit="u2">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 2 &bull; Programmatic RTB</div>
+          <div class="fc-q">Explain the roles of SSP, Ad Exchange, and DSP in Real-Time Bidding (RTB).</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a"><strong>SSP (Supply-Side):</strong> Publishers monetize ad inventory.<br><strong>DSP (Demand-Side):</strong> Advertisers bid programmatically using audience rules.<br><strong>Ad Exchange:</strong> Marketplace hosting the &lt;100 ms auction linking SSP and DSP.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 13 -->
+    <div class="flashcard-card" data-unit="u3">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 3 &bull; Meta Ads Structure</div>
+          <div class="fc-q">What is configured at each level of Meta's 3-Tier Campaign Hierarchy?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">1. <strong>Campaign:</strong> Marketing objective (Sales, Leads, Awareness).<br>2. <strong>Ad Set:</strong> Audience targeting, daily/lifetime budget, schedule, placements.<br>3. <strong>Ad:</strong> Visual creative (Reel/Carousel), copy, and CTA button.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 14 -->
+    <div class="flashcard-card" data-unit="u3">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 3 &bull; Meta Audiences</div>
+          <div class="fc-q">Differentiate Core, Custom, and Lookalike Audiences in Meta Ads.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a"><strong>Core:</strong> Cold targeting by age, city, interests.<br><strong>Custom:</strong> Warm retargeting (Pixel site visitors, CRM emails).<br><strong>Lookalike:</strong> AI-generated cold users mimicking top 1% of a high-value Custom seed list.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 15 -->
+    <div class="flashcard-card" data-unit="u3">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 3 &bull; LinkedIn B2B</div>
+          <div class="fc-q">What is Account-Based Marketing (ABM) on LinkedIn and which two tools power it?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a"><strong>ABM:</strong> Focusing personalized sales+marketing on a curated list of high-value enterprise accounts.<br><strong>Tools:</strong> <em>Matched Audiences</em> (upload target company domains) + <em>Native Lead Gen Forms</em> (1-click auto-fill).</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 16 -->
+    <div class="flashcard-card" data-unit="u3">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 3 &bull; Instagram Reels</div>
+          <div class="fc-q">Which engagement signals does Instagram's Reels algorithm prioritize most?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">1. <strong>Watch Time / Replay Completion Rate</strong><br>2. <strong>DM Shares / Sends</strong> (strongest reach multiplier)<br>3. <strong>Saves</strong><br>4. <strong>Comments &amp; Likes</strong>.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 17 -->
+    <div class="flashcard-card" data-unit="u3">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 3 &bull; Content &amp; Influencers</div>
+          <div class="fc-q">State the 80/20 Content Rule and identify which Influencer Tier gives best D2C ROI.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a"><strong>80/20 Rule:</strong> 80% educational/entertaining value posts, 20% direct promotional offers.<br><strong>Best ROI Tier:</strong> <strong>Micro-influencers (10K&ndash;100K followers)</strong> combine niche trust with high engagement (3%&ndash;5%) at low cost.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 18 -->
+    <div class="flashcard-card" data-unit="u3">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 3 &bull; Signal Loss Fix</div>
+          <div class="fc-q">Why do marketers pair browser Meta Pixel with server-side Conversions API (CAPI)?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">Ad-blockers and iOS privacy limits drop browser Pixel fires. Server-to-server <strong>CAPI</strong> reliably logs conversions (deduplicated via matching <code>event_id</code>) to stabilize ROAS measurement and AI bidding.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 19 -->
+    <div class="flashcard-card" data-unit="u4">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 4 &bull; Search Pipeline</div>
+          <div class="fc-q">Outline the three stages of Google Search Engine Architecture.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">1. <strong>Crawling:</strong> Googlebot discovers URLs via hyperlinks and <code>sitemap.xml</code>.<br>2. <strong>Indexing:</strong> Renders HTML/JS, extracts text/JSON-LD, stores in inverted index.<br>3. <strong>Ranking:</strong> Sorts results by intent relevance, E-E-A-T, backlinks, and Core Web Vitals.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 20 -->
+    <div class="flashcard-card" data-unit="u4">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 4 &bull; On-Page vs Off-Page</div>
+          <div class="fc-q">Contrast On-Page SEO, Off-Page SEO, and Technical SEO.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a"><strong>On-Page:</strong> Titles (50&ndash;60c), Meta desc (150&ndash;160c), H1&ndash;H6, alt text.<br><strong>Off-Page:</strong> High-authority <code>dofollow</code> backlinks &amp; Digital PR.<br><strong>Technical:</strong> <code>robots.txt</code>, XML Sitemap, canonical tags, Core Web Vitals, HTTPS.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 21 -->
+    <div class="flashcard-card" data-unit="u4">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 4 &bull; Core Web Vitals</div>
+          <div class="fc-q">Name the three Core Web Vitals metrics and their exact "Good" Google thresholds.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">1. <strong>LCP</strong> (Largest Contentful Paint &mdash; loading): <strong>&le; 2.5 sec</strong>.<br>2. <strong>INP</strong> (Interaction to Next Paint &mdash; responsiveness): <strong>&le; 200 ms</strong>.<br>3. <strong>CLS</strong> (Cumulative Layout Shift &mdash; stability): <strong>&le; 0.1</strong>.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 22 -->
+    <div class="flashcard-card" data-unit="u4">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 4 &bull; Technical Tags</div>
+          <div class="fc-q">Distinguish <code>robots.txt</code> vs <code>sitemap.xml</code> vs <code>rel="canonical"</code>.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a"><strong>robots.txt:</strong> Disallows bots from crawling private paths (e.g., <code>/admin/</code>).<br><strong>sitemap.xml:</strong> Lists canonical indexable URLs for discovery.<br><strong>rel="canonical":</strong> Merges duplicate URL variations so ranking equity is not split.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 23 -->
+    <div class="flashcard-card" data-unit="u4">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 4 &bull; E-E-A-T &amp; Intent</div>
+          <div class="fc-q">What does E-E-A-T stand for, and what are the 4 Search Intent categories?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a"><strong>E-E-A-T:</strong> Experience, Expertise, Authoritativeness, Trustworthiness.<br><strong>4 Search Intents:</strong> Informational, Navigational, Commercial Investigation, Transactional.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 24 -->
+    <div class="flashcard-card" data-unit="u4">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 4 &bull; YouTube Ads</div>
+          <div class="fc-q">Compare YouTube Skippable In-Stream (TrueView) vs Non-Skippable vs Bumper Ads.</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a"><strong>TrueView Skippable:</strong> Skip after 5s; pay only if viewer watches 30s (or full video) or clicks.<br><strong>Non-Skippable:</strong> 15s mandatory (CPM billing).<br><strong>Bumper:</strong> 6s unskippable micro-ad ideal for mobile brand recall.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 25 -->
+    <div class="flashcard-card" data-unit="u4">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">
+          <div class="fc-tag">Unit 4 &bull; Voice, ORM &amp; Privacy</div>
+          <div class="fc-q">How do Featured Snippets support Voice Search, and what does India's DPDP Act require?</div>
+          <div class="fc-hint">Tap to flip &rarr;</div>
+        </div>
+        <div class="flashcard-back">
+          <div class="fc-tag">Model Answer</div>
+          <div class="fc-a">Voice assistants read aloud Google's <strong>Featured Snippet (Position 0)</strong> &mdash; optimized via concise FAQ headings.<br><strong>DPDP Act 2023:</strong> Requires explicit informed user consent before collecting personal tracking data and easy opt-out.</div>
+          <div class="fc-return">Tap to flip back</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
